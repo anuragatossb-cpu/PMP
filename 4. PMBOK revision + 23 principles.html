@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>PMP Toppers Notes — PMBOK 7 Complete Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#faf8f4;--bg2:#f3f0e8;--surf:#fff;--bdr:#e5ddd0;--txt:#1e180a;--muted:#7a6f5e;--sw:260px;
+  --c1:#5b21b6;--c2:#1d4ed8;--c3:#065f46;--c4:#92400e;--c5:#991b1b;--c6:#0e7490;--c7:#312e81;--c8:#7c2d12;--c9:#134e4a;--c10:#701a75;}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--txt);line-height:1.65;font-size:14.5px}
+#pb{position:fixed;top:0;left:0;height:3px;z-index:9999;width:0;background:linear-gradient(90deg,#5b21b6,#1d4ed8,#065f46,#92400e,#991b1b,#0e7490,#312e81)}
+#pbx{position:fixed;top:8px;right:12px;z-index:9999;background:rgba(30,24,10,.85);color:#fff;font-family:"JetBrains Mono",monospace;font-size:10px;padding:2px 7px;border-radius:12px;opacity:0;transition:opacity .3s;pointer-events:none}
+#sb{width:var(--sw);min-width:var(--sw);background:var(--surf);border-right:1px solid var(--bdr);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:200;display:flex;flex-direction:column}
+#sb::-webkit-scrollbar{width:3px}#sb::-webkit-scrollbar-thumb{background:var(--bdr)}
+.sbl{padding:16px 14px 12px;border-bottom:1px solid var(--bdr)}
+.sbl-t{font-family:"Libre Baskerville",serif;font-size:13px;font-weight:700}
+.sbl-s{font-size:9.5px;color:var(--muted);margin-top:2px}
+.sbn{padding:7px 0 20px;flex:1}
+.sbg{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:9px 13px 3px}
+.sba{display:flex;align-items:center;gap:6px;padding:4px 13px;font-size:11px;color:var(--muted);text-decoration:none;border-right:2px solid transparent;transition:all .12s}
+.sba:hover{color:var(--txt);background:var(--bg)}
+.sba.active{color:var(--txt);font-weight:600;background:var(--bg2);border-right-color:var(--txt)}
+.sd{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+#main{margin-left:var(--sw)}
+.wrap{max-width:980px;padding:0 28px 80px;margin:0 auto}
+.hero{background:linear-gradient(135deg,#160a35 0%,#1e1b4b 50%,#0c2340 100%);color:#fff;padding:44px 30px 38px;overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,rgba(139,92,246,.2),transparent 70%);pointer-events:none}
+.he{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:9px}
+.ht{font-family:"Libre Baskerville",serif;font-size:30px;font-weight:700;line-height:1.15;margin-bottom:8px}
+.hs{font-size:13.5px;color:rgba(255,255,255,.62);margin-bottom:16px;max-width:560px;line-height:1.6}
+.hps{display:flex;flex-wrap:wrap;gap:5px}
+.hp{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:3px 10px;font-size:10.5px;color:rgba(255,255,255,.8)}
+.sec{padding-top:12px}
+.sh{display:flex;align-items:center;gap:10px;padding:22px 0 11px;border-bottom:2px solid var(--bdr);margin-bottom:4px}
+.si{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.st{font-family:"Libre Baskerville",serif;font-size:18px;font-weight:700}
+.stg{margin-left:auto;font-size:9px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:2px 8px;border-radius:20px;flex-shrink:0}
+.card{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;margin-bottom:7px;overflow:hidden}
+.card:hover{box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.ch{display:flex;align-items:center;gap:8px;padding:11px 14px;cursor:pointer;user-select:none}
+.ch:hover{background:var(--bg)}
+.cn{width:22px;height:22px;border-radius:5px;font-size:10px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ct{font-weight:600;font-size:13px;flex:1}
+.ca{font-size:10px;color:var(--muted);transition:transform .2s;flex-shrink:0}
+.card.open .ca{transform:rotate(180deg)}
+.cb{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.card.open .cb{max-height:99999px}
+.cc{padding:2px 14px 14px}
+.box{border-left:3px solid;border-radius:0 7px 7px 0;padding:8px 11px;margin:8px 0;font-size:12px;line-height:1.6}
+.bl{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.exam{background:#fffbeb;border-color:#f59e0b}.exam .bl{color:#b45309}
+.tip{background:#ecfdf5;border-color:#10b981}.tip .bl{color:#065f46}
+.warn{background:#fef2f2;border-color:#ef4444}.warn .bl{color:#b91c1c}
+.def{background:#eff6ff;border-color:#3b82f6}.def .bl{color:#1d4ed8}
+.note{background:#f5f3ff;border-color:#8b5cf6}.note .bl{color:#5b21b6}
+.rehman{background:#fff7ed;border-color:#f97316}.rehman .bl{color:#9a3412}
+.fm{background:#1e1b4b;border-radius:8px;padding:9px 13px;margin:7px 0;font-family:"JetBrains Mono",monospace}
+.fn{font-size:8.5px;color:#a5b4fc;font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:3px}
+.ff{font-size:12.5px;color:#e0e7ff;font-weight:600;margin-bottom:2px}
+.fm2{font-size:10.5px;color:#818cf8;font-family:"DM Sans",sans-serif}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:8px 0}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px;margin:8px 0}
+.tbl th{background:var(--bg2);padding:6px 10px;text-align:left;font-weight:600;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;border-bottom:2px solid var(--bdr)}
+.tbl td{padding:6px 10px;border-bottom:1px solid var(--bdr);vertical-align:top;line-height:1.5}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:nth-child(even) td{background:var(--bg)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:8px 0}
+.mc{background:var(--bg);border:1px solid var(--bdr);border-radius:8px;padding:9px 11px}
+.mt{font-weight:700;font-size:12px;margin-bottom:3px}
+.mb{font-size:11px;color:var(--muted);line-height:1.5}
+ul.l{list-style:none;padding:0;margin:5px 0}
+ul.l li{padding:2px 0 2px 14px;position:relative;font-size:12px;border-bottom:1px solid var(--bg2);line-height:1.55}
+ul.l li:last-child{border-bottom:none}
+ul.l li::before{content:"›";position:absolute;left:2px;color:var(--muted)}
+ul.l.ck li::before{content:"✓";color:#10b981}
+ul.l.sq li::before{content:"▸";color:var(--muted)}
+ul.l.num{counter-reset:num}
+ul.l.num li::before{counter-increment:num;content:counter(num)".";color:var(--c1);font-weight:700;font-size:10px}
+h3.sh2{font-family:"Libre Baskerville",serif;font-size:13px;font-weight:700;margin:12px 0 5px;color:var(--txt)}
+p.bt{font-size:12px;line-height:1.65;margin:5px 0}
+.src{display:inline-flex;align-items:center;gap:4px;background:var(--bg2);border:1px solid var(--bdr);border-radius:14px;padding:2px 8px;font-size:9px;color:var(--muted);margin-bottom:5px}
+.pq{background:var(--bg2);border-radius:8px;padding:10px 12px;margin:10px 0;font-size:12px}
+.pq-t{font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--c8);margin-bottom:5px}
+.pq-q{font-weight:600;margin-bottom:7px;line-height:1.5}
+.pq-opts{list-style:none;padding:0}
+.pq-opts li{padding:3px 0 3px 16px;position:relative;font-size:11.5px;line-height:1.5}
+.pq-opts li::before{content:"○";position:absolute;left:0;color:var(--muted);font-size:10px}
+.pq-opts li.ans{font-weight:700;color:#065f46}
+.pq-opts li.ans::before{content:"✓";color:#10b981}
+/* GLOSSARY */
+.gloss{column-count:2;column-gap:18px;margin:8px 0}
+.gt{break-inside:avoid;padding:4px 0;border-bottom:1px solid var(--bdr);font-size:11.5px;margin-bottom:2px}
+.gt strong{color:var(--c2);font-weight:700}
+/* CRAM */
+#cram{background:#1a1a2e;color:#e2e8f0}
+.cr-inner{max-width:980px;padding:26px 28px 40px;margin:0 auto}
+.cr-title{font-family:"Libre Baskerville",serif;font-size:22px;font-weight:700;color:#f8fafc;text-align:center;margin-bottom:3px}
+.cr-sub{text-align:center;font-size:11.5px;color:#94a3b8;margin-bottom:22px}
+.cr-pg{padding:16px 0;border-top:1px solid rgba(255,255,255,.08)}
+.cr-pt{font-family:"Libre Baskerville",serif;font-size:14px;font-weight:700;color:#a5b4fc;margin-bottom:9px;display:flex;align-items:center;gap:8px}
+.cr-pt::before,.cr-pt::after{content:"";flex:1;height:1px;background:rgba(255,255,255,.07)}
+.cr-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cb2{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:8px 10px}
+.cb2-t{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a5b4fc;margin-bottom:5px}
+.cl{list-style:none;padding:0}
+.cl li{font-size:10.5px;color:#cbd5e1;padding:2px 0 2px 10px;position:relative;line-height:1.5;border-bottom:1px solid rgba(255,255,255,.04)}
+.cl li:last-child{border-bottom:none}
+.cl li::before{content:"›";position:absolute;left:1px;color:#6366f1}
+.cfm{background:#0f0f23;border-radius:5px;padding:5px 8px;margin:3px 0;font-family:"JetBrains Mono",monospace}
+.cfn{font-size:8px;color:#818cf8;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1px}
+.cff{font-size:10.5px;color:#a5b4fc;font-weight:600}
+.cfm2{font-size:9px;color:#64748b;font-family:"DM Sans",sans-serif}
+strong.h{color:#f1f5f9}
+em.g{color:#86efac}
+em.r{color:#fca5a5}
+em.b{color:#93c5fd}
+em.y{color:#fde68a}
+.ctbl{width:100%;border-collapse:collapse;font-size:10px;margin:3px 0}
+.ctbl th{padding:3px 7px;text-align:left;color:#94a3b8;border-bottom:1px solid rgba(255,255,255,.08);font-weight:700}
+.ctbl td{padding:3px 7px;border-bottom:1px solid rgba(255,255,255,.04);color:#cbd5e1}
+/* SECTION THEMING */
+.s1 .cn{background:var(--c1)}.s1 .si{background:#ede9fe;color:var(--c1)}.s1 .stg{background:#ede9fe;color:var(--c1)}
+.s2 .cn{background:var(--c2)}.s2 .si{background:#dbeafe;color:var(--c2)}.s2 .stg{background:#dbeafe;color:var(--c2)}
+.s3 .cn{background:var(--c3)}.s3 .si{background:#d1fae5;color:var(--c3)}.s3 .stg{background:#d1fae5;color:var(--c3)}
+.s4 .cn{background:var(--c4)}.s4 .si{background:#fef3c7;color:var(--c4)}.s4 .stg{background:#fef3c7;color:var(--c4)}
+.s5 .cn{background:var(--c5)}.s5 .si{background:#fee2e2;color:var(--c5)}.s5 .stg{background:#fee2e2;color:var(--c5)}
+.s6 .cn{background:var(--c6)}.s6 .si{background:#cffafe;color:var(--c6)}.s6 .stg{background:#cffafe;color:var(--c6)}
+.s7 .cn{background:var(--c7)}.s7 .si{background:#e0e7ff;color:var(--c7)}.s7 .stg{background:#e0e7ff;color:var(--c7)}
+.s8 .cn{background:var(--c8)}.s8 .si{background:#fff7ed;color:var(--c8)}.s8 .stg{background:#fff7ed;color:var(--c8)}
+.s9 .cn{background:var(--c9)}.s9 .si{background:#ccfbf1;color:var(--c9)}.s9 .stg{background:#ccfbf1;color:var(--c9)}
+.s10 .cn{background:var(--c10)}.s10 .si{background:#fdf4ff;color:var(--c10)}.s10 .stg{background:#fdf4ff;color:var(--c10)}
+@media print{
+  #sb,#pb,#pbx{display:none!important}#main{margin-left:0!important}
+  .wrap{max-width:100%;padding:0 16px 16px}
+  .hero{background:#1e1b4b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:18px}
+  .ht{font-size:18px}.card{page-break-inside:avoid}
+  .cb{max-height:none!important;overflow:visible!important;display:block!important}
+  .sh{page-break-before:always}.sh:first-of-type{page-break-before:avoid}
+  .fm{background:#1e1b4b!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .cr-pg{page-break-before:always}body{font-size:10pt}a{color:inherit;text-decoration:none}
+  .box{border:1px solid #ccc}.tbl th,.tbl td{border:1px solid #ccc}
+}
+@media(max-width:768px){#sb{transform:translateX(-100%)}#main{margin-left:0}.wrap{padding:0 13px 60px}.fg,.g2,.g3,.cr-cols{grid-template-columns:1fr}.hero{padding:24px 14px 20px}.ht{font-size:20px}.cr-inner{padding:18px 14px 28px}.gloss{column-count:1}}
+</style></head><body>
+<div id="pb"></div><div id="pbx">0%</div>
+
+<nav id="sb">
+<div class="sbl"><div class="sbl-t">PMP Toppers Notes</div><div class="sbl-s">PMBOK 7 · Complete Study Guide</div></div>
+<div class="sbn">
+<div class="sbg">PMBOK 7 — Performance Domains</div>
+<a class="sba" href="#d1"><span class="sd" style="background:#5b21b6"></span>D1 — Stakeholder</a>
+<a class="sba" href="#d2"><span class="sd" style="background:#1d4ed8"></span>D2 — Team</a>
+<a class="sba" href="#d3"><span class="sd" style="background:#065f46"></span>D3 — Dev Approach</a>
+<a class="sba" href="#d4"><span class="sd" style="background:#92400e"></span>D4 — Planning</a>
+<a class="sba" href="#d5"><span class="sd" style="background:#991b1b"></span>D5 — Project Work</a>
+<a class="sba" href="#d6"><span class="sd" style="background:#0e7490"></span>D6 — Delivery</a>
+<a class="sba" href="#d7"><span class="sd" style="background:#312e81"></span>D7 — Measurement</a>
+<a class="sba" href="#d8"><span class="sd" style="background:#7c2d12"></span>D8 — Uncertainty</a>
+<div class="sbg">PMBOK 7 — Guide Sections</div>
+<a class="sba" href="#tail"><span class="sd" style="background:#134e4a"></span>Tailoring</a>
+<a class="sba" href="#mma"><span class="sd" style="background:#701a75"></span>Models Methods Artifacts</a>
+<div class="sbg">Key Frameworks</div>
+<a class="sba" href="#rehman"><span class="sd" style="background:#f97316"></span>23 Principles (M. Rehman)</a>
+<a class="sba" href="#gloss"><span class="sd" style="background:#6366f1"></span>Glossary of Key Terms</a>
+<div class="sbg">Cram</div>
+<a class="sba" href="#cram"><span class="sd" style="background:#6366f1"></span>&#x1F9E0; Printable Cram</a>
+</div></nav>
+
+<div id="main">
+<div class="hero">
+<div class="he">PMBOK 7 — Toppers Notes · Complete Study Guide</div>
+<div class="ht">PMP® Toppers Notes<br><span style="font-weight:400;font-style:italic">PMBOK Guide 7th Edition · Fast Pass Method</span></div>
+<div class="hs">Section-by-section notes that eliminate the need to read the guide. All 8 Performance Domains · Tailoring · MMA · Mohammad Rehman's exact 23 Principles · Glossary · Printable Cram. Your licensed copy (369 pages) — distilled.</div>
+<div class="hps">
+<span class="hp">8 Performance Domains — Dense Notes</span>
+<span class="hp">Tailoring — Complete</span>
+<span class="hp">Models Methods Artifacts</span>
+<span class="hp">23 Principles — Exact (M. Rehman)</span>
+<span class="hp">Practice Questions per Principle</span>
+<span class="hp">Glossary — 80+ Terms</span>
+<span class="hp">&#x1F5A8; All Sections Printable</span>
+<span class="hp">&#x1F9E0; Cram Section</span>
+</div></div>
+<div class="wrap">
+
+<!-- ====== D1 STAKEHOLDER ====== -->
+<section class="sec s1" id="d1">
+<div class="sh"><div class="si">&#x1F465;</div><div class="st">D1 — Stakeholder Performance Domain</div><span class="stg">PMBOK Guide §2.1</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.1 · Anurag Shrivastava — Licensed Copy</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities and functions associated with stakeholders throughout the project life cycle. Effective execution yields: productive relationships, stakeholder agreement on objectives, project advocates, and satisfied stakeholders at closure.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Identification and Analysis</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<p class="bt">Stakeholders must be identified continuously — new stakeholders emerge throughout the project. Anyone directly or indirectly affected by the project is a stakeholder.</p>
+<h3 class="sh2">Analysis Tools</h3>
+<table class="tbl">
+<thead><tr><th>Tool</th><th>How It Works</th><th>Key Exam Point</th></tr></thead>
+<tbody>
+<tr><td><strong>Power/Interest Grid</strong></td><td>2×2 matrix: High Power+High Interest=Manage Closely; High Power+Low Interest=Keep Satisfied; Low Power+High Interest=Keep Informed; Low Power+Low Interest=Monitor</td><td>Most used analysis grid on the exam</td></tr>
+<tr><td><strong>Power/Influence Grid</strong></td><td>Same as above but replaces Interest with Influence (ability to affect outcomes)</td><td>Influence ≠ Interest</td></tr>
+<tr><td><strong>Salience Model</strong></td><td>3 dimensions: Power + Legitimacy + Urgency. All 3=Definitive (highest priority). Any 2=Secondary. Any 1=Latent.</td><td>Definitive stakeholders = all 3 attributes</td></tr>
+<tr><td><strong>Stakeholder Cube</strong></td><td>3D model adding a third axis (e.g., attitude) to grid analysis</td><td>More nuanced than 2D grids</td></tr>
+<tr><td><strong>Empathy Map</strong></td><td>Understand stakeholder perspective: Think/Feel, Hear, See, Say/Do, Pain, Gain</td><td>Used for deeper engagement planning</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Stakeholder Engagement Levels</h3>
+<ul class="l">
+<li><strong>Unaware:</strong> No knowledge of project or its potential impacts on them</li>
+<li><strong>Resistant:</strong> Aware but opposed — resistant to change. Requires most engagement effort.</li>
+<li><strong>Neutral:</strong> Aware but neither supportive nor resistant</li>
+<li><strong>Supportive:</strong> Aware and supportive of change. Maintain this level.</li>
+<li><strong>Leading:</strong> Actively engaged in ensuring project success. Leverage these stakeholders.</li>
+</ul>
+<div class="box exam"><div class="bl">⭐ EXAM</div>Gap between Current and Desired engagement level = the engagement action needed. Never leave Resistant stakeholders unaddressed — resistance is a project risk.</div>
+</div></div></div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Engagement Strategy and Communication</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>Communication Method</th><th>Description</th><th>Best For</th></tr></thead>
+<tbody>
+<tr><td><strong>Interactive</strong></td><td>Real-time two-way: meetings, calls, video conference</td><td>Complex discussions, sensitive issues, relationship building</td></tr>
+<tr><td><strong>Push</strong></td><td>Sent from sender to receiver: email, reports, memos. No confirmation of receipt.</td><td>Routine updates, large audiences, formal notification</td></tr>
+<tr><td><strong>Pull</strong></td><td>Receiver accesses at will: intranet, repositories, e-learning</td><td>Optional reference material, large audiences</td></tr>
+</tbody>
+</table>
+<div class="box tip"><div class="bl">💡 PMBOK §2.1 Key Insight</div>Stakeholder engagement is MORE than communication. Engagement involves two-way dialogue that builds shared understanding, not just information transmission. A project that communicates well but engages poorly will still fail stakeholder satisfaction.</div>
+<h3 class="sh2">Outcomes Check (PMBOK Table 2-1)</h3>
+<ul class="l ck">
+<li>Productive working relationship with stakeholders throughout project life cycle</li>
+<li>Stakeholder agreement on project requirements and what constitutes success</li>
+<li>Stakeholders who are project advocates and supporters</li>
+<li>Satisfied stakeholders at project end and benefits realisation stage</li>
+</ul>
+</div></div></div>
+</section>
+
+<!-- ====== D2 TEAM ====== -->
+<section class="sec s2" id="d2">
+<div class="sh"><div class="si">&#x1F91D;</div><div class="st">D2 — Team Performance Domain</div><span class="stg">PMBOK Guide §2.2</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.2</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with the people responsible for producing project deliverables that realise business outcomes. Effective execution yields: shared ownership, high-performing team, applicable leadership, team members who demonstrate trust and respect.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Project Team Management vs Leadership</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="g2">
+<div class="mc"><div class="mt">Centralised Teams</div><div class="mb">Team members work in same location. Face-to-face communication is easiest. Easier to build team culture. Less flexibility for individual members.</div></div>
+<div class="mc"><div class="mt">Distributed/Virtual Teams</div><div class="mb">Members in different locations, time zones, languages. Require explicit communication norms. Technology bridges the gap. Risk of isolation and miscommunication.</div></div>
+</div>
+<h3 class="sh2">Team Authority — 3 Key Concepts</h3>
+<ul class="l">
+<li><strong>Authority:</strong> Right to apply resources, make decisions, sign approvals. Formally granted. Can be delegated.</li>
+<li><strong>Accountability:</strong> Answerable for the outcome of a decision or work. CANNOT be delegated — always rests with one person.</li>
+<li><strong>Responsibility:</strong> Obligation to perform work or fulfil a task. CAN be shared among multiple team members.</li>
+</ul>
+<div class="box exam"><div class="bl">⭐ EXAM TRAP</div>Accountability CANNOT be shared or delegated. Only one person is accountable for any outcome. Responsibility CAN be shared. This distinction appears frequently in scenario questions.</div>
+</div></div></div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Leadership Styles and Situational Approach</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box note"><div class="bl">📝 PMBOK §2.2.1.2</div>"Effective project managers evaluate each situation and use the most applicable leadership style. In moments of chaos, directive action can create more clarity. For highly competent staff in a familiar environment, empowered leadership can elicit more productivity."</div>
+<table class="tbl">
+<thead><tr><th>Style</th><th>When PM Uses It</th><th>Team Development Level</th></tr></thead>
+<tbody>
+<tr><td><strong>Directing (S1)</strong></td><td>New team members, crisis, safety situation, very low team competence</td><td>D1 — Enthusiastic Beginner (Low comp, High commit)</td></tr>
+<tr><td><strong>Coaching (S2)</strong></td><td>Team learning but losing motivation, needs explanation and encouragement</td><td>D2 — Disillusioned Learner (Low-Med comp, Low commit)</td></tr>
+<tr><td><strong>Supporting (S3)</strong></td><td>Capable team lacking confidence, needs encouragement not direction</td><td>D3 — Capable but Cautious (Med-High comp, Variable)</td></tr>
+<tr><td><strong>Delegating (S4)</strong></td><td>Highly competent, motivated, self-organising team</td><td>D4 — Self-Reliant Achiever (High comp, High commit)</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Servant Leadership (PMBOK Emphasis)</h3>
+<ul class="l">
+<li>Serve the team — remove obstacles, provide resources, enable delivery</li>
+<li>Protect the team from distractions and unnecessary interruptions</li>
+<li>Coach team members for growth and skill development</li>
+<li>Encourage collaborative decision-making</li>
+<li>Foster psychological safety — team can speak up, fail safely, and recover</li>
+</ul>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">3</span><span class="ct">Team Development, Conflict, Motivation</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Tuckman Model (PMBOK §2.2.3.1)</h3>
+<table class="tbl">
+<thead><tr><th>Stage</th><th>Team Behaviour</th><th>PM Action</th></tr></thead>
+<tbody>
+<tr><td><strong>Forming</strong></td><td>Polite, uncertain, testing boundaries, dependent on PM</td><td>Directing — set structure, create charter, define roles</td></tr>
+<tr><td><strong>Storming</strong></td><td>Conflict, competition, challenging authority — NORMAL</td><td>Coaching — mediate, enforce ground rules, allow healthy conflict</td></tr>
+<tr><td><strong>Norming</strong></td><td>Cohesion forms, norms accepted, collaboration increases</td><td>Supporting — reinforce norms, celebrate wins</td></tr>
+<tr><td><strong>Performing</strong></td><td>High productivity, self-organising, high trust</td><td>Delegating — step back, focus on strategy and external</td></tr>
+<tr><td><strong>Adjourning</strong></td><td>Disbanding — emotions around endings, pride</td><td>Celebrate, capture lessons, help team transition</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Conflict Resolution (Ranked Best to Worst)</h3>
+<ul class="l num">
+<li><strong>Confront/Problem-Solve:</strong> Direct discussion, win-win. ALWAYS try first.</li>
+<li><strong>Compromise/Reconcile:</strong> Each party gives something. Temporary solution.</li>
+<li><strong>Smooth/Accommodate:</strong> Emphasise agreements, one party yields. Short-term.</li>
+<li><strong>Force/Direct:</strong> PM imposes. Win-lose. Emergency/safety only.</li>
+<li><strong>Withdraw/Avoid:</strong> Never permanent. Cooling down only — always follow up.</li>
+</ul>
+<h3 class="sh2">Motivation — Key Theories</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Maslow</div><div class="mb">Physio→Safety→Social→Esteem→Self-Actualisation. Lower before higher. Cannot skip levels.</div></div>
+<div class="mc"><div class="mt">Herzberg</div><div class="mb">Hygiene (salary, conditions) = prevent dissatisfaction only. Motivators (achievement, growth) = genuinely motivate. Raise ≠ motivator!</div></div>
+<div class="mc"><div class="mt">McGregor X/Y</div><div class="mb">X=workers lazy, need control. Y=self-motivated, seek responsibility. PMP assumes Theory Y.</div></div>
+<div class="mc"><div class="mt">McClelland</div><div class="mb">nAch (excel), nAff (relationships), nPow (influence). Institutional power = positive. Personal power = negative.</div></div>
+</div>
+</div></div></div>
+</section>
+
+<!-- ====== D3 DEV APPROACH ====== -->
+<section class="sec s3" id="d3">
+<div class="sh"><div class="si">&#x1F504;</div><div class="st">D3 — Development Approach and Life Cycle</div><span class="stg">PMBOK Guide §2.3</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.3</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with development approach, cadence, and life cycle phases of the project. Effective execution yields: development approach appropriate to project, project life cycle connecting deliverables to outcomes, development approach enabling stakeholder involvement at right points.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Development Approaches — Complete Comparison</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>Approach</th><th>Characteristics</th><th>Best When</th><th>Requirements</th></tr></thead>
+<tbody>
+<tr><td><strong>Predictive</strong></td><td>Sequential. Plan-driven. Detailed upfront planning. Scope fixed. Changes controlled via CCB.</td><td>Requirements well-defined, stable technology, low uncertainty, regulatory/compliance projects</td><td>Fixed from start</td></tr>
+<tr><td><strong>Iterative</strong></td><td>Repeat cycles to refine a SINGLE deliverable. Feedback improves the deliverable each cycle.</td><td>Final product unclear, need multiple attempts to converge on right solution</td><td>Evolving</td></tr>
+<tr><td><strong>Incremental</strong></td><td>Deliver in usable CHUNKS. Each increment adds functional capability. Customer uses each piece as delivered.</td><td>Parts can be used before whole is complete, early value delivery needed</td><td>Can be decomposed</td></tr>
+<tr><td><strong>Agile</strong></td><td>Iterative + Incremental. Frequent feedback, rapid adaptation, self-organising teams, continuous delivery.</td><td>High uncertainty, rapidly changing requirements, customer collaboration available daily</td><td>Emerging, evolving</td></tr>
+<tr><td><strong>Hybrid</strong></td><td>Mix of predictive and agile. Predictive for stable parts (procurement, contracts), agile for development.</td><td>Most real-world complex projects. Team or regulatory constraints prevent pure agile.</td><td>Mixed</td></tr>
+</tbody>
+</table>
+<div class="box tip"><div class="bl">💡 KEY DISTINCTION</div>Iterative = improve THE SAME THING over multiple cycles. Incremental = add NEW PIECES. Agile = BOTH simultaneously. Building a car iteratively = redesign same car. Incrementally = add wheels, then engine, then body separately.</div>
+<h3 class="sh2">Factors Influencing Approach Selection (PMBOK §2.3.1)</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Product/Deliverable Factors</div><div class="mb">Degree of innovation, technology certainty, requirements certainty, safety implications, regulatory requirements</div></div>
+<div class="mc"><div class="mt">Project Factors</div><div class="mb">Stakeholder engagement availability, team experience and capability, timeline constraints, budget flexibility</div></div>
+<div class="mc"><div class="mt">Organisational Factors</div><div class="mb">Organisational culture, PMO capability, tool availability, project team experience with approach</div></div>
+</div>
+<h3 class="sh2">Delivery Cadence</h3>
+<ul class="l">
+<li><strong>Single Delivery:</strong> One final delivery at project end. Traditional waterfall. Construction, compliance projects.</li>
+<li><strong>Multiple Deliveries:</strong> Deliveries at regular or irregular intervals. Milestones. Most common in practice.</li>
+<li><strong>Periodic Delivery:</strong> Regular schedule-based delivery (weekly, monthly, quarterly releases).</li>
+<li><strong>Continuous Delivery:</strong> Continuous small releases as soon as features are ready. DevOps, CI/CD pipelines.</li>
+</ul>
+</div></div></div>
+</section>
+
+<!-- ====== D4 PLANNING ====== -->
+<section class="sec s4" id="d4">
+<div class="sh"><div class="si">&#x1F4CB;</div><div class="st">D4 — Planning Performance Domain</div><span class="stg">PMBOK Guide §2.4</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.4</div>
+<div class="box def"><div class="bl">📌 Definition</div>Planning is NOT a one-time event — it is a continuous activity throughout the project. Effective execution yields: organised project progress, holistic delivery approach, progressive elaboration, appropriate planning effort, sufficient stakeholder information, and an adaptation process for changing conditions.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Planning Variables and Estimation Methods</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">What Gets Planned (PMBOK §2.4.1–2.4.9)</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Scope and Requirements</div><div class="mb">What will be delivered. WBS decomposes scope into work packages. 100% Rule — everything and nothing more.</div></div>
+<div class="mc"><div class="mt">Schedule</div><div class="mb">When will work be done. Critical Path Method for predictive. Sprint plans for agile. Rolling wave for uncertainty.</div></div>
+<div class="mc"><div class="mt">Cost and Budget</div><div class="mb">Budget at Completion (BAC). Cost baseline + contingency reserve = project budget. Management reserve separate.</div></div>
+<div class="mc"><div class="mt">Resources</div><div class="mb">Who and what is needed. RACI matrix. Resource calendar. Availability planning.</div></div>
+<div class="mc"><div class="mt">Risk</div><div class="mb">Risk register. Response plans. Contingency reserve for known unknowns. Management reserve for unknown unknowns.</div></div>
+<div class="mc"><div class="mt">Quality</div><div class="mb">Quality management plan. Acceptance criteria. Metrics. QA (process) vs QC (output).</div></div>
+<div class="mc"><div class="mt">Communications</div><div class="mb">Who needs what information, when, how, in what format. Channels = N(N-1)/2.</div></div>
+<div class="mc"><div class="mt">Stakeholder Engagement</div><div class="mb">Stakeholder Engagement Plan. Tailored communication strategies per stakeholder group.</div></div>
+</div>
+<h3 class="sh2">Estimation Methods</h3>
+<table class="tbl">
+<thead><tr><th>Method</th><th>Approach</th><th>Accuracy</th><th>Speed</th></tr></thead>
+<tbody>
+<tr><td><strong>Analogous</strong></td><td>Use actuals from similar past projects</td><td>Low (±25-75%)</td><td>Fast</td></tr>
+<tr><td><strong>Parametric</strong></td><td>Statistical relationship: cost-per-unit × volume</td><td>Medium</td><td>Fast</td></tr>
+<tr><td><strong>Bottom-Up</strong></td><td>Estimate each work package, aggregate upward</td><td>High (±5-10%)</td><td>Slow</td></tr>
+<tr><td><strong>Three-Point/PERT</strong></td><td>E = (O + 4M + P)/6 · σ = (P-O)/6</td><td>Medium-High</td><td>Medium</td></tr>
+<tr><td><strong>Planning Poker</strong></td><td>Agile: simultaneous reveal, discuss discrepancies, consensus</td><td>Relative</td><td>Fast</td></tr>
+<tr><td><strong>Affinity</strong></td><td>Group user stories into T-shirt sizes (S/M/L/XL)</td><td>Low (relative)</td><td>Very Fast</td></tr>
+</tbody>
+</table>
+<div class="box note"><div class="bl">📝 Cone of Uncertainty</div>Early estimates: ±50% accuracy. After requirements: ±30%. After design: ±15%. After build: ±5-10%. Predictive projects progressively narrow the cone. In agile, sprint-level estimates are much more accurate than release-level forecasts.</div>
+</div></div></div>
+</section>
+
+<!-- ====== D5 PROJECT WORK ====== -->
+<section class="sec s5" id="d5">
+<div class="sh"><div class="si">&#x2699;&#xFE0F;</div><div class="st">D5 — Project Work Performance Domain</div><span class="stg">PMBOK Guide §2.5</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.5</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with establishing project processes, managing physical resources, and fostering a learning environment. Effective execution yields: efficient project performance, appropriate processes, effective stakeholder communication, efficient physical resource management, effective procurement, improved team capability through learning.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Project Processes and Constraints</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Process Optimisation (PMBOK §2.5.1)</h3>
+<ul class="l">
+<li><strong>Lean production methods:</strong> Value stream mapping identifies value-adding vs non-value-adding activities. Eliminate waste (muda).</li>
+<li><strong>Retrospectives/Lessons Learned:</strong> Regular team reviews of HOW they work — suggest process improvements.</li>
+<li><strong>"Where is the next best dollar spent?"</strong> Continuous question to prioritise value delivery over process adherence.</li>
+<li>Processes must be both efficient (no waste) AND effective (meets quality/regulatory requirements).</li>
+<li>Process audits and quality assurance ensure processes are followed and accomplishing intended outcomes.</li>
+</ul>
+<h3 class="sh2">Balancing Competing Constraints (PMBOK §2.5.2)</h3>
+<p class="bt">Constraints: fixed delivery dates, regulatory codes, predetermined budget, quality policies, triple bottom line (economic, social, environmental). Constraints shift throughout the project — balancing is continuous.</p>
+<div class="g2">
+<div class="mc"><div class="mt">Triple Constraint (Iron Triangle)</div><div class="mb">Scope · Schedule · Cost. Change one = affect the others. Quality is sometimes added as a fourth dimension. PM must communicate trade-offs to sponsor when constraints conflict.</div></div>
+<div class="mc"><div class="mt">Triple Bottom Line</div><div class="mb">Economic (financial performance) · Social (impact on people and communities) · Environmental (ecological footprint). PMBOK 7 stewardship principle requires all three to be considered.</div></div>
+</div>
+<h3 class="sh2">Project Team Focus (PMBOK §2.5.3)</h3>
+<ul class="l">
+<li>Balance workload — prevent burnout and disengagement</li>
+<li>Assess if team members are satisfied with their work (satisfaction correlates with productivity)</li>
+<li>Maximise overall delivered value = protect production (delivery) AND production capability (team health)</li>
+</ul>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Procurement, Knowledge Management, Communications</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Procurement (PMBOK §2.5.6)</h3>
+<table class="tbl">
+<thead><tr><th>Bid Document</th><th>Purpose</th><th>Use When</th></tr></thead>
+<tbody>
+<tr><td><strong>RFI — Request for Information</strong></td><td>Gather market information before formal bidding</td><td>Exploring options, market research</td></tr>
+<tr><td><strong>RFP — Request for Proposal</strong></td><td>Complex scope where buyer wants vendor to propose a solution</td><td>Complex solutions, service contracts</td></tr>
+<tr><td><strong>RFQ — Request for Quote</strong></td><td>Price is the main deciding factor, solution is off-the-shelf</td><td>Commodity purchases, price comparison</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Contract Types — Risk Allocation</h3>
+<table class="tbl">
+<thead><tr><th>Type</th><th>Buyer Risk</th><th>Seller Risk</th><th>Best For</th></tr></thead>
+<tbody>
+<tr><td>FFP (Firm Fixed Price)</td><td>Low</td><td>High</td><td>Defined scope, competitive market</td></tr>
+<tr><td>FPIF (FP Incentive Fee)</td><td>Medium</td><td>Medium</td><td>Defined scope + performance incentive</td></tr>
+<tr><td>T&amp;M (Time &amp; Material)</td><td>High</td><td>Low</td><td>Undefined scope, staff augmentation</td></tr>
+<tr><td>CPFF (Cost Plus Fixed Fee)</td><td>Very High</td><td>Very Low</td><td>R&amp;D, highly uncertain scope</td></tr>
+<tr><td>CPIF (Cost Plus Incentive Fee)</td><td>High</td><td>Medium</td><td>Incentivise cost control in uncertain scope</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Knowledge Management (PMBOK §2.5.8)</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Explicit Knowledge</div><div class="mb">Can be codified using symbols (words, numbers, pictures). Documents, policies, procedures, plans. Easy to store and transfer.</div></div>
+<div class="mc"><div class="mt">Tacit Knowledge</div><div class="mb">Personal knowledge difficult to articulate: beliefs, experience, insights, intuition. Transferred through apprenticeship, storytelling, collaboration.</div></div>
+</div>
+<div class="box exam"><div class="bl">⭐ EXAM</div>Lessons Learned Register captures BOTH explicit (documented findings) and tacit (experiential insights) knowledge. It is a project document updated throughout the project and becomes an Organisational Process Asset at closure.</div>
+</div></div></div>
+</section>
+
+<!-- ====== D6 DELIVERY ====== -->
+<section class="sec s6" id="d6">
+<div class="sh"><div class="si">&#x1F4E6;</div><div class="st">D6 — Delivery Performance Domain</div><span class="stg">PMBOK Guide §2.6</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.6</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with delivering the scope and quality that the project was undertaken to achieve. Effective execution yields: deliverables that contribute to business objectives, project outcomes that realise intended benefits, schedule and budget met, satisfied stakeholders who understand the expected outcomes and value.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Scope, Quality, Subdeliverables</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Scope Delivery (PMBOK §2.6.1)</h3>
+<ul class="l">
+<li>Requirements must be collected, analysed, and prioritised to identify what is in and out of scope</li>
+<li>Requirements Traceability Matrix (RTM) links requirements to deliverables — every requirement must be addressed</li>
+<li>Validate Scope = formal customer acceptance of deliverables (not the same as QC verification)</li>
+<li>Agile: User Stories + Acceptance Criteria + Definition of Done serve the same purpose as scope baseline</li>
+</ul>
+<h3 class="sh2">Quality Delivery (PMBOK §2.6.2)</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Quality Assurance (QA)</div><div class="mb">Proactive. Focus on PROCESSES. During execution. Prevent defects from entering deliverables. Audits, process reviews.</div></div>
+<div class="mc"><div class="mt">Quality Control (QC)</div><div class="mb">Reactive. Focus on OUTPUTS. After work is done. Find defects in deliverables. Inspection, testing, control charts.</div></div>
+<div class="mc"><div class="mt">Cost of Quality (CoQ)</div><div class="mb">Conformance: Prevention + Appraisal. Non-Conformance: Internal Failure + External Failure. External failure most expensive.</div></div>
+<div class="mc"><div class="mt">Continuous Improvement</div><div class="mb">Retrospectives (agile) and lessons learned (predictive) are the mechanisms. Kaizen mindset: every process can improve.</div></div>
+</div>
+<h3 class="sh2">Subdeliverables (PMBOK §2.6.3)</h3>
+<ul class="l">
+<li>In predictive: work packages → activity outputs → phase deliverables → project deliverable</li>
+<li>In agile: user stories → sprint increment → release → product</li>
+<li>Definition of Done (DoD) — agile commitment for what "complete" means for each increment</li>
+<li>Definition of Ready (DoR) — criteria for a user story to enter a sprint</li>
+</ul>
+<div class="box def"><div class="bl">📌 DoD vs Acceptance Criteria</div>DoD = team-level quality gate applied to every increment (shared across all stories). Acceptance Criteria = story-specific conditions the customer must agree are met for a story to be accepted. DoD applies even if acceptance criteria are met.</div>
+</div></div></div>
+</section>
+
+<!-- ====== D7 MEASUREMENT ====== -->
+<section class="sec s7" id="d7">
+<div class="sh"><div class="si">&#x1F4CA;</div><div class="st">D7 — Measurement Performance Domain</div><span class="stg">PMBOK Guide §2.7</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.7</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with assessing project performance and taking appropriate actions to maintain acceptable performance. Effective execution yields: reliable project status understanding, actionable decision-making data, timely corrective actions, accurate forecasts and achieved targets.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Metrics, EVM, and Measurement Pitfalls</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Effective Metrics (PMBOK §2.7.1)</h3>
+<p class="bt">Only measure what will allow learning, facilitate decisions, improve performance, help avoid issues, or prevent deterioration. Measure what matters — not what is easy to measure.</p>
+<div class="g2">
+<div class="mc"><div class="mt">Predictive Metrics</div><div class="mb">EVM (PV, EV, AC, CPI, SPI, EAC, ETC, VAC, TCPI), schedule variance, cost variance, earned value, burndown/burnup, milestone completion rate</div></div>
+<div class="mc"><div class="mt">Agile Metrics</div><div class="mb">Velocity (story points/sprint), cycle time, lead time, throughput, WIP limits, cumulative flow, defect density, team satisfaction</div></div>
+</div>
+<h3 class="sh2">EVM — Complete Formula Reference</h3>
+<div class="fg">
+<div class="fm"><div class="fn">PV | EV | AC | BAC</div><div class="ff">PV=%Planned×BAC | EV=%Done×BAC | AC=actual spent</div><div class="fm2">BAC=total approved budget. EV is ALWAYS the numerator in indices.</div></div>
+<div class="fm"><div class="fn">CV | SV | CPI | SPI</div><div class="ff">CV=EV−AC | SV=EV−PV | CPI=EV/AC | SPI=EV/PV</div><div class="fm2">&gt;0 or &gt;1 = good. &lt;0 or &lt;1 = bad. EV FIRST in variances.</div></div>
+<div class="fm"><div class="fn">EAC (CPI, most common)</div><div class="ff">EAC = BAC ÷ CPI</div><div class="fm2">Use when current performance will continue for remaining work</div></div>
+<div class="fm"><div class="fn">EAC (atypical) | ETC | VAC</div><div class="ff">EAC=AC+(BAC−EV) | ETC=EAC−AC | VAC=BAC−EAC</div><div class="fm2">Atypical = one-time variance. ETC = money left. VAC = over/under at end.</div></div>
+<div class="fm"><div class="fn">TCPI | PERT | Channels</div><div class="ff">TCPI=(BAC−EV)/(BAC−AC) | E=(O+4M+P)/6 | C=N(N−1)/2</div><div class="fm2">TCPI&gt;1.1=unrealistic. σ=(P−O)/6. Add stakeholder = N new channels.</div></div>
+</div>
+<h3 class="sh2">Measurement Pitfalls (PMBOK §2.7.4 — All 6)</h3>
+<table class="tbl">
+<thead><tr><th>Pitfall</th><th>What Happens</th><th>How to Avoid</th></tr></thead>
+<tbody>
+<tr><td><strong>Hawthorne Effect</strong></td><td>The act of measuring changes behaviour. Team focuses on the metric, not the goal.</td><td>Choose metrics that represent true value, not proxies</td></tr>
+<tr><td><strong>Vanity Metric</strong></td><td>Shows data but provides no actionable insight. Looks good, means nothing.</td><td>Only measure what enables decisions or learning</td></tr>
+<tr><td><strong>Demoralization</strong></td><td>Unreachable goals cause team to stop trying</td><td>Balance stretch goals with achievable targets. Recognise effort.</td></tr>
+<tr><td><strong>Misusing Metrics</strong></td><td>Focusing on easy/less important metrics, gaming the system</td><td>Regularly review whether metrics still measure what matters</td></tr>
+<tr><td><strong>Confirmation Bias</strong></td><td>Seeking data that confirms existing views, ignoring contradicting data</td><td>Actively look for disconfirming data; diverse team perspectives</td></tr>
+<tr><td><strong>Correlation ≠ Causation</strong></td><td>Two variables move together does not mean one causes the other</td><td>Investigate root cause before assuming causal relationship</td></tr>
+</tbody>
+</table>
+<div class="box exam"><div class="bl">⭐ EXAM</div>Thresholds: define acceptable variance ranges upfront. Exception plan: pre-agreed actions when threshold is breached. Do NOT wait for breach — forecast trends and act proactively. PMBOK §2.7.5 example: budget threshold +10%/-20% triggers exception plan.</div>
+</div></div></div>
+</section>
+
+<!-- ====== D8 UNCERTAINTY ====== -->
+<section class="sec s8" id="d8">
+<div class="sh"><div class="si">&#x26A0;&#xFE0F;</div><div class="st">D8 — Uncertainty Performance Domain</div><span class="stg">PMBOK Guide §2.8</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §2.8</div>
+<div class="box def"><div class="bl">📌 Definition</div>Addresses activities associated with risk and uncertainty. Effective execution yields: awareness of environment, proactive uncertainty exploration, understanding variable interdependencies, capacity to anticipate threats and opportunities, little negative impact from unforeseen events, opportunities realised, reserves used effectively.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Uncertainty, Risk, Ambiguity, Complexity</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Key Terms (PMBOK §2.8 Definitions)</h3>
+<table class="tbl">
+<thead><tr><th>Term</th><th>PMBOK Definition</th><th>Key Distinction</th></tr></thead>
+<tbody>
+<tr><td><strong>Uncertainty</strong></td><td>Lack of understanding and awareness of issues, events, paths to follow, or solutions</td><td>Broadest term — umbrella concept</td></tr>
+<tr><td><strong>Risk</strong></td><td>Uncertain event or condition that, if it occurs, has positive or negative effect on objectives</td><td>Specific, identifiable, has probability and impact</td></tr>
+<tr><td><strong>Ambiguity</strong></td><td>State of being unclear, difficulty identifying cause, multiple options from which to choose</td><td>"We don't know what we don't know" — epistemic</td></tr>
+<tr><td><strong>Complexity</strong></td><td>Characteristic difficult to manage due to human behaviour, system behaviour, and ambiguity</td><td>Emergent, non-linear, unpredictable outcomes</td></tr>
+<tr><td><strong>Volatility</strong></td><td>Possibility for rapid and unpredictable change</td><td>Speed and unpredictability of environmental change</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Risk Responses</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Threats (Negative Risks)</div><div class="mb">Avoid (eliminate) · Transfer (shift to 3rd party) · Mitigate (reduce P or I) · Accept (active: contingency plan; passive: absorb) · Escalate (beyond authority)</div></div>
+<div class="mc"><div class="mt">Opportunities (Positive Risks)</div><div class="mb">Exploit (ensure happens) · Share (partner for mutual benefit) · Enhance (increase P or I) · Accept · Escalate (beyond authority)</div></div>
+</div>
+<div class="g2">
+<div class="mc"><div class="mt">Contingency Reserve</div><div class="mb">For KNOWN unknowns (identified risks). IN the cost baseline. PM can approve use within authority. Tracked in EVM calculations.</div></div>
+<div class="mc"><div class="mt">Management Reserve</div><div class="mb">For UNKNOWN unknowns. NOT in cost baseline. NOT in EVM. Requires sponsor/senior management approval to release.</div></div>
+</div>
+<h3 class="sh2">Complexity Navigation Approaches</h3>
+<ul class="l">
+<li><strong>Systems thinking:</strong> Consider interconnections and cascading effects before acting</li>
+<li><strong>Decomposition:</strong> Break complex problems into smaller, more manageable components</li>
+<li><strong>Experimentation:</strong> Small safe-to-fail experiments to probe complex systems</li>
+<li><strong>Diverse perspectives:</strong> Invite multiple viewpoints to see blind spots</li>
+<li><strong>Stacey Matrix:</strong> Simple (both clear→predictive), Complicated (one clear→experts), Complex (both uncertain→agile), Chaotic (both unknown→act first, then sense)</li>
+</ul>
+</div></div></div>
+</section>
+
+<!-- ====== TAILORING ====== -->
+<section class="sec s9" id="tail">
+<div class="sh"><div class="si">&#x2702;&#xFE0F;</div><div class="st">Tailoring — PMBOK Guide Section 3</div><span class="stg">PMBOK Guide §3</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §3 — Tailoring</div>
+<div class="box def"><div class="bl">📌 Core Concept</div>Tailoring is the deliberate adaptation of approach, governance, and processes to make them more suitable for the project environment. PMBOK 7 makes tailoring CENTRAL — not optional. Every project is unique and deserves a purposefully adapted approach. Tailoring ≠ ignoring processes.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">What Gets Tailored and Why</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Tailoring Targets</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Life Cycle and Approach</div><div class="mb">Select predictive, iterative, incremental, agile, or hybrid. Match to project characteristics. Most impactful tailoring decision.</div></div>
+<div class="mc"><div class="mt">Processes</div><div class="mb">Which processes to use, simplify, combine, or omit. Large complex projects need more process. Small simple projects need less.</div></div>
+<div class="mc"><div class="mt">Engagement and Communication</div><div class="mb">Formality level, frequency, channels, formats adapted to stakeholder needs and culture.</div></div>
+<div class="mc"><div class="mt">Tools and Methods</div><div class="mb">Project management tools, reporting tools, collaboration platforms. Choose what serves the team best.</div></div>
+<div class="mc"><div class="mt">Governance</div><div class="mb">Decision rights, approvals required, escalation paths, reporting requirements. Match organisational context.</div></div>
+<div class="mc"><div class="mt">Artifacts</div><div class="mb">Templates, documents, plans. Minimise to what adds value. Large portfolios may need more artifacts; small projects less.</div></div>
+</div>
+<h3 class="sh2">Tailoring Process (PMBOK §3.2 — 4 Steps)</h3>
+<ul class="l num">
+<li><strong>Select initial development approach:</strong> Consider product/deliverable, team, organisation factors. Predictive, agile, or hybrid starting point.</li>
+<li><strong>Tailor for the organisation:</strong> Apply organisational governance, standards, PMO requirements, and existing processes as a starting framework.</li>
+<li><strong>Tailor for the project:</strong> Adapt further based on specific project characteristics, team composition, stakeholder needs, and constraints.</li>
+<li><strong>Implement ongoing improvement:</strong> Continuously evaluate and adapt through retrospectives, lessons learned, and performance feedback.</li>
+</ul>
+<div class="box tip"><div class="bl">💡 KEY DISTINCTION</div>Tailoring is COLLABORATIVE — done WITH the team and PMO, not unilaterally by the PM. The team owns how they work; the PM facilitates the selection. PMO provides the starting framework; the team adapts it.</div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Tailoring by Approach Type</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>Factor</th><th>Tailor Toward Predictive</th><th>Tailor Toward Agile</th></tr></thead>
+<tbody>
+<tr><td>Requirements certainty</td><td>High — requirements fixed and complete upfront</td><td>Low — requirements will emerge and evolve</td></tr>
+<tr><td>Technology uncertainty</td><td>Low — proven, familiar technology</td><td>High — novel or experimental technology</td></tr>
+<tr><td>Stakeholder availability</td><td>Low — stakeholders can only engage at milestones</td><td>High — daily collaboration possible</td></tr>
+<tr><td>Team experience</td><td>Strong domain expertise, less agile experience</td><td>Experienced with agile methods</td></tr>
+<tr><td>Regulatory constraints</td><td>High — regulated industry requiring documentation</td><td>Low — flexible environment</td></tr>
+<tr><td>Project size</td><td>Large, long-duration projects benefit from upfront planning</td><td>Small, fast-moving projects benefit from iteration</td></tr>
+<tr><td>Risk tolerance</td><td>Low — organisation risk-averse, wants predictability</td><td>High — organisation embraces uncertainty and learning</td></tr>
+</tbody>
+</table>
+<div class="box warn"><div class="bl">⚠️ COMMON EXAM TRAP</div>"Transitioning to agile" does NOT mean immediately replacing everything. The correct answer is always: gradual introduction, pilot project first, inception deck, training before full rollout. Mohammad Rehman Principle 15: Go gradually. Abrupt transitions fail.</div>
+</div></div></div>
+</section>
+
+<!-- ====== MMA ====== -->
+<section class="sec s10" id="mma">
+<div class="sh"><div class="si">&#x1F9E0;</div><div class="st">Models, Methods &amp; Artifacts (MMA)</div><span class="stg">PMBOK Guide §4</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Guide §4 — Models, Methods, and Artifacts</div>
+<div class="box def"><div class="bl">📌 Overview</div>MMA section provides a reference of commonly used project management tools and techniques. PMBOK 7 does not prescribe which to use — that is determined by tailoring. Models explain how something works. Methods define means to achieve outcomes. Artifacts are documents, data, or deliverables.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Models — Leadership, Team, Change, Complexity</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Leadership Models</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Situational Leadership (Hersey-Blanchard)</div><div class="mb">D1(Low comp+High commit)→S1 Directing | D2(Low-Med+Low)→S2 Coaching | D3(Med-High+Variable)→S3 Supporting | D4(High+High)→S4 Delegating</div></div>
+<div class="mc"><div class="mt">OSCAR Coaching Model</div><div class="mb">Outcome→Situation→Choices→Actions→Review. Structured coaching conversation. PM as coach uses this to help team members find their own solutions.</div></div>
+<div class="mc"><div class="mt">Servant Leadership</div><div class="mb">Leader serves the team. Remove obstacles. Enable delivery. Protect from distractions. Develop people. Build trust through consistency. PMP exam default leadership style.</div></div>
+<div class="mc"><div class="mt">Transformational Leadership</div><div class="mb">Inspire through vision. Change mindsets and values. Long-term culture change. High charisma. Creates dependency risk if leader leaves.</div></div>
+</div>
+<h3 class="sh2">Team Development Models</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Tuckman (Forming-Storming-Norming-Performing-Adjourning)</div><div class="mb">Non-linear. Teams can regress. New member → team may return to Storming. PM adapts leadership style at each stage.</div></div>
+<div class="mc"><div class="mt">Drexler/Sibbet Team Performance Model</div><div class="mb">7 stages: Orientation, Trust Building, Goal Clarification, Commitment, Implementation, High Performance, Renewal. More detailed than Tuckman.</div></div>
+</div>
+<h3 class="sh2">Motivation Models</h3>
+<table class="tbl">
+<thead><tr><th>Model</th><th>Key Concept</th><th>Exam Application</th></tr></thead>
+<tbody>
+<tr><td>Maslow</td><td>5-level hierarchy. Lower before higher.</td><td>Cannot motivate with self-actualisation if safety needs unmet.</td></tr>
+<tr><td>Herzberg</td><td>Hygiene prevents dissatisfaction. Motivators create motivation.</td><td>Salary=hygiene (not motivator). Achievement/growth=motivators.</td></tr>
+<tr><td>McGregor X/Y</td><td>X=lazy/control. Y=self-motivated/trust.</td><td>PMP assumes Theory Y. Agile embodies Theory Y.</td></tr>
+<tr><td>McClelland</td><td>nAch, nAff, nPow.</td><td>nAch = needs challenging work with feedback.</td></tr>
+<tr><td>Vroom Expectancy</td><td>Motivation=Expectancy×Instrumentality×Valence.</td><td>All three must be positive for motivation to exist.</td></tr>
+<tr><td>Theory Z (Ouchi)</td><td>Long-term employment, collective decisions, holistic employee care.</td><td>Japanese management model. Builds deep loyalty.</td></tr>
+</tbody>
+</table>
+<h3 class="sh2">Change Models</h3>
+<div class="g2">
+<div class="mc"><div class="mt">ADKAR (Prosci)</div><div class="mb">Awareness→Desire→Knowledge→Ability→Reinforcement. Sequential — cannot skip. Identify the failing stage to target intervention. Most tested on PMP.</div></div>
+<div class="mc"><div class="mt">Kotter 8-Step</div><div class="mb">Urgency→Coalition→Vision→Communicate→Enable→Short Wins→Consolidate→Anchor. Organisational transformation model.</div></div>
+<div class="mc"><div class="mt">Lewin 3-Stage</div><div class="mb">Unfreeze (create motivation)→Change (transition)→Refreeze (stabilise). Simple, powerful for individual and small group change.</div></div>
+<div class="mc"><div class="mt">Virginia Satir Change Curve</div><div class="mb">Old status quo→Foreign element→Chaos→Transforming idea→Practice→New status quo. Performance DIPS before rising. Expect regression.</div></div>
+</div>
+<h3 class="sh2">Complexity Models</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Stacey Matrix</div><div class="mb">x-axis: certainty of technology. y-axis: agreement on requirements. Simple (both clear)→predictive. Complicated (one clear)→expert methods. Complex (both uncertain)→agile. Chaotic→act first.</div></div>
+<div class="mc"><div class="mt">VUCA</div><div class="mb">Volatile (fast change), Uncertain (unpredictable), Complex (many interactions), Ambiguous (multiple interpretations). High VUCA = agile. Low VUCA = predictive.</div></div>
+</div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Methods — Data Gathering, Analysis, Estimation, Meetings</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Data Gathering &amp; Analysis Methods</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Brainstorming</div><div class="mb">Generate ideas without criticism. All ideas welcome. Follow-up with evaluation and prioritisation. Good for risk identification and requirements gathering.</div></div>
+<div class="mc"><div class="mt">Benchmarking</div><div class="mb">Compare practices, processes, or results against best-in-class competitors or other industries. Identifies improvement opportunities and sets performance targets.</div></div>
+<div class="mc"><div class="mt">Root Cause Analysis</div><div class="mb">5 Whys technique, Fishbone/Ishikawa diagram (6Ms: Machine, Method, Material, Man, Measurement, Mother Nature). Find the actual cause, not the symptom.</div></div>
+<div class="mc"><div class="mt">Decision Tree / EMV</div><div class="mb">Diagrams choices and outcomes. EMV = Probability × Impact. Sum all branch EMVs to select optimal path. Used in quantitative risk analysis.</div></div>
+<div class="mc"><div class="mt">Monte Carlo Simulation</div><div class="mb">Runs thousands of scenarios with varying inputs. Outputs S-curve of probability distributions for cost and schedule. Reveals likelihood of achieving targets.</div></div>
+<div class="mc"><div class="mt">SWOT Analysis</div><div class="mb">Strengths, Weaknesses (internal), Opportunities, Threats (external). Used for risk identification and strategic planning.</div></div>
+</div>
+<h3 class="sh2">Key Meetings</h3>
+<table class="tbl">
+<thead><tr><th>Meeting</th><th>Purpose</th><th>Approach</th></tr></thead>
+<tbody>
+<tr><td><strong>Kickoff Meeting</strong></td><td>Formal start of project or phase. Team meets, objectives set.</td><td>All key stakeholders attend. Sets tone and expectations.</td></tr>
+<tr><td><strong>Daily Standup</strong></td><td>15-minute synchronisation on Sprint Goal progress</td><td>Developers only. NOT a status meeting for PM.</td></tr>
+<tr><td><strong>Sprint Planning</strong></td><td>Select backlog items and plan sprint delivery</td><td>8hr max (1-month sprint). Whole Scrum team.</td></tr>
+<tr><td><strong>Sprint Review</strong></td><td>Inspect increment and adapt backlog</td><td>4hr max. Stakeholders invited. Informal.</td></tr>
+<tr><td><strong>Retrospective</strong></td><td>Improve team process, tools, and interactions</td><td>3hr max. Team only (internal focus).</td></tr>
+<tr><td><strong>Lessons Learned</strong></td><td>Capture knowledge for future projects</td><td>Throughout project AND at closure. Not just at end.</td></tr>
+</tbody>
+</table>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">3</span><span class="ct">Artifacts — Documents, Plans, Baselines, Registers</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<h3 class="sh2">Key Logs and Registers</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Assumption Log</div><div class="mb">Records all assumptions made during planning. Assumptions that prove false become risks or issues. Updated throughout project.</div></div>
+<div class="mc"><div class="mt">Risk Register</div><div class="mb">All identified risks: description, probability, impact, priority, response strategy, owner, status, triggers. Living document — updated continuously.</div></div>
+<div class="mc"><div class="mt">Issue Log</div><div class="mb">Records current problems requiring resolution. Risks that have materialised become issues. Tracks owner, priority, resolution date.</div></div>
+<div class="mc"><div class="mt">Change Log</div><div class="mb">Records all change requests, their status (submitted/reviewed/approved/rejected/deferred), and impact assessments.</div></div>
+<div class="mc"><div class="mt">Lessons Learned Register</div><div class="mb">Captures positive and negative experiences throughout project. Becomes OPA at closure. Requires psychological safety for honest capture.</div></div>
+<div class="mc"><div class="mt">Stakeholder Register</div><div class="mb">Name, role, interest, influence, current/desired engagement level, contact info, strategy. Confidential. Updated as stakeholders change.</div></div>
+</div>
+<h3 class="sh2">Three Baselines (PMB)</h3>
+<ul class="l">
+<li><strong>Scope Baseline:</strong> Approved scope statement + WBS + WBS Dictionary. Defines what will be delivered.</li>
+<li><strong>Schedule Baseline:</strong> Approved project schedule. Defines when activities will occur.</li>
+<li><strong>Cost Baseline:</strong> Approved time-phased project budget (WITHOUT management reserve). Used for EVM.</li>
+<li>Together: Performance Measurement Baseline (PMB). Changes require formal CCB approval.</li>
+</ul>
+<h3 class="sh2">Visual Data Displays</h3>
+<div class="g2">
+<div class="mc"><div class="mt">Burndown Chart</div><div class="mb">Y=remaining work, X=time. Shows if sprint/release is on track. Ideal line for reference. Falls toward zero as work completes.</div></div>
+<div class="mc"><div class="mt">Burnup Chart</div><div class="mb">Shows work completed over time. Scope changes visible as ceiling rises. Better for communicating scope creep impact.</div></div>
+<div class="mc"><div class="mt">Cumulative Flow Diagram</div><div class="mb">Shows work volume in each workflow state over time. Parallel bands = healthy flow. Widening band = bottleneck forming.</div></div>
+<div class="mc"><div class="mt">S-Curve</div><div class="mb">Cumulative cost or work over time. Slow start, rapid middle, tapering end. Used to baseline planned vs actual cost/schedule.</div></div>
+</div>
+</div></div></div>
+</section>
+
+<!-- ====== MOHAMMAD REHMAN 23 PRINCIPLES ====== -->
+<section class="sec s8" id="rehman">
+<div class="sh"><div class="si">&#x1F522;</div><div class="st">Mohammad Rehman's 23 Principles — Fast Pass Method</div><span class="stg">PMP Mindset Workbook</span></div>
+<div class="src">&#x1F4DA; Source: PMP Mindset Workbook — certifywithease.com — Exact principles from uploaded PDF</div>
+<div class="box rehman"><div class="bl">&#x1F4D9; The 3-Step Methodology (Use on EVERY question)</div>
+<strong>Step 1 — Frame the Problem:</strong> Identify the core issue. What is ACTUALLY being asked? Understand context completely BEFORE looking at any answers.<br>
+<strong>Step 2 — Eliminate Wrong Answers:</strong> Remove answers that contradict any of the 23 principles. Eliminate answers that don't address the actual problem.<br>
+<strong>Step 3 — Choose the Best Answer:</strong> Select the option that fully resolves the problem, aligns with PMP mindset, and addresses the issue in its entirety.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">Principle 1 — Discuss, investigate, analyze, ask — before deciding</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F4D9; Core Insight</div>Before making any decision, ensure you fully understand the issue. When a question asks "What should the PM do first or next?" — the answer that involves <strong>gathering information before acting</strong> almost always wins.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">A subcontractor informs you a critical material is unavailable, which could delay the project by two weeks. The client is pressing for quick updates. What should you do first?</div>
+<ul class="pq-opts">
+<li>Notify the client about the potential delay and proceed with alternate materials.</li>
+<li class="ans">Investigate alternative suppliers and consult with the team before making a decision.</li>
+<li>Inform the subcontractor to proceed with what is available to avoid delays.</li>
+<li>Immediately escalate the issue to senior management for a quick resolution.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">Principle 2 — Never settle for delays. Extra costs beat delays.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F4D9; Core Insight</div>Time is more critical than cost. If forced to choose, incur additional costs and use schedule compression — <strong>fast-tracking or crashing</strong> — rather than allowing the project to fall behind.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">Your project is already behind schedule. The team discovers a key component must be redesigned — which could either delay the project by a month or cost more to expedite. What should you do?</div>
+<ul class="pq-opts">
+<li>Accept the delay and redesign to save costs.</li>
+<li>Negotiate with the client to extend the deadline by a month.</li>
+<li class="ans">Use a schedule compression technique and incur extra costs to meet the deadline.</li>
+<li>Pause the project to assess areas where costs can be cut.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">3</span><span class="ct">Principle 3 — Be a servant leader. Encourage, nurture, listen. Never create friction.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F4D9; Core Insight</div>A project manager's job is to serve the team — removing obstacles, providing support, fostering a positive environment. Never take unilateral actions that create stress or pressure on team members.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">The testing phase reveals significant bugs that could either delay the release by two weeks or require additional effort to meet the original deadline. What should you do?</div>
+<ul class="pq-opts">
+<li>Delay the release to fix the bugs without increasing costs.</li>
+<li>Release the software as-is and address bugs in future updates.</li>
+<li>Reassign team members and adjust priorities to meet the original deadline.</li>
+<li class="ans">Negotiate with stakeholders to extend the release date.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">4</span><span class="ct">Principle 4 — Always choose the most value-driven answer. Keyword: "value."</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F4D9; Core Insight</div>Prioritise the option that delivers the most value to the project and stakeholders. When you see the word <strong>"value"</strong> in an answer choice, it's a strong signal. Focus on solutions that deliver significant return while aligning with project objectives.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">A client asks for an additional feature not in the original scope that would increase cost and require extra time. What should you do?</div>
+<ul class="pq-opts">
+<li>Accept the feature, increasing the project budget and schedule.</li>
+<li>Reject the feature to maintain the original budget and timeline.</li>
+<li class="ans">Suggest a scaled-down version to showcase early value while staying within budget and schedule.</li>
+<li>Postpone the feature and suggest adding it in the next project phase.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">5</span><span class="ct">Principle 5 — Root cause analysis and MVP/demo are your main tools.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F4D9; Core Insight</div>When facing project issues, address the root cause or deliver an MVP/demo for immediate value. When you see "root cause," "MVP," or "demo" in an answer, it's a strong signal it's correct.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">Users are experiencing slow load times on certain pages. You discover that fixing the issue could take additional time or delay other tasks. What should you do?</div>
+<ul class="pq-opts">
+<li>Immediately overhaul the website infrastructure.</li>
+<li class="ans">Implement a demo solution on key pages while continuing other tasks.</li>
+<li>Inform the client the issue will be addressed after other tasks are complete.</li>
+<li>Increase the project budget to hire more resources.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">6–10</span><span class="ct">Principles 6–10 — Change, Team Expertise, Escalation, Stakeholders, Closing</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>#</th><th>Principle</th><th>Core Rule</th><th>Practice Answer Key</th></tr></thead>
+<tbody>
+<tr><td><strong>6</strong></td><td>Predictive: all changes → change request process. Agile: changes → product backlog.</td><td>Know your project type first. Predictive = CCB. Agile = backlog and PO.</td><td>Predictive project change request → B: Submit a change request for formal approval before any action.</td></tr>
+<tr><td><strong>7</strong></td><td>Team members are the experts, not you. Make every decision WITH them.</td><td>Involve team in every decision. PM facilitates, doesn't dictate.</td><td>Developers disagree on approach → B: Convene meeting, reach a collective decision.</td></tr>
+<tr><td><strong>8</strong></td><td>PM handles all issues. Escalate to sponsor only for budget problems — last resort.</td><td>Own the problem. Do NOT escalate routine issues to management or HR.</td><td>Supplier goes out of business → C: Work with team to find alternative within existing budget.</td></tr>
+<tr><td><strong>9</strong></td><td>Everyone directly or indirectly involved is a stakeholder → add to register.</td><td>Vendors, regulatory agencies, communities — all stakeholders. Register everyone.</td><td>Regulatory agency raises privacy concern → B: Add to stakeholder register AND update protocols.</td></tr>
+<tr><td><strong>10</strong></td><td>Closing phase is MANDATORY — whether completed or terminated.</td><td>Even cancelled projects must be formally closed. No exceptions.</td><td>Client terminates project → B: Conduct closeout meeting — document deliverables, close contracts, lessons learned.</td></tr>
+</tbody>
+</table>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">11–15</span><span class="ct">Principles 11–15 — Plan, Keywords, Agile Transition</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>#</th><th>Principle</th><th>Core Rule</th><th>Practice Answer Key</th></tr></thead>
+<tbody>
+<tr><td><strong>11</strong></td><td>In predictive: the plan is your map. Constantly refer back to it.</td><td>Every decision validated against the project plan. Plan is the single source of truth.</td><td>Senior manager suggests resource reallocation → B: Refer back to project plan, assess impact first.</td></tr>
+<tr><td><strong>12</strong></td><td>Predictive keywords: CCB, change control process, integrated change control, baseline, formal approval, waterfall.</td><td>Spot these keywords → you're in predictive territory → apply formal change process.</td><td>Instant signal: "Change Control Board" = predictive project → follow formal CCB process.</td></tr>
+<tr><td><strong>13</strong></td><td>Agile keywords: Sprint, iteration, Scrum, daily standup, backlog, Kanban, product increment, product owner, retrospective, velocity.</td><td>Spot these keywords → you're in agile territory → apply agile principles (self-org, PO authority, backlog).</td><td>Instant signal: "Product Owner" = agile → PO controls backlog and sprint priorities.</td></tr>
+<tr><td><strong>14</strong></td><td>No expertise? Get an SME. Similar past project? Use lessons learned register.</td><td>Two clear signals: lack of expertise → SME. Past similar project exists → OPA/lessons learned.</td><td>Team lacks technical knowledge → C: Consult subject matter expert with required knowledge.</td></tr>
+<tr><td><strong>15</strong></td><td>Transitioning to agile? Introduce gradually — pilot project or inception deck.</td><td>Never implement agile overnight. Resistance is predictable. Gradual = sustainable.</td><td>Resistant team asked to go agile → B: Introduce gradually, start with a pilot project.</td></tr>
+</tbody>
+</table>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">16–23</span><span class="ct">Principles 16–23 — Agile Self-Org, Feedback, Client Requests, Absolute Language, Critical Path</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<table class="tbl">
+<thead><tr><th>#</th><th>Principle</th><th>Core Rule</th><th>Answer Signal</th></tr></thead>
+<tbody>
+<tr><td><strong>16</strong></td><td>Agile teams are self-organising. PM steps in ONLY to manage/resolve conflicts when needed.</td><td>Minor disagreement with no impact → let team resolve. Conflict affecting sprint goals → PM facilitates.</td><td>Minor: Let team resolve ✓. Sprint-critical conflict: PM facilitates discussion ✓.</td></tr>
+<tr><td><strong>17</strong></td><td>An agile project always needs consistent customer feedback.</td><td>Agile is driven by continuous customer feedback. No feedback = wrong prioritisation = waste.</td><td>Client hasn't provided feedback → B: Pause similar features, gather client feedback before proceeding.</td></tr>
+<tr><td><strong>18</strong></td><td>Never immediately reject a request — especially from a client.</td><td>Dismissing requests harms the relationship. Always evaluate feasibility and explore alternatives first.</td><td>Client requests major out-of-scope change → B: Discuss feasibility with team, explore options before deciding.</td></tr>
+<tr><td><strong>19</strong></td><td>When question mentions a similar past project → use OPAs or lessons learned register.</td><td>Past project mentioned in question = strong signal to reference it. Don't solve from scratch.</td><td>"A similar issue occurred in a previous project" → B: Refer to lessons learned from that project first.</td></tr>
+<tr><td><strong>20</strong></td><td>When an answer mentions information NOT in the question → eliminate that answer.</td><td>Answers that introduce assumptions not in the question are distractors. Stick to given facts only.</td><td>Team suggests safety improvements not mentioned anywhere in the question → C: Inform client and ask.</td></tr>
+<tr><td><strong>21</strong></td><td>When an answer uses "only" or any absolute language → eliminate that option.</td><td>Project situations are dynamic. Absolute terms indicate rigid thinking. Always too restrictive.</td><td>"The feature can ONLY be added if..." → eliminate. "Review impact and discuss options" → correct ✓.</td></tr>
+<tr><td><strong>22</strong></td><td>When something affects the schedule → look at the critical path first.</td><td>Critical path = minimum project duration. Any delay on CP = project delay. Always check CP first.</td><td>Material delay may push past deadline → A: Reassign resources from non-critical to critical path activities ✓.</td></tr>
+<tr><td><strong>23</strong></td><td>Never give a team member an extra task that reduces their capacity for primary work — including pairing to train others.</td><td>Assigning extra tasks = reduced productivity and potential delays. If training needed → bring in external trainer.</td><td>Senior dev leading critical feature + junior needs training → C: Bring in external trainer. Do NOT burden senior dev ✓.</td></tr>
+</tbody>
+</table>
+<div class="box rehman"><div class="bl">&#x1F4D9; Principles at a Glance — All 23</div>
+1 Investigate first · 2 Extra cost beats delay · 3 Servant leader, no friction · 4 Value-driven answer · 5 Root cause + MVP/demo · 6 Predictive=CCB, Agile=backlog · 7 Team are the experts · 8 PM owns issues, sponsor=last resort · 9 Everyone=stakeholder · 10 Always close the project · 11 Plan is your map · 12 Predictive keywords · 13 Agile keywords · 14 No expertise=SME, past project=OPA · 15 Gradual agile transition · 16 Self-organizing teams · 17 Consistent customer feedback · 18 Never reject a request immediately · 19 Past project=lessons learned · 20 Eliminate info NOT in question · 21 Eliminate absolute language ("only") · 22 Schedule issue=critical path · 23 Never overload team member
+</div>
+</div></div></div>
+</section>
+
+<!-- ====== MOHAMMAD REHMAN 23 PRINCIPLES ====== -->
+<section class="sec s8" id="rehman">
+<div class="sh"><div class="si">&#x1F7E0;</div><div class="st">23 Principles — Mohammad Rehman Fast Pass Method</div><span class="stg">PMP Mindset Workbook</span></div>
+<div class="src">&#x1F4DA; Source: PMP Mindset Workbook — The Fast Pass Method · certifywithease.com</div>
+<div class="box rehman"><div class="bl">&#x1F7E0; THE 3-STEP METHODOLOGY — Apply to Every Question</div>
+<strong>Step 1 — Frame the Problem:</strong> Identify the core issue. What is actually being asked? Understand the context completely BEFORE looking at any answers.<br>
+<strong>Step 2 — Eliminate Wrong Answers:</strong> Remove answers that contradict any of the 23 principles. Eliminate answers that do not address the actual problem statement.<br>
+<strong>Step 3 — Choose the Best Answer:</strong> Select the option that fully resolves the problem, aligns with the PMP mindset, and addresses the issue in its entirety.
+</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">1</span><span class="ct">P1 — Discuss, Investigate, Analyze, Ask — Before Deciding</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>Before making any decision, ensure you fully understand the issue. When a question asks "What should the PM do first or next?" — the answer that involves <strong>gathering information before acting</strong> almost always wins.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a construction project when a subcontractor informs you that a critical material is unavailable, which could delay the project by two weeks. The client is pressing for quick updates. What should you do first?</div>
+<ul class="pq-opts">
+<li>A. Notify the client about the potential delay and proceed with alternate materials.</li>
+<li class="ans">B. Investigate alternative suppliers and consult with the team before making a decision. ✓</li>
+<li>C. Inform the subcontractor to proceed with what is available to avoid delays.</li>
+<li>D. Immediately escalate the issue to senior management for a quick resolution.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">2</span><span class="ct">P2 — Never Settle for Delays. Extra Costs Beat Delays.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>Time is more critical than cost. If a choice must be made, incur additional costs and use schedule compression techniques — <strong>fast-tracking or crashing</strong> — rather than allowing the project to fall behind.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a product development project already behind schedule. The team discovers a key component must be redesigned — which could either delay the project by a month or cost more to expedite production. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Accept the delay and redesign the component to save costs.</li>
+<li>B. Negotiate with the client to extend the deadline by a month.</li>
+<li class="ans">C. Use a schedule compression technique and incur extra costs to meet the deadline. ✓</li>
+<li>D. Pause the project to assess other areas where costs can be cut to make up for delays.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">3</span><span class="ct">P3 — Be a Servant Leader. Encourage, Nurture, Listen. Never Create Friction.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>A project manager's job is to serve the team — removing obstacles, providing support, and fostering a positive environment. <strong>Never take unilateral actions that create stress or pressure on team members.</strong></div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a software development project nearing completion. The testing phase reveals significant bugs, and fixing them could either delay the release by two weeks or require additional effort to meet the original deadline. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Delay the release to fix the bugs without increasing costs.</li>
+<li>B. Release the software as-is and address the bugs in future updates.</li>
+<li>C. Reassign team members and adjust priorities to meet the original deadline.</li>
+<li class="ans">D. Negotiate with stakeholders to extend the release date. ✓</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">4</span><span class="ct">P4 — Always Choose the Most Value-Driven Answer. Keyword: "Value."</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>Prioritize the option that delivers the most value to the project and stakeholders. When you see <strong>"value" in an answer choice, it's a strong signal</strong>. Focus on solutions that deliver significant return while aligning with project objectives.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a manufacturing project and the client asks for an additional feature not in the original scope that would increase cost and require extra time. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Accept the feature, increasing the project budget and schedule.</li>
+<li>B. Reject the feature to maintain the project's original budget and timeline.</li>
+<li class="ans">C. Suggest a scaled-down version of the feature to showcase early value while staying within budget and schedule. ✓</li>
+<li>D. Postpone the feature and suggest adding it in the next project phase.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">5</span><span class="ct">P5 — Root Cause Analysis and MVP/Demo Are Your Main Tools</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>When facing project issues, address the <strong>root cause</strong> or deliver a <strong>minimum viable product (MVP) or demo</strong> for immediate value. When you see "root cause," "MVP," or "demo" in an answer, that's a strong signal it's correct.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">During a website development project, the client reports users experiencing slow load times on certain pages. Fixing the issue could take additional time or delay other tasks. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Immediately overhaul the website infrastructure to improve speed.</li>
+<li class="ans">B. Implement a demo solution on key pages while continuing other tasks. ✓</li>
+<li>C. Inform the client that the issue will be addressed after other tasks are complete.</li>
+<li>D. Increase the project budget to hire more resources and expedite the fix.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">6</span><span class="ct">P6 — Predictive: Change Request Process. Agile: Product Backlog.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>In predictive projects, all changes must go through a <strong>formal change request process (CCB review)</strong>. In agile, changes are simply <strong>added to the product backlog and prioritized</strong> — no formal approval needed. Identifying the project type tells you exactly how to handle change.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a construction project in a predictive environment. Halfway through execution, a key stakeholder requests a major design change that will impact both time and cost. What should you do first?</div>
+<ul class="pq-opts">
+<li>A. Add the change to the project plan and inform the team to proceed.</li>
+<li class="ans">B. Submit a change request for formal approval before taking any action. ✓</li>
+<li>C. Reject the change to prevent any delays to the project timeline.</li>
+<li>D. Add the change to a backlog and decide on its priority with the team.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">7</span><span class="ct">P7 — Team Members Are the Experts. Make Every Decision With Them.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>Team members are the domain experts. <strong>Involving them in decision-making</strong> ensures you leverage their expertise and keep them engaged. The PM's role is to facilitate decisions, not dictate them.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a large-scale software project. During testing, the team identifies bugs that could cause delays. Developers disagree — some suggest a complete code rewrite, others propose temporary fixes. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Decide to implement temporary fixes to keep the project on schedule.</li>
+<li class="ans">B. Convene a meeting with the team to discuss both approaches and reach a collective decision. ✓</li>
+<li>C. Escalate the issue to senior management for guidance on which approach to take.</li>
+<li>D. Ask the client for an extension to allow for a complete code rewrite.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">8</span><span class="ct">P8 — PM Handles All Issues. Sponsor Only for Budget Problems — Last Resort.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>You own the problems. <strong>Escalating to senior management or sponsors for routine issues is not the PM's style.</strong> Only approach the sponsor for major budget issues — and even then, it should be your absolute last resort.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a construction project. Midway through, a major supplier suddenly goes out of business, threatening significant delays. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Immediately escalate the issue to the project sponsor and request additional budget to find a new supplier.</li>
+<li>B. Approach senior management to ask for advice on handling the supplier issue.</li>
+<li class="ans">C. Work with your team to find an alternative supplier within the existing budget and timeline, and negotiate terms directly. ✓</li>
+<li>D. Inform the client about the issue and ask for an extension while you search for another supplier.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">9</span><span class="ct">P9 — Everyone Involved Is a Stakeholder → Add to Stakeholder Register</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>Anyone who has an interest in or is affected by the project is a stakeholder — including clients, team members, vendors, and <strong>regulatory agencies</strong>. Maintain a detailed stakeholder register to manage their needs and expectations.</div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a healthcare IT project. A week before the final rollout, a regulatory agency informs you that certain privacy protocols must be updated. Your team is overwhelmed. The client expects the system to go live on schedule. What should you do?</div>
+<ul class="pq-opts">
+<li>A. Delay the rollout until the privacy protocols are fully updated to comply with regulations.</li>
+<li class="ans">B. Add the regulatory agency to the stakeholder register and update the privacy protocols while ensuring the system goes live on schedule. ✓</li>
+<li>C. Escalate the issue to the client and request additional time to address the new regulations.</li>
+<li>D. Ignore the update and proceed with the rollout to meet the client's deadline.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">10</span><span class="ct">P10 — Closing Phase Is Mandatory — Whether Completed or Terminated</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>The closing phase is mandatory whether a project is completed or prematurely terminated. This phase ensures all activities are formally closed, deliverables are handed over, <strong>contracts are closed, and lessons learned are captured.</strong></div>
+<div class="pq"><div class="pq-t">Practice Question</div>
+<div class="pq-q">You are managing a software development project, but the client decides to terminate it halfway through due to changing business priorities. Some deliverables are complete and the team has already moved on. What should you do next?</div>
+<ul class="pq-opts">
+<li>A. Move on to other projects since the client terminated the work — no further action is required.</li>
+<li class="ans">B. Conduct a project closeout meeting to ensure all deliverables are documented, contracts are closed, and lessons learned are captured. ✓</li>
+<li>C. Leave the documentation incomplete and focus on new projects since the work was terminated.</li>
+<li>D. Ask the client if they want to proceed with a closing phase or skip it since the project is terminated.</li>
+</ul></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">11–15</span><span class="ct">P11–P15 — Plan Is Your Map · Predictive Keywords · Agile Keywords · SME · Gradual Agile Transition</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">P11 — Predictive: The Plan Is Your Map. Constantly Refer Back to It.</div>In predictive projects, the project plan is the foundation for all activities. <strong>Every decision must be validated against the plan.</strong> Deviations must be minimized. The plan is the single source of truth.<br><br>
+<strong>Practice Q:</strong> A senior manager suggests reallocating resources, but the project plan clearly outlines resource allocation. What should you do? → <strong>Refer back to the project plan and assess impact before making any decisions. ✓</strong></div>
+<div class="box rehman"><div class="bl">P12 — Predictive Keywords — Spot These Instantly</div>
+Change Control Board (CCB) · Change Control Process · Integrated Change Control · Perform Integrated Change Control · Baseline · Formal Approval · Waterfall. When you see these → you are in a PREDICTIVE scenario → apply formal change request process.</div>
+<div class="box rehman"><div class="bl">P13 — Agile Keywords — Spot These Instantly</div>
+Sprint · Iteration · Scrum · Daily Standup · Backlog · Kanban · Product Increment · Product Owner · Retrospective · Velocity. When you see these → you are in an AGILE scenario → team self-organises, changes go to backlog.</div>
+<div class="box rehman"><div class="bl">P14 — No Expertise? Get an SME. Past Project? Check Lessons Learned.</div>
+When team lacks expertise → Consult a Subject Matter Expert (SME). When a similar past project was completed → Use the lessons learned register / OPAs. Never attempt to solve with internal guessing when expertise is missing.<br><br>
+<strong>Practice Q:</strong> Team encounters machinery problem they cannot fix. What should you do? → <strong>Consult a subject matter expert (SME) with technical knowledge. ✓</strong></div>
+<div class="box rehman"><div class="bl">P15 — Transitioning to Agile? Go Gradually — Pilot Project, Inception Deck.</div>
+Transitioning from predictive to agile requires careful planning and <strong>gradual implementation</strong>. A pilot project or inception deck allows the team to adapt in a controlled way. Never implement agile across all projects at once.<br><br>
+<strong>Practice Q:</strong> Construction PMO wants to transition to agile. Team is resistant. What do you do first? → <strong>Start with a pilot project to help the team get used to the approach. ✓</strong></div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">16</span><span class="ct">P16 — Agile Teams Self-Organize. PM Only Steps In to Resolve Conflicts.</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">&#x1F7E0; Core Insight</div>In agile, teams have the autonomy to decide how they complete their work. For minor disagreements with no impact on progress, <strong>let the team resolve it</strong>. For conflicts affecting deliverables or sprint goals, the PM <strong>facilitates resolution</strong>.</div>
+<div class="g2">
+<div class="pq"><div class="pq-t">Scenario A — Minor conflict, no impact on progress</div>
+<div class="pq-q">Two team members disagree on a minor feature approach during standup. Not affecting progress. What do you do?</div>
+<ul class="pq-opts"><li class="ans">A. Let the team resolve the conflict. ✓</li><li>B. Step in to facilitate and force a decision.</li></ul></div>
+<div class="pq"><div class="pq-t">Scenario B — Critical conflict affecting sprint goal</div>
+<div class="pq-q">Two senior developers disagree mid-sprint on a critical feature. Product owner concerned it won't complete on time. What do you do?</div>
+<ul class="pq-opts"><li>A. Let the team resolve it.</li><li class="ans">B. Step in to facilitate a discussion to resolve the conflict and keep the sprint on track. ✓</li></ul></div>
+</div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">17–23</span><span class="ct">P17–P23 — Customer Feedback · Don't Reject · OPAs · Eliminate Absolutes · Critical Path · No Overload</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="box rehman"><div class="bl">P17 — Agile Always Needs Consistent Customer Feedback</div>
+Agile projects are driven by customer feedback. Frequent feedback is essential to adjust the backlog, refine features, and prioritize work. If client has not provided feedback → <strong>pause similar features and prioritize gathering feedback before proceeding. ✓</strong></div>
+<div class="box rehman"><div class="bl">P18 — Never Immediately Reject a Request — Especially from a Client</div>
+Even if a request seems impractical or out of scope, <strong>dismissing it outright harms the client relationship</strong>. Evaluate the request carefully, discuss feasibility, and explore alternatives before making a decision.<br><br>
+<strong>Practice Q:</strong> Client requests major design change not in scope. What to do? → <strong>Discuss feasibility with team and explore options before deciding. ✓</strong></div>
+<div class="box rehman"><div class="bl">P19 — Similar Past Project? Always Refer to OPAs and Lessons Learned Register</div>
+Organizational Process Assets (OPAs) — lessons learned and documentation from past projects — are invaluable. When a question mentions a completed past project, <strong>always choose the answer that references it.</strong><br><br>
+<strong>Practice Q:</strong> Team encounters technical issue. Similar issue occurred in previous project. What to do? → <strong>Refer to lessons learned from the previous project. ✓</strong></div>
+<div class="box rehman"><div class="bl">P20 — Answer Mentions Info NOT in the Question? Eliminate That Answer.</div>
+Answers that introduce assumptions or information not explicitly provided in the question mislead you. Always <strong>stick to the facts given.</strong> If an answer requires you to assume something not stated → eliminate it.<br><br>
+<strong>Practice Q:</strong> Team member suggests safety improvements not in scope, no new safety issues identified. What do you do? → <strong>Inform the client about proposed improvements and ask if they want to include them. ✓</strong> (Not: submit change request to sponsor — that introduces new info)</div>
+<div class="box rehman"><div class="bl">P21 — Answer Uses "Only" or Absolute Language? Eliminate That Option.</div>
+Absolute terms like "only," "always," or "never" indicate rigid thinking. Project situations are dynamic and require flexibility. <strong>Answers that eliminate all other possibilities are usually too restrictive to be correct.</strong><br><br>
+<strong>Tip:</strong> Scan all answer choices for words like: only, always, never, must, cannot, solely. These are usually wrong answers in complex scenario questions.</div>
+<div class="box rehman"><div class="bl">P22 — Schedule Issue? Look at the Critical Path First.</div>
+The critical path determines the project's overall timeline. Any delay on it delays the entire project. When a schedule issue arises, <strong>always evaluate its impact on the critical path first.</strong><br><br>
+<strong>Practice Q:</strong> Delay in receiving critical materials has set project back 2 weeks. What to do? → <strong>Reassign resources from non-critical tasks to focus on activities that are part of the critical path. ✓</strong></div>
+<div class="box rehman"><div class="bl">P23 — Never Give a Team Member an Extra Task That Reduces Their Capacity — Including Training Others</div>
+Assigning extra tasks to team members reduces their ability to focus on their primary responsibilities, leading to decreased productivity and potential delays. <strong>If training is needed, bring in an external resource.</strong><br><br>
+<strong>Practice Q:</strong> Senior developer leads critical feature. Junior developer needs onboarding. What to do? → <strong>Bring in an external trainer to handle onboarding while senior developer continues on the critical feature. ✓</strong></div>
+
+<h3 class="sh2" style="margin-top:14px">23 Principles — Quick Reference Card</h3>
+<table class="tbl">
+<thead><tr><th>#</th><th>Principle</th><th>Keyword / Signal</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Discuss, investigate, analyze, ask before deciding</td><td>"What should the PM do FIRST?" → Gather info</td></tr>
+<tr><td>2</td><td>Never settle for delays. Extra costs beat delays.</td><td>Schedule vs cost trade-off → choose cost</td></tr>
+<tr><td>3</td><td>Servant leader: encourage, nurture, listen. No friction.</td><td>Team stress, pressure → PM removes, not adds</td></tr>
+<tr><td>4</td><td>Most value-driven answer. Keyword: "value."</td><td>See "value" in an option → strong signal</td></tr>
+<tr><td>5</td><td>Root cause analysis and MVP/demo are your tools.</td><td>See "root cause," "MVP," "demo" → likely correct</td></tr>
+<tr><td>6</td><td>Predictive: change request. Agile: product backlog.</td><td>Identify project type first, then apply correct change process</td></tr>
+<tr><td>7</td><td>Team are the experts. Decide WITH them.</td><td>Technical decisions → involve the team, not just PM</td></tr>
+<tr><td>8</td><td>PM handles issues. Sponsor only for budget — last resort.</td><td>Escalating routine issues → wrong answer</td></tr>
+<tr><td>9</td><td>Everyone involved is a stakeholder → register.</td><td>New party discovered → add to register immediately</td></tr>
+<tr><td>10</td><td>Closing is mandatory — completed OR terminated.</td><td>Project ends → always close formally</td></tr>
+<tr><td>11</td><td>Predictive: the plan is your map. Always refer to it.</td><td>Someone suggests shortcut → check the plan first</td></tr>
+<tr><td>12</td><td>Predictive keywords: CCB, change control, baseline.</td><td>These words = you're in predictive = formal process</td></tr>
+<tr><td>13</td><td>Agile keywords: sprint, Scrum, standup, backlog, PO.</td><td>These words = you're in agile = self-org, backlog</td></tr>
+<tr><td>14</td><td>No expertise → SME. Past project → lessons learned.</td><td>Unknown territory → external expert. Past project → OPAs.</td></tr>
+<tr><td>15</td><td>Transitioning to agile → go gradually: pilot, deck.</td><td>Agile transition = start small, never big bang</td></tr>
+<tr><td>16</td><td>Agile teams self-organize. PM steps in only for conflicts.</td><td>Minor conflict → let team handle. Sprint impact → facilitate.</td></tr>
+<tr><td>17</td><td>Agile needs consistent customer feedback.</td><td>No client feedback → pause and get it before proceeding</td></tr>
+<tr><td>18</td><td>Never immediately reject a request — especially from client.</td><td>Client request = explore options, never flat reject</td></tr>
+<tr><td>19</td><td>Similar past project → OPAs, lessons learned register.</td><td>Question mentions past project → reference it</td></tr>
+<tr><td>20</td><td>Answer mentions info NOT in question → eliminate it.</td><td>Extra assumptions in answer = red flag</td></tr>
+<tr><td>21</td><td>Answer uses "only" or absolute language → eliminate it.</td><td>Scan for: only, always, never, solely, cannot</td></tr>
+<tr><td>22</td><td>Schedule issue → look at critical path first.</td><td>Delay worry → check CP impact before anything else</td></tr>
+<tr><td>23</td><td>Never overload team — including training others.</td><td>Training needed = external trainer, not senior dev</td></tr>
+</tbody>
+</table>
+</div></div></div>
+</section>
+
+<!-- ====== GLOSSARY ====== -->
+<section class="sec s9" id="gloss">
+<div class="sh"><div class="si">&#x1F4D6;</div><div class="st">Glossary of Key PMP Terms</div><span class="stg">Exam Reference</span></div>
+<div class="src">&#x1F4DA; PMBOK 7 Glossary · PMI Agile Practice Guide · PMP Exam Content Outline</div>
+<div class="box tip"><div class="bl">💡 How to Use</div>These are the terms most likely to appear in exam questions. Know the PMBOK definition — not just the everyday meaning. Several common traps come from misreading a term.</div>
+
+<div class="card open">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">A</span><span class="ct">A–F Key Terms</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="gloss">
+<div class="gt"><strong>Acceptance Criteria</strong> — Conditions that must be satisfied for a deliverable to be accepted by stakeholders. Story-specific. Different from DoD.</div>
+<div class="gt"><strong>Accountability</strong> — Being answerable for an outcome. CANNOT be shared or delegated. Rests with ONE person.</div>
+<div class="gt"><strong>Activity</strong> — Distinct, scheduled portion of work performed during a project. Lowest level of schedule network.</div>
+<div class="gt"><strong>ADKAR</strong> — Awareness, Desire, Knowledge, Ability, Reinforcement. Sequential change model. Find the failing stage to target intervention.</div>
+<div class="gt"><strong>Agile</strong> — Iterative and incremental approach. Frequent delivery, rapid feedback, self-organising teams. Responds to change over following a plan.</div>
+<div class="gt"><strong>Ambiguity</strong> — State of being unclear; difficulty in identifying cause of events or multiple interpretable options. Broader than risk.</div>
+<div class="gt"><strong>Analogous Estimating</strong> — Using actuals from similar past projects. Fast, less accurate. Best for early-phase estimates.</div>
+<div class="gt"><strong>Assumption</strong> — Factor considered true without proof. Assumptions that prove false become risks or issues. Recorded in Assumption Log.</div>
+<div class="gt"><strong>Authority</strong> — Right to apply resources, make decisions, sign approvals. Can be delegated. Formally granted.</div>
+<div class="gt"><strong>Backlog</strong> — Ordered list of work to be done (Product Backlog) or sprint commitments (Sprint Backlog). Owned by Product Owner and Developers respectively.</div>
+<div class="gt"><strong>BAC</strong> — Budget at Completion. Total approved project budget. Fixed unless formally changed via CCB.</div>
+<div class="gt"><strong>Baseline</strong> — Approved plan (scope, schedule, or cost) against which performance is measured. Changes require CCB approval.</div>
+<div class="gt"><strong>BCR</strong> — Benefit-Cost Ratio. Benefits ÷ Costs. &gt;1 = benefits exceed costs. Higher = better project selection.</div>
+<div class="gt"><strong>Bottom-Up Estimating</strong> — Estimate each work package, aggregate upward. Most accurate. Most time-consuming.</div>
+<div class="gt"><strong>Burndown Chart</strong> — Shows remaining work (Y) over time (X). Falls toward zero as work completes. Used in agile sprint tracking.</div>
+<div class="gt"><strong>Burnup Chart</strong> — Shows work completed over time. Scope changes visible as ceiling rises. Better for communicating scope change impact.</div>
+<div class="gt"><strong>Business Case</strong> — Economic feasibility study and justification for project. Contains: business need, NPV, ROI, strategic alignment, risk. Maintained by sponsor.</div>
+<div class="gt"><strong>CCB</strong> — Change Control Board. Reviews, evaluates, approves, or rejects change requests. Even sponsor cannot bypass CCB.</div>
+<div class="gt"><strong>Change Log</strong> — Documents all change requests, their status, and impact assessments. Maintained throughout project.</div>
+<div class="gt"><strong>Change Request</strong> — Formal proposal to modify any document, deliverable, or baseline. Must go through CCB in predictive projects.</div>
+<div class="gt"><strong>CoQ</strong> — Cost of Quality. Conformance (Prevention + Appraisal) + Non-Conformance (Internal + External Failure). Prevention is cheapest.</div>
+<div class="gt"><strong>Complexity</strong> — Characteristic difficult to manage due to human behaviour, system behaviour, and ambiguity. Non-linear, emergent outcomes.</div>
+<div class="gt"><strong>Cone of Uncertainty</strong> — Estimates improve in accuracy as project progresses. Early: ±50%. Final: ±5-10%.</div>
+<div class="gt"><strong>Contingency Reserve</strong> — Budget held for known risks (known unknowns). IN cost baseline. PM can approve within authority level.</div>
+<div class="gt"><strong>CPI</strong> — Cost Performance Index. EV÷AC. &gt;1 = under budget. &lt;1 = over budget. Best predictor of final cost.</div>
+<div class="gt"><strong>Critical Path</strong> — Longest duration network path. Determines minimum project duration. TF=0 on all critical path activities.</div>
+<div class="gt"><strong>CV</strong> — Cost Variance. EV−AC. Positive = under budget. Negative = over budget.</div>
+<div class="gt"><strong>Cycle Time</strong> — Time from work starting to work completing. Key Kanban metric.</div>
+<div class="gt"><strong>Daily Scrum</strong> — 15-minute event. Developers inspect Sprint Goal progress. NOT a status meeting for PM or management.</div>
+<div class="gt"><strong>Definition of Done (DoD)</strong> — Team-level quality criteria for an Increment to be complete. Created by Developers. Cannot be weakened mid-Sprint.</div>
+<div class="gt"><strong>Definition of Ready (DoR)</strong> — Criteria a user story must meet before entering a sprint. Story written, estimates done, dependencies resolved.</div>
+<div class="gt"><strong>Deliverable</strong> — Any unique, verifiable product, result, or capability to perform a service that is required to be produced to complete a process.</div>
+<div class="gt"><strong>Development Approach</strong> — The means used to create and evolve a product: predictive, iterative, incremental, agile, or hybrid.</div>
+<div class="gt"><strong>EAC</strong> — Estimate at Completion. Forecast of total project cost. Most common formula: BAC÷CPI.</div>
+<div class="gt"><strong>EMV</strong> — Expected Monetary Value. Probability × Impact. Used in decision trees and quantitative risk analysis.</div>
+<div class="gt"><strong>ETC</strong> — Estimate to Complete. EAC−AC. How much MORE money is needed to finish from today.</div>
+<div class="gt"><strong>EV</strong> — Earned Value. % Work Complete × BAC. Value of work actually performed. Always in numerator of EVM indices.</div>
+<div class="gt"><strong>EVM</strong> — Earned Value Management. Integrates scope, schedule, and cost. Uses PV, EV, AC to measure performance and forecast outcomes.</div>
+<div class="gt"><strong>Fast-Tracking</strong> — Schedule compression by doing activities in parallel. No cost increase. Increases rework risk. Critical path only.</div>
+<div class="gt"><strong>FFP</strong> — Firm Fixed Price contract. Seller bears all cost overrun risk. Lowest risk for buyer. Best for defined scope.</div>
+<div class="gt"><strong>Float/Slack</strong> — Amount of time an activity can be delayed without delaying project end (Total Float) or successor (Free Float).</div>
+</div>
+</div></div></div>
+
+<div class="card">
+<div class="ch" onclick="toggleCard(this.parentElement)"><span class="cn">G</span><span class="ct">G–Z Key Terms</span><span class="ca">▼</span></div>
+<div class="cb"><div class="cc">
+<div class="gloss">
+<div class="gt"><strong>Gold Plating</strong> — Adding features beyond what was agreed without change request. Initiated by PM/team. Always a bad practice.</div>
+<div class="gt"><strong>Governance</strong> — Framework of authority, roles, decision-making processes for directing and controlling projects and organisations.</div>
+<div class="gt"><strong>Hybrid</strong> — Development approach combining predictive and agile elements. Most common in practice.</div>
+<div class="gt"><strong>Inception Deck</strong> — Agile tool for aligning team and stakeholders on project vision, approach, and priorities at project start.</div>
+<div class="gt"><strong>Increment</strong> — Scrum artifact. Usable, done, potentially shippable output from a sprint. Commitment = Definition of Done.</div>
+<div class="gt"><strong>IRR</strong> — Internal Rate of Return. Discount rate where NPV=0. Higher = more attractive. Compare to hurdle rate.</div>
+<div class="gt"><strong>Issue</strong> — A risk that has materialised. A current problem requiring resolution. Tracked in Issue Log.</div>
+<div class="gt"><strong>Issue Log</strong> — Document tracking current problems: description, owner, priority, resolution date.</div>
+<div class="gt"><strong>Kanban</strong> — Visual flow-based method. WIP limits, pull system, cycle time metric. No fixed roles or time-boxes.</div>
+<div class="gt"><strong>KPI</strong> — Key Performance Indicator. Metric tied to a specific project or business objective. Must be actionable and relevant.</div>
+<div class="gt"><strong>Lead Time</strong> — Time from customer request to delivery. Includes wait time in queue + Cycle Time.</div>
+<div class="gt"><strong>Leads and Lags</strong> — Lead=advance successor before predecessor finishes (negative lag). Lag=mandatory wait time between activities.</div>
+<div class="gt"><strong>Lessons Learned Register</strong> — Captures what worked and what did not. Created throughout project. Becomes OPA at closure.</div>
+<div class="gt"><strong>Management Reserve</strong> — Budget for unknown unknowns. NOT in cost baseline. NOT in EVM. Requires sponsor approval.</div>
+<div class="gt"><strong>Milestone</strong> — Significant point or event in a project. Zero duration. Used to mark phase completions and key deliverables.</div>
+<div class="gt"><strong>Monte Carlo Simulation</strong> — Runs thousands of scenarios with varying inputs. Outputs probability distribution for cost/schedule outcomes.</div>
+<div class="gt"><strong>MVP</strong> — Minimum Viable Product. Smallest deliverable that provides value and enables learning. Core agile/lean concept.</div>
+<div class="gt"><strong>NPV</strong> — Net Present Value. Sum of discounted future cash flows minus initial investment. Higher = better. &gt;0 = accept project.</div>
+<div class="gt"><strong>OPA</strong> — Organisational Process Assets. Templates, processes, lessons learned, historical data from the organisation. Used and updated by projects.</div>
+<div class="gt"><strong>Opportunity</strong> — A risk with a positive effect on project objectives. Responses: Exploit, Share, Enhance, Accept, Escalate.</div>
+<div class="gt"><strong>Outcome</strong> — End result or consequence of a process or project. Different from Output — outcomes are changes in behaviour or capability.</div>
+<div class="gt"><strong>Parametric Estimating</strong> — Statistical relationship between variables (e.g. cost per unit × units). More accurate than analogous.</div>
+<div class="gt"><strong>Payback Period</strong> — Time to recover initial investment. Shorter = better. Does NOT account for time value of money.</div>
+<div class="gt"><strong>PERT</strong> — Program Evaluation and Review Technique. E=(O+4M+P)/6. σ=(P−O)/6. Three-point estimate with weighted average.</div>
+<div class="gt"><strong>PMB</strong> — Performance Measurement Baseline. Scope + Schedule + Cost baselines combined. Used for EVM. Excludes management reserve.</div>
+<div class="gt"><strong>PMO</strong> — Project Management Office. Supportive (guidance), Controlling (compliance), or Directive (manages projects).</div>
+<div class="gt"><strong>Portfolio</strong> — Collection of projects, programs, operations aligned to strategic objectives. No fixed end date.</div>
+<div class="gt"><strong>Product Backlog</strong> — Scrum artifact. Ordered list of everything needed in product. Owned by Product Owner. Commitment = Product Goal.</div>
+<div class="gt"><strong>Product Owner</strong> — Scrum role. Owns Product Backlog. Maximises value. Only person who can cancel a Sprint. Accepts/rejects increment.</div>
+<div class="gt"><strong>Program</strong> — Group of related projects managed in a coordinated way to obtain benefits not available from managing individually.</div>
+<div class="gt"><strong>Project Charter</strong> — Document formally authorising project. Names PM and grants authority. Issued by Sponsor. Created in Initiating.</div>
+<div class="gt"><strong>Psychological Safety</strong> — Belief that one can speak up, admit mistakes, and challenge ideas without fear. #1 predictor of team effectiveness.</div>
+<div class="gt"><strong>PV</strong> — Planned Value. % Work Planned × BAC. Authorised budget for scheduled work.</div>
+<div class="gt"><strong>Quality</strong> — Degree to which deliverable meets requirements and expectations. "Fitness for purpose" and conformance to requirements.</div>
+<div class="gt"><strong>RACI</strong> — Responsibility Assignment Matrix. Responsible, Accountable, Consulted, Informed. Only ONE person can be Accountable per row.</div>
+<div class="gt"><strong>Requirements Traceability Matrix (RTM)</strong> — Links requirements to their source and tracks to deliverables. Ensures all requirements are addressed.</div>
+<div class="gt"><strong>Residual Risk</strong> — Risk remaining AFTER a response is implemented. Must be accepted and monitored.</div>
+<div class="gt"><strong>Retrospective</strong> — Scrum event. Team inspects process, tools, and interactions. Identifies improvements. 3hr max (1-month sprint).</div>
+<div class="gt"><strong>Risk</strong> — Uncertain event or condition that, if occurs, has positive or negative effect on objectives. Risk ≠ Issue.</div>
+<div class="gt"><strong>Risk Register</strong> — Repository of all identified risks with probability, impact, response, owner, and status. Living document.</div>
+<div class="gt"><strong>Rolling Wave Planning</strong> — Near-term work planned in detail; far-future work at high level. Updated as project progresses.</div>
+<div class="gt"><strong>Scope Creep</strong> — Uncontrolled expansion of scope without formal change control. Always bad. Prevented by change management.</div>
+<div class="gt"><strong>Scrum Master</strong> — Servant leader. Facilitates Scrum events. Removes impediments. Does NOT manage or assign tasks to team.</div>
+<div class="gt"><strong>Secondary Risk</strong> — New risk CREATED BY implementing a risk response. Must be identified and managed.</div>
+<div class="gt"><strong>SME</strong> — Subject Matter Expert. Consulted when team lacks expertise. External resource brought in for specialised knowledge.</div>
+<div class="gt"><strong>SPI</strong> — Schedule Performance Index. EV÷PV. &gt;1 = ahead of schedule. &lt;1 = behind schedule.</div>
+<div class="gt"><strong>Sprint</strong> — Scrum time-box of 1–4 weeks. Contains all work and events. No changes that endanger Sprint Goal.</div>
+<div class="gt"><strong>Sprint Backlog</strong> — Scrum artifact. Selected PB items + delivery plan. Owned by Developers. Commitment = Sprint Goal.</div>
+<div class="gt"><strong>Stakeholder</strong> — Individual, group, or organisation that may affect, be affected by, or perceive itself affected by a project decision or outcome.</div>
+<div class="gt"><strong>Stakeholder Register</strong> — Document containing information about identified stakeholders. Confidential. Updated throughout project.</div>
+<div class="gt"><strong>SV</strong> — Schedule Variance. EV−PV. Positive = ahead of schedule. Negative = behind schedule.</div>
+<div class="gt"><strong>Systems Thinking</strong> — Holistic view of how parts interact. Changes in one area cascade to others. Core PMBOK 7 principle.</div>
+<div class="gt"><strong>T&amp;M Contract</strong> — Time and Material. Buyer pays for actual time and materials. No cost ceiling. Highest buyer risk after cost-plus.</div>
+<div class="gt"><strong>Tailoring</strong> — Deliberate adaptation of approach, governance, processes to fit the specific project context. Collaborative decision.</div>
+<div class="gt"><strong>TCPI</strong> — To Complete Performance Index. (BAC−EV)÷(BAC−AC). Efficiency needed to meet original budget. &gt;1.1 = unrealistic.</div>
+<div class="gt"><strong>Threat</strong> — A risk with negative effect on objectives. Responses: Avoid, Transfer, Mitigate, Accept, Escalate.</div>
+<div class="gt"><strong>Throughput</strong> — Number of items completed per time period. Used for Kanban forecasting.</div>
+<div class="gt"><strong>Total Float</strong> — TF = LS−ES = LF−EF. Time activity can delay without delaying project end. CP activities have TF=0.</div>
+<div class="gt"><strong>Tuckman Model</strong> — Forming → Storming → Norming → Performing → Adjourning. Non-linear. Teams can regress.</div>
+<div class="gt"><strong>VAC</strong> — Variance at Completion. BAC−EAC. Positive = will finish under budget. Negative = will finish over budget.</div>
+<div class="gt"><strong>Value</strong> — Ultimate indicator of project success. Net worth or importance of benefits. Outputs→Outcomes→Benefits→Value.</div>
+<div class="gt"><strong>Velocity</strong> — Story points completed per sprint. Used for release forecasting. NEVER compare velocity across different teams.</div>
+<div class="gt"><strong>VUCA</strong> — Volatile, Uncertain, Complex, Ambiguous. High VUCA = agile preferred. Low VUCA = predictive works well.</div>
+<div class="gt"><strong>WBS</strong> — Work Breakdown Structure. Hierarchical decomposition of total project scope. 100% Rule. Lowest level = Work Package.</div>
+<div class="gt"><strong>WIP Limits</strong> — Maximum items in any Kanban workflow state. Exposes bottlenecks. Core Kanban practice.</div>
+<div class="gt"><strong>XP</strong> — Extreme Programming. Agile framework: TDD, pair programming, CI, refactoring, collective code ownership.</div>
+</div>
+</div></div></div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ====== CRAM SECTION ====== -->
+<div id="cram">
+<div class="cr-inner">
+<div class="cr-title">&#x1F9E0; Printable Cram Section</div>
+<div class="cr-sub">5 pages — print and review the night before. Each block is one printable page.</div>
+
+<!-- PAGE 1 -->
+<div class="cr-pg">
+<div class="cr-pt">Page 1 — 23 Rehman Principles (Quick Card)</div>
+<div class="cr-cols">
+<div class="cb2">
+<div class="cb2-t">Principles 1–12</div>
+<ul class="cl">
+<li><strong class="h">P1</strong> — Investigate FIRST. Gather info before acting. "What to do first?" = get info.</li>
+<li><strong class="h">P2</strong> — Extra costs beat delays. Compress schedule (crash/fast-track) before accepting delay.</li>
+<li><strong class="h">P3</strong> — Servant leader. Encourage, nurture, listen. Never create team friction.</li>
+<li><strong class="h">P4</strong> — Most value-driven answer wins. Keyword "value" in answer = strong signal.</li>
+<li><strong class="h">P5</strong> — Root cause analysis + MVP/demo are your tools. See these keywords → likely correct.</li>
+<li><strong class="h">P6</strong> — Predictive: change request (CCB). Agile: add to product backlog. Identify type first.</li>
+<li><strong class="h">P7</strong> — Team are the experts. Make decisions WITH them, not for them.</li>
+<li><strong class="h">P8</strong> — PM owns all issues. Sponsor only for major budget issues — LAST resort.</li>
+<li><strong class="h">P9</strong> — Everyone involved = stakeholder. Add immediately to stakeholder register.</li>
+<li><strong class="h">P10</strong> — Closing is mandatory. Always. Even terminated projects must be formally closed.</li>
+<li><strong class="h">P11</strong> — Predictive: the plan is your map. Always refer back to it before acting.</li>
+<li><strong class="h">P12</strong> — Predictive keywords: CCB · change control · baseline · formal approval → formal process.</li>
+</ul>
+</div>
+<div class="cb2">
+<div class="cb2-t">Principles 13–23 + 3-Step Method</div>
+<ul class="cl">
+<li><strong class="h">P13</strong> — Agile keywords: sprint · scrum · standup · backlog · PO → self-org, changes to backlog.</li>
+<li><strong class="h">P14</strong> — No expertise → get SME. Past similar project → use OPAs/lessons learned.</li>
+<li><strong class="h">P15</strong> — Transitioning to agile → go gradually. Pilot project first. Never big-bang rollout.</li>
+<li><strong class="h">P16</strong> — Agile teams self-organise. Minor conflict → let team handle. Sprint at risk → facilitate.</li>
+<li><strong class="h">P17</strong> — Agile needs consistent customer feedback. No feedback → pause and get it.</li>
+<li><strong class="h">P18</strong> — Never immediately reject client requests. Explore options, discuss feasibility first.</li>
+<li><strong class="h">P19</strong> — Question mentions past project → refer to OPAs and lessons learned. Always.</li>
+<li><strong class="h">P20</strong> — Answer introduces info NOT in question → eliminate that answer immediately.</li>
+<li><strong class="h">P21</strong> — Answer uses "only" / "always" / "never" / absolute language → eliminate it.</li>
+<li><strong class="h">P22</strong> — Schedule issue → look at critical path first. Reassign from non-critical to critical.</li>
+<li><strong class="h">P23</strong> — Never overload team. Training = bring external trainer. Never burden senior dev.</li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">3-Step Method (Every Question)</div>
+<ul class="cl">
+<li><em class="b">Step 1 — Frame:</em> What is actually being asked? Understand fully before looking at answers.</li>
+<li><em class="b">Step 2 — Eliminate:</em> Remove answers contradicting any principle. Remove answers adding new assumptions.</li>
+<li><em class="b">Step 3 — Choose:</em> Select the option that fully resolves the problem and aligns with PMP mindset.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="cr-pg">
+<div class="cr-pt">Page 2 — 8 Performance Domains (Key Facts)</div>
+<div class="cr-cols">
+<div class="cb2">
+<div class="cb2-t">D1 Stakeholder · D2 Team · D3 Dev Approach · D4 Planning</div>
+<ul class="cl">
+<li><em class="b">D1 — Stakeholder:</em> Identify→Analyse→Prioritise→Engage→Monitor. Engagement &gt; Communication. Power/Interest grid. Salience model (Power+Legitimacy+Urgency). Levels: Unaware→Resistant→Neutral→Supportive→Leading. Never ignore resistance.</li>
+<li><em class="b">D2 — Team:</em> Authority=right to decide (delegable). Accountability=answerable (NOT delegable). Responsibility=perform (shareable). Servant leadership = exam default. Tuckman: Forming(Direct)→Storming(Coach)→Norming(Support)→Performing(Delegate)→Adjourning(Close). Conflict: Problem-Solve best. Withdraw worst.</li>
+<li><em class="b">D3 — Dev Approach:</em> Predictive=fixed requirements, stable tech. Iterative=refine same thing. Incremental=add usable pieces. Agile=iterative+incremental. Hybrid=most real-world projects. Cadence: Single / Multiple / Periodic / Continuous delivery.</li>
+<li><em class="b">D4 — Planning:</em> Progressive elaboration. Rolling wave. Cone of uncertainty (early ±50%, late ±5%). PERT: E=(O+4M+P)/6. σ=(P−O)/6. Estimation: Analogous(fast,low accuracy) → Parametric → Bottom-up(slow, high accuracy). Planning Poker for agile.</li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">D5 Project Work · D6 Delivery</div>
+<ul class="cl">
+<li><em class="b">D5 — Project Work:</em> Efficient+effective processes. Triple Constraint: Scope/Schedule/Cost. Triple Bottom Line: Economic/Social/Environmental. Explicit knowledge=codifiable (docs). Tacit knowledge=experience (transferred via apprenticeship). RFI→RFP→RFQ. Contracts: FFP(low buyer risk)→T&amp;M→CPFF(high buyer risk).</li>
+<li><em class="b">D6 — Delivery:</em> RTM links requirements to deliverables. Validate Scope = customer acceptance (not QC). QA=process/proactive/prevent. QC=output/reactive/detect. DoD=team quality gate. DoR=story must meet before sprint. CoQ: Prevention cheapest, External Failure most expensive.</li>
+</ul>
+</div>
+<div class="cb2">
+<div class="cb2-t">D7 Measurement · D8 Uncertainty</div>
+<ul class="cl">
+<li><em class="b">D7 — Measurement:</em> 6 pitfalls: Hawthorne / Vanity metrics / Demoralization / Misuse / Confirmation bias / Correlation≠Causation. EVM formulas (see Page 3). Agile metrics: Velocity / Cycle time / Lead time / Throughput / WIP / CFD. Dashboard and information radiators.</li>
+<li><em class="b">D8 — Uncertainty:</em> Risk=uncertain event (positive or negative). Ambiguity=unclear, epistemic. Complexity=emergent, non-linear. Volatility=fast unpredictable change. Stacey Matrix: Simple→predictive, Complex→agile, Chaotic→act first. Contingency Reserve=known unknowns (IN baseline). Management Reserve=unknown unknowns (NOT in baseline).</li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">Risk Responses</div>
+<table class="ctbl">
+<thead><tr><th>Threat</th><th>Opportunity</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td>Avoid</td><td>Exploit</td><td>Eliminate / Ensure it happens</td></tr>
+<tr><td>Transfer</td><td>Share</td><td>Shift to 3rd party / Partner</td></tr>
+<tr><td>Mitigate</td><td>Enhance</td><td>Reduce P&amp;I / Increase P&amp;I</td></tr>
+<tr><td>Accept</td><td>Accept</td><td>Active (contingency) or Passive</td></tr>
+<tr><td>Escalate</td><td>Escalate</td><td>Beyond PM authority</td></tr>
+</tbody>
+</table>
+<div class="cb2-t" style="margin-top:8px">Tailoring (PMBOK §3)</div>
+<ul class="cl">
+<li>4 steps: Select approach → Tailor for org → Tailor for project → Improve continuously</li>
+<li>Toward Predictive: fixed requirements, known tech, low stakeholder availability, regulated industry</li>
+<li>Toward Agile: evolving requirements, novel tech, daily collaboration available</li>
+<li>Agile transition: always gradual — pilot project first, never full immediate rollout</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="cr-pg">
+<div class="cr-pt">Page 3 — All EVM Formulas + Scrum + MMA Key Models</div>
+<div class="cr-cols">
+<div class="cb2">
+<div class="cb2-t">EVM — Master Formula Reference</div>
+<div class="cfm"><div class="cfn">PV · EV · AC · BAC</div><div class="cff">PV=%Planned×BAC | EV=%Done×BAC | AC=actual spent</div><div class="cfm2">BAC=total budget. EV ALWAYS numerator in indices. EV ALWAYS first in variances.</div></div>
+<div class="cfm"><div class="cfn">CV | SV | CPI | SPI</div><div class="cff">CV=EV−AC | SV=EV−PV | CPI=EV/AC | SPI=EV/PV</div><div class="cfm2">&gt;0 or &gt;1 = good. &lt;0 or &lt;1 = bad.</div></div>
+<div class="cfm"><div class="cfn">EAC (CPI, most common)</div><div class="cff">EAC = BAC ÷ CPI</div><div class="cfm2">Current performance will continue. Most accurate predictor.</div></div>
+<div class="cfm"><div class="cfn">EAC (atypical) | EAC (CPI+SPI)</div><div class="cff">EAC=AC+(BAC−EV) | EAC=AC+[(BAC−EV)÷(CPI×SPI)]</div><div class="cfm2">Atypical=one-time variance. CPI+SPI=schedule affects cost.</div></div>
+<div class="cfm"><div class="cfn">ETC | VAC | TCPI</div><div class="cff">ETC=EAC−AC | VAC=BAC−EAC | TCPI=(BAC−EV)÷(BAC−AC)</div><div class="cfm2">ETC=money left. VAC=over/under at end. TCPI&gt;1.1=unrealistic.</div></div>
+<div class="cfm"><div class="cfn">PERT | σ | Channels | Float | EMV</div><div class="cff">E=(O+4M+P)/6 | σ=(P−O)/6 | C=N(N−1)/2 | TF=LS−ES | EMV=P×I</div><div class="cfm2">1σ=68%, 2σ=95%, 3σ=99.7%. CP: TF=0.</div></div>
+<div class="cfm"><div class="cfn">EXAMPLE: BAC=00k, PV=0k, EV=0k, AC=5k</div><div class="cff">CV=−5k OVER | SV=−10k BEHIND | CPI=0.91 | SPI=0.83 | EAC=09.9k | VAC=−.9k</div><div class="cfm2">Both under 1: over budget AND behind schedule simultaneously.</div></div>
+<div class="cb2-t" style="margin-top:8px">Contract Risk Quick Ref</div>
+<table class="ctbl">
+<thead><tr><th>Type</th><th>Buyer Risk</th><th>Seller Risk</th></tr></thead>
+<tbody>
+<tr><td>FFP</td><td>Low</td><td>High — bears overruns</td></tr>
+<tr><td>FPIF</td><td>Medium</td><td>Medium</td></tr>
+<tr><td>T&amp;M</td><td>High</td><td>Low</td></tr>
+<tr><td>CPFF/CPIF/CPAF</td><td>Highest</td><td>Lowest</td></tr>
+</tbody>
+</table>
+</div>
+<div class="cb2">
+<div class="cb2-t">Scrum Complete Flash Card</div>
+<ul class="cl">
+<li><strong class="h">3 Pillars (TIA):</strong> Transparency · Inspection · Adaptation</li>
+<li><strong class="h">5 Values (FRCOC):</strong> Focus · Respect · Courage · Openness · Commitment</li>
+<li><strong class="h">Product Owner:</strong> Owns backlog · Orders items · Accepts Increment · Defines WHAT · <em class="y">Only PO cancels Sprint</em></li>
+<li><strong class="h">Scrum Master:</strong> Servant leader · Removes impediments · Facilitates · Does NOT assign tasks</li>
+<li><strong class="h">Developers:</strong> Cross-functional · Self-organising · Creates Sprint Backlog · Owns DoD · <em class="y">Only Devs change Sprint Backlog mid-Sprint</em></li>
+<li><strong class="h">Sprint:</strong> ≤4 weeks · No Sprint Goal changes · Only PO cancels</li>
+<li><strong class="h">Sprint Planning:</strong> 8hr max · Select items · Define Sprint Goal</li>
+<li><strong class="h">Daily Scrum:</strong> 15min · Devs only · NOT a PM status meeting</li>
+<li><strong class="h">Sprint Review:</strong> 4hr max · Inspect Increment · Stakeholders attend</li>
+<li><strong class="h">Retrospective:</strong> 3hr max · HOW we work · Create improvement actions</li>
+<li>Product Backlog → <em class="b">Product Goal</em></li>
+<li>Sprint Backlog → <em class="b">Sprint Goal</em></li>
+<li>Increment → <em class="b">Definition of Done</em></li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">MMA — Key Models Flash</div>
+<ul class="cl">
+<li><strong class="h">ADKAR:</strong> Awareness→Desire→Knowledge→Ability→Reinforcement. Sequential. Most tested.</li>
+<li><strong class="h">Kotter 8:</strong> Urgency→Coalition→Vision→Comms→Enable→Wins→Consolidate→Anchor</li>
+<li><strong class="h">Lewin:</strong> Unfreeze→Change→Refreeze. Simple, powerful.</li>
+<li><strong class="h">Stacey:</strong> Simple=predictive. Complicated=expert. Complex=agile. Chaotic=act first.</li>
+<li><strong class="h">VUCA:</strong> Volatile+Uncertain+Complex+Ambiguous. High VUCA → agile.</li>
+<li><strong class="h">Situational Leadership:</strong> D1→S1 Direct, D2→S2 Coach, D3→S3 Support, D4→S4 Delegate</li>
+<li><strong class="h">Tuckman:</strong> Form→Storm(Coach)→Norm→Perform(Delegate)→Adjourn. Non-linear!</li>
+<li><strong class="h">Maslow:</strong> Physio→Safety→Social→Esteem→Self-Actualise. Lower first.</li>
+<li><strong class="h">Herzberg:</strong> Hygiene=prevent dissatisfaction. Motivators=create motivation. Raise≠motivate!</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="cr-pg">
+<div class="cr-pt">Page 4 — 12 PMBOK Principles + Tailoring + Glossary Traps</div>
+<div class="cr-cols">
+<div class="cb2">
+<div class="cb2-t">12 PMBOK 7 Principles — One-Line Each</div>
+<ul class="cl">
+<li><strong class="h">1. Stewardship:</strong> Integrity · Care · Trustworthiness · Compliance. Act as fiduciary inside and outside org.</li>
+<li><strong class="h">2. Team:</strong> Collaborative environment. Team agreements BY the team. Authority≠Accountability≠Responsibility.</li>
+<li><strong class="h">3. Stakeholders:</strong> Proactive engagement. Engagement &gt; Communication. Even resistant stakeholders engaged.</li>
+<li><strong class="h">4. Value:</strong> Outputs→Outcomes→Benefits→Value. Delivering scope ≠ delivering value. Business case alignment.</li>
+<li><strong class="h">5. Systems Thinking:</strong> Holistic view. One change cascades to others. See the whole system.</li>
+<li><strong class="h">6. Leadership:</strong> Any team member can lead. Leadership ≠ Authority. Servant leadership = PMP default.</li>
+<li><strong class="h">7. Tailoring:</strong> Every project unique. Adapt with team and PMO. Tailoring ≠ ignoring processes.</li>
+<li><strong class="h">8. Quality:</strong> Build in, not inspected in. Gold plating = bad. CoQ: Prevention cheapest.</li>
+<li><strong class="h">9. Complexity:</strong> Stacey Matrix. Both uncertain = complex = agile. Non-linear, emergent.</li>
+<li><strong class="h">10. Risk:</strong> Threats: ATMES. Opportunities: ESEAS. Continuous. Residual risk after response.</li>
+<li><strong class="h">11. Adaptability &amp; Resiliency:</strong> Build feedback loops. Psychological safety. Recover from setbacks.</li>
+<li><strong class="h">12. Change:</strong> Projects = agents of change. ADKAR sequential. Prepare people for new state.</li>
+</ul>
+</div>
+<div class="cb2">
+<div class="cb2-t">Common Exam Traps — Don't Fall For These</div>
+<ul class="cl">
+<li><em class="r">Trap 1:</em> "Give a raise to motivate" → Salary is HYGIENE not a motivator. Answer: recognition, growth, achievement.</li>
+<li><em class="r">Trap 2:</em> "Agile means no documentation" → FALSE. Right side of manifesto still has value. Just less.</li>
+<li><em class="r">Trap 3:</em> Sponsor can approve changes without CCB → FALSE. CCB is mandatory. Even sponsor cannot bypass.</li>
+<li><em class="r">Trap 4:</em> Management Reserve is in the cost baseline → FALSE. NOT in baseline, NOT in EVM.</li>
+<li><em class="r">Trap 5:</em> Accountability can be shared → FALSE. Only ONE person is accountable for any outcome.</li>
+<li><em class="r">Trap 6:</em> Gold plating adds value → FALSE. Always bad. Introduces risk and wastes resources.</li>
+<li><em class="r">Trap 7:</em> PM should escalate issues to sponsor → FALSE. PM handles issues. Sponsor = budget only, last resort.</li>
+<li><em class="r">Trap 8:</em> CPI and SPI are equally important predictors → FALSE. CPI is the BETTER predictor of final cost.</li>
+<li><em class="r">Trap 9:</em> TCPI&gt;1.0 = achievable target → FALSE. TCPI&gt;1.1 = generally unrealistic. Challenge the plan.</li>
+<li><em class="r">Trap 10:</em> Scope Creep and Gold Plating are the same → FALSE. Scope creep = stakeholder-driven (uncontrolled). Gold plating = PM/team-initiated.</li>
+<li><em class="r">Trap 11:</em> SV=0 at project end always → TRUE. Because EV always equals PV at project completion.</li>
+<li><em class="r">Trap 12:</em> Payback period accounts for time value of money → FALSE. NPV and IRR account for it. Payback does NOT.</li>
+<li><em class="r">Trap 13:</em> Scrum Master assigns tasks to Developers → FALSE. Developers self-organise and pull work themselves.</li>
+<li><em class="r">Trap 14:</em> Free Float and Total Float are the same → FALSE. FF = delay without affecting successor. TF = delay without affecting project end.</li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">Key Distinctions — Quick Reference</div>
+<ul class="cl">
+<li><strong class="h">Risk vs Issue:</strong> Risk=future, uncertain. Issue=present, definite (materialised risk).</li>
+<li><strong class="h">QA vs QC:</strong> QA=process/proactive. QC=output/reactive.</li>
+<li><strong class="h">Output vs Outcome:</strong> Output=deliverable. Outcome=change enabled by deliverable.</li>
+<li><strong class="h">DoD vs Acceptance Criteria:</strong> DoD=team-wide standard. AC=story-specific conditions.</li>
+<li><strong class="h">Validate Scope vs Verify Quality:</strong> Validate=customer accepts deliverable. Verify=QC confirms it meets specs.</li>
+<li><strong class="h">Explicit vs Tacit Knowledge:</strong> Explicit=can be documented. Tacit=personal experience/intuition.</li>
+<li><strong class="h">Crashing vs Fast-Tracking:</strong> Crash=add resources (costs more). Fast-track=overlap activities (more risk).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="cr-pg">
+<div class="cr-pt">Page 5 — 20 PMP Mindset Rules + Org Structures + Ethics</div>
+<div class="cr-cols">
+<div class="cb2">
+<div class="cb2-t">20 PMP Exam Mindset Rules</div>
+<ul class="cl">
+<li><em class="g">1.</em> Servant leader: remove obstacles, enable team. Don't command.</li>
+<li><em class="g">2.</em> Conflict: always try Problem-Solve/Collaborate FIRST.</li>
+<li><em class="g">3.</em> Bad news: communicate EARLY. Never hide variances.</li>
+<li><em class="g">4.</em> Every change: formal process. No exceptions, even sponsor.</li>
+<li><em class="g">5.</em> Unhappy stakeholder: meet, understand, update engagement plan.</li>
+<li><em class="g">6.</em> Safety risk: stop activity, escalate. No deadline overrides safety.</li>
+<li><em class="g">7.</em> Ethics violation asked of you: refuse, report, document.</li>
+<li><em class="g">8.</em> Conflict of interest: disclose immediately, recuse from decision.</li>
+<li><em class="g">9.</em> New stakeholder mid-project: register, analyse, engage now.</li>
+<li><em class="g">10.</em> Gold plating: never. Deliver exactly what was agreed.</li>
+<li><em class="g">11.</em> Sunk cost: ignore it. Decide on future value only.</li>
+<li><em class="g">12.</em> Agile manifesto right side: still has value. Just LESS.</li>
+<li><em class="g">13.</em> Scrum: only PO cancels Sprint. Only Devs change Sprint Backlog.</li>
+<li><em class="g">14.</em> EVM: EV always numerator for indices. EV first in variances.</li>
+<li><em class="g">15.</em> CPI is best predictor of final project cost. It tends to hold stable.</li>
+<li><em class="g">16.</em> Management reserve: NOT in baseline, NOT in EVM. Sponsor approves.</li>
+<li><em class="g">17.</em> TCPI&gt;1.1 = unrealistic recovery plan. Flag and escalate.</li>
+<li><em class="g">18.</em> Fixed price contract: seller bears ALL cost overrun risk.</li>
+<li><em class="g">19.</em> Projectised = most PM authority. Balanced Matrix = most conflict.</li>
+<li><em class="g">20.</em> Working software = PRIMARY agile measure of progress. Not stories, not docs.</li>
+</ul>
+</div>
+<div class="cb2">
+<div class="cb2-t">Org Structures — PM Authority</div>
+<table class="ctbl">
+<thead><tr><th>Structure</th><th>PM Authority</th><th>Note</th></tr></thead>
+<tbody>
+<tr><td>Functional</td><td>Little to none</td><td>FM controls resources</td></tr>
+<tr><td>Weak Matrix</td><td>Limited</td><td>PM part-time</td></tr>
+<tr><td>Balanced Matrix</td><td>Equal to FM</td><td>Most conflict zone</td></tr>
+<tr><td>Strong Matrix</td><td>Moderate–High</td><td>PM has priority</td></tr>
+<tr><td>Projectised</td><td>High to total</td><td>PM = direct manager</td></tr>
+</tbody>
+</table>
+<div class="cb2-t" style="margin-top:8px">PMI Ethics — 4 Values (RRFH)</div>
+<ul class="cl">
+<li><strong class="h">Responsibility:</strong> Own decisions. Correct errors. Report illegal/unethical. Never cover up.</li>
+<li><strong class="h">Respect:</strong> Dignity for all. Good-faith negotiation. Don't abuse power.</li>
+<li><strong class="h">Fairness:</strong> Impartial decisions. Disclose COI. Recuse yourself. No discrimination.</li>
+<li><strong class="h">Honesty:</strong> Truth always. No false information. Accurate status reports.</li>
+<li><em class="b">Mandatory</em> = sanctions. <em class="g">Aspirational</em> = ideal to strive for.</li>
+<li>Ethics priority: <em class="y">Safety → Legal → Org Policy → PMI Code → Stakeholders</em></li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">Project Selection Quick Ref</div>
+<ul class="cl">
+<li><strong class="h">NPV:</strong> Higher=better. &gt;0=accept. Accounts for time value. PRIMARY metric.</li>
+<li><strong class="h">IRR:</strong> Higher=better. Compare to hurdle rate. Where NPV=0.</li>
+<li><strong class="h">Payback Period:</strong> Shorter=better. Simple. Ignores time value.</li>
+<li><strong class="h">BCR:</strong> &gt;1=accept. Higher=better.</li>
+<li><strong class="h">Sunk Cost:</strong> Already spent. NEVER factor into future decisions.</li>
+<li><strong class="h">Opportunity Cost:</strong> Value of best alternative NOT chosen.</li>
+</ul>
+<div class="cb2-t" style="margin-top:8px">Agile Manifesto (4 Values)</div>
+<ul class="cl">
+<li>Individuals &amp; interactions <em class="g">OVER</em> processes &amp; tools</li>
+<li>Working software <em class="g">OVER</em> comprehensive documentation</li>
+<li>Customer collaboration <em class="g">OVER</em> contract negotiation</li>
+<li>Responding to change <em class="g">OVER</em> following a plan</li>
+<li><em class="r">TRAP: Right side STILL has value — just less than left!</em></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div style="text-align:center;padding:22px 0;border-top:1px solid rgba(255,255,255,.08);margin-top:12px">
+<div style="font-family:'Libre Baskerville',serif;font-size:16px;color:#f1f5f9;margin-bottom:5px">"The expert in anything was once a beginner. You've done the work — now go pass that exam."</div>
+<div style="font-size:10.5px;color:#64748b;margin-top:6px">PMP Toppers Notes · Sources: PMBOK® Guide 7th Edition (Licensed copy, 369 pages) · PMI Agile Practice Guide · PMP Mindset Workbook — The Fast Pass Method (certifywithease.com) · Scrum Guide 2020 · PMI Code of Ethics</div>
+</div>
+</div></div>
+</div></div>
+
+<script>
+function toggleCard(c){c.classList.toggle("open")}
+const pb=document.getElementById("pb"),pbx=document.getElementById("pbx");
+let pt;
+window.addEventListener("scroll",function(){
+  var s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+  var p=h>0?Math.round(s/h*100):0;
+  pb.style.width=p+"%";pbx.textContent=p+"%";pbx.style.opacity="1";
+  clearTimeout(pt);pt=setTimeout(function(){pbx.style.opacity="0"},1800);
+},{passive:true});
+var secs=document.querySelectorAll("section[id],div[id=cram]");
+var links=document.querySelectorAll(".sba");
+function spy(){
+  var cur="";
+  secs.forEach(function(s){if(s.getBoundingClientRect().top<=110)cur=s.id});
+  links.forEach(function(l){l.classList.toggle("active",l.getAttribute("href")==="#"+cur)});
+}
+window.addEventListener("scroll",spy,{passive:true});spy();
+if(window.innerWidth>900){
+  document.querySelectorAll("section").forEach(function(s){
+    var cards=s.querySelectorAll(".card");
+    cards.forEach(function(c,i){if(i<2)c.classList.add("open")});
+  });
+}
+</script></body></html>

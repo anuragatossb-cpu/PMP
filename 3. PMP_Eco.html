@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMP Master Revision Guide — All Domains</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#f5f3ef; --surface:#ffffff; --surface2:#faf9f6; --border:#e4dfd6;
+    --ink:#1c1917; --ink2:#44403c; --ink3:#78716c;
+    --d1:#1d4ed8; --d2:#15803d; --d3:#b45309;
+    --trad:#6d28d9; --agil:#0e7490;
+    --exam:#fef9c3; --exam-b:#ca8a04;
+    --tip:#f0fdf4;  --tip-b:#16a34a;
+    --warn:#fff1f2; --warn-b:#e11d48;
+    --def:#eff6ff;  --def-b:#3b82f6;
+    --formula-bg:#f5f3ff; --formula-b:#8b5cf6;
+    --shadow-sm:0 1px 3px rgba(0,0,0,.06);
+    --shadow:0 4px 16px rgba(0,0,0,.08);
+    --r:12px; --rsm:8px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.75;}
+
+  /* ── PROGRESS BAR ── */
+  #progress-wrap{
+    position:fixed;top:0;left:252px;right:0;height:4px;
+    background:rgba(0,0,0,.06);z-index:500;
+  }
+  #progress-bar{
+    height:100%;width:0%;
+    background:linear-gradient(90deg,#2563eb,#16a34a,#d97706);
+    transition:width .1s ease;
+  }
+  #progress-label{
+    position:fixed;top:8px;right:16px;
+    background:var(--ink);color:#fff;
+    font-size:.72rem;font-weight:700;letter-spacing:.5px;
+    padding:.25rem .65rem;border-radius:20px;
+    z-index:501;opacity:0;transition:opacity .3s;
+    font-family:'JetBrains Mono',monospace;
+  }
+
+  /* ── SIDEBAR ── */
+  #sidebar{
+    position:fixed;top:0;left:0;width:252px;height:100vh;
+    background:var(--ink);overflow-y:auto;z-index:400;
+    padding-bottom:2rem;scrollbar-width:thin;
+    scrollbar-color:rgba(255,255,255,.12) transparent;
+  }
+  #sidebar::-webkit-scrollbar{width:4px;}
+  #sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:4px;}
+  .sb-logo{padding:1.4rem 1.4rem 1.1rem;border-bottom:1px solid rgba(255,255,255,.08);}
+  .sb-logo .title{font-family:'Libre Baskerville',serif;font-size:1rem;color:#fff;line-height:1.3;}
+  .sb-logo .sub{font-size:.7rem;color:rgba(255,255,255,.35);margin-top:.3rem;letter-spacing:.4px;}
+  .sb-sec{padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.05);}
+  .sb-lbl{padding:.45rem 1.4rem .15rem;font-size:.64rem;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.28);font-weight:700;}
+  .sb-a{display:flex;align-items:center;gap:.5rem;padding:.33rem 1.4rem;color:rgba(255,255,255,.5);text-decoration:none;font-size:.78rem;transition:background .12s,color .12s;border-left:2px solid transparent;}
+  .sb-a:hover{background:rgba(255,255,255,.06);color:rgba(255,255,255,.9);}
+  .sb-a.active{color:#fff;border-left-color:#60a5fa;background:rgba(255,255,255,.05);}
+  .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+
+  /* ── MAIN ── */
+  #main{margin-left:252px;padding:3rem 3rem 5rem;max-width:1040px;}
+
+  /* ── HERO ── */
+  .hero{background:linear-gradient(135deg,#1c1917 0%,#292524 60%,#1c1917 100%);border-radius:16px;padding:2.8rem 3rem 2.4rem;color:#fff;margin-bottom:2.8rem;position:relative;overflow:hidden;}
+  .hero::before{content:'PMP';position:absolute;right:-1rem;top:-2rem;font-family:'Libre Baskerville',serif;font-size:11rem;color:rgba(255,255,255,.03);font-weight:700;pointer-events:none;line-height:1;}
+  .hero .eyebrow{font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:#fbbf24;font-weight:600;margin-bottom:.6rem;}
+  .hero h1{font-family:'Libre Baskerville',serif;font-size:2.1rem;line-height:1.2;}
+  .hero p{color:rgba(255,255,255,.6);margin-top:.6rem;font-size:.9rem;max-width:520px;}
+  .hero .pills{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1.3rem;}
+  .hero .pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:.22rem .8rem;font-size:.73rem;color:rgba(255,255,255,.8);}
+  .hero .pill.gold{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.3);color:#fbbf24;}
+
+  /* ── SECTION DIVIDER ── */
+  .sdiv{display:flex;align-items:center;gap:1.1rem;margin:3.5rem 0 1.6rem;padding-bottom:.8rem;border-bottom:2px solid var(--border);}
+  .sdiv .snum{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#fff;flex-shrink:0;}
+  .sdiv h2{font-family:'Libre Baskerville',serif;font-size:1.6rem;}
+  .sdiv .sbadge{margin-left:auto;background:var(--surface2);border:1px solid var(--border);border-radius:20px;padding:.22rem .8rem;font-size:.7rem;color:var(--ink3);white-space:nowrap;}
+
+  /* ── DOMAIN HEADER ── */
+  .dhdr{border-radius:var(--r);padding:1.3rem 1.7rem;margin:2rem 0 1.1rem;display:flex;align-items:center;gap:1rem;color:#fff;}
+  .dhdr .dicon{font-size:1.7rem;}
+  .dhdr .dlbl{font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;opacity:.65;}
+  .dhdr .dtitle{font-family:'Libre Baskerville',serif;font-size:1.25rem;line-height:1.2;}
+  .dhdr .dpct{margin-left:auto;font-size:1.9rem;font-weight:700;opacity:.8;font-family:'Libre Baskerville',serif;}
+  .d1hdr{background:linear-gradient(135deg,#1e3a8a,#2563eb);}
+  .d2hdr{background:linear-gradient(135deg,#14532d,#16a34a);}
+  .d3hdr{background:linear-gradient(135deg,#78350f,#d97706);}
+
+  /* ── COLLAPSIBLE CARD ── */
+  .ccard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);margin-bottom:.9rem;box-shadow:var(--shadow-sm);overflow:hidden;}
+  .chead{display:flex;align-items:center;gap:.9rem;padding:.9rem 1.35rem;cursor:pointer;user-select:none;transition:background .12s;}
+  .chead:hover{background:var(--surface2);}
+  .cnum{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;color:#fff;flex-shrink:0;}
+  .ctitle{font-weight:600;font-size:.93rem;}
+  .csub{font-size:.77rem;color:var(--ink3);margin-top:1px;}
+  .carrow{margin-left:auto;color:var(--ink3);transition:transform .2s;font-size:.82rem;}
+  .ccard.open .carrow{transform:rotate(180deg);}
+  .cbody{display:none;padding:1.1rem 1.4rem 1.3rem;border-top:1px solid var(--border);background:var(--surface2);}
+  .ccard.open .cbody{display:block;}
+
+  /* ── SUBTASK LIST ── */
+  .stl{list-style:none;padding:0;}
+  .stl li{display:flex;align-items:flex-start;gap:.65rem;padding:.42rem 0;font-size:.87rem;color:var(--ink2);border-bottom:1px solid var(--border);}
+  .stl li:last-child{border-bottom:none;}
+  .stl li::before{content:'→';color:var(--ink3);flex-shrink:0;margin-top:.08rem;}
+
+  /* ── PRINCIPLE LIST ── */
+  .plist{list-style:none;padding:0;}
+  .plist li{display:flex;align-items:flex-start;gap:.65rem;padding:.48rem 0;font-size:.87rem;color:var(--ink2);border-bottom:1px dashed var(--border);}
+  .plist li:last-child{border-bottom:none;}
+  .pbullet{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.6rem;font-weight:700;color:#fff;margin-top:.2rem;}
+
+  /* ── KEY BOXES ── */
+  .kb{border-radius:var(--rsm);padding:.95rem 1.15rem;margin:.85rem 0;font-size:.87rem;line-height:1.65;}
+  .kb h4{font-size:.68rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:.38rem;}
+  .kb.exam{background:var(--exam);border-left:4px solid var(--exam-b);}  .kb.exam h4{color:var(--exam-b);}
+  .kb.tip{background:var(--tip);border-left:4px solid var(--tip-b);}     .kb.tip h4{color:var(--tip-b);}
+  .kb.warn{background:var(--warn);border-left:4px solid var(--warn-b);}  .kb.warn h4{color:var(--warn-b);}
+  .kb.def{background:var(--def);border-left:4px solid var(--def-b);}     .kb.def h4{color:var(--def-b);}
+
+  /* ── FORMULA ── */
+  .formula{background:var(--formula-bg);border:1px solid var(--formula-b);border-radius:var(--rsm);padding:.65rem 1.05rem;margin:.6rem 0;font-family:'JetBrains Mono',monospace;font-size:.82rem;color:#5b21b6;}
+
+  /* ── TABLES ── */
+  .dt{width:100%;border-collapse:collapse;font-size:.82rem;margin:.85rem 0;background:var(--surface);border-radius:var(--rsm);overflow:hidden;box-shadow:var(--shadow-sm);}
+  .dt th{background:var(--ink);color:#fff;padding:.52rem .9rem;text-align:left;font-size:.68rem;letter-spacing:.6px;text-transform:uppercase;font-weight:600;}
+  .dt td{padding:.48rem .9rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink2);}
+  .dt tr:last-child td{border-bottom:none;}
+  .dt tr:hover td{background:var(--surface2);}
+
+  /* ── MINI GRID ── */
+  .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin:.85rem 0;}
+  .mc{background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:.85rem 1rem;font-size:.83rem;color:var(--ink2);box-shadow:var(--shadow-sm);}
+  .mc strong{display:block;color:var(--ink);font-weight:600;margin-bottom:.28rem;font-size:.81rem;}
+
+  /* ── KA HEADER ── */
+  .kahdr{border-radius:var(--r);padding:1.05rem 1.55rem;margin:2rem 0 1rem;color:#fff;display:flex;align-items:center;gap:.85rem;}
+  .kahdr .katag{font-size:.63rem;letter-spacing:1.2px;text-transform:uppercase;background:rgba(255,255,255,.2);border-radius:20px;padding:.2rem .65rem;font-weight:700;}
+  .kahdr h3{font-family:'Libre Baskerville',serif;font-size:1.15rem;}
+  .ka-scope{background:linear-gradient(135deg,#0e7490,#06b6d4);}
+  .ka-sched{background:linear-gradient(135deg,#92400e,#d97706);}
+  .ka-cost{background:linear-gradient(135deg,#1e3a8a,#3b82f6);}
+  .ka-res{background:linear-gradient(135deg,#4c1d95,#9333ea);}
+  .ka-qual{background:linear-gradient(135deg,#831843,#ec4899);}
+  .ka-risk{background:linear-gradient(135deg,#7f1d1d,#ef4444);}
+  .ka-comm{background:linear-gradient(135deg,#1e40af,#60a5fa);}
+  .ka-proc{background:linear-gradient(135deg,#451a03,#92400e);}
+  .ka-stake{background:linear-gradient(135deg,#064e3b,#059669);}
+
+  .kacard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.55rem;margin-bottom:1.1rem;box-shadow:var(--shadow-sm);}
+  .kacard h3{font-weight:700;font-size:.95rem;margin-bottom:.65rem;color:var(--ink);}
+
+  /* ── ITTO GRID ── */
+  .ittog{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;margin:.85rem 0;}
+  .ibox{border-radius:var(--rsm);padding:.82rem .95rem;}
+  .ibox h4{font-size:.64rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:.45rem;}
+  .ibox ul{padding-left:.95rem;}
+  .ibox li{font-size:.79rem;margin-bottom:.16rem;color:var(--ink2);}
+  .iin{background:#e0f2fe;} .iin h4{color:#0369a1;}
+  .itt{background:#dcfce7;} .itt h4{color:#15803d;}
+  .iout{background:#fff7ed;} .iout h4{color:#c2410c;}
+
+  /* ── FORMULA BLOCK ── */
+  .fblock{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:1.1rem;box-shadow:var(--shadow-sm);}
+  .fblock .fhead{background:#1c1917;color:#fff;padding:.65rem 1.15rem;font-size:.77rem;font-weight:600;letter-spacing:.4px;}
+  .frow{display:grid;grid-template-columns:210px 1fr;gap:.5rem;padding:.48rem 1.15rem;border-bottom:1px solid var(--border);font-size:.82rem;align-items:start;}
+  .frow:last-child{border-bottom:none;}
+  .flbl{font-weight:600;color:var(--ink);}
+  .fval{font-family:'JetBrains Mono',monospace;color:#5b21b6;font-size:.79rem;}
+
+  /* ── DOMAIN WEIGHT TABLE ── */
+  .dwtable{background:var(--surface);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);margin-bottom:1.8rem;border:1px solid var(--border);}
+  .dwtable table{width:100%;border-collapse:collapse;}
+  .dwtable th{background:var(--ink);color:#fff;padding:.6rem 1rem;text-align:left;font-size:.7rem;letter-spacing:.6px;text-transform:uppercase;}
+  .dwtable td{padding:.6rem 1rem;border-bottom:1px solid var(--border);font-size:.86rem;}
+  .dwtable tr:last-child td{border-bottom:none;}
+  .pbar{display:flex;align-items:center;gap:.65rem;}
+  .pbo{flex:1;background:var(--border);border-radius:10px;height:8px;}
+  .pbi{height:8px;border-radius:10px;}
+
+  /* ── PHASE HEADING ── */
+  .phdr{display:flex;align-items:center;gap:1rem;margin:2.5rem 0 1.1rem;padding-bottom:.7rem;border-bottom:3px solid;}
+  .phdr .ppill{border-radius:20px;padding:.28rem .85rem;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;white-space:nowrap;}
+  .phdr h2{font-family:'Libre Baskerville',serif;font-size:1.5rem;}
+
+  /* ── MINDSET HEADER ── */
+  .mhdr{border-radius:var(--r);padding:1.15rem 1.7rem;margin:2rem 0 1.1rem;display:flex;align-items:center;gap:1rem;color:#fff;}
+  .trad-hdr{background:linear-gradient(135deg,#4c1d95,#7c3aed);}
+  .agil-hdr{background:linear-gradient(135deg,#0c4a6e,#0891b2);}
+
+  /* ── QUICK-FIRE ── */
+  .qfgrid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1rem 0;}
+  .qfc{background:var(--surface);border:1px solid var(--border);border-radius:var(--rsm);padding:.95rem 1.05rem;box-shadow:var(--shadow-sm);}
+  .qfq{font-weight:600;font-size:.84rem;color:var(--ink);margin-bottom:.35rem;}
+  .qfa{font-size:.82rem;color:#15803d;font-weight:500;}
+
+  /* ── FLOW ── */
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem;margin:.7rem 0;font-size:.79rem;}
+  .fs{background:var(--ink);color:#fff;border-radius:6px;padding:.28rem .7rem;}
+  .fa{color:var(--ink3);font-size:1rem;}
+
+  /* ── BADGE ── */
+  .badge{display:inline-block;padding:.13rem .5rem;border-radius:10px;font-size:.67rem;font-weight:700;letter-spacing:.4px;vertical-align:middle;margin-left:.3rem;background:var(--exam);color:var(--exam-b);border:1px solid var(--exam-b);}
+
+  /* ── COMPARE TABLE TAG ── */
+  .tag-g{background:#dcfce7;color:#15803d;padding:.1rem .45rem;border-radius:4px;font-size:.75rem;font-weight:600;}
+  .tag-r{background:#fee2e2;color:#dc2626;padding:.1rem .45rem;border-radius:4px;font-size:.75rem;font-weight:600;}
+
+  @media(max-width:900px){
+    #sidebar{display:none;} #main{margin-left:0;padding:1.5rem 1.1rem 3rem;}
+    #progress-wrap{left:0;}
+    .ittog,.mgrid,.qfgrid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-wrap"><div id="progress-bar"></div></div>
+<div id="progress-label">0%</div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav id="sidebar">
+  <div class="sb-logo">
+    <div class="title">PMP Master<br>Revision Guide</div>
+    <div class="sub">3 Domains · Mindset · 49 Processes</div>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Overview</div>
+    <a class="sb-a" href="#overview"><span class="dot" style="background:#fbbf24;"></span>Exam Blueprint</a>
+    <a class="sb-a" href="#formulas"><span class="dot" style="background:#8b5cf6;"></span>All Formulas</a>
+    <a class="sb-a" href="#quickfire"><span class="dot" style="background:#0891b2;"></span>Quick-Fire Q&amp;A</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Section 1 — ECO</div>
+    <a class="sb-a" href="#domain1"><span class="dot" style="background:#3b82f6;"></span>Domain 1: People (42%)</a>
+    <a class="sb-a" href="#domain2"><span class="dot" style="background:#22c55e;"></span>Domain 2: Process (50%)</a>
+    <a class="sb-a" href="#domain3"><span class="dot" style="background:#f59e0b;"></span>Domain 3: Business (8%)</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Section 2 — Mindset</div>
+    <a class="sb-a" href="#trad"><span class="dot" style="background:#a78bfa;"></span>Traditional PM</a>
+    <a class="sb-a" href="#agile"><span class="dot" style="background:#22d3ee;"></span>Agile PM</a>
+    <a class="sb-a" href="#compare"><span class="dot" style="background:#34d399;"></span>Trad vs Agile</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Section 3 — Processes</div>
+    <a class="sb-a" href="#init"><span class="dot" style="background:#ef4444;"></span>Initiating (2)</a>
+    <a class="sb-a" href="#plan"><span class="dot" style="background:#3b82f6;"></span>Planning (24)</a>
+    <a class="sb-a" href="#exec"><span class="dot" style="background:#22c55e;"></span>Executing (10)</a>
+    <a class="sb-a" href="#mc"><span class="dot" style="background:#f59e0b;"></span>Monitoring &amp; Controlling (12)</a>
+    <a class="sb-a" href="#close"><span class="dot" style="background:#a78bfa;"></span>Closing (1)</a>
+  </div>
+  <div class="sb-sec">
+    <div class="sb-lbl">Knowledge Areas</div>
+    <a class="sb-a" href="#ka-scope"><span class="dot" style="background:#06b6d4;"></span>Scope</a>
+    <a class="sb-a" href="#ka-sched"><span class="dot" style="background:#d97706;"></span>Schedule</a>
+    <a class="sb-a" href="#ka-cost"><span class="dot" style="background:#3b82f6;"></span>Cost &amp; EVM</a>
+    <a class="sb-a" href="#ka-res"><span class="dot" style="background:#9333ea;"></span>Resource</a>
+    <a class="sb-a" href="#ka-qual"><span class="dot" style="background:#ec4899;"></span>Quality</a>
+    <a class="sb-a" href="#ka-risk"><span class="dot" style="background:#ef4444;"></span>Risk</a>
+    <a class="sb-a" href="#ka-comm"><span class="dot" style="background:#60a5fa;"></span>Communication</a>
+    <a class="sb-a" href="#ka-proc"><span class="dot" style="background:#92400e;"></span>Procurement</a>
+    <a class="sb-a" href="#ka-stake"><span class="dot" style="background:#059669;"></span>Stakeholder</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<main id="main">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">One-Stop Examination Reference</div>
+  <h1>PMP Master Revision Guide</h1>
+  <p>Complete coverage of all 3 ECO Domains, Traditional &amp; Agile Mindsets, all 49 Processes, 10 Knowledge Areas, every formula, and quick-fire Q&amp;A — structured for AT (Above Target) in all domains.</p>
+  <div class="pills">
+    <span class="pill gold">3 ECO Domains</span>
+    <span class="pill">35 ECO Tasks</span>
+    <span class="pill">49 Processes</span>
+    <span class="pill">5 Process Groups</span>
+    <span class="pill">10 Knowledge Areas</span>
+    <span class="pill">Predictive + Agile + Hybrid</span>
+    <span class="pill">All EVM Formulas</span>
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     OVERVIEW
+════════════════════════════ -->
+<div class="sdiv" id="overview">
+  <div class="snum" style="background:#fbbf24;color:#1c1917;">★</div>
+  <h2>Exam Blueprint &amp; Domain Weights</h2>
+  <span class="sbadge">180 Questions · 230 Minutes</span>
+</div>
+
+<div class="dwtable">
+  <table>
+    <thead><tr><th>Domain</th><th>Tasks</th><th>% Weight</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Domain 1: People</strong></td><td>14</td><td><div class="pbar"><div class="pbo"><div class="pbi" style="width:42%;background:#2563eb;"></div></div><span>42%</span></div></td></tr>
+      <tr><td><strong>Domain 2: Process</strong></td><td>17</td><td><div class="pbar"><div class="pbo"><div class="pbi" style="width:50%;background:#16a34a;"></div></div><span>50%</span></div></td></tr>
+      <tr><td><strong>Domain 3: Business Environment</strong></td><td>4</td><td><div class="pbar"><div class="pbo"><div class="pbi" style="width:8%;background:#d97706;"></div></div><span>8%</span></div></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mgrid">
+  <div class="mc"><strong>📋 Exam Format</strong>180 questions · 230 minutes · ~50% predictive scenarios / ~50% agile. Mix of multiple choice, drag-and-drop, matching, and fill-in.</div>
+  <div class="mc"><strong>⭐ Priority Areas</strong>Domain 2 carries the most weight (50%) — focus hardest here. Domain 1 (42%) tests leadership, conflict, EI. Domain 3 (8%) tests compliance &amp; value delivery.</div>
+  <div class="mc"><strong>🎯 PMI Mindset Rule</strong>Always think: proactive, collaborative, consult the team, plan before acting, servant leader, resolve conflict at root cause, respect ethical standards.</div>
+  <div class="mc"><strong>🔄 Hybrid Reality</strong>Modern PMP expects fluency in both predictive (PMBOK) and agile (Scrum/Kanban). Questions blend both. Neither is "better" — choose based on context.</div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SECTION 1 — ECO
+════════════════════════════════════════ -->
+<div class="sdiv" style="margin-top:4rem;">
+  <div class="snum" style="background:#1d4ed8;">1</div>
+  <h2>ECO — Examination Content Outline</h2>
+  <span class="sbadge">Source: Eco_Slides.pdf</span>
+</div>
+<div class="kb def">
+  <h4>📌 What is the ECO?</h4>
+  The Examination Content Outline defines the exact tasks a PM is expected to perform. Every exam question maps to one of these 35 tasks across 3 domains. Knowing the sub-tasks cold is essential — scenarios ask which action best aligns with a given task.
+</div>
+
+<!-- ──── DOMAIN 1 ──── -->
+<div class="dhdr d1hdr" id="domain1">
+  <div class="dicon">👥</div>
+  <div><div class="dlbl">Domain 1</div><div class="dtitle">People</div></div>
+  <div class="dpct">42%</div>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.1</div>
+    <div><div class="ctitle">Manage Conflict</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Interpret the source and stage of the conflict</li><li>Analyze the context for the conflict</li><li>Evaluate / recommend / reconcile the appropriate conflict resolution solution</li></ul>
+    <div class="kb exam"><h4>⭐ Conflict Resolution — PMI Preferred Order</h4>
+      <strong>1. Collaborate/Problem-Solve</strong> — Win-Win; addresses root cause; MOST preferred.<br>
+      <strong>2. Compromise/Reconcile</strong> — Lose-Lose; both give something.<br>
+      <strong>3. Smooth/Accommodate</strong> — Temporarily de-emphasises differences; short-term only.<br>
+      <strong>4. Withdraw/Avoid</strong> — Postpones the issue; not a real resolution.<br>
+      <strong>5. Force/Direct</strong> — Win-Lose; LEAST preferred by PMI.
+    </div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.2</div>
+    <div><div class="ctitle">Lead a Team</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl">
+      <li>Set a clear vision and mission</li>
+      <li>Support diversity and inclusion (behaviour types, thought process)</li>
+      <li>Value servant leadership — relate tenets to the team</li>
+      <li>Determine an appropriate leadership style (directive, collaborative)</li>
+      <li>Inspire, motivate, and influence via team contract, social contract, reward system</li>
+      <li>Analyze team members and stakeholders' influence</li>
+      <li>Distinguish various options to lead various team members and stakeholders</li>
+    </ul>
+    <div class="kb exam"><h4>⭐ Servant Leadership — 10 Tenets</h4>
+      Listening · Empathy · Healing · Awareness · Persuasion · Conceptualisation · Foresight · Stewardship · Commitment to growth · Building community. In agile, the PM is ALWAYS a servant leader.
+    </div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.3</div>
+    <div><div class="ctitle">Support Team Performance</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Appraise team member performance against key performance indicators</li><li>Support and recognise team member growth and development</li><li>Determine appropriate feedback approach</li><li>Verify performance improvements</li></ul>
+    <div class="kb tip"><h4>💡 Tuckman's Stages</h4><strong>Forming → Storming → Norming → Performing → Adjourning</strong><br>Storming = most conflict. Performing = peak productivity. PM adapts leadership style per stage.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.4</div>
+    <div><div class="ctitle">Empower Team Members and Stakeholders</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Organise around team strengths</li><li>Support team task accountability</li><li>Evaluate demonstration of task accountability</li><li>Determine and bestow level(s) of decision-making authority</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.5</div>
+    <div><div class="ctitle">Ensure Team Members/Stakeholders Are Adequately Trained</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine required competencies and elements of training</li><li>Determine training options based on training needs</li><li>Allocate resources for training</li><li>Measure training outcomes</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.6</div>
+    <div><div class="ctitle">Build a Team</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Appraise stakeholder skills</li><li>Deduce project resource requirements</li><li>Continuously assess and refresh team skills to meet project needs</li><li>Maintain team and knowledge transfer</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.7</div>
+    <div><div class="ctitle">Address and Remove Impediments, Obstacles, and Blockers</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine critical impediments, obstacles, and blockers for the team</li><li>Prioritize critical impediments, obstacles, and blockers</li><li>Use network to implement solutions to remove impediments</li><li>Re-assess continually to ensure impediments are being addressed</li></ul>
+    <div class="kb exam"><h4>⭐ Agile Link</h4>Scrum Master's primary role = removing impediments. This ECO task maps directly to the agile servant-leader removing blockers in the daily standup.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.8</div>
+    <div><div class="ctitle">Negotiate Project Agreements</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Analyse the bounds of the negotiations for agreement</li><li>Assess priorities and determine ultimate objective(s)</li><li>Verify objective(s) of the project agreement is met</li><li>Participate in agreement negotiations</li><li>Determine a negotiation strategy</li></ul>
+    <div class="kb tip"><h4>💡 Negotiation Strategies</h4>Win-Win (Integrative) is most preferred. Win-Lose (Distributive/Positional) is adversarial. Always negotiate in good faith and aim for mutual benefit.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.9</div>
+    <div><div class="ctitle">Collaborate with Stakeholders</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Evaluate engagement needs for stakeholders</li><li>Optimise alignment between stakeholder needs, expectations, and project objectives</li><li>Build trust and influence stakeholders to accomplish project objectives</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.10</div>
+    <div><div class="ctitle">Build Shared Understanding</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Break down situation to identify the root cause of a misunderstanding</li><li>Survey all necessary parties to reach consensus</li><li>Support outcome of parties' agreement</li><li>Investigate potential misunderstandings</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.11</div>
+    <div><div class="ctitle">Engage and Support Virtual Teams</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Examine virtual team member needs (environment, geography, culture, global)</li><li>Investigate alternatives (communication tools, co-location) for virtual team engagement</li><li>Implement options for virtual team member engagement</li><li>Continually evaluate effectiveness of virtual team member engagement</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.12</div>
+    <div><div class="ctitle">Define Team Ground Rules</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Communicate organisational principles with team and external stakeholders</li><li>Establish an environment that fosters adherence to the ground rules</li><li>Manage and rectify ground rule violations</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.13</div>
+    <div><div class="ctitle">Mentor Relevant Stakeholders</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Allocate the time to mentoring</li><li>Recognise and act on mentoring opportunities</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#1d4ed8;">1.14</div>
+    <div><div class="ctitle">Promote Team Performance Through Emotional Intelligence</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Assess behaviour through the use of personality indicators</li><li>Analyse personality indicators and adjust to the emotional needs of key project stakeholders</li></ul>
+    <div class="kb exam"><h4>⭐ Emotional Intelligence (EI) — 4 Components</h4>
+      <strong>Self-Awareness</strong> — Know your own emotions.<br>
+      <strong>Self-Management</strong> — Control your own emotions.<br>
+      <strong>Social Awareness</strong> — Understand others' emotions (empathy).<br>
+      <strong>Relationship Management</strong> — Influence and manage others' emotions.<br>
+      EI enables faster, more effective conflict resolution and better stakeholder relationships.
+    </div>
+  </div>
+</div>
+
+<!-- ──── DOMAIN 2 ──── -->
+<div class="dhdr d2hdr" id="domain2">
+  <div class="dicon">⚙️</div>
+  <div><div class="dlbl">Domain 2</div><div class="dtitle">Process</div></div>
+  <div class="dpct">50%</div>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.1</div>
+    <div><div class="ctitle">Execute Project with Urgency Required to Deliver Business Value</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Assess opportunities to deliver value incrementally</li><li>Examine the business value throughout the project</li><li>Support the team to subdivide project tasks to find the minimum viable product (MVP)</li></ul>
+    <div class="kb exam"><h4>⭐ MVP</h4>Minimum Viable Product — smallest deliverable that has real value for the customer. Core agile concept. Always deliver MVP first, then iterate based on feedback.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.2</div>
+    <div><div class="ctitle">Manage Communications</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Analyse communication needs of all stakeholders</li><li>Determine communication methods, channels, frequency, and level of detail for all stakeholders</li><li>Communicate project information and updates effectively</li><li>Confirm communication is understood and feedback is received</li></ul>
+    <div class="formula">Communication Channels = n(n-1) ÷ 2 &nbsp;|&nbsp; 5 people = 10 ch · 10 people = 45 ch · 15 people = 105 ch</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.3</div>
+    <div><div class="ctitle">Assess and Manage Risks</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine risk management options</li><li>Iteratively assess and prioritise risks</li></ul>
+    <div class="kb exam"><h4>⭐ Risk Responses</h4>
+      <strong>Threats (EATMA):</strong> Escalate → Avoid → Transfer → Mitigate → Accept<br>
+      <strong>Opportunities (EESEA):</strong> Escalate → Exploit → Share → Enhance → Accept<br>
+      Risk = uncertain future event. Issue = risk that has materialised. Negative risk = Threat. Positive risk = Opportunity.
+    </div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.4</div>
+    <div><div class="ctitle">Engage Stakeholders</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Analyse stakeholders (power interest grid, influence, impact)</li><li>Categorise stakeholders</li><li>Engage stakeholders by category</li><li>Develop, execute, and validate a strategy for stakeholder engagement</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.5</div>
+    <div><div class="ctitle">Plan and Manage Budget and Resources</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Estimate budgetary needs based on scope and lessons learned from past projects</li><li>Anticipate future budget challenges</li><li>Monitor budget variations and work with governance process to adjust as necessary</li><li>Plan and manage resources</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.6</div>
+    <div><div class="ctitle">Plan and Manage Schedule</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Estimate project tasks (milestones, dependencies, story points)</li><li>Utilise benchmarks and historical data</li><li>Prepare schedule based on methodology</li><li>Measure ongoing progress based on methodology</li><li>Modify schedule as needed based on methodology</li><li>Coordinate with other projects and other operations</li></ul>
+    <div class="kb exam"><h4>⭐ Critical Path</h4>Longest path through the network = minimum project duration. Activities on CP have ZERO float. Crashing = add resources (costs more). Fast-tracking = overlap activities (adds risk).</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.7</div>
+    <div><div class="ctitle">Plan and Manage Quality of Products/Deliverables</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine quality standard required for project deliverables</li><li>Recommend options for improvement based on quality gaps</li><li>Continually survey project deliverable quality</li></ul>
+    <div class="kb warn"><h4>⚠️ Gold Plating</h4>Adding unrequested features = Gold Plating. NEVER do this — it violates scope even if well-intentioned. All additions must go through formal change control.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.8</div>
+    <div><div class="ctitle">Plan and Manage Scope</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine and prioritise requirements</li><li>Break down scope (WBS in predictive; Backlog in agile)</li><li>Monitor and validate scope</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.9</div>
+    <div><div class="ctitle">Integrate Project Planning Activities</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Consolidate the project/phase plans</li><li>Assess consolidated project plans for dependencies, gaps, and continued business value</li><li>Analyse the data collected</li><li>Collect and analyse data to make informed project decisions</li><li>Determine critical information requirements</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.10</div>
+    <div><div class="ctitle">Manage Project Changes</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Anticipate and embrace the need for change (follow change management practices)</li><li>Determine strategy to handle change</li><li>Execute change management strategy according to the methodology</li><li>Determine a change response to move the project forward</li></ul>
+    <div class="kb exam"><h4>⭐ Integrated Change Control — The Golden Rule</h4>ALL changes to the Project Management Plan require an <strong>approved Change Request</strong>. Assess impact on: scope, schedule, cost, quality, resources, communications, risk, procurement, and stakeholder engagement. No exceptions.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.11</div>
+    <div><div class="ctitle">Plan and Manage Procurement</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Define resource requirements and needs</li><li>Communicate resource requirements</li><li>Manage suppliers/contracts</li><li>Plan and manage procurement strategy</li><li>Develop a delivery solution</li></ul>
+    <div class="kb tip"><h4>💡 Contract Selection Principle</h4>Always select contracts that are mutually beneficial to both buyer and seller. The best contract serves the project objectives — not just one party.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.12</div>
+    <div><div class="ctitle">Manage Project Artifacts</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine the requirements for managing the project artifacts (what, when, where, who)</li><li>Validate that project information is kept up to date (version control) and accessible to all stakeholders</li><li>Continually assess the effectiveness of the management of the project artifacts</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.13</div>
+    <div><div class="ctitle">Determine Appropriate Project Methodology/Methods and Practices</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Assess project needs, complexity, and magnitude</li><li>Recommend project execution strategy (contracting, finance)</li><li>Recommend a project methodology/approach (predictive, agile, hybrid)</li><li>Use iterative, incremental practices throughout the project life cycle</li></ul>
+    <div class="mgrid">
+      <div class="mc"><strong>Predictive (Waterfall)</strong>Best when scope is fully defined &amp; stable, requirements are clear, change is unlikely, regulatory compliance required.</div>
+      <div class="mc"><strong>Agile (Scrum/Kanban)</strong>Best when requirements evolve, fast delivery needed, customer feedback loops critical, uncertainty is high.</div>
+      <div class="mc"><strong>Hybrid</strong>Combines both — predictive planning with agile delivery sprints. Most common for complex, large-scale projects.</div>
+      <div class="mc"><strong>Key Decision Factors</strong>Level of uncertainty · Team experience · Stakeholder involvement · Regulatory requirements · Delivery timeline.</div>
+    </div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.14</div>
+    <div><div class="ctitle">Establish Project Governance Structure</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine appropriate governance for a project (replicate organisational governance)</li><li>Define escalation paths and thresholds</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.15</div>
+    <div><div class="ctitle">Manage Project Issues</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Recognise when a risk becomes an issue</li><li>Attack the issue with the optimal action to achieve project success</li><li>Collaborate with relevant stakeholders on the approach to resolve issues</li></ul>
+    <div class="kb exam"><h4>⭐ Risk vs Issue</h4><strong>Risk</strong> = uncertain event that MAY happen in the future (proactive management).<br><strong>Issue</strong> = a risk that HAS occurred — now a real problem requiring immediate action (reactive management). Logged in the Issue Log.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.16</div>
+    <div><div class="ctitle">Ensure Knowledge Transfer for Project Continuity</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Discuss project responsibilities within team</li><li>Outline expectations for working environment</li><li>Confirm approach for knowledge transfers</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#15803d;">2.17</div>
+    <div><div class="ctitle">Plan and Manage Project/Phase Closure or Transitions</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Determine criteria to successfully close the project or phase</li><li>Validate readiness for transition (to operations team or next phase)</li><li>Conclude activities to close out project or phase (final lessons learned, retrospective, procurement, financials, resources)</li></ul>
+    <div class="kb warn"><h4>⚠️ Early Termination Rule</h4>Even if a project is terminated early, it MUST be formally closed through the Close Project or Phase process. All bills paid, resources released, lessons learned documented. No shortcuts.</div>
+  </div>
+</div>
+
+<!-- ──── DOMAIN 3 ──── -->
+<div class="dhdr d3hdr" id="domain3">
+  <div class="dicon">🏢</div>
+  <div><div class="dlbl">Domain 3</div><div class="dtitle">Business Environment</div></div>
+  <div class="dpct">8%</div>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#b45309;">3.1</div>
+    <div><div class="ctitle">Plan and Manage Project Compliance</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Confirm project compliance requirements (security, health and safety, regulatory compliance)</li><li>Classify compliance categories</li><li>Determine potential threats to compliance</li><li>Use methods to support compliance</li><li>Analyse the consequences of non-compliance</li><li>Determine necessary approach and action to address compliance needs (risk, legal)</li><li>Measure the extent to which the project is in compliance</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#b45309;">3.2</div>
+    <div><div class="ctitle">Evaluate and Deliver Project Benefits and Value</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Investigate that benefits are identified</li><li>Document agreement on ownership for ongoing benefit realisation</li><li>Verify measurement system is in place to track benefits</li><li>Evaluate delivery options to demonstrate value</li><li>Appraise stakeholders of value gain progress</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#b45309;">3.3</div>
+    <div><div class="ctitle">Evaluate and Address External Business Environment Changes for Impact on Scope</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Survey changes to external business environment (regulations, technology, geopolitical, market)</li><li>Assess and prioritise impact on project scope/backlog based on external changes</li><li>Recommend options for scope/backlog changes (schedule, cost changes)</li><li>Continually review external business environment for impacts on project scope/backlog</li></ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#b45309;">3.4</div>
+    <div><div class="ctitle">Support Organisational Change</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="stl"><li>Assess organisational culture</li><li>Evaluate impact of organisational change to project and determine required actions</li><li>Evaluate impact of the project to the organisation and determine required actions</li></ul>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     SECTION 2 — MINDSET
+════════════════════════════════════════ -->
+<div class="sdiv" style="margin-top:4rem;">
+  <div class="snum" style="background:#7c3aed;">2</div>
+  <h2>PM Mindset — Traditional &amp; Agile</h2>
+  <span class="sbadge">Source: Mindset_Slides.pdf</span>
+</div>
+<div class="kb def"><h4>📌 Why Mindset Matters</h4>The PMP exam is scenario-based. The "right" answer is always the one reflecting the correct PMI mindset — proactive, ethical, collaborative, value-driven. These principles must become instinctive.</div>
+
+<!-- TRADITIONAL -->
+<div class="mhdr trad-hdr" id="trad">
+  <span style="font-size:1.7rem;">📘</span>
+  <div><div style="font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;opacity:.65;">Section 2A</div><div style="font-family:'Libre Baskerville',serif;font-size:1.25rem;">Traditional PM Mindset</div></div>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T1</div>
+    <div><div class="ctitle">Stakeholders, Plans &amp; Change Control</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Stakeholder identification and analysis is done <strong>throughout the project</strong>, not just at the beginning.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Always follow the plan — <strong>no changes without an approved change request</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Any stakeholder wanting to change the PM Plan must submit a formal <strong>Change Request</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>All change requests must be <strong>reviewed and assessed</strong> for impact before approval.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span><strong>Never take actions without first creating a plan</strong> — plan before you act.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Consult with the project team before making decisions — they have a more practical approach.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T2</div>
+    <div><div class="ctitle">Decisions, Tools, Scope Changes &amp; Estimating</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Final decisions should always <strong>benefit project objectives</strong> — choose the method delivering the most value.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Use <strong>inclusive tools</strong> — whiteboard with marker over complex software where possible.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>All scope changes must be assessed for impact on: <strong>schedule, cost, quality, resources, communications, risk, procurement, and stakeholder engagement</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Use <strong>bottom-up estimating</strong>, not top-down. More accurate but more effort.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T3</div>
+    <div><div class="ctitle">Integration, Lessons Learned &amp; Closure</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Your main job is to be an <strong>integrator</strong> of all project components — never focus on one area at the expense of others.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Update the <strong>Lessons Learned Register throughout the entire project</strong> — not just at closure.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>When closing, ensure <strong>all bills are paid</strong> and resources are formally released.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Projects terminated early <strong>still require formal closure</strong> through Close Project or Phase process.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T4</div>
+    <div><div class="ctitle">WBS, Schedule &amp; Quality</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>The <strong>best people to break down work (WBS)</strong> is the project team — not the PM alone.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>The <strong>best people to determine activity timing</strong> is also the project team.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Quality requirements should be <strong>defined early and checked frequently</strong> throughout the project.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Customers are the best people to check deliverables for quality — <strong>they are the end users</strong>.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T5</div>
+    <div><div class="ctitle">Conflicts, Communication &amp; Emotional Intelligence</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Before resolving conflict, <strong>understand the source</strong> of the conflict first.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Conflicts should be resolved for the <strong>benefit of project objectives</strong>, not to satisfy one party over another.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Before sending communications, analyse stakeholder needs: <strong>what, how often, which method, who delivers it</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Use <strong>emotional intelligence</strong> to analyse your own feelings and those of others — enables faster, more effective problem resolution.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#7c3aed;">T6</div>
+    <div><div class="ctitle">Risk, Contracts &amp; Stakeholder Engagement</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Identify <strong>as much risk as early as possible</strong>. Document ALL risks AND their responses in the Risk Register.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Negative risk = Threat. Positive risk = Opportunity. <strong>Document responses to both types</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Select contracts that are <strong>mutually beneficial to both the buyer and the seller</strong>.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span>Engage stakeholders <strong>often and regularly</strong> — meetings, calls, one-on-ones, presentations.</li>
+      <li><span class="pbullet" style="background:#7c3aed;">✓</span><strong>Tailor communications</strong> to each stakeholder — confirm understanding and receipt.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- AGILE -->
+<div class="mhdr agil-hdr" id="agile" style="margin-top:2rem;">
+  <span style="font-size:1.7rem;">🔄</span>
+  <div><div style="font-size:.68rem;letter-spacing:1.5px;text-transform:uppercase;opacity:.65;">Section 2B</div><div style="font-family:'Libre Baskerville',serif;font-size:1.25rem;">Agile PM Mindset</div></div>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A1</div>
+    <div><div class="ctitle">Servant Leadership &amp; Product Backlog</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Be a <strong>servant leader at all times</strong> — empower the team, remove impediments, give them tools, stay out of their way.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Engage the <strong>Product Owner</strong> to document and prioritise features in the product backlog.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span><strong>Only the Product Owner</strong> can prioritise the backlog. If PO refuses, TRAIN and COACH them — never prioritise yourself.</li>
+    </ul>
+    <div class="kb exam"><h4>⭐ Frequent Exam Trap</h4>If a Product Owner says "all features are equally important and refuses to prioritise" — the correct answer is to COACH/TRAIN the PO on the value of prioritisation. You do NOT prioritise the backlog yourself.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A2</div>
+    <div><div class="ctitle">Communication &amp; Physical Environment</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Use <strong>co-location</strong> — have the team work in the same physical space whenever possible.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span><strong>Face-to-face communication with a whiteboard</strong> is the best and most effective form of communication.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Provide agile teams with <strong>abundant wall space</strong> for writing, kanban boards, and sticky notes.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A3</div>
+    <div><div class="ctitle">Information Radiators, Problem Solving &amp; Conflict</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Radiate information via <strong>large visible charts</strong> — burndown charts, burnup charts, velocity charts.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Project problems should be <strong>resolved by the project team</strong>. Let the team choose the solution — your role is to coach and support.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Create a <strong>safe environment for disagreements</strong>. Conflict is a positive learning opportunity — never punish for differing opinions.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A4</div>
+    <div><div class="ctitle">Kanban, Vision &amp; Motivation</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Use <strong>Kanban boards</strong> to limit Work In Progress (WIP). Display on large whiteboard or screen — visible to all.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span><strong>Consistently re-communicate the project vision</strong> — keep it alive, visible, and shared across the team.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Understand individual team member needs — <strong>find what motivates each person</strong> and use it.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A5</div>
+    <div><div class="ctitle">Clarity, Ethics &amp; Leadership Style</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Make sure the team understands what <strong>failure and success look like</strong> on the project — set clear criteria.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Be a <strong>central figure, not a dictator</strong> — guide, facilitate, enable.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span><strong>Have strong ethical values</strong> — the foundation of all PM credibility and decision-making.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#0891b2;">A6</div>
+    <div><div class="ctitle">Retrospectives &amp; Feedback Loops</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <ul class="plist">
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Review how work was completed by conducting a <strong>retrospective</strong> at the end of each sprint/iteration.</li>
+      <li><span class="pbullet" style="background:#0891b2;">✓</span>Use <strong>feedback loops</strong> — apply lessons learned from one sprint directly to the next iteration.</li>
+    </ul>
+    <div class="kb tip"><h4>💡 Scrum Ceremonies — All Four</h4>
+      <strong>Sprint Planning</strong> — What work goes into this sprint?<br>
+      <strong>Daily Standup</strong> — What did I do? What will I do? Any blockers?<br>
+      <strong>Sprint Review</strong> — Demonstrate working product to stakeholders for feedback.<br>
+      <strong>Sprint Retrospective</strong> — How can we improve the process and team dynamics?
+    </div>
+  </div>
+</div>
+
+<!-- COMPARE -->
+<div class="sdiv" id="compare" style="margin-top:2.5rem;">
+  <div class="snum" style="background:#059669;">≠</div>
+  <h2>Traditional vs Agile — Complete Comparison</h2>
+</div>
+<table class="dt">
+  <thead><tr><th>Aspect</th><th>Traditional (Predictive)</th><th>Agile (Iterative)</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Scope</strong></td><td>Fixed, fully defined upfront</td><td>Evolves iteratively via backlog</td></tr>
+    <tr><td><strong>Planning</strong></td><td>Detailed plan before execution begins</td><td>Rolling wave / Sprint planning each cycle</td></tr>
+    <tr><td><strong>Change</strong></td><td>Controlled via formal Change Requests</td><td>Welcomed and embraced; built in</td></tr>
+    <tr><td><strong>Estimation</strong></td><td>Bottom-up; hours/days/cost-based</td><td>Story points; velocity-based</td></tr>
+    <tr><td><strong>PM Leadership</strong></td><td>Directive; PM plans &amp; controls</td><td>Servant leader; team self-organises</td></tr>
+    <tr><td><strong>Delivery</strong></td><td>Big-bang at project end</td><td>Incremental; every sprint (2–4 weeks)</td></tr>
+    <tr><td><strong>Customer</strong></td><td>Involved at milestones/reviews</td><td>Engaged continuously; PO embedded</td></tr>
+    <tr><td><strong>Communication</strong></td><td>Formal; Communications Mgmt Plan</td><td>Face-to-face; information radiators</td></tr>
+    <tr><td><strong>Tools</strong></td><td>Gantt chart, CPM, WBS</td><td>Kanban board, Burndown chart, Backlog</td></tr>
+    <tr><td><strong>Documentation</strong></td><td>Comprehensive; formal</td><td>Just enough; lightweight</td></tr>
+    <tr><td><strong>Risk</strong></td><td>Risk Register; 7-step formal process</td><td>Managed iteratively; adaptive responses</td></tr>
+    <tr><td><strong>Success Metric</strong></td><td>On time, on budget, in scope</td><td>Business value &amp; customer satisfaction</td></tr>
+    <tr><td><strong>Conflict</strong></td><td>PM resolves; follows process</td><td>Team resolves with PM as coach</td></tr>
+    <tr><td><strong>Quality</strong></td><td>Inspected at end (QC)</td><td>Built-in; Definition of Done each sprint</td></tr>
+  </tbody>
+</table>
+
+<!-- ════════════════════════════════════════
+     SECTION 3 — PROCESSES
+════════════════════════════════════════ -->
+<div class="sdiv" style="margin-top:4rem;">
+  <div class="snum" style="background:#dc2626;">3</div>
+  <h2>PM Processes — All 5 Process Groups</h2>
+  <span class="sbadge">Source: PM_Revision_Notes.html</span>
+</div>
+<div class="kb def"><h4>📌 The 49 Processes Framework</h4>5 Process Groups × 10 Knowledge Areas = 49 unique processes. Each has Inputs, Tools &amp; Techniques, and Outputs (ITTOs). Planning has the most (24). Know key outputs — they are the most tested component of every process.</div>
+
+<table class="dt" style="margin-bottom:2rem;">
+  <thead><tr><th>Process Group</th><th>Processes</th><th>Key Purpose</th></tr></thead>
+  <tbody>
+    <tr><td>🚀 Initiating</td><td>2</td><td>Authorise the project; identify stakeholders</td></tr>
+    <tr><td>📐 Planning</td><td>24</td><td>Develop PM Plan; all subsidiary plans &amp; baselines</td></tr>
+    <tr><td>⚙️ Executing</td><td>10</td><td>Carry out the work; manage people and quality</td></tr>
+    <tr><td>🔍 Monitoring &amp; Controlling</td><td>12</td><td>Track, review, regulate; manage changes</td></tr>
+    <tr><td>✅ Closing</td><td>1</td><td>Formally close project or phase</td></tr>
+  </tbody>
+</table>
+
+<!-- INITIATING -->
+<div class="phdr" style="border-color:#ef4444;" id="init">
+  <span class="ppill" style="background:#ef4444;">Phase 1</span>
+  <h2>Initiating (2 Processes)</h2>
+</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#ef4444;">1.1</div>
+    <div><div class="ctitle">Develop Project Charter <span class="badge">⭐ Exam Heavy</span></div><div class="csub">Authorises the project; gives PM authority to apply resources</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <div class="ittog">
+      <div class="ibox iin"><h4>Inputs</h4><ul><li>Business Case</li><li>Benefits Management Plan</li><li>Agreements</li><li>EEF / OPA</li></ul></div>
+      <div class="ibox itt"><h4>Tools &amp; Techniques</h4><ul><li>Expert Judgment</li><li>Data Gathering</li><li>Interpersonal &amp; Team Skills</li><li>Meetings</li></ul></div>
+      <div class="ibox iout"><h4>Outputs</h4><ul><li><strong>Project Charter</strong></li><li>Assumption Log</li></ul></div>
+    </div>
+    <div class="kb exam"><h4>⭐ Project Charter Rules</h4>Created BEFORE the project starts. PM helps write it but <strong>SPONSOR SIGNS it</strong> — not the PM. Without a charter, the PM has no official authority. Contains: project purpose, high-level requirements, objectives, risks, milestones, and PM's authority level.</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#ef4444;">1.2</div>
+    <div><div class="ctitle">Identify Stakeholders <span class="badge">⭐ Exam Heavy</span></div><div class="csub">Identify all people/organisations affected by or affecting the project</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <div class="ittog">
+      <div class="ibox iin"><h4>Inputs</h4><ul><li>Project Charter</li><li>Business Documents</li><li>PM Plan</li><li>EEF / OPA</li></ul></div>
+      <div class="ibox itt"><h4>Tools &amp; Techniques</h4><ul><li>Expert Judgment</li><li>Data Gathering</li><li>Stakeholder Analysis</li><li>Power/Interest Grid</li><li>Meetings</li></ul></div>
+      <div class="ibox iout"><h4>Outputs</h4><ul><li><strong>Stakeholder Register</strong></li><li>Change Requests</li><li>PM Plan Updates</li></ul></div>
+    </div>
+    <div class="kb exam"><h4>⭐ Stakeholder Register Contains</h4>Contact info · Role · Expectations · Interest level · Influence level · How they are affected · Communication requirements. Created in Initiating — <strong>updated continuously throughout the entire project</strong>.</div>
+  </div>
+</div>
+
+<!-- PLANNING -->
+<div class="phdr" style="border-color:#2563eb;" id="plan">
+  <span class="ppill" style="background:#2563eb;">Phase 2</span>
+  <h2>Planning (24 Processes)</h2>
+</div>
+<div class="kb def" style="margin-bottom:1.2rem;"><h4>📌 Planning Overview</h4>Contains <strong>24 processes</strong> — the most of any phase. Output is the <strong>Project Management Plan</strong> with 4 baselines and 14 subsidiary plans. Can only be changed via approved Change Request.</div>
+
+<div class="ccard open">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#2563eb;">2.1</div>
+    <div><div class="ctitle">Develop Project Management Plan <span class="badge">⭐ Exam Heavy</span></div><div class="csub">Integrates all subsidiary plans and baselines into one cohesive document</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <div class="ittog">
+      <div class="ibox iin"><h4>Inputs</h4><ul><li>Project Charter</li><li>Outputs from other processes</li><li>EEF / OPA</li></ul></div>
+      <div class="ibox itt"><h4>Tools &amp; Techniques</h4><ul><li>Expert Judgment</li><li>Data Gathering</li><li>Interpersonal &amp; Team Skills</li><li>Meetings</li></ul></div>
+      <div class="ibox iout"><h4>Outputs</h4><ul><li><strong>Project Management Plan</strong></li></ul></div>
+    </div>
+    <div class="kb exam"><h4>⭐ The 4 Baselines</h4>
+      <strong>Scope Baseline</strong> = Scope Statement + WBS + WBS Dictionary<br>
+      <strong>Schedule Baseline</strong> = Approved project schedule<br>
+      <strong>Cost Baseline</strong> = Time-phased budget (S-Curve)<br>
+      <strong>Performance Measurement Baseline</strong> = Scope + Schedule + Cost integrated
+    </div>
+    <div class="kb tip"><h4>14 Subsidiary Plans</h4>Scope · Requirements · Schedule · Cost · Quality · Resource · Communications · Risk · Procurement · Stakeholder · Change Mgmt · Configuration Mgmt · Life Cycle Description · Development Approach</div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#2563eb;">2.5</div>
+    <div><div class="ctitle">Create WBS (Work Breakdown Structure) <span class="badge">⭐ Exam Heavy</span></div><div class="csub">Subdivide deliverables into smaller, manageable components</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <div class="ittog">
+      <div class="ibox iin"><h4>Inputs</h4><ul><li>PM Plan (Scope Mgmt Plan)</li><li>Project Scope Statement</li><li>Requirements Docs</li><li>EEF / OPA</li></ul></div>
+      <div class="ibox itt"><h4>Tools &amp; Techniques</h4><ul><li><strong>Decomposition</strong></li><li>Expert Judgment</li></ul></div>
+      <div class="ibox iout"><h4>Outputs</h4><ul><li><strong>Scope Baseline</strong> (3 parts)</li><li>Project Document Updates</li></ul></div>
+    </div>
+    <div class="kb warn"><h4>⚠️ WBS Critical Rules</h4>
+      • "If it is NOT in the WBS, it is NOT part of the project."<br>
+      • Each node must have a unique code identifier.<br>
+      • NO gaps and NO overlap of work packages.<br>
+      • Lowest level = Work Package → broken into Activities.<br>
+      • Created by PM + SMEs + Project Team (excellent team-building activity).
+    </div>
+  </div>
+</div>
+
+<div class="ccard">
+  <div class="chead" onclick="tog(this.parentElement)">
+    <div class="cnum" style="background:#2563eb;">2.x</div>
+    <div><div class="ctitle">All Other Planning Processes — Key Outputs Summary</div></div>
+    <span class="carrow">▼</span>
+  </div>
+  <div class="cbody">
+    <table class="dt">
+      <thead><tr><th>Process</th><th>Key Output</th></tr></thead>
+      <tbody>
+        <tr><td>Plan Scope Management</td><td>Scope Management Plan, Requirements Management Plan</td></tr>
+        <tr><td>Collect Requirements</td><td>Requirements Documentation, Requirements Traceability Matrix (RTM)</td></tr>
+        <tr><td>Define Scope</td><td>Project Scope Statement</td></tr>
+        <tr><td>Plan Schedule Management</td><td>Schedule Management Plan</td></tr>
+        <tr><td>Define Activities</td><td>Activity List, Activity Attributes, Milestone List</td></tr>
+        <tr><td>Sequence Activities</td><td>Project Schedule Network Diagram</td></tr>
+        <tr><td>Estimate Activity Durations</td><td>Duration Estimates, Basis of Estimates</td></tr>
+        <tr><td>Develop Schedule</td><td><strong>Schedule Baseline</strong>, Project Schedule, Schedule Data</td></tr>
+        <tr><td>Plan Cost Management</td><td>Cost Management Plan</td></tr>
+        <tr><td>Estimate Costs</td><td>Cost Estimates, Basis of Estimates</td></tr>
+        <tr><td>Determine Budget</td><td><strong>Cost Baseline</strong>, Project Funding Requirements</td></tr>
+        <tr><td>Plan Quality Management</td><td>Quality Management Plan, Quality Metrics</td></tr>
+        <tr><td>Plan Resource Management</td><td>Resource Management Plan, Team Charter</td></tr>
+        <tr><td>Estimate Activity Resources</td><td>Resource Requirements, Resource Breakdown Structure (RBS)</td></tr>
+        <tr><td>Plan Communications Management</td><td>Communications Management Plan</td></tr>
+        <tr><td>Plan Risk Management</td><td>Risk Management Plan</td></tr>
+        <tr><td>Identify Risks</td><td>Risk Register, Risk Report</td></tr>
+        <tr><td>Perform Qualitative Risk Analysis</td><td>Risk Register Updated (H/M/L priority)</td></tr>
+        <tr><td>Perform Quantitative Risk Analysis</td><td>Risk Register Updated (numerical values)</td></tr>
+        <tr><td>Plan Risk Responses</td><td>Change Requests, PM Plan Updates, Risk Register Updates</td></tr>
+        <tr><td>Plan Procurement Management</td><td>Procurement Management Plan, Bid Documents, SOW, Source Selection Criteria</td></tr>
+        <tr><td>Plan Stakeholder Engagement</td><td>Stakeholder Engagement Plan</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EXECUTING -->
+<div class="phdr" style="border-color:#16a34a;" id="exec">
+  <span class="ppill" style="background:#16a34a;">Phase 3</span>
+  <h2>Executing (10 Processes)</h2>
+</div>
+<table class="dt">
+  <thead><tr><th>Process</th><th>Knowledge Area</th><th>Key Output</th></tr></thead>
+  <tbody>
+    <tr><td>Direct &amp; Manage Project Work</td><td>Integration</td><td>Deliverables, Work Performance Data, Change Requests</td></tr>
+    <tr><td>Manage Project Knowledge</td><td>Integration</td><td>Lessons Learned Register, OPA Updates</td></tr>
+    <tr><td>Manage Quality</td><td>Quality</td><td>Quality Reports, Test &amp; Evaluation Documents</td></tr>
+    <tr><td>Acquire Resources</td><td>Resource</td><td>Physical Resource Assignments, Project Team Assignments</td></tr>
+    <tr><td>Develop Team</td><td>Resource</td><td>Team Performance Assessment, Change Requests</td></tr>
+    <tr><td>Manage Team</td><td>Resource</td><td>Change Requests, PM Plan Updates</td></tr>
+    <tr><td>Manage Communications</td><td>Communication</td><td>Project Communications</td></tr>
+    <tr><td>Implement Risk Responses</td><td>Risk</td><td>Change Requests, Project Document Updates</td></tr>
+    <tr><td>Conduct Procurements</td><td>Procurement</td><td>Selected Sellers, Signed Agreements</td></tr>
+    <tr><td>Manage Stakeholder Engagement</td><td>Stakeholder</td><td>Change Requests, PM Plan Updates</td></tr>
+  </tbody>
+</table>
+
+<!-- M&C -->
+<div class="phdr" style="border-color:#d97706;" id="mc">
+  <span class="ppill" style="background:#d97706;">Phase 4</span>
+  <h2>Monitoring &amp; Controlling (12 Processes)</h2>
+</div>
+<table class="dt">
+  <thead><tr><th>Process</th><th>Knowledge Area</th><th>Key Output</th></tr></thead>
+  <tbody>
+    <tr><td>Monitor &amp; Control Project Work</td><td>Integration</td><td>Work Performance Reports, Change Requests</td></tr>
+    <tr><td><strong>Perform Integrated Change Control ⭐</strong></td><td>Integration</td><td>Approved / Rejected Change Requests</td></tr>
+    <tr><td>Validate Scope</td><td>Scope</td><td>Accepted Deliverables, Change Requests</td></tr>
+    <tr><td>Control Scope</td><td>Scope</td><td>Work Performance Info, Change Requests</td></tr>
+    <tr><td>Control Schedule</td><td>Schedule</td><td>Schedule Forecasts, Change Requests</td></tr>
+    <tr><td>Control Costs</td><td>Cost</td><td>Cost Forecasts (EAC, ETC), Change Requests</td></tr>
+    <tr><td>Control Quality</td><td>Quality</td><td>Quality Control Measurements, Verified Deliverables</td></tr>
+    <tr><td>Control Resources</td><td>Resource</td><td>Change Requests, PM Plan Updates</td></tr>
+    <tr><td>Monitor Communications</td><td>Communication</td><td>Work Performance Info, Change Requests</td></tr>
+    <tr><td>Monitor Risks</td><td>Risk</td><td>Work Performance Info, Risk Register Updates, Change Requests</td></tr>
+    <tr><td>Control Procurements</td><td>Procurement</td><td>Closed Procurements, Work Performance Info</td></tr>
+    <tr><td>Monitor Stakeholder Engagement</td><td>Stakeholder</td><td>Work Performance Info, Change Requests</td></tr>
+  </tbody>
+</table>
+<div class="kb exam"><h4>⭐ Validate Scope vs Control Scope</h4><strong>Validate Scope</strong> = customer ACCEPTS completed deliverables (sign-off). Done in M&amp;C by the customer.<br><strong>Control Scope</strong> = PM monitors scope against baseline and manages changes. Internal PM activity.</div>
+
+<!-- CLOSING -->
+<div class="phdr" style="border-color:#7c3aed;" id="close">
+  <span class="ppill" style="background:#7c3aed;">Phase 5</span>
+  <h2>Closing (1 Process)</h2>
+</div>
+<div class="kacard">
+  <h3>Close Project or Phase (Integration)</h3>
+  <div class="ittog">
+    <div class="ibox iin"><h4>Inputs</h4><ul><li>Project Charter</li><li>PM Plan</li><li>Project Documents</li><li>Accepted Deliverables</li><li>Business Documents</li><li>Agreements</li><li>OPA</li></ul></div>
+    <div class="ibox itt"><h4>Tools &amp; Techniques</h4><ul><li>Expert Judgment</li><li>Data Analysis</li><li>Meetings</li></ul></div>
+    <div class="ibox iout"><h4>Outputs</h4><ul><li>Project Documents Updates</li><li>Final Product Transition</li><li>Final Report</li><li>OPA Updates (Lessons Learned)</li></ul></div>
+  </div>
+  <div class="kb exam"><h4>⭐ Closing Checklist</h4>
+    ✓ Formal acceptance of deliverables from customer<br>
+    ✓ Update and finalise Lessons Learned Register<br>
+    ✓ Formally release all project resources<br>
+    ✓ Pay all outstanding bills; close all contracts<br>
+    ✓ Archive all project documents<br>
+    ✓ Even early-terminated projects MUST be formally closed
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     KNOWLEDGE AREAS
+════════════════════════════════════════ -->
+<div class="sdiv" style="margin-top:3rem;">
+  <div class="snum" style="background:#059669;">KA</div>
+  <h2>10 Knowledge Areas — Core Concepts</h2>
+</div>
+
+<!-- SCOPE -->
+<div class="kahdr ka-scope" id="ka-scope"><div class="katag">KA 1</div><h3>📐 Scope Management</h3></div>
+<div class="kacard">
+  <div class="mgrid">
+    <div class="mc"><strong>Product Scope</strong>Features and functions of the product/service/result.</div>
+    <div class="mc"><strong>Project Scope</strong>Work required to deliver the product.</div>
+    <div class="mc"><strong>Gold Plating</strong>PM adds unrequested features — NEVER do this.</div>
+    <div class="mc"><strong>Scope Creep</strong>Unauthorised stakeholder additions — must go through change control.</div>
+  </div>
+  <div class="kb exam"><h4>⭐ Scope Baseline = 3 Parts</h4><strong>1. Project Scope Statement · 2. WBS · 3. WBS Dictionary</strong><br>Validate Scope = customer sign-off on deliverables. Control Scope = PM monitors against baseline. RTM (Requirements Traceability Matrix) links requirements to their source and tracks status throughout.</div>
+</div>
+
+<!-- SCHEDULE -->
+<div class="kahdr ka-sched" id="ka-sched"><div class="katag">KA 2</div><h3>📅 Schedule Management</h3></div>
+<div class="kacard">
+  <table class="dt">
+    <tr><th>Term</th><th>Definition / Exam Point</th></tr>
+    <tr><td><strong>Critical Path</strong></td><td>Longest path through network; determines min project duration; zero float</td></tr>
+    <tr><td><strong>Float / Slack</strong></td><td>Time activity can be delayed without delaying project: LS−ES or LF−EF</td></tr>
+    <tr><td><strong>Crashing</strong></td><td>Add resources to shorten schedule; costs more; always on critical path activities</td></tr>
+    <tr><td><strong>Fast-Tracking</strong></td><td>Overlap sequential activities; increases risk of rework</td></tr>
+    <tr><td><strong>Resource Leveling</strong></td><td>Resolves over-allocation; may extend the schedule</td></tr>
+    <tr><td><strong>Resource Smoothing</strong></td><td>Adjust within existing float; does NOT extend schedule</td></tr>
+    <tr><td><strong>Leads</strong></td><td>Acceleration/overlap of successor activity</td></tr>
+    <tr><td><strong>Lags</strong></td><td>Intentional delay between activities</td></tr>
+  </table>
+  <div class="formula">Float = LS − ES = LF − EF</div>
+  <div class="formula">PERT = (O + 4M + P) ÷ 6 &nbsp;|&nbsp; SD = (P − O) ÷ 6 &nbsp;|&nbsp; Triangular = (O + M + P) ÷ 3</div>
+</div>
+
+<!-- COST -->
+<div class="kahdr ka-cost" id="ka-cost"><div class="katag">KA 3</div><h3>💰 Cost Management &amp; EVM</h3></div>
+<div class="kacard">
+  <h3>⭐ All EVM Formulas — Full Reference</h3>
+  <table class="dt">
+    <thead><tr><th>Metric</th><th>Formula</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td><strong>CV (Cost Variance)</strong></td><td>EV − AC</td><td>+ = under budget; − = over budget</td></tr>
+      <tr><td><strong>SV (Schedule Variance)</strong></td><td>EV − PV</td><td>+ = ahead; − = behind schedule</td></tr>
+      <tr><td><strong>CPI (Cost Perf. Index)</strong></td><td>EV ÷ AC</td><td>&gt;1 = efficient; &lt;1 = over budget</td></tr>
+      <tr><td><strong>SPI (Schedule Perf. Index)</strong></td><td>EV ÷ PV</td><td>&gt;1 = ahead; &lt;1 = behind</td></tr>
+      <tr><td><strong>EAC (Est. at Completion)</strong></td><td>BAC ÷ CPI</td><td>If current CPI continues to end</td></tr>
+      <tr><td><strong>EAC (atypical variance)</strong></td><td>AC + (BAC − EV)</td><td>If variance is a one-time event</td></tr>
+      <tr><td><strong>ETC (Est. to Complete)</strong></td><td>EAC − AC</td><td>How much more to spend</td></tr>
+      <tr><td><strong>VAC (Variance at Completion)</strong></td><td>BAC − EAC</td><td>+ = projected under budget at end</td></tr>
+      <tr><td><strong>TCPI (based on BAC)</strong></td><td>(BAC − EV) ÷ (BAC − AC)</td><td>Efficiency needed to meet original budget</td></tr>
+      <tr><td><strong>TCPI (based on EAC)</strong></td><td>(BAC − EV) ÷ (EAC − AC)</td><td>Efficiency needed to meet revised EAC</td></tr>
+    </tbody>
+  </table>
+  <div class="kb warn"><h4>⚠️ EVM Memory Rule</h4>CV &amp; SV: "EV minus" (CV=EV−AC, SV=EV−PV). CPI &amp; SPI: "EV over" (CPI=EV/AC, SPI=EV/PV). &gt;1 always means GOOD. &lt;1 always means BAD.</div>
+</div>
+
+<!-- RESOURCE -->
+<div class="kahdr ka-res" id="ka-res"><div class="katag">KA 4</div><h3>👥 Resource Management</h3></div>
+<div class="kacard">
+  <div class="mgrid">
+    <div class="mc"><strong>Maslow's Hierarchy</strong>Physiological → Safety → Social → Esteem → Self-Actualisation. People motivated by lowest unmet need.</div>
+    <div class="mc"><strong>Herzberg's Two-Factor</strong>Hygiene factors (salary, conditions) prevent dissatisfaction. Motivators (achievement, recognition) create satisfaction.</div>
+    <div class="mc"><strong>McGregor Theory X / Y</strong>X: people dislike work; need control. Y: people self-motivate; empowerment works. PMI favours Theory Y.</div>
+    <div class="mc"><strong>Expectancy Theory (Vroom)</strong>Motivation = Expectancy × Instrumentality × Valence. Effort → Performance → Reward they value.</div>
+  </div>
+  <div class="kb exam"><h4>⭐ RACI Chart</h4><strong>Responsible</strong> — does the work. <strong>Accountable</strong> — owns the outcome (one per task only). <strong>Consult</strong> — provides input. <strong>Inform</strong> — receives updates. Only ONE person Accountable per task.</div>
+</div>
+
+<!-- QUALITY -->
+<div class="kahdr ka-qual" id="ka-qual"><div class="katag">KA 5</div><h3>✅ Quality Management</h3></div>
+<div class="kacard">
+  <div class="mgrid">
+    <div class="mc"><strong>Quality Assurance (Manage Quality)</strong>Process-oriented · Audits processes · Proactive · "Are we using the right process?"</div>
+    <div class="mc"><strong>Quality Control (Control Quality)</strong>Product-oriented · Inspects deliverables · Reactive · "Does the product meet the standard?"</div>
+  </div>
+  <table class="dt">
+    <thead><tr><th>Quality Tool</th><th>Exam Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Fishbone / Ishikawa / Cause &amp; Effect</td><td>Root cause analysis — why did the defect occur?</td></tr>
+      <tr><td>Pareto Chart</td><td>80/20 rule — 80% of problems from 20% of causes. Prioritise top issues.</td></tr>
+      <tr><td>Control Chart</td><td>Monitor process stability over time. Upper/Lower Control Limits (UCL/LCL). Rule of 7.</td></tr>
+      <tr><td>Scatter Diagram</td><td>Correlation between two variables</td></tr>
+      <tr><td>Histogram</td><td>Frequency distribution of defects/variables</td></tr>
+      <tr><td>Flowchart</td><td>Map process to identify where defects occur</td></tr>
+    </tbody>
+  </table>
+  <div class="kb exam"><h4>⭐ Cost of Quality</h4><strong>Cost of Conformance</strong> = Prevention + Appraisal (spending to AVOID defects).<br><strong>Cost of Non-Conformance</strong> = Internal Failure + External Failure (cost when defects OCCUR).<br>Prevention is always cheaper. "Quality is planned in, not inspected in." Rule of 7 = 7 consecutive points on same side of mean = out of control.</div>
+</div>
+
+<!-- RISK -->
+<div class="kahdr ka-risk" id="ka-risk"><div class="katag">KA 6</div><h3>⚠️ Risk Management</h3></div>
+<div class="kacard">
+  <div class="mgrid">
+    <div class="mc"><strong>Threats — EATMA</strong>Escalate → Avoid → Transfer → Mitigate → Accept</div>
+    <div class="mc"><strong>Opportunities — EESEA</strong>Escalate → Exploit → Share → Enhance → Accept</div>
+  </div>
+  <div class="kb exam"><h4>⭐ Qualitative vs Quantitative Risk Analysis</h4>
+    <strong>Qualitative</strong>: Probability × Impact Matrix; H/M/L ranking; done first; no special software; ALL projects should do this.<br>
+    <strong>Quantitative</strong>: Assigns monetary values; Monte Carlo, Decision Tree, Tornado Charts; requires specialist software; only for HIGH-priority risks.<br><br>
+    <strong>Contingency Reserve</strong> = Known unknowns (identified risks). In cost baseline.<br>
+    <strong>Management Reserve</strong> = Unknown unknowns. NOT in cost baseline; requires change request to access.
+  </div>
+  <div class="formula">EMV = Probability (%) × Risk Impact ($)</div>
+</div>
+
+<!-- COMMUNICATION -->
+<div class="kahdr ka-comm" id="ka-comm"><div class="katag">KA 7</div><h3>📣 Communication Management</h3></div>
+<div class="kacard">
+  <div class="formula">Communication Channels = n(n-1) ÷ 2 &nbsp;|&nbsp; Adding 1 person adds (n−1) channels</div>
+  <table class="dt">
+    <thead><tr><th>People (n)</th><th>Channels</th></tr></thead>
+    <tbody><tr><td>2</td><td>1</td></tr><tr><td>5</td><td>10</td></tr><tr><td>10</td><td>45</td></tr><tr><td>15</td><td>105</td></tr><tr><td>20</td><td>190</td></tr></tbody>
+  </table>
+  <div class="kb exam"><h4>⭐ Communication Model + Key Terms</h4>
+    <strong>Sender → Encode → Message → Channel → Decode → Receiver → Feedback</strong><br>
+    <strong>Noise</strong> = anything that disrupts the message.<br>
+    <strong>Paralingual</strong> = pitch, tone, inflection (affects meaning even without changing words).<br>
+    <strong>Nonverbal</strong> = body language (represents ~55% of all communication).<br><br>
+    <strong>Interactive</strong> = best; two-way (meetings, calls). <strong>Push</strong> = reports, emails (one-way, no confirmed receipt). <strong>Pull</strong> = intranet, databases (recipient must retrieve).
+  </div>
+</div>
+
+<!-- PROCUREMENT -->
+<div class="kahdr ka-proc" id="ka-proc"><div class="katag">KA 8</div><h3>🛒 Procurement Management</h3></div>
+<div class="kacard">
+  <table class="dt">
+    <thead><tr><th>Contract Type</th><th>Risk Bearer</th><th>Scope Known?</th></tr></thead>
+    <tbody>
+      <tr><td><strong>FFP</strong> (Firm Fixed Price)</td><td>Seller — all risk</td><td>Very well-defined</td></tr>
+      <tr><td><strong>FPIF</strong> (FP Incentive Fee)</td><td>Seller (+ incentive)</td><td>Well-defined + target cost</td></tr>
+      <tr><td><strong>FP-EPA</strong> (Econ Price Adjustment)</td><td>Shared</td><td>Well-defined; long-term</td></tr>
+      <tr><td><strong>CPFF</strong> (Cost Plus Fixed Fee)</td><td>Buyer — bears risk</td><td>Poorly defined / evolving</td></tr>
+      <tr><td><strong>CPIF</strong> (Cost Plus Incentive)</td><td>Buyer (+ incentive)</td><td>Undefined + incentive</td></tr>
+      <tr><td><strong>CPAF</strong> (Cost Plus Award Fee)</td><td>Buyer</td><td>Undefined + satisfaction</td></tr>
+      <tr><td><strong>T&amp;M</strong> (Time &amp; Material)</td><td>Buyer — all risk</td><td>High-level only</td></tr>
+    </tbody>
+  </table>
+  <div class="kb exam"><h4>⭐ Procurement Key Rules</h4>
+    Select contracts <strong>mutually beneficial to both parties</strong>.<br>
+    <strong>Bidder Conference</strong> — all potential sellers get same info (ensures fairness, no favouritism).<br>
+    <strong>Independent Cost Estimate</strong> — third party verifies seller's proposed prices.<br>
+    <strong>Claims Administration</strong> — disputes between buyer and seller; negotiation is preferred resolution.<br>
+    Formal written notice from buyer = contract closed.
+  </div>
+</div>
+
+<!-- STAKEHOLDER -->
+<div class="kahdr ka-stake" id="ka-stake"><div class="katag">KA 9</div><h3>🤝 Stakeholder Management</h3></div>
+<div class="kacard">
+  <div class="flow">
+    <span class="fs" style="background:#78716c;">Unaware</span><span class="fa">→</span>
+    <span class="fs" style="background:#dc2626;">Resistant</span><span class="fa">→</span>
+    <span class="fs" style="background:#d97706;">Neutral</span><span class="fa">→</span>
+    <span class="fs" style="background:#16a34a;">Supportive</span><span class="fa">→</span>
+    <span class="fs" style="background:#1d4ed8;">Leading</span>
+  </div>
+  <div class="mgrid">
+    <div class="mc"><strong>Power/Interest Grid</strong>High Power + High Interest = Manage Closely. High Power + Low Interest = Keep Satisfied. Low Power + High Interest = Keep Informed. Low/Low = Monitor.</div>
+    <div class="mc"><strong>Salience Model</strong>Power (authority) + Urgency (time-sensitive needs) + Legitimacy (appropriate involvement) = stakeholder priority ranking.</div>
+    <div class="mc"><strong>Stakeholder Engagement Assessment Matrix</strong>Shows C (Current) vs D (Desired) engagement level. Goal: move all to Supportive or Leading.</div>
+    <div class="mc"><strong>Key Rule</strong>Stakeholder identification and engagement are CONTINUOUS processes — not one-time activities. Re-identify stakeholders throughout the project.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     FORMULAS
+════════════════════════════════════════ -->
+<div class="sdiv" id="formulas" style="margin-top:4rem;">
+  <div class="snum" style="background:#5b21b6;">∑</div>
+  <h2>All PMP Formulas — Complete Reference</h2>
+  <span class="sbadge">Print This Page</span>
+</div>
+
+<div class="fblock">
+  <div class="fhead">💰 Earned Value Management (EVM)</div>
+  <div class="frow"><span class="flbl">Cost Variance (CV)</span><span class="fval">CV = EV − AC &nbsp;(+ = under budget)</span></div>
+  <div class="frow"><span class="flbl">Schedule Variance (SV)</span><span class="fval">SV = EV − PV &nbsp;(+ = ahead of schedule)</span></div>
+  <div class="frow"><span class="flbl">Cost Performance Index</span><span class="fval">CPI = EV ÷ AC &nbsp;(&gt;1 = good)</span></div>
+  <div class="frow"><span class="flbl">Schedule Perf. Index</span><span class="fval">SPI = EV ÷ PV &nbsp;(&gt;1 = good)</span></div>
+  <div class="frow"><span class="flbl">EAC (CPI continues)</span><span class="fval">EAC = BAC ÷ CPI</span></div>
+  <div class="frow"><span class="flbl">EAC (atypical variance)</span><span class="fval">EAC = AC + (BAC − EV)</span></div>
+  <div class="frow"><span class="flbl">EAC (new estimate)</span><span class="fval">EAC = AC + ETC</span></div>
+  <div class="frow"><span class="flbl">Estimate to Complete (ETC)</span><span class="fval">ETC = EAC − AC</span></div>
+  <div class="frow"><span class="flbl">Variance at Completion</span><span class="fval">VAC = BAC − EAC &nbsp;(+ = under budget)</span></div>
+  <div class="frow"><span class="flbl">TCPI (to meet BAC)</span><span class="fval">TCPI = (BAC − EV) ÷ (BAC − AC)</span></div>
+  <div class="frow"><span class="flbl">TCPI (to meet EAC)</span><span class="fval">TCPI = (BAC − EV) ÷ (EAC − AC)</span></div>
+</div>
+
+<div class="fblock">
+  <div class="fhead">📅 Schedule Estimation</div>
+  <div class="frow"><span class="flbl">PERT (3-Point Weighted)</span><span class="fval">(O + 4M + P) ÷ 6</span></div>
+  <div class="frow"><span class="flbl">PERT Std Deviation</span><span class="fval">(P − O) ÷ 6</span></div>
+  <div class="frow"><span class="flbl">PERT Variance</span><span class="fval">[(P − O) ÷ 6]²</span></div>
+  <div class="frow"><span class="flbl">Triangular (3-Point)</span><span class="fval">(O + M + P) ÷ 3</span></div>
+  <div class="frow"><span class="flbl">Float / Slack</span><span class="fval">LS − ES = LF − EF</span></div>
+</div>
+
+<div class="fblock">
+  <div class="fhead">📊 Communication</div>
+  <div class="frow"><span class="flbl">Communication Channels</span><span class="fval">n(n-1) ÷ 2</span></div>
+</div>
+
+<div class="fblock">
+  <div class="fhead">⚠️ Risk</div>
+  <div class="frow"><span class="flbl">Expected Monetary Value</span><span class="fval">EMV = Probability (%) × Impact ($)</span></div>
+</div>
+
+<div class="fblock">
+  <div class="fhead">💰 Procurement (Point of Total Assumption)</div>
+  <div class="frow"><span class="flbl">PTA (FPIF contracts)</span><span class="fval">PTA = [(Ceiling Price − Target Price) ÷ Buyer's Share Ratio] + Target Cost</span></div>
+</div>
+
+<!-- ════════════════════════════════════════
+     QUICK-FIRE Q&A
+════════════════════════════════════════ -->
+<div class="sdiv" id="quickfire" style="margin-top:4rem;">
+  <div class="snum" style="background:#0891b2;">⚡</div>
+  <h2>Quick-Fire Exam Q&amp;A — Last-Minute Drill</h2>
+  <span class="sbadge">30 Questions</span>
+</div>
+
+<div class="qfgrid">
+  <div class="qfc"><div class="qfq">Who signs the Project Charter?</div><div class="qfa">→ Project Sponsor (not the PM)</div></div>
+  <div class="qfc"><div class="qfq">Who can prioritise the product backlog?</div><div class="qfa">→ Product Owner ONLY. Never the PM.</div></div>
+  <div class="qfc"><div class="qfq">PMI's most preferred conflict resolution?</div><div class="qfa">→ Collaborate / Problem-Solve (Win-Win)</div></div>
+  <div class="qfc"><div class="qfq">PMI's least preferred conflict resolution?</div><div class="qfa">→ Force / Direct (Win-Lose)</div></div>
+  <div class="qfc"><div class="qfq">Negative risk = ? | Positive risk = ?</div><div class="qfa">→ Threat | Opportunity</div></div>
+  <div class="qfc"><div class="qfq">CPI = 0.85. What does this mean?</div><div class="qfa">→ Over budget — getting only $0.85 value per $1 spent</div></div>
+  <div class="qfc"><div class="qfq">SPI = 1.12. What does this mean?</div><div class="qfa">→ Ahead of schedule — performing 12% faster than planned</div></div>
+  <div class="qfc"><div class="qfq">Contract with most risk to seller?</div><div class="qfa">→ FFP (Firm Fixed Price)</div></div>
+  <div class="qfc"><div class="qfq">Contract with most risk to buyer?</div><div class="qfa">→ T&amp;M (Time &amp; Material)</div></div>
+  <div class="qfc"><div class="qfq">Gold Plating = ?</div><div class="qfa">→ PM adds unrequested features. NEVER acceptable.</div></div>
+  <div class="qfc"><div class="qfq">Scope Creep = ?</div><div class="qfa">→ Unauthorised stakeholder scope additions. Prevent via change control.</div></div>
+  <div class="qfc"><div class="qfq">WBS Scope Baseline = 3 components?</div><div class="qfa">→ Scope Statement + WBS + WBS Dictionary</div></div>
+  <div class="qfc"><div class="qfq">Can an early-terminated project skip closure?</div><div class="qfa">→ NO. ALL projects must be formally closed.</div></div>
+  <div class="qfc"><div class="qfq">Tuckman's conflict (storming) stage = ?</div><div class="qfa">→ Stage 2 (Forming → Storming → Norming → Performing → Adjourning)</div></div>
+  <div class="qfc"><div class="qfq">Best agile communication method?</div><div class="qfa">→ Face-to-face with whiteboard</div></div>
+  <div class="qfc"><div class="qfq">Scrum Master's primary role?</div><div class="qfa">→ Servant leader; removes impediments; coaches the team</div></div>
+  <div class="qfc"><div class="qfq">QA vs QC — which is proactive?</div><div class="qfa">→ QA (process audit, preventive). QC = reactive (product inspection).</div></div>
+  <div class="qfc"><div class="qfq">Who creates the WBS?</div><div class="qfa">→ PM + SMEs + Project Team (NOT PM alone)</div></div>
+  <div class="qfc"><div class="qfq">Pareto Chart 80/20 rule means?</div><div class="qfa">→ 80% of defects caused by 20% of causes. Fix top 20%.</div></div>
+  <div class="qfc"><div class="qfq">When to use Quantitative Risk Analysis?</div><div class="qfa">→ Only for HIGH-priority risks (after qualitative analysis)</div></div>
+  <div class="qfc"><div class="qfq">Contingency Reserve covers?</div><div class="qfa">→ Known unknowns (identified risks). IN the cost baseline.</div></div>
+  <div class="qfc"><div class="qfq">Management Reserve covers?</div><div class="qfa">→ Unknown unknowns. NOT in baseline; needs change request.</div></div>
+  <div class="qfc"><div class="qfq">Validate Scope vs Control Scope?</div><div class="qfa">→ Validate = customer accepts deliverables. Control = PM monitors against baseline.</div></div>
+  <div class="qfc"><div class="qfq">What tool does the agile PM use to limit WIP?</div><div class="qfa">→ Kanban board</div></div>
+  <div class="qfc"><div class="qfq">Rule of 7 in Control Charts?</div><div class="qfa">→ 7 consecutive points on same side of mean = process out of control</div></div>
+  <div class="qfc"><div class="qfq">What is a Burndown Chart used for?</div><div class="qfa">→ Tracks remaining work vs time in a sprint. Should slope down.</div></div>
+  <div class="qfc"><div class="qfq">Bidder Conference purpose?</div><div class="qfa">→ All potential sellers get the same information — ensures fairness.</div></div>
+  <div class="qfc"><div class="qfq">Best estimation technique for accuracy?</div><div class="qfa">→ Bottom-up estimating (most accurate, most effort)</div></div>
+  <div class="qfc"><div class="qfq">RACI — only one person per task for which?</div><div class="qfa">→ Accountable (A) — exactly ONE person per task</div></div>
+  <div class="qfc"><div class="qfq">What is the PMI test for the best answer?</div><div class="qfa">→ What benefits the project objectives most? Proactive &gt; Reactive. Plan &gt; Act.</div></div>
+</div>
+
+<!-- TOP 5 EXAM RULES -->
+<div class="kb exam" style="margin-top:2rem;">
+  <h4>⭐ Top 5 Rules to Walk Into the Exam With</h4>
+  <strong>1.</strong> Always consult the team and create a plan before taking any action. <em>Proactive beats reactive every time.</em><br>
+  <strong>2.</strong> ALL changes to the PM Plan require an approved Change Request — no exceptions, no shortcuts.<br>
+  <strong>3.</strong> Be a servant leader — empower the team, remove impediments, let the team solve problems.<br>
+  <strong>4.</strong> EVM: CPI/SPI &gt; 1 = good. CV/SV positive = good. Negative or &lt;1 = problem.<br>
+  <strong>5.</strong> Stakeholder identification, risk management, and lessons learned are CONTINUOUS activities — not done once.
+</div>
+
+<!-- Footer -->
+<div style="margin-top:3.5rem;padding:1.5rem 2rem;background:var(--surface);border-radius:var(--r);border:1px solid var(--border);text-align:center;font-size:.8rem;color:var(--ink3);">
+  <strong style="color:var(--ink);">PMP Master Revision Guide</strong> — Compiled from ECO Slides, Mindset Slides &amp; PM Revision Notes (TIA / PMBOK)<br>
+  3 Domains · 35 Tasks · 49 Processes · 5 Process Groups · 10 Knowledge Areas · Traditional + Agile + Hybrid<br>
+  <span style="color:#ca8a04;font-weight:600;margin-top:.4rem;display:block;">Study well. AT in all three domains. You've got this. 🎯</span>
+</div>
+
+</main>
+
+<script>
+// ── Toggle collapsible cards ──
+function tog(card){ card.classList.toggle('open'); }
+
+// ── Reading progress bar ──
+const bar = document.getElementById('progress-bar');
+const lbl = document.getElementById('progress-label');
+let lblTimer;
+window.addEventListener('scroll', () => {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  const pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+  bar.style.width = pct + '%';
+  lbl.textContent = pct + '%';
+  lbl.style.opacity = '1';
+  clearTimeout(lblTimer);
+  lblTimer = setTimeout(() => { lbl.style.opacity = '0'; }, 1800);
+});
+
+// ── Sidebar active link on scroll ──
+const allIds = Array.from(document.querySelectorAll('[id]'));
+const sLinks = document.querySelectorAll('.sb-a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  allIds.forEach(el => {
+    if (window.scrollY >= el.offsetTop - 130) current = el.id;
+  });
+  sLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+
+// ── Auto-open first few cards on large screens ──
+if(window.innerWidth > 900){
+  document.querySelectorAll('.ccard').forEach((c,i) => { if(i < 2) c.classList.add('open'); });
+}
+</script>
+</body>
+</html>

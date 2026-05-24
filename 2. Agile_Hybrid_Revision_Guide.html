@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agile & Hybrid — Ultimate Revision Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f2ec;--paper:#fff;--ink:#1c1c2e;--ink2:#4a4a6a;--ink3:#8888aa;--border:#e4ddd4;--sh:0 2px 12px rgba(28,28,46,.09);--sw:260px;
+--ag:#1a6e3c;--ag-lt:#e8f8f0;--ag-md:#27ae60;
+--sc:#1a4f8a;--sc-lt:#eaf2fb;
+--xp:#7d3c98;--xp-lt:#f5eef8;
+--kb:#b7770d;--kb-lt:#fef9e7;
+--lean:#5d4037;--lean-lt:#efebe9;
+--hy:#c0392b;--hy-lt:#fdecea;
+--val:#0d6e6e;--val-lt:#e0f5f5;
+--stake:#2471a3;--stake-lt:#eaf3fb;
+--plan:#6c3483;--plan-lt:#f5eef8;
+--team:#c0185a;--team-lt:#fce4ec;
+--cont:#37474f;--cont-lt:#eceff1;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);font-size:14px;line-height:1.65;overflow-x:hidden}
+#tnav{position:fixed;top:0;left:var(--sw);right:0;height:46px;background:var(--paper);border-bottom:1px solid var(--border);z-index:90;display:flex;align-items:center;padding:0 1rem;gap:.4rem;overflow-x:auto;white-space:nowrap}
+#tnav::-webkit-scrollbar{height:0}
+#tnav a{padding:.28rem .7rem;border-radius:20px;font-size:.72rem;font-weight:600;text-decoration:none;flex-shrink:0}
+.ta{color:var(--ag);background:var(--ag-lt);border:1px solid #b3e8cc}
+.ts{color:var(--sc);background:var(--sc-lt);border:1px solid #b8d9f2}
+.tx{color:var(--xp);background:var(--xp-lt);border:1px solid #d9b8f0}
+.tk{color:var(--kb);background:var(--kb-lt);border:1px solid #f0d97a}
+.tl{color:var(--lean);background:var(--lean-lt);border:1px solid #d7ccc8}
+.th{color:var(--hy);background:var(--hy-lt);border:1px solid #f5c6c3}
+.tv{color:var(--val);background:var(--val-lt);border:1px solid #80cbc4}
+.tst{color:var(--stake);background:var(--stake-lt);border:1px solid #90caf9}
+.tp{color:var(--plan);background:var(--plan-lt);border:1px solid #d9b8f0}
+.tt{color:var(--team);background:var(--team-lt);border:1px solid #f48fb1}
+.tc{color:var(--cont);background:var(--cont-lt);border:1px solid #b0bec5}
+.tq{color:#fff;background:var(--ink);border:1px solid var(--ink)}
+#tnav .sp{width:1px;height:20px;background:var(--border);flex-shrink:0}
+#sb{position:fixed;top:0;left:0;width:var(--sw);height:100vh;background:#1c1c2e;overflow-y:auto;z-index:100;font-size:11.5px}
+#sb::-webkit-scrollbar{width:3px}
+#sb::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1)}
+.sb-logo{padding:.9rem 1.1rem .7rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo h1{font-family:'Crimson Pro',serif;font-size:1.2rem;color:#fff;line-height:1.2}
+.sb-logo p{font-size:.6rem;color:rgba(255,255,255,.35);margin-top:.15rem;letter-spacing:.5px;text-transform:uppercase}
+.sb-lbl{padding:.55rem 1.1rem .15rem;font-size:.58rem;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.22);font-weight:700}
+details.sbg summary{list-style:none;cursor:pointer;padding:.32rem 1.1rem;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:.45rem;font-weight:600;font-size:.7rem}
+details.sbg summary::-webkit-details-marker{display:none}
+details.sbg summary::before{content:'▶';font-size:.45rem;transition:transform .2s;flex-shrink:0}
+details.sbg[open] summary::before{transform:rotate(90deg)}
+.sd{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+a.sl{display:block;padding:.26rem 1.1rem .26rem 2.3rem;color:rgba(255,255,255,.38);text-decoration:none;transition:all .12s;font-size:.66rem;border-left:2px solid transparent;margin-left:.5rem}
+a.sl:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.04)}
+a.sl.ka-lnk{padding-left:1.1rem;font-weight:600;color:rgba(255,255,255,.52);font-size:.69rem}
+#main{margin-left:var(--sw);padding-top:46px}
+.hero{background:linear-gradient(135deg,#1c1c2e 0%,#1a4f3a 50%,#1a6e3c 100%);color:#fff;padding:2.5rem 2.5rem 2rem;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:-80px;top:-80px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.04),transparent 70%)}
+.hero h1{font-family:'Crimson Pro',serif;font-size:2.4rem;line-height:1.15;font-weight:700;position:relative;z-index:1}
+.hero p{color:rgba(255,255,255,.6);margin-top:.4rem;font-size:.9rem;position:relative;z-index:1}
+.stats{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.5rem;position:relative;z-index:1}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:.55rem 1rem;text-align:center}
+.stat b{font-family:'Crimson Pro',serif;font-size:1.7rem;font-weight:700;display:block;line-height:1}
+.stat s{font-size:.62rem;letter-spacing:.7px;text-transform:uppercase;color:rgba(255,255,255,.45);display:block;text-decoration:none}
+.ph-hdr{display:flex;align-items:center;gap:1rem;padding:1.6rem 2.5rem .8rem;border-bottom:3px solid}
+.ph-hdr .bnum{font-family:'Crimson Pro',serif;font-size:3.2rem;font-weight:700;opacity:.12;line-height:1;flex-shrink:0}
+.ph-hdr .info .lbl{font-size:.62rem;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;margin-bottom:.15rem}
+.ph-hdr .info h2{font-family:'Crimson Pro',serif;font-size:1.8rem;font-weight:700}
+.ph-hdr .info p{font-size:.8rem;color:var(--ink2);margin-top:.2rem}
+.ph-chips{display:flex;gap:.4rem;margin-top:.5rem;flex-wrap:wrap}
+.ph-chip{padding:.18rem .6rem;border-radius:20px;font-size:.62rem;font-weight:700}
+.mm{background:#fff;border-radius:12px;margin:1rem 2.5rem;padding:1.3rem;box-shadow:var(--sh);border:1px solid var(--border);overflow-x:auto}
+.mm h4{font-size:.64rem;letter-spacing:1px;text-transform:uppercase;color:var(--ink3);font-weight:700;margin-bottom:.9rem}
+.mm-tree{display:flex;align-items:center;gap:1.5rem;min-width:min-content}
+.mm-center{padding:.55rem 1rem;border-radius:8px;color:#fff;font-weight:700;font-size:.78rem;white-space:nowrap;flex-shrink:0}
+.mm-branches{display:flex;flex-direction:column;gap:.45rem}
+.mm-row{display:flex;align-items:center}
+.mm-conn{width:35px;height:1.5px;background:#d5d0c8;position:relative;flex-shrink:0}
+.mm-conn::after{content:'';position:absolute;right:-4px;top:-3.5px;width:0;height:0;border-top:4px solid transparent;border-bottom:4px solid transparent;border-left:5px solid #d5d0c8}
+.mm-node{padding:.28rem .72rem;border-radius:6px;font-size:.72rem;font-weight:600;border:1.5px solid;white-space:nowrap}
+.mm-subs{display:flex;flex-direction:column;gap:.18rem;margin-left:8px}
+.mm-sub{font-size:.65rem;color:var(--ink2);padding:.12rem .45rem;background:var(--bg);border-radius:3px}
+.pc-grid{padding:1rem 2.5rem 0;display:grid;gap:1rem}
+.pc{background:#fff;border-radius:12px;box-shadow:var(--sh);border:1px solid var(--border);overflow:hidden}
+.pc-head{display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.3rem;cursor:pointer;user-select:none;transition:background .15s}
+.pc-head:hover{background:#faf8f5}
+.pc-num{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.75rem;flex-shrink:0}
+.pc-ta{flex:1;min-width:0}
+.pc-title{font-weight:700;font-size:.95rem;line-height:1.25}
+.pc-tag{font-size:.76rem;color:var(--ink2);margin-top:.2rem;font-style:italic;font-family:'Crimson Pro',serif}
+.pc-bgs{display:flex;gap:.35rem;margin-top:.35rem;flex-wrap:wrap}
+.pc-bg{padding:.12rem .5rem;border-radius:8px;font-size:.6rem;font-weight:700}
+.pc-arr{margin-left:auto;color:var(--ink3);font-size:.75rem;transition:transform .2s;flex-shrink:0;padding-top:.2rem}
+.pc.open .pc-arr{transform:rotate(180deg)}
+.pc-body{display:none;border-top:1px solid var(--border);padding:1.3rem 1.5rem}
+.pc.open .pc-body{display:block}
+.ol{background:linear-gradient(135deg,#1c1c2e,#1a4f3a);color:#fff;border-radius:10px;padding:.85rem 1.1rem;margin-bottom:1.1rem;display:flex;align-items:flex-start;gap:.6rem}
+.ol .q{font-size:1.4rem;opacity:.35;line-height:1;flex-shrink:0;font-family:'Crimson Pro',serif}
+.ol p{font-style:italic;font-size:.87rem;font-family:'Crimson Pro',serif;line-height:1.5}
+.ib{border-radius:9px;padding:.8rem 1rem;margin-bottom:.9rem;border-left:4px solid;display:flex;gap:.6rem}
+.ib .ic h5{font-size:.63rem;letter-spacing:.8px;text-transform:uppercase;font-weight:700;margin-bottom:.2rem}
+.ib .ic p,.ib .ic li{font-size:.79rem;color:var(--ink2)}
+.ib .ic ul{padding-left:1rem}
+.ib .ic li{margin-bottom:.15rem}
+.ii{background:#eef5ff;border-color:#2980b9}.ii h5{color:#1a5276}
+.ie{background:#fff8e1;border-color:#f9a825}.ie h5{color:#e65100}
+.iw{background:#fff0f0;border-color:#c0392b}.iw h5{color:#c0392b}
+.it{background:#e8faf0;border-color:#27ae60}.it h5{color:#1a7a4a}
+.if{background:#f3f0fb;border-color:#7c4dff}.if h5{color:#4527a0}
+.ig{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:.8rem;margin:.9rem 0}
+.ic-col{border-radius:9px;padding:.85rem .95rem}
+.ic-col h5{font-size:.62rem;letter-spacing:.9px;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+.ic-in{background:#eaf3fb}.ic-in h5{color:#1a5276}
+.ic-tt{background:#e8f8f0}.ic-tt h5{color:#1a7a4a}
+.ic-out{background:#fef3e8}.ic-out h5{color:#c05c0a}
+.ic-col ul{list-style:none}
+.ic-col li{font-size:.76rem;color:var(--ink2);padding:.18rem 0;border-bottom:1px solid rgba(0,0,0,.04);display:flex;align-items:flex-start;gap:.35rem}
+.ic-col li:last-child{border-bottom:none}
+.ic-col li::before{content:'›';color:var(--ink3);flex-shrink:0}
+.ic-col li strong{color:var(--ink)}
+.ct{width:100%;border-collapse:collapse;font-size:.76rem;margin:.7rem 0;border-radius:8px;overflow:hidden}
+.ct th{background:var(--ink);color:#fff;padding:.45rem .7rem;text-align:left;font-size:.62rem;letter-spacing:.5px;text-transform:uppercase}
+.ct td{padding:.38rem .7rem;border-bottom:1px solid var(--border);color:var(--ink2);vertical-align:top}
+.ct tr:last-child td{border-bottom:none}
+.ct tr:nth-child(even) td{background:#f9f7f4}
+.ct td strong{color:var(--ink)}
+.fb{font-family:'JetBrains Mono',monospace;background:#f3f0fb;border:1px solid #c5bce8;border-radius:8px;padding:.7rem .95rem;font-size:.75rem;color:#4527a0;margin:.5rem 0;line-height:2}
+.fl{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:.7rem 0}
+.fs{padding:.35rem .8rem;border-radius:7px;font-size:.72rem;font-weight:600;color:#fff;white-space:nowrap}
+.fa{width:22px;height:1.5px;background:var(--ink3);position:relative;flex-shrink:0}
+.fa::after{content:'';position:absolute;right:-4px;top:-4px;border-top:4.5px solid transparent;border-bottom:4.5px solid transparent;border-left:5.5px solid var(--ink3)}
+.eb{background:#fff8e1;border:1px solid #f9a825;border-radius:9px;padding:.85rem 1rem;margin:.8rem 0}
+.eb h5{font-size:.62rem;letter-spacing:.9px;text-transform:uppercase;font-weight:700;color:#e65100;margin-bottom:.45rem}
+.eb h5::before{content:'⭐ '}
+.eb ul{list-style:none}
+.eb li{font-size:.78rem;color:var(--ink2);padding:.2rem 0;border-bottom:1px dotted rgba(249,168,37,.35);display:flex;align-items:flex-start;gap:.45rem}
+.eb li:last-child{border-bottom:none}
+.eb li::before{content:'→';color:#f9a825;font-weight:700;flex-shrink:0}
+.eb li strong{color:var(--ink)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:.8rem 0}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.7rem;margin:.7rem 0}
+.gbox{background:var(--bg);border-radius:8px;padding:.75rem .9rem;border:1px solid var(--border)}
+.gbox h6{font-size:.65rem;letter-spacing:.5px;text-transform:uppercase;font-weight:700;color:var(--ink);margin-bottom:.3rem}
+.gbox p,.gbox li{font-size:.76rem;color:var(--ink2)}
+.gbox ul{padding-left:.9rem}
+.gbox li{margin-bottom:.15rem}
+.chip{display:inline-block;padding:.1rem .48rem;border-radius:6px;font-size:.6rem;font-weight:700}
+.chip-e{background:#fff3cd;color:#b7750a;border:1px solid #f5a623}
+.sdiv{height:2px;border:none;margin:0}
+.btt{position:fixed;bottom:1.5rem;right:1.5rem;width:36px;height:36px;background:var(--ink);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh);font-size:.7rem;z-index:200;opacity:0;pointer-events:none;transition:all .2s;text-decoration:none}
+.btt.show{opacity:1;pointer-events:auto}
+/* Hybrid visual boxes */
+.hy-box{border-radius:10px;padding:1rem;margin:.7rem 0;border:2px solid}
+.hy-row{display:flex;gap:.3rem;margin-bottom:.4rem}
+.hy-block{padding:.35rem .8rem;border-radius:6px;font-size:.73rem;font-weight:700;text-align:center}
+/* Agile cycle visual */
+.cycle{display:flex;align-items:center;justify-content:center;gap:.5rem;margin:.7rem 0;flex-wrap:wrap}
+.cy-step{padding:.5rem .9rem;border-radius:8px;font-size:.73rem;font-weight:700;color:#fff;text-align:center}
+/* Manifesto values */
+.mval{display:grid;grid-template-columns:1fr auto 1fr;gap:.5rem;align-items:center;margin:.3rem 0;font-size:.78rem}
+.mval .left{background:#e8f8f0;border-radius:6px;padding:.3rem .6rem;font-weight:700;color:#1a6e3c}
+.mval .vs{color:var(--ink3);font-size:.65rem;font-weight:700}
+.mval .right{background:#f0f0f0;border-radius:6px;padding:.3rem .6rem;color:var(--ink2)}
+@media(max-width:1024px){:root{--sw:0px}#sb{display:none}#tnav{left:0}.pc-grid,.mm{padding-left:1.2rem;padding-right:1.2rem}.ph-hdr{padding-left:1.2rem;padding-right:1.2rem}.ig{grid-template-columns:1fr}.g2,.g3{grid-template-columns:1fr}.hero{padding:2rem 1.2rem}}
+</style>
+</head>
+<body>
+<nav id="sb">
+  <div class="sb-logo"><h1>Agile &amp; Hybrid Guide</h1><p>PMP · CAPM · Agile Practice Guide</p></div>
+  <div style="padding:.3rem 0">
+    <div class="sb-lbl">Core Agile</div>
+    <a href="#agile-mindset" class="sl ka-lnk">🌱 Agile Mindset &amp; Manifesto</a>
+    <details class="sbg" open>
+      <summary><span class="sd" style="background:#1a6e3c"></span>Scrum Framework</summary>
+      <a href="#scrum-overview" class="sl">Scrum Overview &amp; Pillars</a>
+      <a href="#scrum-roles" class="sl">Scrum Roles</a>
+      <a href="#scrum-events" class="sl">Scrum Events</a>
+      <a href="#scrum-artifacts" class="sl">Scrum Artifacts</a>
+    </details>
+    <details class="sbg">
+      <summary><span class="sd" style="background:#7d3c98"></span>Extreme Programming (XP)</summary>
+      <a href="#xp-values" class="sl">XP Values &amp; Roles</a>
+      <a href="#xp-practices" class="sl">XP Practices</a>
+    </details>
+    <details class="sbg">
+      <summary><span class="sd" style="background:#b7770d"></span>Kanban</summary>
+      <a href="#kanban" class="sl">Kanban Principles &amp; Board</a>
+    </details>
+    <details class="sbg">
+      <summary><span class="sd" style="background:#5d4037"></span>Lean</summary>
+      <a href="#lean" class="sl">Lean Principles &amp; Waste</a>
+    </details>
+    <div class="sb-lbl" style="margin-top:.4rem">Hybrid Projects</div>
+    <a href="#hybrid-intro" class="sl ka-lnk">🔀 What is Hybrid?</a>
+    <a href="#hybrid-methods" class="sl ka-lnk">📊 4 Hybrid Methods</a>
+    <a href="#life-cycles" class="sl ka-lnk">🔄 4 Life Cycles</a>
+    <div class="sb-lbl" style="margin-top:.4rem">Agile Domains</div>
+    <a href="#value-delivery" class="sl ka-lnk">💎 Value-Driven Delivery</a>
+    <a href="#stakeholder-eng" class="sl ka-lnk">🤝 Stakeholder Engagement</a>
+    <a href="#adaptive-planning" class="sl ka-lnk">📐 Adaptive Planning</a>
+    <a href="#team-performance" class="sl ka-lnk">👥 Team Performance</a>
+    <a href="#problem-detect" class="sl ka-lnk">⚠️ Problem Detection</a>
+    <a href="#cont-improve" class="sl ka-lnk">🔄 Continuous Improvement</a>
+    <div class="sb-lbl" style="margin-top:.4rem">Quick Reference</div>
+    <a href="#qr-manifesto" class="sl ka-lnk">📜 Manifesto Quick Ref</a>
+    <a href="#qr-scrum-terms" class="sl ka-lnk">📋 Scrum vs XP Terms</a>
+    <a href="#qr-estimation" class="sl ka-lnk">📐 Estimation Techniques</a>
+    <a href="#qr-bullets" class="sl ka-lnk">⭐ Rapid-Fire Bullets</a>
+  </div>
+</nav>
+<div id="tnav">
+  <a href="#agile-mindset" class="ta">🌱 Mindset</a>
+  <a href="#scrum-overview" class="ts">🏃 Scrum</a>
+  <a href="#xp-values" class="tx">💻 XP</a>
+  <a href="#kanban" class="tk">📋 Kanban</a>
+  <a href="#lean" class="tl">🏭 Lean</a>
+  <div class="sp"></div>
+  <a href="#hybrid-intro" class="th">🔀 Hybrid</a>
+  <a href="#life-cycles" class="th">🔄 Life Cycles</a>
+  <div class="sp"></div>
+  <a href="#value-delivery" class="tv">💎 Value</a>
+  <a href="#stakeholder-eng" class="tst">🤝 Stakeholders</a>
+  <a href="#adaptive-planning" class="tp">📐 Planning</a>
+  <a href="#team-performance" class="tt">👥 Team</a>
+  <a href="#cont-improve" class="tc">🔄 CI</a>
+  <div class="sp"></div>
+  <a href="#qr-bullets" class="tq">⚡ Quick Ref</a>
+</div>
+<div id="main">
+<div class="hero" id="top">
+  <h1>Agile &amp; Hybrid<br>One-Stop Revision Guide</h1>
+  <p>Agile Manifesto · Scrum · XP · Kanban · Lean · Hybrid Methods · All Domains · Exam-Ready</p>
+  <div class="stats">
+    <div class="stat"><b>4</b><s>Agile Values</s></div>
+    <div class="stat"><b>12</b><s>Guiding Principles</s></div>
+    <div class="stat"><b>4</b><s>Life Cycle Types</s></div>
+    <div class="stat"><b>4</b><s>Hybrid Methods</s></div>
+    <div class="stat"><b>3</b><s>Scrum Pillars</s></div>
+    <div class="stat"><b>5</b><s>Lean Principles</s></div>
+  </div>
+</div>
+<!-- ══════════ AGILE MINDSET & MANIFESTO ══════════ -->
+<hr class="sdiv" style="background:#1a6e3c;margin-top:0" id="agile-mindset">
+<div class="ph-hdr" style="border-color:#1a6e3c">
+  <div class="bnum">01</div>
+  <div class="info">
+    <div class="lbl" style="color:#1a6e3c">Domain I</div>
+    <h2>Agile Mindset, Manifesto &amp; Principles</h2>
+    <p>The philosophical foundation of all Agile methods — the "why" behind everything Agile does.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#e8f8f0;color:#1a6e3c">4 Values</span>
+      <span class="ph-chip" style="background:#e8f8f0;color:#1a6e3c">12 Principles</span>
+      <span class="ph-chip" style="background:#e8f8f0;color:#1a6e3c">Created 2001</span>
+    </div>
+  </div>
+</div>
+<div class="mm">
+  <h4>🗺️ Agile Mindset — Mind Map</h4>
+  <div class="mm-tree">
+    <div class="mm-center" style="background:#1a6e3c">AGILE</div>
+    <div class="mm-branches">
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a6e3c;color:#1a6e3c">Manifesto (2001)</div><div class="mm-subs"><div class="mm-sub">4 Values — what we prefer over what</div><div class="mm-sub">12 Principles — how we behave</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#27ae60;color:#27ae60">Mindset</div><div class="mm-subs"><div class="mm-sub">Welcome change · Fail fast · Continuous delivery</div><div class="mm-sub">Small increments · Feedback loops · Learning</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a4f8a;color:#1a4f8a">vs Traditional</div><div class="mm-subs"><div class="mm-sub">Builds incrementally vs as a whole</div><div class="mm-sub">Plans throughout vs all at once</div><div class="mm-sub">Welcomes change vs discourages change</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#7d3c98;color:#7d3c98">Methods (Umbrella)</div><div class="mm-subs"><div class="mm-sub">Scrum · XP · Kanban · Lean · SAFe · Crystal</div></div></div>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open" id="agile-what">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a6e3c">A1</div>
+    <div class="pc-ta">
+      <div class="pc-title">What is Agile? <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Agile is an umbrella term — Scrum is the most popular framework underneath it"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Agile was developed for software but applies to any project with high uncertainty. It builds, delivers, and learns in small cycles rather than doing everything upfront and hoping for the best.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>Agile vs. Traditional (Waterfall):</h6>
+        <table class="ct"><thead><tr><th>Agile</th><th>Traditional</th></tr></thead>
+        <tbody>
+          <tr><td>Builds in increments</td><td>Builds as a whole</td></tr>
+          <tr><td>Plans throughout project</td><td>Plans all at once upfront</td></tr>
+          <tr><td>Delivers value over time</td><td>Delivers at the end</td></tr>
+          <tr><td>Customer sees value faster</td><td>Customer sees value at end</td></tr>
+          <tr><td>Welcomes change</td><td>Discourages change</td></tr>
+          <tr><td>Scope is variable</td><td>Scope is fixed</td></tr>
+          <tr><td>Time &amp; cost are fixed</td><td>Scope is fixed</td></tr>
+        </tbody></table>
+      </div>
+      <div class="gbox"><h6>Agile Benefits:</h6><ul>
+        <li>Customer involved throughout the life cycle</li>
+        <li>Greater customer interaction with all stakeholders</li>
+        <li>Constant feedback stays current and successful</li>
+        <li>Greater value delivered up front</li>
+        <li>Change is welcomed by all stakeholders</li>
+        <li>Reduces risk through early delivery</li>
+        <li>Higher team morale through ownership</li>
+      </ul>
+      <h6 style="margin-top:.5rem">Inverting the Triangle:</h6>
+      <table class="ct"><thead><tr><th>Traditional</th><th>Agile</th></tr></thead>
+      <tbody><tr><td>Scope = Fixed</td><td>Scope = Variable</td></tr>
+      <tr><td>Time &amp; Cost = Variable</td><td>Time &amp; Cost = Fixed</td></tr></tbody></table>
+      </div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Agile Concurrent Development</h5><ul>
+      <li>Fund incrementally — opt to extend, redirect, or cancel at granular level</li>
+      <li>Deliver and realise value steadily</li>
+      <li>Validate designs with users and customers continuously</li>
+      <li>Continuously adapt to risk and change</li>
+      <li>Integrate early and often</li>
+    </ul></div></div>
+  </div>
+</div>
+<div class="pc open" id="manifesto">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a6e3c">A2</div>
+    <div class="pc-ta">
+      <div class="pc-title">The Agile Manifesto — 4 Values <span class="chip chip-e">⭐⭐ MUST MEMORISE</span></div>
+      <div class="pc-tag">"We value the LEFT more — but the RIGHT still has value"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Created in 2001 by 17 software practitioners. The manifesto doesn't say ignore the right side — it says prioritise the left side when trade-offs must be made.</p></div>
+    <div class="ib ie"><div class="ic"><h5>⭐⭐ The 4 Values — EXAM CRITICAL</h5>
+      <div class="mval"><div class="left">Individuals &amp; Interactions</div><div class="vs">OVER</div><div class="right">Processes &amp; Tools</div></div>
+      <div class="mval"><div class="left">Working Software</div><div class="vs">OVER</div><div class="right">Comprehensive Documentation</div></div>
+      <div class="mval"><div class="left">Customer Collaboration</div><div class="vs">OVER</div><div class="right">Contract Negotiation</div></div>
+      <div class="mval"><div class="left">Responding to Change</div><div class="vs">OVER</div><div class="right">Following a Plan</div></div>
+      <p style="font-size:.74rem;margin-top:.5rem;color:var(--ink2);font-style:italic">"That is, while there is value in the items on the right, we value the items on the left more."</p>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Individuals &amp; Interactions over Processes &amp; Tools:</h6><ul>
+        <li>Projects are undertaken by <strong>people</strong>, not tools</li>
+        <li>Problems get solved by <strong>people</strong>, not processes</li>
+        <li>Projects are ultimately about people</li>
+      </ul></div>
+      <div class="gbox"><h6>Working Software over Documentation:</h6><ul>
+        <li>Agile docs should be <strong>"barely sufficient"</strong></li>
+        <li>Done "just in time" and "just because"</li>
+        <li>Delivering software that works comes before documentation</li>
+      </ul></div>
+      <div class="gbox"><h6>Customer Collaboration over Contract Negotiation:</h6><ul>
+        <li>Be flexible and accommodating</li>
+        <li>Manage change, don't suppress it</li>
+        <li>Requires a trusting relationship</li>
+        <li>Shared definition of "done"</li>
+      </ul></div>
+      <div class="gbox"><h6>Responding to Change over Following a Plan:</h6><ul>
+        <li>Software projects have high rates of change</li>
+        <li>Spend energy responding, not resisting change</li>
+        <li>Plans are living documents, not contracts</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+<div class="pc open" id="principles">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a6e3c">A3</div>
+    <div class="pc-ta">
+      <div class="pc-title">12 Agile Guiding Principles <span class="chip chip-e">⭐⭐ MUST MEMORISE</span></div>
+      <div class="pc-tag">"The 12 principles translate the 4 values into actionable behaviours"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="g2">
+      <div class="gbox"><h6>Principles 1–6:</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.4rem"><strong>Satisfy the customer</strong> through early and continuous delivery of valuable software</li>
+        <li style="margin-bottom:.4rem"><strong>Welcome changing requirements</strong>, even late in development — agile harnesses change for competitive advantage</li>
+        <li style="margin-bottom:.4rem"><strong>Deliver working software frequently</strong> — weeks to months, prefer shorter timescales</li>
+        <li style="margin-bottom:.4rem"><strong>Business people and developers work together daily</strong> throughout the project</li>
+        <li style="margin-bottom:.4rem"><strong>Build around motivated individuals</strong> — give them environment and trust them</li>
+        <li style="margin-bottom:.4rem"><strong>Face-to-face conversation</strong> is the most efficient communication method</li>
+      </ol></div>
+      <div class="gbox"><h6>Principles 7–12:</h6><ol start="7" style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.4rem"><strong>Working software is the primary measure</strong> of progress</li>
+        <li style="margin-bottom:.4rem"><strong>Sustainable development</strong> — maintain constant pace indefinitely</li>
+        <li style="margin-bottom:.4rem"><strong>Continuous attention to technical excellence</strong> enhances agility</li>
+        <li style="margin-bottom:.4rem"><strong>Simplicity</strong> — maximise the amount of work NOT done is essential</li>
+        <li style="margin-bottom:.4rem"><strong>Best architectures emerge from self-organising teams</strong></li>
+        <li style="margin-bottom:.4rem"><strong>At regular intervals, team reflects</strong> and adjusts behaviour (retrospectives)</li>
+      </ol></div>
+    </div>
+    <div class="eb"><h5>Exam Bullets — Manifesto &amp; Principles</h5><ul>
+      <li>The Agile Manifesto has <strong>4 values</strong> and <strong>12 principles</strong> — created in 2001</li>
+      <li>The RIGHT side still has value — Agile <strong>doesn't eliminate</strong> processes, docs, or contracts</li>
+      <li>Principle 7: <strong>Working software</strong> is the primary measure of progress (not % complete)</li>
+      <li>Principle 10: <strong>Simplicity</strong> — maximise the work NOT done. Less is more.</li>
+      <li>Principle 12: <strong>Retrospectives</strong> are mandated by the Agile Manifesto itself</li>
+      <li>Principle 1: <strong>Customer satisfaction</strong> through early and CONTINUOUS delivery is the highest priority</li>
+    </ul></div>
+  </div>
+</div>
+</div><!-- end pc-grid -->
+
+<!-- ══════════ SCRUM ══════════ -->
+<hr class="sdiv" style="background:#1a4f8a;margin-top:1.5rem" id="scrum-overview">
+<div class="ph-hdr" style="border-color:#1a4f8a">
+  <div class="bnum">02</div>
+  <div class="info">
+    <div class="lbl" style="color:#1a4f8a">Framework</div>
+    <h2>Scrum Framework</h2>
+    <p>The most widely used Agile framework. Based on three pillars: Transparency, Inspection, Adaptation.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#eaf2fb;color:#1a4f8a">3 Pillars</span>
+      <span class="ph-chip" style="background:#eaf2fb;color:#1a4f8a">3 Roles</span>
+      <span class="ph-chip" style="background:#eaf2fb;color:#1a4f8a">5 Events</span>
+      <span class="ph-chip" style="background:#eaf2fb;color:#1a4f8a">3 Artifacts</span>
+    </div>
+  </div>
+</div>
+<div class="mm">
+  <h4>🗺️ Scrum Framework — Mind Map</h4>
+  <div class="mm-tree">
+    <div class="mm-center" style="background:#1a4f8a">SCRUM</div>
+    <div class="mm-branches">
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a4f8a;color:#1a4f8a">3 Pillars</div><div class="mm-subs"><div class="mm-sub">Transparency · Inspection · Adaptation</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a4f8a;color:#1a4f8a">3 Roles</div><div class="mm-subs"><div class="mm-sub">Product Owner → Backlog + Priority</div><div class="mm-sub">Scrum Master → Facilitator + Shield</div><div class="mm-sub">Development Team → Build + Test</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a4f8a;color:#1a4f8a">5 Events</div><div class="mm-subs"><div class="mm-sub">Sprint → Sprint Planning → Daily Scrum → Review → Retrospective</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#1a4f8a;color:#1a4f8a">3 Artifacts</div><div class="mm-subs"><div class="mm-sub">Product Backlog · Sprint Backlog · Product Increment</div></div></div>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open" id="scrum-pillars">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a4f8a">S1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Scrum — 3 Pillars <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Transparency → Inspection → Adaptation — each pillar enables the next"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Scrum is not just a process — it's a framework built on three empirical principles. Without transparency you can't inspect. Without inspection you can't adapt. Each pillar depends on the one before.</p></div>
+    <div class="g3">
+      <div class="gbox"><h6>🔍 Transparency</h6><p>Visibility to those responsible for the outcome. Everyone can see what is happening. Sprint progress, backlog status, Definition of Done — all visible to all.</p></div>
+      <div class="gbox"><h6>🔎 Inspection</h6><p>Timely checks on how well the project is progressing toward goals. Looks for problematic deviations or differences from goals. Happens at every Scrum event.</p></div>
+      <div class="gbox"><h6>🔄 Adaptation</h6><p>Adjusting a process to minimise further issues when an inspection shows a problem or undesirable trend. Retrospectives and Sprint Reviews are the primary adaptation events.</p></div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Scrum Process Flow</h5>
+      <div class="fl">
+        <div class="fs" style="background:#37474f;font-size:.65rem">Product Backlog</div><div class="fa"></div>
+        <div class="fs" style="background:#1a4f8a;font-size:.65rem">Sprint Planning</div><div class="fa"></div>
+        <div class="fs" style="background:#1a4f8a;font-size:.65rem">Sprint Backlog</div><div class="fa"></div>
+        <div class="fs" style="background:#1a6e3c;font-size:.65rem">Sprint (1-4 wks)</div><div class="fa"></div>
+        <div class="fs" style="background:#1a6e3c;font-size:.65rem">Increment</div><div class="fa"></div>
+        <div class="fs" style="background:#b7770d;font-size:.65rem">Review + Retro</div>
+      </div>
+      <p style="font-size:.73rem;margin-top:.4rem;color:var(--ink2)">Daily Scrum happens every day within the Sprint. The cycle then repeats with the next Sprint.</p>
+    </div></div>
+  </div>
+</div>
+<div class="pc open" id="scrum-roles">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a4f8a">S2</div>
+    <div class="pc-ta">
+      <div class="pc-title">Scrum Roles — 3 Roles <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Product Owner owns WHAT. Scrum Master owns HOW. Dev Team does the WORK."</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="g3">
+      <div class="gbox"><h6>🎯 Product Owner:</h6><ul>
+        <li>Owns the <strong>product vision</strong></li>
+        <li>Defines features; decides release date and content</li>
+        <li>Responsible for <strong>market success</strong></li>
+        <li>Prioritises features by <strong>business value</strong></li>
+        <li>Can change features and priorities every Sprint</li>
+        <li>Manages and grooms the <strong>Product Backlog</strong></li>
+        <li>Defines the <strong>Definition of Done</strong></li>
+        <li>Attends all Scrum events</li>
+      </ul></div>
+      <div class="gbox"><h6>🛡️ Scrum Master:</h6><ul>
+        <li>Responsible for facilitating the Scrum process</li>
+        <li><strong>Shields the team</strong> from external interruptions</li>
+        <li>Removes <strong>impediments</strong> to progress</li>
+        <li>Looks for ways to enhance productivity</li>
+        <li>Acts as <strong>servant leader</strong></li>
+        <li>Coaches the team on Scrum practices</li>
+        <li>Facilitates all Scrum events</li>
+        <li>= XP Coach, = Agile PM</li>
+      </ul></div>
+      <div class="gbox"><h6>⚙️ Development Team:</h6><ul>
+        <li>Small group with <strong>all necessary skills</strong> (cross-functional)</li>
+        <li>Focuses on steady delivery of high quality features</li>
+        <li>Generates options for delivery</li>
+        <li><strong>Self-organising</strong> — manages own work within Sprints</li>
+        <li>Ideally <strong>3-9 members</strong></li>
+        <li>Writes acceptance tests</li>
+        <li>Demos completed increments</li>
+        <li>Does its own estimation</li>
+      </ul></div>
+    </div>
+    <div class="eb"><h5>Exam Bullets — Scrum Roles</h5><ul>
+      <li><strong>Product Owner = Customer</strong> in XP terminology — same role, different name</li>
+      <li><strong>Scrum Master = Coach</strong> in XP terminology — servant leader, not boss</li>
+      <li>The Scrum Master does <strong>NOT</strong> manage the team — the team is self-organising</li>
+      <li>Product Owner can <strong>change priorities every Sprint</strong> but NOT during a Sprint</li>
+      <li>Dev Team size: <strong>3-9 members</strong> is ideal. Too small = limited skills; too large = coordination overhead</li>
+    </ul></div>
+  </div>
+</div>
+<div class="pc open" id="scrum-events">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a4f8a">S3</div>
+    <div class="pc-ta">
+      <div class="pc-title">Scrum Events — 5 Events <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Sprint is the container — all other events happen inside it"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <table class="ct"><thead><tr><th>Event</th><th>Duration</th><th>Who Attends</th><th>Purpose</th><th>Output</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Sprint Planning</strong></td><td>≤8 hrs (4-wk sprint)</td><td>All 3 roles</td><td>Decide what to build this sprint and how</td><td>Sprint Backlog + Sprint Goal</td></tr>
+      <tr><td><strong>Sprint</strong></td><td>1–4 weeks (fixed)</td><td>Dev Team</td><td>Build the product increment</td><td>Potentially Shippable Product Increment</td></tr>
+      <tr><td><strong>Daily Scrum (Standup)</strong></td><td>15 minutes</td><td>Dev Team (SM optional)</td><td>Synchronise activities; plan next 24 hours</td><td>Updated plan for next day</td></tr>
+      <tr><td><strong>Sprint Review</strong></td><td>≤4 hrs (4-wk sprint)</td><td>All + Stakeholders</td><td>Demonstrate completed work; gather feedback</td><td>Updated Product Backlog</td></tr>
+      <tr><td><strong>Sprint Retrospective</strong></td><td>≤3 hrs (4-wk sprint)</td><td>All 3 Scrum roles</td><td>Inspect team process; plan improvements</td><td>Process improvement actions</td></tr>
+    </tbody></table>
+    <div class="g2">
+      <div class="gbox"><h6>Daily Scrum — 3 Questions:</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.25rem">What did I do <strong>yesterday</strong>?</li>
+        <li style="margin-bottom:.25rem">What will I do <strong>today</strong>?</li>
+        <li>Are there any <strong>impediments</strong> in my way?</li>
+      </ol><p style="font-size:.72rem;margin-top:.4rem;color:var(--ink2)">Same time, same place every day. Led by Scrum Master. 15 minutes — no more.</p></div>
+      <div class="gbox"><h6>Sprint Retrospective Topics:</h6><ul>
+        <li>What went <strong>well</strong>? (keep doing)</li>
+        <li>What went <strong>wrong</strong>? (stop doing)</li>
+        <li>What to do <strong>more of</strong>?</li>
+        <li>What to do <strong>less of</strong>?</li>
+      </ul><p style="font-size:.72rem;margin-top:.4rem;color:var(--ink2)">= Lessons Learned for the Sprint. Happens AFTER the Sprint Review and BEFORE the next Sprint Planning.</p></div>
+    </div>
+    <div class="ib iw"><div class="ic"><h5>⚠️ Sprint Rules — Critical!</h5><ul>
+      <li>During the sprint, <strong>no changes</strong> are made that would affect the sprint goal</li>
+      <li>Development team members are <strong>kept the same</strong> throughout the sprint</li>
+      <li>Sprint can be <strong>cancelled</strong> by Product Owner only — if sprint goal becomes obsolete</li>
+      <li><strong>Timeboxed</strong> = fixed duration; unused time is not extended</li>
+    </ul></div></div>
+  </div>
+</div>
+<div class="pc open" id="scrum-artifacts">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a4f8a">S4</div>
+    <div class="pc-ta">
+      <div class="pc-title">Scrum Artifacts — 3 Artifacts + DoD <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Backlog → Backlog → Increment — each sprint creates a potentially shippable product"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="g3">
+      <div class="gbox"><h6>📋 Product Backlog:</h6><ul>
+        <li>Prioritised list of <strong>all work</strong> needed to complete the product</li>
+        <li>Owned and prioritised by the <strong>Product Owner</strong></li>
+        <li>Sorted by <strong>value</strong> — most valuable items listed first</li>
+        <li><strong>Dynamic</strong> — constantly evolves and is refined</li>
+        <li>Team and PO "groom the backlog" (refine/estimate)</li>
+        <li>Never complete until product is retired</li>
+      </ul></div>
+      <div class="gbox"><h6>📝 Sprint Backlog:</h6><ul>
+        <li>Items from Product Backlog <strong>selected for this Sprint</strong></li>
+        <li>Accompanied by a plan for how to achieve the sprint goal</li>
+        <li><strong>Only updated by the Development Team</strong></li>
+        <li>Highly visible view of work being done</li>
+        <li>Dev team's forecast for the Sprint</li>
+        <li>Fixed once Sprint starts (unless cancelled)</li>
+      </ul></div>
+      <div class="gbox"><h6>📦 Product Increment:</h6><ul>
+        <li>Part of the product that is <strong>done after each Sprint</strong></li>
+        <li>Must meet the <strong>Definition of Done</strong></li>
+        <li>Potentially shippable — usable by end users</li>
+        <li>Done to gather feedback after each Sprint</li>
+        <li>Each increment is additive to prior increments</li>
+      </ul></div>
+    </div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Definition of Done (DoD)</h5>
+      <p>Shared understanding of what "done" means. Defined at project start, applies to all work. May include: unit tests pass, code reviewed, documentation updated, integration tests pass. <strong>Prevents misunderstanding</strong> between team and Product Owner.</p>
+      <p style="margin-top:.4rem">DoD is defined for: User Stories · Sprint Releases · Final Product</p>
+    </div></div>
+    <div class="eb"><h5>Exam Bullets — Scrum Artifacts</h5><ul>
+      <li>Product Backlog items are prioritised by <strong>business value</strong> — not technical priority</li>
+      <li><strong>Sprint Backlog can ONLY be updated by the Development Team</strong> — not PO or SM</li>
+      <li>The Product Increment must meet the <strong>Definition of Done</strong> to count as complete</li>
+      <li>Backlog Grooming / Refinement = adding detail, estimates, and ordering to items</li>
+      <li>Velocity = average story points completed per Sprint — used for release planning</li>
+    </ul></div>
+  </div>
+</div>
+</div><!-- end scrum grid -->
+<!-- ══════════ EXTREME PROGRAMMING ══════════ -->
+<hr class="sdiv" style="background:#7d3c98;margin-top:1.5rem" id="xp-values">
+<div class="ph-hdr" style="border-color:#7d3c98">
+  <div class="bnum">03</div>
+  <div class="info">
+    <div class="lbl" style="color:#7d3c98">Framework</div>
+    <h2>Extreme Programming (XP)</h2>
+    <p>Software-development centric Agile method focusing on technical practices and good coding standards.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#f5eef8;color:#7d3c98">5 Values</span>
+      <span class="ph-chip" style="background:#f5eef8;color:#7d3c98">4 Roles</span>
+      <span class="ph-chip" style="background:#f5eef8;color:#7d3c98">12+ Practices</span>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#7d3c98">X1</div>
+    <div class="pc-ta">
+      <div class="pc-title">XP Values, Roles &amp; Key Practices <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Scrum manages the project; XP manages the technical work inside it"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>XP and Scrum complement each other — Scrum provides the project framework while XP provides the engineering practices. They are often used together.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>5 XP Core Values:</h6><ul>
+        <li><strong>Simplicity</strong> — Find the simplest thing that could possibly work. Remove complexity.</li>
+        <li><strong>Communication</strong> — Team members know what is expected; daily standup is key</li>
+        <li><strong>Feedback</strong> — Get impressions of correctness early; failing fast allows faster improvement</li>
+        <li><strong>Courage</strong> — Allow work to be entirely visible to others; honest conversations</li>
+        <li><strong>Respect</strong> — Everyone is accountable for success or failure; recognise differences</li>
+      </ul></div>
+      <div class="gbox"><h6>4 XP Roles:</h6><ul>
+        <li><strong>Coach</strong> — Mentor; guides process; facilitator. = Scrum Master</li>
+        <li><strong>Customer</strong> — Business representative; provides requirements and priorities. = Product Owner</li>
+        <li><strong>Programmers</strong> — Developers who build the product; write the code</li>
+        <li><strong>Testers</strong> — Help customer define and write acceptance tests for user stories</li>
+      </ul>
+      <div class="ib ie" style="margin-top:.5rem"><div class="ic"><h5>⭐ XP ↔ Scrum Equivalents</h5>
+        <table class="ct"><thead><tr><th>XP Term</th><th>Scrum Term</th></tr></thead>
+        <tbody>
+          <tr><td>Coach</td><td>Scrum Master</td></tr>
+          <tr><td>Customer</td><td>Product Owner</td></tr>
+          <tr><td>Team</td><td>Development Team</td></tr>
+          <tr><td>Iteration</td><td>Sprint</td></tr>
+          <tr><td>Small Release</td><td>Release</td></tr>
+          <tr><td>Reflection</td><td>Retrospective</td></tr>
+          <tr><td>Daily Standup</td><td>Daily Scrum</td></tr>
+          <tr><td>Planning Game</td><td>Sprint Planning</td></tr>
+        </tbody></table>
+      </div></div>
+      </div>
+    </div>
+    <div id="xp-practices"></div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Key XP Practices — All Must Be Known!</h5>
+      <table class="ct"><thead><tr><th>Practice</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Pair Programming</strong></td><td>Two developers write code together — one codes, one reviews in real time. Spreads knowledge.</td></tr>
+        <tr><td><strong>Test-Driven Development (TDD)</strong></td><td>Write the test BEFORE writing the code. Code passes when test passes. Ensures quality is built in.</td></tr>
+        <tr><td><strong>Continuous Integration</strong></td><td>Integrate and test code frequently. Brings problems to surface before more code is built on top.</td></tr>
+        <tr><td><strong>Refactoring</strong></td><td>Remove redundancy; eliminate unused functionality; improve code design throughout the entire project lifecycle.</td></tr>
+        <tr><td><strong>Simple Design</strong></td><td>Code is testable, browsable, understandable. Do the simplest thing that could possibly work.</td></tr>
+        <tr><td><strong>Release Planning</strong></td><td>Customer outlines functionality; developers estimate difficulty; agree on what goes into next release.</td></tr>
+        <tr><td><strong>Small Releases</strong></td><td>Push new functionality all the way to production users frequently.</td></tr>
+        <tr><td><strong>Collective Code Ownership</strong></td><td>Any developer can modify any part of the code at any time.</td></tr>
+        <tr><td><strong>Coding Standards</strong></td><td>Team agrees on coding rules so collective ownership works.</td></tr>
+        <tr><td><strong>Sustainable Pace</strong></td><td>Work at a pace that can be maintained indefinitely (no death marches).</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="eb"><h5>Exam Bullets — XP</h5><ul>
+      <li><strong>TDD</strong> — Tests are written BEFORE the code. Code is written to PASS the test. Not the other way around.</li>
+      <li><strong>Pair Programming</strong> — Two devs, one keyboard. The observer reviews in real time. Spreads knowledge.</li>
+      <li><strong>Continuous Integration</strong> — Integrate frequently so defects are found before more code is built on them</li>
+      <li><strong>Refactoring</strong> = improvement without changing external behaviour; keeps code clean and maintainable</li>
+      <li>XP focuses on <strong>technical excellence</strong>; Scrum focuses on <strong>project management</strong> — they complement each other</li>
+    </ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ KANBAN ══════════ -->
+<hr class="sdiv" style="background:#b7770d;margin-top:1.5rem" id="kanban">
+<div class="ph-hdr" style="border-color:#b7770d">
+  <div class="bnum">04</div>
+  <div class="info">
+    <div class="lbl" style="color:#b7770d">Framework</div>
+    <h2>Kanban Development</h2>
+    <p>Derived from Toyota's lean production system. "Kanban" means "signboard" in Japanese. Visualise and limit work.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#fef9e7;color:#b7770d">5 Principles</span>
+      <span class="ph-chip" style="background:#fef9e7;color:#b7770d">Limit WIP</span>
+      <span class="ph-chip" style="background:#fef9e7;color:#b7770d">No fixed iterations</span>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#b7770d">K1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Kanban Principles, Board &amp; WIP Limits <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Visualise work, limit what's in progress, manage the flow — pull, don't push"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Kanban doesn't prescribe sprints or roles — it's a flow-based system. Work items are pulled when capacity exists rather than pushed onto the team. The board makes ALL work visible to ALL stakeholders at all times.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>5 Kanban Core Principles:</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.3rem"><strong>Visualise the workflow</strong> — make invisible knowledge work visible using a board</li>
+        <li style="margin-bottom:.3rem"><strong>Limit WIP</strong> — keeping work in progress low increases visibility of issues and bottlenecks</li>
+        <li style="margin-bottom:.3rem"><strong>Manage flow</strong> — track work through the system; identify issues; measure for effectiveness</li>
+        <li style="margin-bottom:.3rem"><strong>Make process policies explicit</strong> — clearly explain how things work for open discussions</li>
+        <li><strong>Improve collaboration</strong> — through scientific measurement and experimentation</li>
+      </ol></div>
+      <div class="gbox"><h6>Kanban Board (Information Radiator):</h6>
+        <div style="border:2px solid #b7770d;border-radius:8px;padding:.7rem;margin:.3rem 0">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.3rem;margin-bottom:.3rem">
+            <div style="background:#eaf3fb;border-radius:4px;padding:.3rem;text-align:center;font-size:.65rem;font-weight:700">TO DO</div>
+            <div style="background:#fef9e7;border-radius:4px;padding:.3rem;text-align:center;font-size:.65rem;font-weight:700">IN PROGRESS</div>
+            <div style="background:#f5eef8;border-radius:4px;padding:.3rem;text-align:center;font-size:.65rem;font-weight:700">TESTING</div>
+            <div style="background:#e8f8f0;border-radius:4px;padding:.3rem;text-align:center;font-size:.65rem;font-weight:700">DONE</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:.3rem">
+            <div style="display:flex;flex-direction:column;gap:.2rem">
+              <div style="background:#fff;border:1px solid #ddd;border-radius:3px;padding:.25rem;font-size:.62rem">Story A</div>
+              <div style="background:#fff;border:1px solid #ddd;border-radius:3px;padding:.25rem;font-size:.62rem">Story B</div>
+              <div style="background:#fff;border:1px solid #ddd;border-radius:3px;padding:.25rem;font-size:.62rem">Story C</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.2rem">
+              <div style="background:#fef9e7;border:1px solid #f9a825;border-radius:3px;padding:.25rem;font-size:.62rem">Story D</div>
+              <div style="background:#fef9e7;border:1px solid #f9a825;border-radius:3px;padding:.25rem;font-size:.62rem">Story E</div>
+              <div style="font-size:.6rem;color:#c0392b;font-weight:700">WIP Limit: 2</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.2rem">
+              <div style="background:#f5eef8;border:1px solid #9b59b6;border-radius:3px;padding:.25rem;font-size:.62rem">Story F</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:.2rem">
+              <div style="background:#e8f8f0;border:1px solid #27ae60;border-radius:3px;padding:.25rem;font-size:.62rem">Story G ✓</div>
+              <div style="background:#e8f8f0;border:1px solid #27ae60;border-radius:3px;padding:.25rem;font-size:.62rem">Story H ✓</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:.72rem;color:var(--ink2);margin-top:.3rem">Can be physical (whiteboard) or digital. Acts as "information radiator" — anyone can see status at a glance.</p>
+      </div>
+    </div>
+    <div class="ib ie"><div class="ic"><h5>⭐ WIP Limits &amp; Cycle Time</h5>
+      <div class="fb">Cycle Time = WIP / Throughput
+(Little's Law)
+
+Example: Team completes 5 items/day, 30 items in progress
+Cycle Time = 30 / 5 = 6 days per item
+
+Reducing WIP → Reduces Cycle Time → Faster delivery!</div>
+      <p style="font-size:.74rem;margin-top:.3rem;color:var(--ink2)">Excessive WIP hides bottlenecks, represents money with no return, and increases risk of rework. <strong>Always limit WIP.</strong></p>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Cumulative Flow Diagram (CFD):</h6><p>Stack graph showing how work progresses through stages over time. Widening bands indicate bottlenecks. Used to track flow efficiency, spot bottlenecks, and forecast completion. <strong>Theory of Constraints</strong> — identify and resolve the bottleneck activity.</p></div>
+      <div class="gbox"><h6>Kanban vs. Scrum:</h6>
+        <table class="ct"><thead><tr><th>Kanban</th><th>Scrum</th></tr></thead>
+        <tbody>
+          <tr><td>No fixed iterations</td><td>Fixed-length Sprints</td></tr>
+          <tr><td>Continuous flow</td><td>Iterative batches</td></tr>
+          <tr><td>WIP limits per column</td><td>Sprint commitment</td></tr>
+          <tr><td>No prescribed roles</td><td>3 defined roles</td></tr>
+          <tr><td>Changes anytime</td><td>No changes in Sprint</td></tr>
+        </tbody></table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ LEAN ══════════ -->
+<hr class="sdiv" style="background:#5d4037;margin-top:1.5rem" id="lean">
+<div class="ph-hdr" style="border-color:#5d4037">
+  <div class="bnum">05</div>
+  <div class="info">
+    <div class="lbl" style="color:#5d4037">Framework</div>
+    <h2>Lean Software Development</h2>
+    <p>Originated from Toyota's manufacturing system (TPS). Applied to software development. Eliminate waste, deliver fast.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#efebe9;color:#5d4037">7 Principles</span>
+      <span class="ph-chip" style="background:#efebe9;color:#5d4037">7 Wastes</span>
+      <span class="ph-chip" style="background:#efebe9;color:#5d4037">Toyota Origin</span>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#5d4037">L1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Lean Principles &amp; 7 Wastes <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Maximise value, minimise waste — deliver fast by removing everything that doesn't add value"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Lean asks one question about every activity: does this create value for the customer? If not, it's waste. Eliminate waste relentlessly to deliver faster with less cost.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>7 Lean Principles:</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.3rem"><strong>Eliminate Waste</strong> — partially done work, delays, handoffs, unnecessary features</li>
+        <li style="margin-bottom:.3rem"><strong>Amplify Learning</strong> — communicate early and often; get feedback quickly; build on learning</li>
+        <li style="margin-bottom:.3rem"><strong>Defer Decisions</strong> — commit to things as late as possible; keep options open</li>
+        <li style="margin-bottom:.3rem"><strong>Deliver Fast</strong> — quickly deliver valuable software; iterate through designs</li>
+        <li style="margin-bottom:.3rem"><strong>Empower the Team</strong> — respect team's technical knowledge; let them make technical decisions</li>
+        <li style="margin-bottom:.3rem"><strong>Build Quality In</strong> — build quality into the product; assure quality throughout development</li>
+        <li><strong>Optimise the Whole</strong> — see the system as more than the sum of its parts</li>
+      </ol></div>
+      <div class="gbox"><h6>7 Wastes of Lean (TIMWOOD + P):</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.25rem"><strong>Partially done work</strong> — started but not complete; no value delivered</li>
+        <li style="margin-bottom:.25rem"><strong>Extra processes</strong> — unnecessary approval steps, reviews, sign-offs</li>
+        <li style="margin-bottom:.25rem"><strong>Extra features</strong> — building things customers don't need</li>
+        <li style="margin-bottom:.25rem"><strong>Task switching</strong> — context switching between tasks reduces efficiency</li>
+        <li style="margin-bottom:.25rem"><strong>Waiting</strong> — waiting for approval, resources, or the next task</li>
+        <li style="margin-bottom:.25rem"><strong>Motion</strong> — unnecessary movement or handoffs</li>
+        <li><strong>Defects</strong> — rework caused by defects; cost increases the later they're found</li>
+      </ol></div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Value Stream Mapping</h5><p>Technique to optimise flow of information or materials. Steps: (1) Identify product/service, (2) Map current state value stream, (3) Review to find waste, (4) Map future state with improvements, (5) Develop roadmap to implement, (6) Revisit regularly. Goal: reduce waiting time and eliminate non-value-adding activities.</p></div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ HYBRID ══════════ -->
+<hr class="sdiv" style="background:#c0392b;margin-top:1.5rem" id="hybrid-intro">
+<div class="ph-hdr" style="border-color:#c0392b">
+  <div class="bnum">06</div>
+  <div class="info">
+    <div class="lbl" style="color:#c0392b">Approach</div>
+    <h2>Hybrid Projects</h2>
+    <p>Combines traditional (waterfall/predictive) methods with agile. Fit-for-purpose based on project risk and context.</p>
+    <div class="ph-chips">
+      <span class="ph-chip" style="background:#fdecea;color:#c0392b">4 Hybrid Methods</span>
+      <span class="ph-chip" style="background:#fdecea;color:#c0392b">4 Life Cycle Types</span>
+      <span class="ph-chip" style="background:#fdecea;color:#c0392b">Fit-For-Purpose</span>
+    </div>
+  </div>
+</div>
+<div class="mm">
+  <h4>🗺️ Hybrid &amp; Life Cycles — Mind Map</h4>
+  <div class="mm-tree">
+    <div class="mm-center" style="background:#c0392b">HYBRID</div>
+    <div class="mm-branches">
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#c0392b;color:#c0392b">Why Hybrid?</div><div class="mm-subs"><div class="mm-sub">High uncertainty parts → Agile</div><div class="mm-sub">Definable parts → Predictive</div><div class="mm-sub">Based on project risk</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#c0392b;color:#c0392b">Method 1</div><div class="mm-subs"><div class="mm-sub">Agile development → Predictive rollout (sequential)</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#c0392b;color:#c0392b">Method 2</div><div class="mm-subs"><div class="mm-sub">Agile + Predictive simultaneously (parallel)</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#c0392b;color:#c0392b">Method 3</div><div class="mm-subs"><div class="mm-sub">Predominantly Predictive with some Agile sprints embedded</div></div></div>
+      <div class="mm-row"><div class="mm-conn"></div><div class="mm-node" style="border-color:#c0392b;color:#c0392b">Method 4</div><div class="mm-subs"><div class="mm-sub">Predominantly Agile with some Predictive components</div></div></div>
+    </div>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open" id="life-cycles">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#c0392b">H1</div>
+    <div class="pc-ta">
+      <div class="pc-title">4 Life Cycle Types <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Agile leverages BOTH iterative AND incremental — that's what makes it unique"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Predictive does everything once. Iterative repeats until correct. Incremental delivers in parts. Agile combines iterative and incremental to deliver frequent small releases that continuously improve.</p></div>
+    <div class="ib ie"><div class="ic"><h5>⭐ PMI Agile Practice Guide — Table 3.1</h5>
+      <table class="ct"><thead><tr><th>Approach</th><th>Requirements</th><th>Activities</th><th>Delivery</th><th>Goal</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Predictive</strong></td><td>Fixed</td><td>Performed once for entire project</td><td>Single delivery</td><td>Manage cost</td></tr>
+        <tr><td><strong>Iterative</strong></td><td>Dynamic</td><td>Repeated until correct</td><td>Single delivery</td><td>Correctness of solution</td></tr>
+        <tr><td><strong>Incremental</strong></td><td>Dynamic</td><td>Performed once for a given increment</td><td>Frequent smaller deliveries</td><td>Speed</td></tr>
+        <tr><td><strong>Agile</strong></td><td>Dynamic</td><td>Repeated until correct</td><td>Frequent small deliveries</td><td>Customer value via frequent deliveries &amp; feedback</td></tr>
+      </tbody></table>
+      <p style="font-size:.74rem;margin-top:.4rem;color:var(--ink2)"><strong>Key insight:</strong> Agile leverages BOTH aspects of Iterative (repeated until correct) AND Incremental (frequent smaller deliveries). This combination maximises customer value and feedback.</p>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Definable Work (use Predictive):</h6><ul>
+        <li>Clear, well-understood procedures</li>
+        <li>Proved successful on similar past projects</li>
+        <li>Low rates of change and uncertainty</li>
+        <li>Examples: car production, electrical appliances, construction</li>
+      </ul></div>
+      <div class="gbox"><h6>High Uncertainty Work (use Agile):</h6><ul>
+        <li>Not-done-before type of work</li>
+        <li>High rates of change, complexity, and risk</li>
+        <li>Requirements unclear or likely to change</li>
+        <li>Examples: software development, designing a new product, R&amp;D</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+<div class="pc open" id="hybrid-methods">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#c0392b">H2</div>
+    <div class="pc-ta">
+      <div class="pc-title">4 Hybrid Methods — Visual Diagrams <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"No single hybrid is 'right' — the right method is the one that fits your project"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Hybrid is "fit-for-purpose" — use whichever combination of approaches best reduces risk and delivers value for your specific project context. There is no one-size-fits-all.</p></div>
+    <div class="g2">
+      <!-- Method 1 -->
+      <div class="gbox">
+        <h6>Method 1 — Agile Development then Predictive Rollout:</h6>
+        <div style="border:2px solid #1a6e3c;border-radius:8px;padding:.7rem;margin:.4rem 0">
+          <div style="display:flex;gap:.2rem;margin-bottom:.3rem;font-size:.62rem;color:var(--ink2);justify-content:space-around"><span>Design</span><span>Develop</span><span>Test</span><span>Rollout</span></div>
+          <div style="display:flex;gap:.2rem">
+            <div style="background:#1a6e3c;color:#fff;border-radius:6px;padding:.4rem;flex:3;text-align:center;font-size:.72rem;font-weight:700">AGILE</div>
+            <div style="background:#1a4f8a;color:#fff;border-radius:6px;padding:.4rem;flex:2;text-align:center;font-size:.72rem;font-weight:700">PREDICTIVE</div>
+          </div>
+          <div style="background:#1a4f8a;height:8px;border-radius:4px;margin-top:.3rem"></div>
+        </div>
+        <p style="font-size:.73rem;color:var(--ink2)">Use when: product design/build is uncertain but deployment/rollout is well-defined. Example: develop new software with Agile, then roll out to 50 locations using a standard plan.</p>
+      </div>
+      <!-- Method 2 -->
+      <div class="gbox">
+        <h6>Method 2 — Agile and Predictive Simultaneously:</h6>
+        <div style="border:2px solid #b7770d;border-radius:8px;padding:.7rem;margin:.4rem 0">
+          <div style="display:flex;gap:.2rem;margin-bottom:.3rem;font-size:.62rem;color:var(--ink2);justify-content:space-around"><span>Design</span><span>Develop</span><span>Test</span><span>Rollout</span></div>
+          <div style="display:flex;flex-direction:column;gap:.2rem">
+            <div style="background:#1a6e3c;color:#fff;border-radius:6px;padding:.35rem;text-align:center;font-size:.72rem;font-weight:700">AGILE (runs entire time)</div>
+            <div style="background:#1a4f8a;color:#fff;border-radius:6px;padding:.35rem;text-align:center;font-size:.72rem;font-weight:700">PREDICTIVE (runs entire time)</div>
+          </div>
+          <div style="background:#b7770d;height:8px;border-radius:4px;margin-top:.3rem"></div>
+        </div>
+        <p style="font-size:.73rem;color:var(--ink2)">Use when: different work streams have different needs. Example: software features built with Agile while infrastructure is delivered using traditional project management simultaneously.</p>
+      </div>
+      <!-- Method 3 -->
+      <div class="gbox">
+        <h6>Method 3 — Predominantly Predictive with some Agile:</h6>
+        <div style="border:2px solid #5d4037;border-radius:8px;padding:.7rem;margin:.4rem 0">
+          <div style="display:flex;gap:.2rem;margin-bottom:.2rem">
+            <div style="flex:1;display:flex;justify-content:center;gap:.2rem">
+              <div style="background:#1a6e3c;color:#fff;border-radius:5px;padding:.3rem .5rem;font-size:.65rem;font-weight:700">Agile</div>
+              <div style="background:#1a6e3c;color:#fff;border-radius:5px;padding:.3rem .5rem;font-size:.65rem;font-weight:700">Agile</div>
+            </div>
+          </div>
+          <div style="display:flex;gap:.2rem">
+            <div style="background:#1a4f8a;color:#fff;border-radius:5px;padding:.3rem;flex:1;text-align:center;font-size:.65rem;font-weight:700">Predictive</div>
+            <div style="background:#1a4f8a;color:#fff;border-radius:5px;padding:.3rem;flex:1;text-align:center;font-size:.65rem;font-weight:700">Predictive</div>
+            <div style="background:#1a4f8a;color:#fff;border-radius:5px;padding:.3rem;flex:1;text-align:center;font-size:.65rem;font-weight:700">Predictive</div>
+          </div>
+        </div>
+        <p style="font-size:.73rem;color:var(--ink2)">Predominantly Predictive approach. Agile is used for specific uncertain components only. Example: large construction project using traditional methods but Agile for design phases.</p>
+      </div>
+      <!-- Method 4 -->
+      <div class="gbox">
+        <h6>Method 4 — Predominantly Agile with some Predictive:</h6>
+        <div style="border:2px solid #1a6e3c;border-radius:8px;padding:.7rem;margin:.4rem 0">
+          <div style="display:flex;gap:.2rem;margin-bottom:.2rem">
+            <div style="background:#1a6e3c;color:#fff;border-radius:5px;padding:.3rem;flex:1;text-align:center;font-size:.65rem;font-weight:700">Agile</div>
+            <div style="flex:2;display:flex;flex-direction:column;gap:.2rem">
+              <div style="background:#1a6e3c;color:#fff;border-radius:5px;padding:.3rem;text-align:center;font-size:.65rem;font-weight:700">Agile</div>
+              <div style="display:flex;gap:.2rem">
+                <div style="background:#1a4f8a;color:#fff;border-radius:4px;padding:.2rem;flex:1;text-align:center;font-size:.6rem;font-weight:700">Pred</div>
+                <div style="background:#1a4f8a;color:#fff;border-radius:4px;padding:.2rem;flex:1;text-align:center;font-size:.6rem;font-weight:700">Pred</div>
+              </div>
+            </div>
+            <div style="background:#1a6e3c;color:#fff;border-radius:5px;padding:.3rem;flex:1;text-align:center;font-size:.65rem;font-weight:700">Agile</div>
+          </div>
+        </div>
+        <p style="font-size:.73rem;color:var(--ink2)">Predominantly Agile approach. Predictive used for specific components (e.g. regulatory compliance, fixed-scope deliverables). Example: software project using Scrum but with traditional change management for governance.</p>
+      </div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Mixing Agile Approaches</h5><ul>
+      <li>Agile frameworks are <strong>not customised</strong> for a specific team out of the box</li>
+      <li>Teams may <strong>tailor agile practices</strong> to deliver value in their context</li>
+      <li>Teams may develop their own <strong>special blend of agile</strong> that fits their project</li>
+      <li>Hybrid is "fit-for-purpose" — based on <strong>project risk, context, and needs</strong></li>
+      <li>Use a combination of <strong>any methods</strong> to deliver value</li>
+    </ul></div></div>
+    <div class="eb"><h5>Exam Bullets — Hybrid</h5><ul>
+      <li>Hybrid = <strong>"Fit-For-Purpose"</strong> — choose based on risk level of each project component</li>
+      <li>High uncertainty components → use <strong>Agile</strong>. Well-defined components → use <strong>Predictive</strong></li>
+      <li>Agile leverages <strong>BOTH iterative AND incremental</strong> aspects simultaneously</li>
+      <li>Predictive goal = <strong>Manage cost</strong>. Agile goal = <strong>Customer value via frequent delivery</strong></li>
+      <li>There is no "one right" hybrid method — the project context determines the best mix</li>
+    </ul></div>
+  </div>
+</div>
+</div><!-- end hybrid grid -->
+<!-- ══════════ VALUE-DRIVEN DELIVERY ══════════ -->
+<hr class="sdiv" style="background:#0d6e6e;margin-top:1.5rem" id="value-delivery">
+<div class="ph-hdr" style="border-color:#0d6e6e">
+  <div class="bnum">07</div>
+  <div class="info">
+    <div class="lbl" style="color:#0d6e6e">Domain II</div>
+    <h2>Value-Driven Delivery</h2>
+    <p>Agile projects exist to generate business value. Deliver highest-value items first, early, and often.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#0d6e6e">V1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Value, Prioritisation &amp; MVP <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Deliver the highest value first — a happy stakeholder is a successful project"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Value-based prioritisation means putting the most valuable features at the top of the backlog and delivering them first. Every sprint should be answering: "What does the customer value most right now?"</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>Prioritisation Techniques — All Must Be Known:</h6>
+        <table class="ct"><thead><tr><th>Technique</th><th>How It Works</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Simple Scheme</strong></td><td>Priority 1, 2, 3. Risk: everything becomes Priority 1.</td></tr>
+          <tr><td><strong>MoSCoW</strong></td><td>Must Have / Should Have / Could Have / Won't Have this time</td></tr>
+          <tr><td><strong>Monopoly Money</strong></td><td>Give everyone equal monopoly money; distribute to what they value most</td></tr>
+          <tr><td><strong>100-Point Method</strong></td><td>Each person gets 100 points to distribute across requirements</td></tr>
+          <tr><td><strong>Dot Voting</strong></td><td>Each person gets dots to place on requirements they support</td></tr>
+          <tr><td><strong>Kano Analysis</strong></td><td>Categorises features: Delighters (excite), Satisfiers (expected), Dissatisfiers (must have), Indifferent</td></tr>
+          <tr><td><strong>Req. Prioritisation Model</strong></td><td>Combines value, cost, risk, and dependencies</td></tr>
+        </tbody></table>
+      </div>
+      <div class="gbox"><h6>Financial Metrics for Value:</h6><ul>
+        <li><strong>ROI</strong> — Return on Investment: benefits received / money invested (percentage)</li>
+        <li><strong>IRR</strong> — Internal Rate of Return: interest rate needed to break even in today's money</li>
+        <li><strong>NPV</strong> — Net Present Value: value of future money in today's terms</li>
+        <li><strong>EVM</strong> — Earned Value Management: monitors value of project as it progresses (CPI, SPI)</li>
+      </ul>
+      <h6 style="margin-top:.5rem">Minimal Viable Product (MVP):</h6>
+      <p style="font-size:.76rem;color:var(--ink2)">A set of functionality that is complete enough to be useful but small enough not to be an entire project. Usually a module or subset. Delivered early to get real feedback from real users.</p>
+      </div>
+    </div>
+    <div class="ib ie"><div class="ic"><h5>⭐ MoSCoW — Most Tested Prioritisation Technique</h5>
+      <div class="g2">
+        <div><ul style="font-size:.76rem;color:var(--ink2)">
+          <li><strong>Must Have</strong> — Critical requirements; project fails without them</li>
+          <li><strong>Should Have</strong> — Important but not critical; can be deferred</li>
+        </ul></div>
+        <div><ul style="font-size:.76rem;color:var(--ink2)">
+          <li><strong>Could Have</strong> — Nice to have; included if time permits</li>
+          <li><strong>Won't Have (this time)</strong> — Agreed to be excluded from this release</li>
+        </ul></div>
+      </div>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Agile Contracting:</h6><ul>
+        <li>Agile fixes <strong>resources and time</strong>; varies functionality</li>
+        <li><strong>Graduated Fixed Price</strong> — buyer/seller share risks; different rates for early/on-time/late</li>
+        <li><strong>Fixed Price Work Packages</strong> — mitigate under/over-estimating</li>
+        <li>"Money for nothing and change for free" principle</li>
+      </ul></div>
+      <div class="gbox"><h6>Key Performance Indicators (KPIs):</h6><ul>
+        <li><strong>Rate of progress</strong> — how many story points completed</li>
+        <li><strong>Remaining work</strong> — how much left in backlog</li>
+        <li><strong>Likely completion date</strong> — based on velocity</li>
+        <li><strong>Likely cost remaining</strong> — based on burn rate</li>
+      </ul></div>
+    </div>
+    <div class="eb"><h5>Exam Bullets — Value-Driven Delivery</h5><ul>
+      <li><strong>Deliver highest-value features FIRST</strong> — this reduces risk and builds stakeholder confidence</li>
+      <li><strong>MVP</strong> = minimum set of features to be useful — get real feedback as early as possible</li>
+      <li><strong>MoSCoW</strong>: Must, Should, Could, Won't — the most commonly tested prioritisation technique</li>
+      <li>Working software = primary measure of progress (Principle 7). NOT % complete or docs produced.</li>
+      <li><strong>Risk is anti-value</strong> — it has the potential to remove or reduce value. Manage it aggressively.</li>
+    </ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ STAKEHOLDER ENGAGEMENT ══════════ -->
+<hr class="sdiv" style="background:#2471a3;margin-top:1.5rem" id="stakeholder-eng">
+<div class="ph-hdr" style="border-color:#2471a3">
+  <div class="bnum">08</div>
+  <div class="info">
+    <div class="lbl" style="color:#2471a3">Domain III</div>
+    <h2>Stakeholder Engagement</h2>
+    <p>Projects are done by people for people. Active, continuous stakeholder engagement is a cornerstone of Agile.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#2471a3">ST1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Stakeholder Engagement, Vision &amp; Communication <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"Short iterations keep stakeholders engaged — engagement builds trust and drives success"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>In Agile, stakeholders aren't just consulted at milestones — they are active participants throughout. Sprint Reviews, demos, and daily collaboration keep them informed and invested in the outcome.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>Methods of Stakeholder Engagement:</h6><ul>
+        <li>Get the <strong>right stakeholders</strong> — identify and include all relevant parties</li>
+        <li><strong>Cement stakeholder involvement</strong> — make their participation essential</li>
+        <li>Actively manage stakeholder interest throughout the project</li>
+        <li>Frequently discuss what <strong>"done" looks like</strong></li>
+        <li>Show progress and capabilities at Sprint Reviews</li>
+        <li>Candidly discuss estimates and projections</li>
+      </ul></div>
+      <div class="gbox"><h6>Set a Shared Vision — Tools:</h6><ul>
+        <li><strong>Agile Charter</strong> — high-level agreement; uses W5H (Who, What, When, Where, Why, How)</li>
+        <li><strong>Definition of Done</strong> — shared understanding of completion criteria</li>
+        <li><strong>Wireframes</strong> — quick mock-ups ("low-fidelity prototyping"); clarify what done looks like</li>
+        <li><strong>Personas</strong> — profiles of key users; goal-oriented; help team focus on valuable features</li>
+        <li><strong>Use Case Diagrams</strong> — visually shows how users use the application</li>
+        <li><strong>Data Models</strong> — how data is structured and related</li>
+        <li><strong>Project Tweet</strong> — describe project goal in 140 characters or less</li>
+      </ul></div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Collaboration Games — Know All 3!</h5>
+      <table class="ct"><thead><tr><th>Game</th><th>How It Works</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Remember the Future</strong></td><td>Ask stakeholders to imagine the release succeeded; look back at what made it successful</td><td>Define success criteria from stakeholder perspective</td></tr>
+        <tr><td><strong>Prune the Product Tree</strong></td><td>Draw a tree; stakeholders add features as branches using sticky notes; trunk = core features</td><td>Visualise and prioritise features together</td></tr>
+        <tr><td><strong>Speedboat (Sailboat)</strong></td><td>Draw boat moving toward goal; sticky notes show what propels it (wind) and what slows it (anchors)</td><td>Identify threats and opportunities collaboratively</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Green Zone vs. Red Zone Communication:</h6>
+        <table class="ct"><thead><tr><th>Red Zone ❌</th><th>Green Zone ✅</th></tr></thead>
+        <tbody>
+          <tr><td>Blames others</td><td>Takes responsibility</td></tr>
+          <tr><td>Responds defensively</td><td>Responds non-defensively</td></tr>
+          <tr><td>Sees conflict as battle</td><td>Sees conflict as natural</td></tr>
+          <tr><td>Uses shame and blame</td><td>Uses persuasion</td></tr>
+          <tr><td>Does not listen</td><td>Listens well</td></tr>
+          <tr><td>Seeks to win</td><td>Seeks excellence</td></tr>
+        </tbody></table>
+      </div>
+      <div class="gbox"><h6>Critical Soft Skills for Agile:</h6><ul>
+        <li><strong>Emotional Intelligence (EQ)</strong> — identify, assess, influence emotions of self and others</li>
+        <li><strong>Active Listening</strong> — Level 1 (Internal), Level 2 (Focused), Level 3 (Global/Body Language)</li>
+        <li><strong>Negotiation</strong> — happens throughout; best when interactions are positive</li>
+        <li><strong>Facilitation</strong> — run effective meetings: Goals, Rules, Timing, Assisting</li>
+        <li><strong>Conflict Resolution</strong> — 5 levels from problem-to-solve up to world war</li>
+      </ul></div>
+    </div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Conflict Levels (1–5)</h5>
+      <div style="display:flex;flex-direction:column;gap:.2rem">
+        <div style="background:#e8f8f0;border-radius:5px;padding:.3rem .7rem;font-size:.74rem"><strong>Level 1:</strong> Problem to Solve — sharing information; collaborative</div>
+        <div style="background:#fff8e1;border-radius:5px;padding:.3rem .7rem;font-size:.74rem"><strong>Level 2:</strong> Disagreement — personal protection; positions harden</div>
+        <div style="background:#fef3e8;border-radius:5px;padding:.3rem .7rem;font-size:.74rem"><strong>Level 3:</strong> Contest — must win; blame emerges</div>
+        <div style="background:#fdecea;border-radius:5px;padding:.3rem .7rem;font-size:.74rem"><strong>Level 4:</strong> Crusade — protecting one's group; factions form</div>
+        <div style="background:#c0392b;border-radius:5px;padding:.3rem .7rem;font-size:.74rem;color:#fff"><strong>Level 5:</strong> World War — must destroy the other side</div>
+      </div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ ADAPTIVE PLANNING ══════════ -->
+<hr class="sdiv" style="background:#6c3483;margin-top:1.5rem" id="adaptive-planning">
+<div class="ph-hdr" style="border-color:#6c3483">
+  <div class="bnum">09</div>
+  <div class="info">
+    <div class="lbl" style="color:#6c3483">Domain IV</div>
+    <h2>Adaptive Planning</h2>
+    <p>Planning is ongoing — not a one-time event. Agile continuously re-plans based on new information and feedback.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#6c3483">P1</div>
+    <div class="pc-ta">
+      <div class="pc-title">User Stories, Estimation &amp; Planning <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Plan at multiple levels — release, iteration, and daily — always based on value"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Agile planning is lighter upfront and heavier throughout. You don't plan everything at the start — you plan enough to get started, then continuously refine as you learn more.</p></div>
+    <div class="ib ie"><div class="ic"><h5>⭐⭐ User Stories — Format + INVEST</h5>
+      <div class="fb">As a &lt;user type&gt;
+I &lt;want to / need to&gt; &lt;goal&gt;
+So that &lt;value / benefit&gt;
+
+Example:
+"As a payroll clerk, I want to view all payroll taxes,
+so that I can pay them on time"</div>
+      <table class="ct" style="margin-top:.5rem"><thead><tr><th>Letter</th><th>Criteria</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>I</strong></td><td>Independent</td><td>Can be reprioritised without affecting others</td></tr>
+        <tr><td><strong>N</strong></td><td>Negotiable</td><td>Allow trade-offs based on cost and function</td></tr>
+        <tr><td><strong>V</strong></td><td>Valuable</td><td>Clearly states value to user/customer</td></tr>
+        <tr><td><strong>E</strong></td><td>Estimatable</td><td>Team can estimate how long it takes</td></tr>
+        <tr><td><strong>S</strong></td><td>Small</td><td>4-40 hours of work; can fit in one iteration</td></tr>
+        <tr><td><strong>T</strong></td><td>Testable</td><td>Clear acceptance criteria can be written</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Estimation Techniques — All Must Be Known!</h5>
+      <table class="ct"><thead><tr><th>Technique</th><th>How It Works</th><th>Key Feature</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Story Points</strong></td><td>Relative size assigned to user stories based on complexity, effort, risk</td><td>Relative not absolute; team-defined</td></tr>
+        <tr><td><strong>Planning Poker</strong></td><td>Each person plays a card (Fibonacci number) simultaneously; discuss differences</td><td>Prevents anchoring and HIPPO effect</td></tr>
+        <tr><td><strong>Wideband Delphi</strong></td><td>Group-based anonymous estimation by panel of experts; prevents groupthink</td><td>Prevents: Bandwagon, HIPPO, Groupthink</td></tr>
+        <tr><td><strong>Affinity Estimating</strong></td><td>Group stories into size categories together quickly</td><td>Fast; works for large backlogs</td></tr>
+        <tr><td><strong>T-Shirt Sizing</strong></td><td>XS, S, M, L, XL — relative sizing without numbers</td><td>Simple; good for early planning</td></tr>
+        <tr><td><strong>Fibonacci Sequence</strong></td><td>1, 2, 3, 5, 8, 13, 21 — numbers reflect natural uncertainty growth</td><td>Used in Planning Poker</td></tr>
+        <tr><td><strong>Ideal Time</strong></td><td>Time to complete with zero interruptions or problems</td><td>Then factor in productivity rate</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>3 C's of User Stories:</h6><ul>
+        <li><strong>Card</strong> — Written on index card; brief; used to spark conversation</li>
+        <li><strong>Conversation</strong> — The real detail comes through talking about the story</li>
+        <li><strong>Confirmation</strong> — Acceptance criteria confirm when story is done</li>
+      </ul></div>
+      <div class="gbox"><h6>Velocity &amp; Release Planning:</h6>
+        <div class="fb" style="font-size:.72rem">Velocity = Average story points per Sprint
+Iterations needed = Total points / Velocity
+
+Example: 250 points ÷ 18 avg velocity = 14 iterations</div>
+        <p style="font-size:.74rem;margin-top:.3rem;color:var(--ink2)">Velocity is used to forecast when the backlog will be completed and to plan releases.</p>
+      </div>
+    </div>
+    <div class="g2">
+      <div class="gbox"><h6>Iteration Types:</h6><ul>
+        <li><strong>Iteration 0</strong> — Set up; doesn't build product; prepares infrastructure and team</li>
+        <li><strong>Development Iteration</strong> — Build the product increment</li>
+        <li><strong>Iteration H (Hardening)</strong> — Clean up code, produce documentation before release</li>
+        <li><strong>Spike</strong> — Time-boxed research or proof of concept to reduce uncertainty</li>
+      </ul></div>
+      <div class="gbox"><h6>Timeboxing &amp; Parkinson's Law:</h6><p style="font-size:.76rem;color:var(--ink2)">Timeboxing = fixed-duration periods. If work isn't done, move it to the next timebox. <strong>Parkinson's Law:</strong> "Work tends to expand to fill the time given." Timeboxing prevents this by imposing strict limits.</p>
+      <ul style="font-size:.74rem;margin-top:.3rem;color:var(--ink2)">
+        <li>Daily Standup: 15 minutes</li>
+        <li>Retrospective: ~2 hours</li>
+        <li>Sprint: 1–4 weeks</li>
+      </ul></div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Story Maps &amp; Product Roadmap</h5><p style="font-size:.76rem;color:var(--ink2)"><strong>Story Map</strong> = high-level planning tool where stakeholders map project priorities early. Shows when features will be delivered and what's in each release. Becomes the <strong>Product Roadmap</strong> — a visual of all releases and their contents across time.</p></div></div>
+    <div class="eb"><h5>Exam Bullets — Adaptive Planning</h5><ul>
+      <li><strong>INVEST</strong> = Independent, Negotiable, Valuable, Estimatable, Small, Testable — every user story should meet all 6</li>
+      <li><strong>Planning Poker</strong> uses Fibonacci sequence; everyone reveals simultaneously to prevent anchoring</li>
+      <li><strong>Wideband Delphi</strong> prevents HIPPO (Highest Paid Person's Opinion) and groupthink</li>
+      <li><strong>Velocity</strong> = average story points per sprint; used to predict future delivery dates</li>
+      <li><strong>Spike</strong> = time-boxed investigation; has no deliverable except knowledge</li>
+      <li><strong>Parkinson's Law</strong>: Work expands to fill available time — timeboxing prevents this</li>
+    </ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ TEAM PERFORMANCE ══════════ -->
+<hr class="sdiv" style="background:#c0185a;margin-top:1.5rem" id="team-performance">
+<div class="ph-hdr" style="border-color:#c0185a">
+  <div class="bnum">10</div>
+  <div class="info">
+    <div class="lbl" style="color:#c0185a">Domain V</div>
+    <h2>Team Performance</h2>
+    <p>People are the most important factor in project success (COCOMO: 33x more important than tools). Build great teams.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#c0185a">T1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Team Building, Leadership &amp; Tracking <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Servant leader, self-organising team, adaptive leadership — the Agile PM is a facilitator not a boss"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>COCOMO II proves it mathematically — people factors score 33, tools and processes score 3. Build your team right, create psychological safety, and the work will follow.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>Servant Leadership (Agile PM Role):</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li style="margin-bottom:.25rem">Shield team from interruptions and distractions</li>
+        <li style="margin-bottom:.25rem">Remove impediments to progress</li>
+        <li style="margin-bottom:.25rem">Re-communicate the project vision</li>
+        <li>Carry food and water (metaphor: support the team)</li>
+      </ol>
+      <div style="margin-top:.5rem;font-size:.74rem;color:var(--ink2)">
+        <strong>Management vs Leadership:</strong><br>
+        Management = Task/Control/Command focus<br>
+        Leadership = People/Empowerment/Communication focus
+      </div></div>
+      <div class="gbox"><h6>High-Performance Agile Team Traits:</h6><ul>
+        <li>Shared vision of project goals</li>
+        <li>Realistic, achievable goals</li>
+        <li>Fewer than 12 members (ideally 3-9)</li>
+        <li>Strong sense of team identity</li>
+        <li>Provide strong servant leadership</li>
+        <li>Self-organising and self-directing</li>
+        <li><strong>Generalising Specialists</strong> — skilled in more than one area; reduce bottlenecks</li>
+        <li>Psychological safety — safe to experiment and fail</li>
+      </ul></div>
+    </div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Adaptive Leadership (Tuckman Stages + Leadership Style)</h5>
+      <table class="ct"><thead><tr><th>Stage</th><th>Team Behaviour</th><th>Leadership Style</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Forming</strong></td><td>Getting to know each other; polite; uncertain</td><td>Directing — tell them what to do</td></tr>
+        <tr><td><strong>Storming</strong></td><td>Conflicts emerge; disagreements; most difficult stage</td><td>Coaching — guide through conflict</td></tr>
+        <tr><td><strong>Norming</strong></td><td>Consensus forms; trust builds; norms established</td><td>Supporting — encourage and facilitate</td></tr>
+        <tr><td><strong>Performing</strong></td><td>High performance; self-directed; fully functional</td><td>Delegating — step back; trust the team</td></tr>
+        <tr><td><strong>Adjourning</strong></td><td>Project complete; team disbands</td><td>Celebrating &amp; releasing resources</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Team Tracking Charts — Burn Up, Burn Down, Velocity</h5>
+      <div class="g3">
+        <div class="gbox"><h6>Burndown Chart:</h6><p>Shows <strong>remaining work</strong> over time. Line goes DOWN toward zero. Goal: reach zero by Sprint end. If line is above expected — behind schedule. Used DAILY.</p></div>
+        <div class="gbox"><h6>Burnup Chart:</h6><p>Shows <strong>work completed</strong> over time. Line goes UP toward total scope line. Also shows if scope is increasing (total scope line rises). Better for scope change visibility.</p></div>
+        <div class="gbox"><h6>Velocity Chart:</h6><p>Shows story points completed per Sprint. Use average velocity to forecast: <span style="font-family:monospace;font-size:.7rem">Iterations = Total Points / Velocity</span>. Stabilises after 3-4 sprints.</p></div>
+      </div>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Team Space Best Practices:</h6><ul>
+        <li><strong>Co-located teams</strong> — within 33 feet / 10 meters (osmotic communication range)</li>
+        <li><strong>Caves and Common</strong> — Caves = private focus space; Common = group collaboration space</li>
+        <li><strong>Osmotic Communication</strong> — information flows naturally from daily conversations</li>
+        <li><strong>Tacit Knowledge</strong> — unwritten knowledge; supported through collective group experience</li>
+      </ul></div>
+      <div class="gbox"><h6>Distributed Teams:</h6><ul>
+        <li>At least one team member working off-site</li>
+        <li>Digital tools to replicate co-location: Video conferencing, Virtual card walls, Interactive whiteboards, IM/VoIP</li>
+        <li>Challenges: time zones, cultural differences, communication styles, native languages</li>
+      </ul></div>
+    </div>
+    <div class="ib ii"><div class="ic"><h5>💡 Skill Development Models</h5>
+      <div class="g2">
+        <div><h6 style="font-size:.7rem;margin-bottom:.25rem">Shu-Ha-Ri (Martial Arts Model):</h6><ul style="font-size:.74rem;color:var(--ink2)">
+          <li><strong>Shu</strong> — Obey: follow the rules exactly</li>
+          <li><strong>Ha</strong> — Moving away: start to adapt</li>
+          <li><strong>Ri</strong> — Finding individual paths: transcend and create</li>
+        </ul></div>
+        <div><h6 style="font-size:.7rem;margin-bottom:.25rem">Dreyfus Model:</h6><ul style="font-size:.74rem;color:var(--ink2)">
+          <li>Novice → Advanced Beginner → Competent → Proficient → Expert</li>
+        </ul></div>
+      </div>
+    </div></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ PROBLEM DETECTION ══════════ -->
+<hr class="sdiv" style="background:#37474f;margin-top:1.5rem" id="problem-detect">
+<div class="ph-hdr" style="border-color:#37474f">
+  <div class="bnum">11</div>
+  <div class="info">
+    <div class="lbl" style="color:#37474f">Domain VI</div>
+    <h2>Problem Detection &amp; Resolution</h2>
+    <p>Detect problems early when they're cheap to fix. Technical debt, defects, and variance analysis.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#37474f">PD1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Technical Debt, Defects &amp; Lead/Cycle Time <span class="chip chip-e">⭐ EXAM HEAVY</span></div>
+      <div class="pc-tag">"The cost of change rises over time — find defects early or pay exponentially more later"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Every day you leave a defect unfixed, more code gets built on top of it. Technical debt compounds like financial debt — the longer you wait, the more it costs to repay.</p></div>
+    <div class="g2">
+      <div class="gbox"><h6>Technical Debt:</h6><p>Backlog of work caused by not doing regular cleanup and refactoring. Accumulates when shortcuts are taken. If not addressed, leads to increased cost of development and makes it harder to implement future changes. <strong>Refactoring is the solution.</strong></p></div>
+      <div class="gbox"><h6>Cost of Change Rule:</h6><p>The cost of fixing a defect increases dramatically the later in the development cycle it is discovered. Fix in development: cheap. Fix in testing: moderate. Fix in production: expensive. Fix after customer finds it: most expensive. Agile's frequent iterations catch defects early.</p></div>
+    </div>
+    <div class="ib if"><div class="ic"><h5>📐 Lead Time vs. Cycle Time</h5>
+      <div class="fb">Cycle Time = WIP / Throughput  (Little's Law)
+
+Lead Time  = Total time from request to delivery (end-to-end)
+Cycle Time = Time to process ONE item through the system (part of lead time)
+
+Example: Feature requires 60 points, team does 5 points/day
+Cycle Time = 60 / 5 = 12 days</div>
+      <p style="font-size:.74rem;margin-top:.3rem;color:var(--ink2)">Excessive WIP → longer cycle time → money spent with no return. Limit WIP to reduce cycle time.</p>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>Variance &amp; Trend Analysis:</h6><ul>
+        <li><strong>Variance</strong> — measures how far actual performance is from expected</li>
+        <li><strong>Trend Analysis</strong> — provides insight into future issues based on pattern</li>
+        <li><strong>Lagging Metrics</strong> — measure what already happened (e.g., defects found)</li>
+        <li><strong>Leading Metrics</strong> — predict what is about to happen (e.g., velocity trend)</li>
+        <li><strong>Control Limits</strong> — diagnose issues before they occur; provide guidelines</li>
+      </ul></div>
+      <div class="gbox"><h6>Escaped Defects:</h6><p>Defects that make it all the way to the customer. Most expensive type of defect. Agile's continuous testing and incremental delivery dramatically reduce escaped defects by catching them in early sprints before they compound.</p>
+      <h6 style="margin-top:.5rem">Risk-Adjusted Backlog:</h6><p style="font-size:.74rem;color:var(--ink2)">Adjusting the backlog order to account for risk — high-risk items may be pulled forward to resolve uncertainty early.</p></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ CONTINUOUS IMPROVEMENT ══════════ -->
+<hr class="sdiv" style="background:#1a6e3c;margin-top:1.5rem" id="cont-improve">
+<div class="ph-hdr" style="border-color:#1a6e3c">
+  <div class="bnum">12</div>
+  <div class="info">
+    <div class="lbl" style="color:#1a6e3c">Domain VII</div>
+    <h2>Continuous Improvement (Kaizen)</h2>
+    <p>Agile teams inspect and adapt constantly. Retrospectives, PDCA, process analysis, and value stream mapping.</p>
+  </div>
+</div>
+<div class="pc-grid">
+<div class="pc open">
+  <div class="pc-head" onclick="tog(this)">
+    <div class="pc-num" style="background:#1a6e3c">CI1</div>
+    <div class="pc-ta">
+      <div class="pc-title">Retrospectives, PDCA &amp; Process Improvement <span class="chip chip-e">⭐⭐ EXAM CRITICAL</span></div>
+      <div class="pc-tag">"Retrospectives are the engine of continuous improvement — inspect and adapt every Sprint"</div>
+    </div><div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="ol"><span class="q">"</span><p>Kaizen — Japanese for "continuous improvement" — is the philosophy behind every retrospective. Small, frequent improvements compound over time into significant team and process transformation.</p></div>
+    <div class="ib ie"><div class="ic"><h5>⭐ Retrospective — 5 Stages (2-Hour Format)</h5>
+      <table class="ct"><thead><tr><th>Stage</th><th>Time</th><th>Activities</th><th>Purpose</th></tr></thead>
+      <tbody>
+        <tr><td><strong>1. Set the Stage</strong></td><td>~6 min</td><td>Check-In, Focus On/Off, ESVP (Explorer/Shopper/Vacationer/Prisoner)</td><td>Get everyone focused and participating</td></tr>
+        <tr><td><strong>2. Gather Data</strong></td><td>~40 min</td><td>Timeline, Triple Nickels (5 groups × 5 ideas × 5 min), Mad/Sad/Glad</td><td>Create picture of what happened in Sprint</td></tr>
+        <tr><td><strong>3. Generate Insights</strong></td><td>~25 min</td><td>Brainstorming, Five Whys, Fishbone Analysis, Dot Voting</td><td>Analyse the data; find root causes</td></tr>
+        <tr><td><strong>4. Decide What to Do</strong></td><td>~20 min</td><td>Short Subjects (Start/Stop/More/Less), SMART Goals</td><td>Decide improvement actions for next Sprint</td></tr>
+        <tr><td><strong>5. Close the Retrospective</strong></td><td>~20 min</td><td>Plus/Delta (more of / less of)</td><td>Reflect on the retrospective itself</td></tr>
+      </tbody></table>
+    </div></div>
+    <div class="g2">
+      <div class="gbox"><h6>PDCA Cycle (Deming / Kaizen):</h6>
+        <div class="cycle">
+          <div class="cy-step" style="background:#1a5276">Plan<br><span style="font-size:.62rem;font-weight:400">Define problem &amp; solution</span></div>
+          <div style="font-size:1.2rem;color:var(--ink3)">→</div>
+          <div class="cy-step" style="background:#1a7a4a">Do<br><span style="font-size:.62rem;font-weight:400">Implement solution</span></div>
+          <div style="font-size:1.2rem;color:var(--ink3)">→</div>
+          <div class="cy-step" style="background:#b7770d">Check<br><span style="font-size:.62rem;font-weight:400">Measure results</span></div>
+          <div style="font-size:1.2rem;color:var(--ink3)">→</div>
+          <div class="cy-step" style="background:#c0392b">Act<br><span style="font-size:.62rem;font-weight:400">Standardise or adjust</span></div>
+        </div>
+        <p style="font-size:.73rem;color:var(--ink2)">Also called the Agile Cycle: Plan → Develop → Evaluate → Learn → (repeat). Used in Kaizen and as the foundation of all retrospectives.</p>
+      </div>
+      <div class="gbox"><h6>Short Subjects (Decide What to Do):</h6><ul>
+        <li><strong>Start doing</strong> — new practices to adopt next Sprint</li>
+        <li><strong>Stop doing</strong> — practices that are wasting time or causing harm</li>
+        <li><strong>Do more of</strong> — practices that are working well</li>
+        <li><strong>Do less of</strong> — practices with diminishing returns</li>
+      </ul>
+      <h6 style="margin-top:.5rem">SMART Goals:</h6><ul>
+        <li><strong>S</strong>pecific · <strong>M</strong>easurable · <strong>A</strong>ttainable · <strong>R</strong>elevant · <strong>T</strong>imely</li>
+      </ul></div>
+    </div>
+    <div class="g2">
+      <div class="gbox"><h6>Process Tailoring:</h6><p>Amend the methodology to better fit the project environment. Change things for good reason — not just for the sake of change. This is how teams develop their own hybrid approach. Key question: "Does this process add value for us?"</p></div>
+      <div class="gbox"><h6>Pre-Mortems:</h6><p>Team meeting BEFORE the project that looks at what could cause failure. Steps: (1) Think about possible failures, (2) Create list of causes, (3) Review project plan to reduce/remove those causes. Proactive risk identification tool.</p></div>
+    </div>
+    <div class="eb"><h5>Exam Bullets — Continuous Improvement</h5><ul>
+      <li>Retrospective = <strong>after every Sprint</strong>; ~2 hours; inspect process and create improvement plan</li>
+      <li>Five Whys = ask "why?" <strong>five times</strong> to reach root cause</li>
+      <li><strong>PDCA</strong> = Plan-Do-Check-Act (Deming Cycle) — the foundation of Kaizen and all retrospectives</li>
+      <li>Kaizen focuses on <strong>small incremental improvements</strong> — not big bang changes</li>
+      <li><strong>Process Tailoring</strong> — adapt the methodology; this is how hybrid approaches are created</li>
+      <li>Value Stream Mapping — find and eliminate waste in the process flow; reduce wait times</li>
+    </ul></div>
+  </div>
+</div>
+</div>
+
+<!-- ══════════ QUICK REFERENCE ══════════ -->
+<hr class="sdiv" style="background:#1c1c2e;margin-top:2rem">
+<div style="padding:2rem 2.5rem 1rem;text-align:center">
+  <h2 id="qr-manifesto" style="font-family:'Crimson Pro',serif;font-size:2rem;font-weight:700">⚡ Quick Reference Hub</h2>
+  <p style="color:var(--ink2);margin-top:.3rem">All critical facts, formulas, and exam bullets in one place</p>
+</div>
+<div style="padding:0 2.5rem 3rem">
+
+<!-- Manifesto Quick Ref -->
+<div class="pc open" style="margin-bottom:1rem">
+  <div class="pc-head" onclick="tog(this)" style="cursor:pointer">
+    <div class="pc-num" style="background:#1a6e3c">📜</div>
+    <div class="pc-ta"><div class="pc-title">Agile Manifesto — Complete Quick Reference</div></div>
+    <div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="g2">
+      <div class="gbox"><h6>4 Values (left over right):</h6><ol style="padding-left:1rem;font-size:.76rem;color:var(--ink2)">
+        <li>Individuals &amp; Interactions <strong>over</strong> Processes &amp; Tools</li>
+        <li>Working Software <strong>over</strong> Comprehensive Documentation</li>
+        <li>Customer Collaboration <strong>over</strong> Contract Negotiation</li>
+        <li>Responding to Change <strong>over</strong> Following a Plan</li>
+      </ol></div>
+      <div class="gbox"><h6>12 Principles (numbered):</h6><ol style="padding-left:1rem;font-size:.72rem;color:var(--ink2)">
+        <li>Satisfy customer through early &amp; continuous delivery</li>
+        <li>Welcome changing requirements, even late</li>
+        <li>Deliver working software frequently</li>
+        <li>Business &amp; developers work together daily</li>
+        <li>Build around motivated individuals; trust them</li>
+        <li>Face-to-face = most efficient communication</li>
+        <li>Working software = primary measure of progress</li>
+        <li>Sustainable development — constant pace</li>
+        <li>Continuous attention to technical excellence</li>
+        <li>Simplicity — maximise work NOT done</li>
+        <li>Best architectures from self-organising teams</li>
+        <li>Team reflects and adjusts regularly</li>
+      </ol></div>
+    </div>
+  </div>
+</div>
+
+<!-- Scrum vs XP Terms -->
+<div class="pc open" style="margin-bottom:1rem" id="qr-scrum-terms">
+  <div class="pc-head" onclick="tog(this)" style="cursor:pointer">
+    <div class="pc-num" style="background:#1a4f8a">📋</div>
+    <div class="pc-ta"><div class="pc-title">Scrum vs. XP — Complete Terminology Cross-Reference</div></div>
+    <div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <table class="ct"><thead><tr><th>Scrum Term</th><th>XP Equivalent</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td>Sprint</td><td>Iteration</td><td>Fixed-length time period (1-4 weeks)</td></tr>
+      <tr><td>Release</td><td>Small Release</td><td>Multiple sprints → production deployment</td></tr>
+      <tr><td>Sprint Planning</td><td>Planning Game</td><td>Agile planning meeting to select work</td></tr>
+      <tr><td>Product Owner</td><td>Customer</td><td>Business representative who provides requirements</td></tr>
+      <tr><td>Retrospective</td><td>Reflection</td><td>Lessons learned meeting for the sprint</td></tr>
+      <tr><td>Scrum Master</td><td>Coach</td><td>Agile facilitator and servant leader</td></tr>
+      <tr><td>Development Team</td><td>Team</td><td>Empowered cross-functional team that builds product</td></tr>
+      <tr><td>Daily Scrum</td><td>Daily Standup</td><td>Brief 15-minute daily status meeting</td></tr>
+      <tr><td>Sprint Backlog</td><td>Iteration Backlog</td><td>Work selected for the current sprint</td></tr>
+      <tr><td>Product Backlog</td><td>Stories/Backlog</td><td>Prioritised list of all work to be done</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- Estimation Quick Ref -->
+<div class="pc open" style="margin-bottom:1rem" id="qr-estimation">
+  <div class="pc-head" onclick="tog(this)" style="cursor:pointer">
+    <div class="pc-num" style="background:#6c3483">📐</div>
+    <div class="pc-ta"><div class="pc-title">Estimation Techniques + Formulas Quick Reference</div></div>
+    <div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="fb">━━ VELOCITY ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Velocity = Average story points completed per Sprint
+Iterations needed = Total backlog points / Velocity
+Example: 250 pts ÷ 18 velocity = ~14 iterations
+
+━━ CYCLE TIME (Little's Law) ━━━━━━━━━━━━━━━━━━━━━
+Cycle Time = WIP / Throughput
+Example: 60 points ÷ 5 pts/day = 12 days cycle time
+
+━━ RISK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EMV = Probability (%) × Impact ($)
+Risk Severity = Risk Probability × Risk Impact
+
+━━ FIBONACCI SEQUENCE (Story Points) ━━━━━━━━━━━
+1, 2, 3, 5, 8, 13, 21, 34, 55, 89...
+(Each number = sum of previous two)
+Used in Planning Poker to estimate relative story size</div>
+    <div class="g3" style="margin-top:.7rem">
+      <div class="gbox"><h6>MoSCoW:</h6><ul>
+        <li>Must Have</li><li>Should Have</li><li>Could Have</li><li>Won't Have (this time)</li>
+      </ul></div>
+      <div class="gbox"><h6>INVEST:</h6><ul>
+        <li>Independent</li><li>Negotiable</li><li>Valuable</li><li>Estimatable</li><li>Small</li><li>Testable</li>
+      </ul></div>
+      <div class="gbox"><h6>SMART Goals:</h6><ul>
+        <li>Specific</li><li>Measurable</li><li>Attainable</li><li>Relevant</li><li>Timely</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- Rapid-Fire Exam Bullets -->
+<div class="pc open" style="margin-bottom:1rem" id="qr-bullets">
+  <div class="pc-head" onclick="tog(this)" style="cursor:pointer">
+    <div class="pc-num" style="background:#c0392b">⭐</div>
+    <div class="pc-ta"><div class="pc-title">Rapid-Fire Exam Bullets — 60 Most Tested Facts</div></div>
+    <div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <div class="g2">
+      <div>
+        <div class="eb"><h5>Manifesto &amp; Mindset</h5><ul>
+          <li>Agile Manifesto: <strong>4 values</strong> and <strong>12 principles</strong>, created in <strong>2001</strong></li>
+          <li>The RIGHT side of the manifesto still has value — Agile doesn't eliminate it</li>
+          <li>Primary measure of progress = <strong>working software</strong> (not % complete)</li>
+          <li>Highest priority = <strong>customer satisfaction</strong> through early continuous delivery</li>
+          <li>Principle 10: <strong>Simplicity</strong> — maximise work NOT done</li>
+          <li>Principle 12: Retrospectives are mandated by the <strong>manifesto itself</strong></li>
+          <li>Agile inverts the triangle: <strong>Scope varies; Time &amp; Cost fixed</strong></li>
+        </ul></div>
+        <div class="eb"><h5>Scrum Framework</h5><ul>
+          <li>3 Pillars: <strong>Transparency → Inspection → Adaptation</strong></li>
+          <li>Product Owner = <strong>Customer (XP)</strong>; Scrum Master = <strong>Coach (XP)</strong></li>
+          <li><strong>No changes</strong> to sprint goal during a sprint</li>
+          <li>Daily Scrum = <strong>15 minutes</strong>; same time, same place</li>
+          <li>3 Daily Scrum questions: Yesterday / Today / Impediments</li>
+          <li>Sprint Backlog updated by <strong>Dev Team ONLY</strong></li>
+          <li>Only <strong>Product Owner</strong> can cancel a sprint</li>
+          <li>DoD = <strong>Definition of Done</strong> — agreed BEFORE work starts</li>
+          <li>Ideal dev team size: <strong>3-9 members</strong></li>
+        </ul></div>
+        <div class="eb"><h5>XP, Kanban &amp; Lean</h5><ul>
+          <li>TDD: Write <strong>test BEFORE code</strong></li>
+          <li>Pair Programming: <strong>two devs, one keyboard</strong>, real-time review</li>
+          <li>Refactoring: improves code without changing external behaviour</li>
+          <li>Kanban: "<strong>signboard</strong>" in Japanese; from Toyota</li>
+          <li><strong>Limit WIP</strong> → shorter cycle time → faster delivery</li>
+          <li>Lean Waste #1: <strong>Partially done work</strong></li>
+          <li>Lean goal: maximise value, <strong>minimise waste</strong></li>
+          <li>Cycle Time = WIP / Throughput (<strong>Little's Law</strong>)</li>
+        </ul></div>
+      </div>
+      <div>
+        <div class="eb"><h5>Hybrid &amp; Life Cycles</h5><ul>
+          <li>Agile leverages <strong>BOTH iterative AND incremental</strong> aspects</li>
+          <li>Predictive goal = <strong>Manage cost</strong></li>
+          <li>Agile goal = <strong>Customer value via frequent deliveries &amp; feedback</strong></li>
+          <li>Hybrid = <strong>Fit-For-Purpose</strong>; based on project risk</li>
+          <li>High uncertainty → Agile; Definable work → Predictive</li>
+          <li>4 Methods: Sequential, Simultaneous, Mostly Predictive, Mostly Agile</li>
+        </ul></div>
+        <div class="eb"><h5>Planning &amp; Estimation</h5><ul>
+          <li>User story format: <strong>As a... I want... So that...</strong></li>
+          <li>INVEST: Independent, Negotiable, Valuable, Estimatable, <strong>Small, Testable</strong></li>
+          <li>Story size: <strong>4-40 hours</strong> ideal (fits in one iteration)</li>
+          <li>Planning Poker uses <strong>Fibonacci sequence</strong></li>
+          <li>Wideband Delphi prevents <strong>HIPPO</strong> (Highest Paid Person's Opinion)</li>
+          <li>Velocity = used to <strong>forecast iterations needed</strong></li>
+          <li>Spike = time-boxed <strong>research/proof of concept</strong></li>
+          <li>Parkinson's Law: work expands to <strong>fill available time</strong></li>
+          <li>MVP = minimum viable product — smallest useful feature set</li>
+        </ul></div>
+        <div class="eb"><h5>Team &amp; Continuous Improvement</h5><ul>
+          <li>COCOMO: People score <strong>33</strong>; Tools &amp; Processes score 3 (11x difference!)</li>
+          <li>Agile PM = <strong>Servant Leader</strong>, not command-and-control</li>
+          <li>Co-located teams: within <strong>33 feet / 10 meters</strong></li>
+          <li>Osmotic Communication = info flows from <strong>everyday conversations</strong></li>
+          <li>Retrospective = after <strong>every sprint</strong>; ~2 hours; 5 stages</li>
+          <li>Kaizen = <strong>continuous improvement</strong> (Japanese)</li>
+          <li>PDCA = <strong>Plan-Do-Check-Act</strong> (Deming Cycle)</li>
+          <li>Escaped Defects = defects that <strong>reach the customer</strong></li>
+          <li>Technical Debt: fix with <strong>refactoring</strong></li>
+          <li>MoSCoW: Must, Should, Could, <strong>Won't</strong></li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Frameworks Comparison -->
+<div class="pc open" style="margin-bottom:1rem">
+  <div class="pc-head" onclick="tog(this)" style="cursor:pointer">
+    <div class="pc-num" style="background:#37474f">🔄</div>
+    <div class="pc-ta"><div class="pc-title">Agile Frameworks — Side-by-Side Comparison</div></div>
+    <div class="pc-arr">▼</div>
+  </div>
+  <div class="pc-body">
+    <table class="ct"><thead><tr><th>Aspect</th><th>Scrum</th><th>XP</th><th>Kanban</th><th>Lean</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Origin</strong></td><td>Software (1990s)</td><td>Software (1999)</td><td>Toyota (manufacturing)</td><td>Toyota (manufacturing)</td></tr>
+      <tr><td><strong>Focus</strong></td><td>Project management</td><td>Technical excellence</td><td>Flow &amp; visualisation</td><td>Waste elimination</td></tr>
+      <tr><td><strong>Iterations</strong></td><td>Fixed Sprints (1-4wk)</td><td>Fixed Iterations</td><td>Continuous flow, no sprints</td><td>Continuous flow</td></tr>
+      <tr><td><strong>Key Roles</strong></td><td>PO, SM, Dev Team</td><td>Customer, Coach, Programmers, Testers</td><td>No prescribed roles</td><td>No prescribed roles</td></tr>
+      <tr><td><strong>Key Ceremony</strong></td><td>Sprint Review, Retro</td><td>Planning Game, Reflection</td><td>Stand-ups (optional)</td><td>Kaizen events</td></tr>
+      <tr><td><strong>Changes during iteration?</strong></td><td>No — sprint is protected</td><td>No during iteration</td><td>Yes — anytime</td><td>Yes — anytime</td></tr>
+      <tr><td><strong>Key Tool</strong></td><td>Sprint Backlog, Burndown</td><td>TDD, Pair Programming</td><td>Kanban Board, WIP Limits</td><td>Value Stream Map</td></tr>
+      <tr><td><strong>PM equivalent</strong></td><td>Scrum Master</td><td>Coach</td><td>Flow Manager</td><td>Kaizen Leader</td></tr>
+    </tbody></table>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="background:var(--ink);color:rgba(255,255,255,.6);border-radius:14px;padding:1.8rem 2rem;text-align:center;margin-top:1rem">
+  <div style="font-family:'Crimson Pro',serif;font-size:1.5rem;color:#fff;font-weight:700;margin-bottom:.4rem">Agile &amp; Hybrid — Ultimate Revision Guide</div>
+  <div style="font-size:.78rem;margin-bottom:.8rem">Agile Manifesto · Scrum · XP · Kanban · Lean · Hybrid · Value · Stakeholders · Planning · Team · CI</div>
+  <div style="display:flex;justify-content:center;gap:.5rem;flex-wrap:wrap">
+    <a href="#agile-mindset" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">🌱 Mindset</a>
+    <a href="#scrum-overview" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">🏃 Scrum</a>
+    <a href="#xp-values" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">💻 XP</a>
+    <a href="#kanban" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">📋 Kanban</a>
+    <a href="#lean" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">🏭 Lean</a>
+    <a href="#hybrid-intro" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">🔀 Hybrid</a>
+    <a href="#top" style="color:rgba(255,255,255,.7);font-size:.72rem;text-decoration:none;padding:.2rem .6rem;border:1px solid rgba(255,255,255,.2);border-radius:10px">↑ Top</a>
+  </div>
+</div>
+</div>
+</div><!-- end main -->
+<a href="#top" class="btt" id="btt">▲</a>
+<script>
+function tog(el){var c=el.parentElement;c.classList.toggle('open')}
+window.addEventListener('scroll',function(){var b=document.getElementById('btt');b.classList.toggle('show',window.scrollY>400)});
+if(window.innerWidth>1024){document.querySelectorAll('.pc').forEach(function(c){c.classList.add('open')})}
+</script>
+</body>
+</html>

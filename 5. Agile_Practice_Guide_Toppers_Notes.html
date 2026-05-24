@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agile Practice Guide — Topper's Notes</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --accent: #c8832a;
+    --accent2: #2e7d4f;
+    --light-bg: #f7f4ef;
+    --card-bg: #ffffff;
+    --border: #d4c9b5;
+    --text: #2b2b2b;
+    --muted: #6b6b6b;
+    --highlight: #fff3cd;
+    --tip-bg: #e8f4fd;
+    --warn-bg: #fdf3e8;
+    --success-bg: #eafaf1;
+    --tag-bg: #e8eaf6;
+    --cram-bg: #1a3a5c;
+    --cram-text: #f0e6d3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--light-bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  /* TOP NAV */
+  .top-nav {
+    background: var(--primary);
+    color: white;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  .nav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .nav-title { font-size: 16px; font-weight: bold; color: #f0c86a; letter-spacing: 0.5px; }
+  .nav-subtitle { font-size: 11px; color: #b0c4de; font-family: Arial, sans-serif; }
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    padding: 6px 20px;
+    background: #122840;
+  }
+  .nav-links a {
+    color: #b0c4de;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-links a:hover { background: var(--accent); color: white; }
+
+  /* MAIN CONTAINER */
+  .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, #0d2236 100%);
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 6px solid var(--accent);
+  }
+  .hero h1 { font-size: 28px; color: #f0c86a; margin-bottom: 8px; }
+  .hero .subtitle { font-size: 16px; color: #b0c4de; margin-bottom: 15px; }
+  .hero-meta { display: flex; gap: 20px; flex-wrap: wrap; }
+  .hero-tag {
+    background: rgba(200,131,42,0.25);
+    border: 1px solid var(--accent);
+    color: #f0c86a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* SECTION WRAPPER */
+  .section-wrapper {
+    background: var(--card-bg);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    page-break-inside: avoid;
+  }
+  .section-header {
+    background: var(--primary);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .section-header .sec-num {
+    background: var(--accent);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    flex-shrink: 0;
+    font-family: Arial, sans-serif;
+  }
+  .section-header .sec-title { font-size: 18px; color: #f0c86a; flex: 1; }
+  .print-btn {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    font-family: Arial, sans-serif;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .print-btn:hover { background: var(--accent); border-color: var(--accent); }
+
+  .section-body { padding: 24px; }
+
+  /* SUBSECTION */
+  .subsection {
+    margin-bottom: 24px;
+    border-left: 3px solid var(--border);
+    padding-left: 16px;
+  }
+  .subsection h3 {
+    color: var(--primary);
+    font-size: 15px;
+    margin-bottom: 10px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border);
+  }
+  .subsection h4 {
+    color: var(--accent2);
+    font-size: 13px;
+    margin: 12px 0 6px;
+    font-family: Arial, sans-serif;
+  }
+
+  /* KEY CONCEPT BOXES */
+  .key-box {
+    background: var(--highlight);
+    border: 1px solid #ffc107;
+    border-left: 4px solid #ffc107;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .tip-box {
+    background: var(--tip-bg);
+    border: 1px solid #90caf9;
+    border-left: 4px solid #1976d2;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .warn-box {
+    background: var(--warn-bg);
+    border: 1px solid #ffb74d;
+    border-left: 4px solid #e65100;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .success-box {
+    background: var(--success-bg);
+    border: 1px solid #81c784;
+    border-left: 4px solid #2e7d32;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .box-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .key-box .box-label { color: #856404; }
+  .tip-box .box-label { color: #1565c0; }
+  .warn-box .box-label { color: #bf360c; }
+  .success-box .box-label { color: #1b5e20; }
+
+  /* MANIFESTO */
+  .manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+  }
+  .manifesto-card {
+    background: var(--primary);
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .manifesto-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .manifesto-card .val-title { color: #f0c86a; font-size: 14px; font-weight: bold; margin-bottom: 4px; }
+  .manifesto-card .val-over { font-size: 11px; color: #90caf9; font-family: Arial, sans-serif; }
+  .manifesto-card .val-desc { font-size: 12px; color: #d0e4f7; margin-top: 6px; }
+
+  /* PRINCIPLES GRID */
+  .principles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 12px 0;
+  }
+  .principle-item {
+    background: #f0f4f8;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .p-num {
+    background: var(--primary);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    flex-shrink: 0;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 1px;
+  }
+
+  /* LIFE CYCLE TABLE */
+  .lc-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+  .lc-table th {
+    background: var(--primary);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+  }
+  .lc-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .lc-table tr:nth-child(even) td { background: #f9f7f4; }
+  .lc-table tr:hover td { background: #f0ebe3; }
+  .lc-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+  .badge-pred { background: #e3f2fd; color: #1565c0; }
+  .badge-iter { background: #f3e5f5; color: #6a1b9a; }
+  .badge-incr { background: #e8f5e9; color: #1b5e20; }
+  .badge-agile { background: #fff3e0; color: #e65100; }
+  .badge-hybrid { background: #fce4ec; color: #880e4f; }
+
+  /* LIFE CYCLE CARDS */
+  .lc-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .lc-card {
+    border-radius: 6px;
+    padding: 14px;
+    border: 1px solid var(--border);
+  }
+  .lc-card.pred { background: #e3f2fd; border-top: 3px solid #1565c0; }
+  .lc-card.iter { background: #f3e5f5; border-top: 3px solid #6a1b9a; }
+  .lc-card.incr { background: #e8f5e9; border-top: 3px solid #1b5e20; }
+  .lc-card.agile { background: #fff3e0; border-top: 3px solid #e65100; }
+  .lc-card h4 { font-size: 13px; margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .lc-card ul { padding-left: 14px; font-size: 12px; }
+  .lc-card li { margin-bottom: 3px; }
+
+  /* HYBRID COMBOS */
+  .hybrid-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 12px 0; }
+  .hybrid-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 12px;
+    border-top: 3px solid var(--accent);
+  }
+  .hybrid-card .hc-title { font-size: 12px; font-weight: bold; color: var(--primary); margin-bottom: 6px; font-family: Arial, sans-serif; }
+  .hybrid-card .hc-desc { font-size: 11px; color: var(--muted); }
+
+  /* SERVANT LEADERSHIP */
+  .sl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+  .sl-card {
+    background: #f0f4f8;
+    border: 1px solid #c5d5e8;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .sl-icon { font-size: 20px; margin-bottom: 6px; }
+  .sl-title { font-size: 12px; font-weight: bold; color: var(--primary); font-family: Arial, sans-serif; margin-bottom: 4px; }
+  .sl-desc { font-size: 11px; color: var(--muted); }
+
+  /* TEAM ROLES */
+  .roles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 12px 0; }
+  .role-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    border-top: 4px solid var(--primary);
+  }
+  .role-card.po { border-top-color: #e65100; }
+  .role-card.sm { border-top-color: #1b5e20; }
+  .role-card h4 { font-size: 13px; color: var(--primary); margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .role-card.po h4 { color: #e65100; }
+  .role-card.sm h4 { color: #1b5e20; }
+  .role-card ul { padding-left: 14px; font-size: 12px; }
+  .role-card li { margin-bottom: 3px; }
+
+  /* PRACTICES */
+  .practice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .practice-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    position: relative;
+  }
+  .practice-card::before {
+    content: attr(data-icon);
+    position: absolute;
+    top: 10px; right: 12px;
+    font-size: 18px;
+  }
+  .practice-card h4 { font-size: 13px; color: var(--primary); margin-bottom: 8px; font-family: Arial, sans-serif; padding-right: 24px; }
+  .practice-card ul { padding-left: 14px; font-size: 12px; }
+  .practice-card li { margin-bottom: 3px; }
+
+  /* METRICS */
+  .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+  .metric-card {
+    background: var(--primary);
+    color: white;
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+  }
+  .metric-card .m-title { color: #f0c86a; font-size: 12px; font-weight: bold; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  .metric-card .m-desc { font-size: 11px; color: #b0c4de; }
+
+  /* TROUBLESHOOTING */
+  .trouble-item {
+    display: flex;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    align-items: flex-start;
+  }
+  .trouble-item:last-child { border-bottom: none; }
+  .trouble-pain { color: #c62828; font-weight: bold; min-width: 180px; flex-shrink: 0; }
+  .trouble-sol { color: var(--text); }
+
+  /* FRAMEWORKS */
+  .fw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .fw-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    border-left: 4px solid var(--accent);
+  }
+  .fw-card h4 { font-size: 13px; color: var(--primary); margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .fw-card ul { padding-left: 14px; font-size: 12px; }
+  .fw-card li { margin-bottom: 3px; }
+  .fw-card .fw-badge {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: #3949ab;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  /* ORG SECTION */
+  .org-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .org-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+  }
+  .org-card h4 { font-size: 13px; color: var(--primary); margin-bottom: 8px; font-family: Arial, sans-serif; }
+  .org-card ul { padding-left: 14px; font-size: 12px; }
+  .org-card li { margin-bottom: 3px; }
+
+  /* GLOSSARY */
+  .glossary-grid { columns: 2; column-gap: 30px; margin: 12px 0; }
+  .gloss-item {
+    break-inside: avoid;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-size: 12px;
+  }
+  .gloss-term { font-weight: bold; color: var(--primary); font-family: Arial, sans-serif; font-size: 13px; }
+  .gloss-def { color: var(--text); margin-top: 2px; }
+
+  /* CRAM SECTION */
+  .cram-section {
+    background: var(--cram-bg);
+    color: var(--cram-text);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+  .cram-header {
+    background: var(--accent);
+    padding: 20px 30px;
+    text-align: center;
+  }
+  .cram-header h2 { font-size: 22px; color: white; margin-bottom: 4px; }
+  .cram-header p { color: rgba(255,255,255,0.85); font-size: 13px; font-family: Arial, sans-serif; }
+  .cram-body { padding: 24px 30px; }
+  .cram-page {
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.05);
+  }
+  .cram-page-header {
+    color: #f0c86a;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid rgba(240,200,106,0.3);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .cram-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .cram-sub { margin-bottom: 12px; }
+  .cram-sub-title {
+    color: #90caf9;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+  .cram-item { font-size: 12px; color: var(--cram-text); margin-bottom: 3px; padding-left: 12px; position: relative; }
+  .cram-item::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 1px; }
+  .cram-highlight { color: #f0c86a; font-weight: bold; }
+  .cram-table { width: 100%; border-collapse: collapse; font-size: 11px; margin: 8px 0; }
+  .cram-table th { background: rgba(200,131,42,0.4); color: #f0c86a; padding: 5px 8px; text-align: left; font-family: Arial, sans-serif; }
+  .cram-table td { padding: 5px 8px; border-bottom: 1px solid rgba(255,255,255,0.08); color: #d0e4f7; }
+  .cram-table tr:nth-child(even) td { background: rgba(255,255,255,0.05); }
+  .cram-formula {
+    background: rgba(200,131,42,0.2);
+    border: 1px solid rgba(200,131,42,0.4);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin: 6px 0;
+    font-family: Arial, sans-serif;
+    color: #f0c86a;
+  }
+  .cram-key-val {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .ck-key { color: #90caf9; min-width: 140px; font-weight: bold; font-family: Arial, sans-serif; }
+  .ck-val { color: var(--cram-text); }
+  .print-cram-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    transition: all 0.2s;
+  }
+  .print-cram-btn:hover { background: #a0621a; }
+
+  /* GENERAL */
+  p { margin-bottom: 8px; }
+  ul { padding-left: 18px; }
+  li { margin-bottom: 4px; }
+  .text-muted { color: var(--muted); font-size: 12px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  .bold { font-weight: bold; }
+  .accent-text { color: var(--accent); }
+  .primary-text { color: var(--primary); }
+
+  /* STACEY MODEL */
+  .stacey-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 14px;
+    margin: 12px 0;
+  }
+  .stacey-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin: 8px 0; }
+  .stacey-cell {
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .stacey-cell h5 { font-size: 13px; margin-bottom: 4px; font-family: Arial, sans-serif; }
+  .cell-simple { background: #e8f5e9; color: #1b5e20; }
+  .cell-complex { background: #fff3e0; color: #e65100; }
+  .cell-chaos { background: #fce4ec; color: #880e4f; }
+
+  /* PRINT STYLES */
+  @media print {
+    body { background: white; }
+    .top-nav, .print-btn, .print-cram-btn, .hero { display: none !important; }
+    .section-wrapper { box-shadow: none; border: 1px solid #ccc; page-break-inside: avoid; }
+    .section-header { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .manifesto-card { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .metric-card { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cram-section { background: #1a3a5c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .cram-header { background: #c8832a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  .section-print-area { }
+
+  /* SCRUM EVENTS */
+  .event-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .event-item {
+    background: #f0f4f8;
+    border: 1px solid #c5d5e8;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .event-item .ev-name { font-weight: bold; color: var(--primary); font-family: Arial, sans-serif; }
+  .event-item .ev-desc { color: var(--muted); font-size: 11px; margin-top: 2px; }
+
+  /* COMPARISON TABLE */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 10px 0; }
+  .comp-table th { background: var(--primary); color: white; padding: 7px 10px; font-family: Arial, sans-serif; font-size: 11px; }
+  .comp-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .comp-table tr:nth-child(even) td { background: #f9f7f4; }
+
+  /* SIDEBAR NOTE */
+  .sidebar-note {
+    float: right;
+    width: 220px;
+    background: #f0f4f8;
+    border: 1px solid #c5d5e8;
+    border-radius: 6px;
+    padding: 10px 12px;
+    margin: 0 0 12px 16px;
+    font-size: 11px;
+    color: var(--muted);
+    clear: right;
+  }
+  .sidebar-note .sn-title { color: var(--primary); font-weight: bold; font-size: 12px; font-family: Arial, sans-serif; margin-bottom: 4px; }
+  .clearfix::after { content: ''; display: table; clear: both; }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--primary);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-size: 13px;
+    text-align: center;
+    font-style: italic;
+  }
+  .callout strong { color: #f0c86a; }
+
+  /* DSDM */
+  .dsdm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 8px 0; }
+  .dsdm-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent2);
+    border-radius: 0 4px 4px 0;
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+  .dsdm-num { font-weight: bold; color: var(--accent2); font-family: Arial, sans-serif; margin-right: 4px; }
+
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(to right, var(--accent), transparent);
+    margin: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+  <div class="nav-header">
+    <div>
+      <div class="nav-title">📗 Agile Practice Guide — Topper's Notes</div>
+      <div class="nav-subtitle">PMP Exam Study Reference | Based on PMI–Agile Alliance Agile Practice Guide</div>
+    </div>
+    <button class="print-btn" onclick="window.print()">🖨️ Print All</button>
+  </div>
+  <div class="nav-links">
+    <a href="#intro">§1 Introduction</a>
+    <a href="#intro-agile">§2 Intro to Agile</a>
+    <a href="#lifecycle">§3 Life Cycles</a>
+    <a href="#creating">§4 Creating Env</a>
+    <a href="#delivering">§5 Delivering</a>
+    <a href="#org">§6 Org Considerations</a>
+    <a href="#frameworks">Frameworks A3</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#cram">🔥 Cram Section</a>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>📗 Agile Practice Guide — Topper's Notes</h1>
+  <div class="subtitle">Complete Revision Companion | Every Section Synthesised | Exam-Ready</div>
+  <div class="hero-meta">
+    <span class="hero-tag">§1–7 Full Coverage</span>
+    <span class="hero-tag">Annexes A1–A3</span>
+    <span class="hero-tag">Frameworks: Scrum · XP · Kanban · Crystal · DSDM · SAFe · LeSS · DA</span>
+    <span class="hero-tag">Exam Glossary</span>
+    <span class="hero-tag">5-Page Cram Sheet</span>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: INTRODUCTION ===== -->
+<div id="intro" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">1</div>
+    <div class="sec-title">Introduction — Why This Guide, What It Covers</div>
+    <button class="print-btn" onclick="printSection('s1')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s1">
+    <div class="two-col">
+      <div>
+        <div class="subsection">
+          <h3>Purpose & Context</h3>
+          <p>Jointly developed by <strong>PMI and Agile Alliance®</strong>. Bridges predictive and agile project management. Practical guidance for project leaders and team members adapting to agile. Not software-only — covers manufacturing, education, healthcare.</p>
+          <div class="key-box">
+            <div class="box-label">📌 Core Purpose</div>
+            The guide provides tools, situational guidelines, and understanding of agile techniques. It addresses the "messy middle ground" between purely predictive and purely agile approaches.
+          </div>
+        </div>
+        <div class="subsection">
+          <h3>Why Now?</h3>
+          <ul>
+            <li>Exponential advances in technology</li>
+            <li>Customer demand for immediate value delivery</li>
+            <li>Social media enabling rapid feedback loops</li>
+            <li>Disruptive technologies changing competitive landscape</li>
+            <li>Cloud computing enabling iterative/incremental releases</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="subsection">
+          <h3>In-Scope vs. Out-of-Scope</h3>
+          <table class="lc-table">
+            <tr><th>IN Scope</th><th>OUT of Scope</th></tr>
+            <tr><td>Agile at project/team level</td><td>Org-wide agile programs</td></tr>
+            <tr><td>Popular agile approaches</td><td>Niche/company-specific methods</td></tr>
+            <tr><td>Suitability factors</td><td>Endorsing specific approach</td></tr>
+            <tr><td>Mapping agile to PMBOK</td><td>Modifying PMBOK processes</td></tr>
+            <tr><td>Agile beyond software</td><td>Removing software influence</td></tr>
+            <tr><td>Guidance & techniques</td><td>Prescriptive step-by-step</td></tr>
+            <tr><td>Accepted term definitions</td><td>New terms/definitions</td></tr>
+          </table>
+        </div>
+        <div class="tip-box">
+          <div class="box-label">💡 Exam Note</div>
+          OCM (Organizational Change Management) is referenced but is OUT OF SCOPE for this guide. Refer to PMI's <em>Managing Change in Organizations: A Practice Guide</em> for OCM.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: INTRODUCTION TO AGILE ===== -->
+<div id="intro-agile" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">2</div>
+    <div class="sec-title">An Introduction to Agile — Manifesto, Mindset, Lean & Kanban</div>
+    <button class="print-btn" onclick="printSection('s2')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s2">
+
+    <div class="subsection">
+      <h3>2.1 Definable Work vs. High-Uncertainty Work</h3>
+      <div class="two-col">
+        <div class="lc-card pred">
+          <h4 style="color:#1565c0">Definable Work</h4>
+          <ul>
+            <li>Clear, proven procedures</li>
+            <li>Similar projects done before</li>
+            <li>Low execution uncertainty</li>
+            <li>Examples: car production, construction (post-design)</li>
+            <li>→ Use <strong>Predictive</strong> approach</li>
+          </ul>
+        </div>
+        <div class="lc-card agile">
+          <h4 style="color:#e65100">High-Uncertainty Work</h4>
+          <ul>
+            <li>Exploratory, not-done-before work</li>
+            <li>Requires collaboration & problem-solving</li>
+            <li>High change, complexity, and risk</li>
+            <li>Examples: software, product design, R&D</li>
+            <li>→ Use <strong>Agile</strong> approach</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>2.2 The Agile Manifesto (2001)</h3>
+      <p class="text-muted">Formalized by thought leaders in software industry in 2001. Now applied across many industries.</p>
+      <div class="manifesto-grid">
+        <div class="manifesto-card">
+          <div class="val-title">Individuals & Interactions</div>
+          <div class="val-over">OVER processes and tools</div>
+          <div class="val-desc">People and their collaboration are more valuable than rigid processes or tools.</div>
+        </div>
+        <div class="manifesto-card">
+          <div class="val-title">Working Software</div>
+          <div class="val-over">OVER comprehensive documentation</div>
+          <div class="val-desc">Functional product is the primary measure of progress, not documents.</div>
+        </div>
+        <div class="manifesto-card">
+          <div class="val-title">Customer Collaboration</div>
+          <div class="val-over">OVER contract negotiation</div>
+          <div class="val-desc">Working with customers continuously is better than fixing requirements upfront.</div>
+        </div>
+        <div class="manifesto-card">
+          <div class="val-title">Responding to Change</div>
+          <div class="val-over">OVER following a plan</div>
+          <div class="val-desc">Adapting to change delivers better competitive advantage than rigid adherence to a plan.</div>
+        </div>
+      </div>
+      <div class="tip-box">
+        <div class="box-label">⚠️ Critical Exam Point</div>
+        <strong>"While there is value in the items on the right, we value the items on the LEFT more."</strong> — Items on the right (processes, documentation, contracts, plans) still have value. Agile does NOT eliminate them.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>The 12 Principles of Agile</h3>
+      <div class="principles-grid">
+        <div class="principle-item"><div class="p-num">1</div><div>Satisfy customer through <strong>early and continuous delivery</strong> of valuable software — highest priority</div></div>
+        <div class="principle-item"><div class="p-num">2</div><div><strong>Welcome changing requirements</strong>, even late. Agile harnesses change for competitive advantage.</div></div>
+        <div class="principle-item"><div class="p-num">3</div><div>Deliver working software <strong>frequently</strong> (weeks to months), prefer shorter timescale</div></div>
+        <div class="principle-item"><div class="p-num">4</div><div><strong>Business + developers work together daily</strong> throughout the project</div></div>
+        <div class="principle-item"><div class="p-num">5</div><div>Build around <strong>motivated individuals</strong>. Give environment/support. Trust them.</div></div>
+        <div class="principle-item"><div class="p-num">6</div><div>Most effective communication = <strong>face-to-face conversation</strong></div></div>
+        <div class="principle-item"><div class="p-num">7</div><div><strong>Working software = primary measure of progress</strong></div></div>
+        <div class="principle-item"><div class="p-num">8</div><div>Promote <strong>sustainable development</strong> — constant pace indefinitely</div></div>
+        <div class="principle-item"><div class="p-num">9</div><div>Continuous attention to <strong>technical excellence</strong> and good design enhances agility</div></div>
+        <div class="principle-item"><div class="p-num">10</div><div><strong>Simplicity</strong> — art of maximizing work NOT done — essential</div></div>
+        <div class="principle-item"><div class="p-num">11</div><div>Best architectures/designs emerge from <strong>self-organizing teams</strong></div></div>
+        <div class="principle-item"><div class="p-num">12</div><div>At regular intervals, team <strong>reflects and adjusts</strong> → Retrospective</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Agile Mindset Model (Ahmed Sidky)</h3>
+      <div class="callout"><strong>Agile = Mindset</strong> defined by 4 Values → guided by 12 Principles → manifested through many <strong>Practices</strong></div>
+      <div class="key-box">
+        <div class="box-label">🔑 Key Concept</div>
+        Agile approaches existed BEFORE the Manifesto (years/decades). The Manifesto formalized existing practices. <strong>Agile is a BLANKET TERM</strong> covering: Scrum, XP, Kanban, FDD, DSDM, Crystal, AUP, Scrumban — all subsets of Lean thinking.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>2.3 Lean and the Kanban Method</h3>
+      <div class="two-col">
+        <div>
+          <div class="key-box">
+            <div class="box-label">Hierarchy</div>
+            <strong>Lean</strong> (superset) → <strong>Agile</strong> + <strong>Kanban Method</strong> (named instances of lean thinking)
+          </div>
+          <p>Shared heritage: delivering value, respecting people, minimizing waste, transparency, adapting to change, continuous improvement.</p>
+          <p>Kanban Method: emerged mid-2000s as alternative to agile methods. The original <strong>"start-where-you-are"</strong> approach. Less prescriptive, less disruptive to implement.</p>
+        </div>
+        <div>
+          <div class="tip-box">
+            <div class="box-label">💡 Kanban vs Agile Debate</div>
+            Kanban was conceived in lean manufacturing but widely used in agile settings. Both camps claim it. The key: Kanban optimizes flow; Agile embraces change with iterations.
+          </div>
+          <div class="success-box">
+            <div class="box-label">Two Strategies to Fulfill Agile Values</div>
+            <strong>1.</strong> Adopt a formal agile framework (learn it fully before tailoring)<br>
+            <strong>2.</strong> Implement changes incrementally that fit project context
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>2.4 Uncertainty, Risk & Life Cycle Selection (Stacey Complexity Model)</h3>
+      <div class="stacey-box">
+        <p style="font-size:12px; margin-bottom:10px;"><strong>Two axes:</strong> Requirements Uncertainty (Y) × Technical Uncertainty (X)</p>
+        <div class="stacey-grid">
+          <div class="stacey-cell cell-simple">
+            <h5>Simple/Complicated</h5>
+            <p>Low requirements + Low technical uncertainty</p>
+            <p><strong>→ Linear/Predictive works well</strong></p>
+          </div>
+          <div class="stacey-cell cell-complex">
+            <h5>Complex</h5>
+            <p>High requirements OR technical uncertainty</p>
+            <p><strong>→ Adaptive/Agile approaches work well</strong></p>
+          </div>
+          <div class="stacey-cell cell-chaos">
+            <h5>Chaotic</h5>
+            <p>Both uncertainties VERY HIGH</p>
+            <p><strong>→ Need to contain one variable first</strong></p>
+          </div>
+        </div>
+      </div>
+      <p>Agile/iterative/incremental approaches work well for projects with: R&D, high rates of change, unclear/unknown requirements, hard-to-describe final goals.</p>
+      <div class="key-box">
+        <div class="box-label">Iterative + Incremental = Agile Feedback Loop</div>
+        Short feedback loops → Reprioritization → Frequent adaptation → Updated plans → Frequent delivery → Less waste/rework
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 3: LIFE CYCLE SELECTION ===== -->
+<div id="lifecycle" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">3</div>
+    <div class="sec-title">Life Cycle Selection — Four Types, Hybrid Approaches & Tailoring</div>
+    <button class="print-btn" onclick="printSection('s3')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s3">
+
+    <div class="subsection">
+      <h3>3.1 The Four Life Cycles — Master Table</h3>
+      <table class="lc-table">
+        <tr>
+          <th>Life Cycle</th>
+          <th>Requirements</th>
+          <th>Activities</th>
+          <th>Delivery</th>
+          <th>Goal</th>
+          <th>Use When</th>
+        </tr>
+        <tr>
+          <td><span class="lc-badge badge-pred">Predictive</span></td>
+          <td>Fixed</td>
+          <td>Once for entire project</td>
+          <td>Single delivery</td>
+          <td>Manage cost</td>
+          <td>Stable, well-known requirements; low risk</td>
+        </tr>
+        <tr>
+          <td><span class="lc-badge badge-iter">Iterative</span></td>
+          <td>Dynamic</td>
+          <td>Repeated until correct</td>
+          <td>Single delivery</td>
+          <td>Correctness of solution</td>
+          <td>Complex, high change; optimize for learning</td>
+        </tr>
+        <tr>
+          <td><span class="lc-badge badge-incr">Incremental</span></td>
+          <td>Dynamic</td>
+          <td>Once per increment</td>
+          <td>Frequent smaller deliveries</td>
+          <td>Speed</td>
+          <td>Customer needs partial value quickly</td>
+        </tr>
+        <tr>
+          <td><span class="lc-badge badge-agile">Agile</span></td>
+          <td>Dynamic</td>
+          <td>Repeated until correct</td>
+          <td>Frequent small deliveries</td>
+          <td>Customer value via frequent delivery + feedback</td>
+          <td>High uncertainty; continuous feedback needed</td>
+        </tr>
+      </table>
+      <div class="tip-box">
+        <div class="box-label">💡 Key Insight — Planning is always present</div>
+        What differentiates a life cycle is NOT whether planning is done, but <strong>HOW MUCH</strong> planning is done and <strong>WHEN</strong>. Predictive = most upfront. Agile = plan → deliver → replan → repeat.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Characteristics of Each Life Cycle</h3>
+      <div class="lc-cards">
+        <div class="lc-card pred">
+          <h4 style="color:#1565c0">📋 Predictive Life Cycle</h4>
+          <ul>
+            <li>Plan drives the work; detailed upfront</li>
+            <li>High certainty: firm requirements, stable team, low risk</li>
+            <li>Activities execute serially: Analyze → Design → Build → Test → Deliver</li>
+            <li>Restricts changes to scope/requirements</li>
+            <li>No business value until END of project</li>
+            <li>Also called: plan-driven, waterfall, serial</li>
+          </ul>
+        </div>
+        <div class="lc-card iter">
+          <h4 style="color:#6a1b9a">🔄 Iterative Life Cycle</h4>
+          <ul>
+            <li>Improves product through successive prototypes</li>
+            <li>Each prototype → new stakeholder feedback → rework</li>
+            <li>Optimized for <strong>learning</strong>, not speed</li>
+            <li>Useful when: high complexity, frequent changes, differing stakeholder views</li>
+            <li>May take longer due to learning focus</li>
+          </ul>
+        </div>
+        <div class="lc-card incr">
+          <h4 style="color:#1b5e20">📦 Incremental Life Cycle</h4>
+          <ul>
+            <li>Optimize for <strong>speed of delivery</strong></li>
+            <li>Delivers finished, usable subsets of solution</li>
+            <li>Customer gets value BEFORE project complete</li>
+            <li>Each increment is fully done (fixtures, paint, everything)</li>
+            <li>MVP possible — deliver to subset of customers for feedback</li>
+          </ul>
+        </div>
+        <div class="lc-card agile">
+          <h4 style="color:#e65100">⚡ Agile Life Cycle</h4>
+          <ul>
+            <li><strong>Both iterative AND incremental</strong></li>
+            <li>Expects requirements to change</li>
+            <li>Incremental delivery uncovers hidden requirements</li>
+            <li><strong>Iteration-based:</strong> fixed timeboxes → complete features</li>
+            <li><strong>Flow-based:</strong> pull from backlog based on capacity; WIP limits</li>
+            <li>Earlier return on investment (highest value work first)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Iteration-Based vs. Flow-Based Agile</h3>
+      <table class="comp-table">
+        <tr><th>Aspect</th><th>Iteration-Based (e.g., Scrum)</th><th>Flow-Based (e.g., Kanban)</th></tr>
+        <tr><td>Time structure</td><td>Fixed timeboxes (sprints)</td><td>Continuous; no fixed timebox</td></tr>
+        <tr><td>Work planning</td><td>Plan per iteration</td><td>Pull from backlog as capacity allows</td></tr>
+        <tr><td>Work control</td><td>Iteration commitment</td><td>WIP (Work-In-Progress) limits</td></tr>
+        <tr><td>Standup focus</td><td>What did I do? What will I do? Impediments?</td><td>Walk board right→left; bottlenecks; flow?</td></tr>
+        <tr><td>Demos/reviews</td><td>End of each iteration</td><td>When enough features accumulate</td></tr>
+        <tr><td>Retrospectives</td><td>End of each iteration</td><td>Team-determined schedule</td></tr>
+        <tr><td>Measurement</td><td>Velocity (story pts/iteration)</td><td>Lead time, cycle time, throughput</td></tr>
+        <tr><td>Refinement</td><td>Timeboxed sessions (mid-iteration)</td><td>Just-in-time (as card is pulled)</td></tr>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <h3>3.1.6–3.1.11 Hybrid Life Cycles</h3>
+      <div class="warn-box">
+        <div class="box-label">⚠️ Exam Alert — Hybrid ≠ Agile</div>
+        A hybrid approach uses COMBINATION of predictive, iterative, incremental, and/or agile elements. Calling a hybrid "agile" is misleading — it doesn't fully embody agile mindset/values/principles.
+      </div>
+      <div class="hybrid-grid">
+        <div class="hybrid-card">
+          <div class="hc-title">Agile Dev → Predictive Rollout</div>
+          <div class="hc-desc">Agile development phase (uncertainty/complexity) followed by predictive rollout (defined, repeatable). Example: new high-tech product + mass training rollout. Pharma: agile trials → FDA approval (predictive end phase).</div>
+        </div>
+        <div class="hybrid-card">
+          <div class="hc-title">Combined Simultaneously</div>
+          <div class="hc-desc">Some parts agile, some parts predictive in same project. Transitioning incrementally to agile. Common scenario — not fully agile nor fully predictive.</div>
+        </div>
+        <div class="hybrid-card">
+          <div class="hc-title">Mostly Predictive + Agile Components</div>
+          <div class="hc-desc">Small agile element within mainly predictive project. Example: construction project with new roofing material — run agile trials for new component, predictive for rest.</div>
+        </div>
+        <div class="hybrid-card">
+          <div class="hc-title">Mostly Agile + Predictive Component</div>
+          <div class="hc-desc">Largely agile with one non-negotiable predictive element. Example: external vendor component that cannot be delivered incrementally — single integration at end.</div>
+        </div>
+        <div class="hybrid-card">
+          <div class="hc-title">Fit-For-Purpose Hybrid</div>
+          <div class="hc-desc">Designed based on project risks. Campus construction: incremental for building order (ROI acceleration) + predictive per individual building. Government insurance system: agile + predictive calculation team concurrently.</div>
+        </div>
+        <div class="hybrid-card">
+          <div class="hc-title">Transition Strategy Hybrid</div>
+          <div class="hc-desc">Gradual shift from predictive to agile. Add iterative techniques first → then incremental. Try on low-risk, medium-uncertainty project. Then scale up. Tailored to organization's readiness.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>3.2 Mixing Agile Approaches</h3>
+      <p>Teams rarely limit to one approach. Common blend: <strong>Scrum + Kanban + XP</strong></p>
+      <div class="success-box">
+        <div class="box-label">Popular Blend — Scrum + Kanban + XP</div>
+        <strong>Scrum:</strong> product backlog, product owner, scrum master, sprints, reviews, retrospectives<br>
+        <strong>Kanban board:</strong> visualize flow, make impediments visible, manage WIP limits<br>
+        <strong>XP practices:</strong> story cards, continuous integration, refactoring, automated testing, TDD
+      </div>
+      <div class="warn-box">
+        <div class="box-label">⚠️ Caution on Tailoring</div>
+        Tailoring is an ADVANCED topic. <strong>Gain experience and be successful with one approach BEFORE tailoring.</strong> Premature/haphazard tailoring minimizes effectiveness and limits benefits. "Shu-Ha-Ri" model: first obey (Shu) → then consciously deviate (Ha) → then innovate (Ri).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>3.3 Project Factors That Influence Tailoring</h3>
+      <table class="lc-table">
+        <tr><th>Project Factor</th><th>Tailoring Recommendation</th></tr>
+        <tr><td>Steady vs. sporadic demand</td><td>Flow-based agile with cadence (best of both worlds)</td></tr>
+        <tr><td>Inexperienced team</td><td>Retrospect more often; train fundamentals first</td></tr>
+        <tr><td>Frequent interruptions/delays</td><td>Kanban boards + WIP limits to expose bottlenecks</td></tr>
+        <tr><td>Poor quality increments</td><td>Test-driven development (TDD) practices</td></tr>
+        <tr><td>Multiple teams on one product</td><td>Learn agile program management / scaling frameworks</td></tr>
+        <tr><td>New to agile approach</td><td>Train in mindset fundamentals; workshop on specific approach</td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 4: CREATING AGILE ENVIRONMENT ===== -->
+<div id="creating" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">4</div>
+    <div class="sec-title">Implementing Agile: Creating an Agile Environment</div>
+    <button class="print-btn" onclick="printSection('s4')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s4">
+
+    <div class="subsection">
+      <h3>4.1 Start with an Agile Mindset</h3>
+      <p>Managing with agile requires the team to adopt an agile mindset. Key questions to guide implementation:</p>
+      <div class="two-col">
+        <ul>
+          <li>How can the team act in an agile manner?</li>
+          <li>What can we deliver quickly for early feedback?</li>
+          <li>How can the team be transparent?</li>
+        </ul>
+        <ul>
+          <li>What work can be avoided (high-priority focus)?</li>
+          <li>How can servant-leadership benefit the team's goals?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>4.2 Servant Leadership</h3>
+      <div class="key-box">
+        <div class="box-label">🔑 Definition</div>
+        <strong>Servant Leadership</strong> = the practice of leading through service to the team, by focusing on understanding and addressing the needs and development of team members to enable highest possible team performance.
+      </div>
+      <div class="tip-box">
+        <div class="box-label">Servant Leader Order of Priorities</div>
+        <strong>1. Purpose</strong> — Define the "why"; team optimizes at project level, not person level<br>
+        <strong>2. People</strong> — Create environment where everyone can succeed; each member contributes<br>
+        <strong>3. Process</strong> — Results over perfect process; cross-functional team that delivers finished value often and reflects = agile
+      </div>
+      <div class="sl-grid">
+        <div class="sl-card"><div class="sl-icon">👂</div><div class="sl-title">Listening</div><div class="sl-desc">Active, deep listening to team members</div></div>
+        <div class="sl-card"><div class="sl-icon">🤝</div><div class="sl-title">Serving</div><div class="sl-desc">Service to team first, not command</div></div>
+        <div class="sl-card"><div class="sl-icon">🌱</div><div class="sl-title">Helping Grow</div><div class="sl-desc">Nurture team members' development</div></div>
+        <div class="sl-card"><div class="sl-icon">🏋️</div><div class="sl-title">Coaching</div><div class="sl-desc">Coach vs. control; enable not direct</div></div>
+        <div class="sl-card"><div class="sl-icon">🔒</div><div class="sl-title">Safety & Trust</div><div class="sl-desc">Promote psychological safety</div></div>
+        <div class="sl-card"><div class="sl-icon">🧠</div><div class="sl-title">Self-Awareness</div><div class="sl-desc">Know own strengths & biases</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>4.2.1 Servant Leader Responsibilities</h3>
+      <div class="two-col">
+        <div>
+          <h4>Facilitate (not Manage)</h4>
+          <ul>
+            <li>Shift from "managing coordination" → "facilitating collaboration"</li>
+            <li>Help everyone do their best thinking</li>
+            <li>Encourage participation, understanding, shared responsibility</li>
+            <li>Expose and communicate bottlenecks between teams</li>
+            <li>Become impartial bridge-builders and coaches</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Remove Organizational Impediments</h4>
+          <ul>
+            <li>Challenge lengthy processes (finance, change control, audits)</li>
+            <li>Help departments understand agile deliverables</li>
+            <li>Address bottleneck processes that delay delivery</li>
+            <li>Work with finance for incremental budgeting</li>
+            <li>Work with auditors in regulatory environments</li>
+          </ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:12px">
+        <div>
+          <h4>Pave the Way for Others' Contribution</h4>
+          <ul>
+            <li>Enable self-management and self-organization</li>
+            <li>Work with facilities for team space</li>
+            <li>Enable team focus on one project at a time</li>
+            <li>Work with product owner to develop stories with team</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Educate & Support</h4>
+          <ul>
+            <li>Educate stakeholders on agile benefits (prioritization, productivity, quality)</li>
+            <li>Mentor, encourage, advocate for training</li>
+            <li>Help with technical PM activities (e.g., quantitative risk analysis)</li>
+            <li>Celebrate successes; build external bridges</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>4.2.2 Role of Project Manager in Agile</h3>
+      <div class="warn-box">
+        <div class="box-label">⚠️ Role Shift — Critical for PMP</div>
+        <strong>Traditional PM:</strong> Center of coordination, tracking, status reporting to organization<br>
+        <strong>Agile PM:</strong> Servant leader — coaching, fostering collaboration, aligning stakeholder needs<br>
+        The value of PMs is NOT their position, but their ability to make everyone else better.
+      </div>
+      <p>In agile, PMs encourage distribution of responsibility to team members who have the knowledge to get work done. Cross-functional teams coordinate their own work and collaborate with product owner.</p>
+    </div>
+
+    <div class="subsection">
+      <h3>4.3 Team Composition</h3>
+      <div class="roles-grid">
+        <div class="role-card">
+          <h4>Cross-Functional Team Member</h4>
+          <ul>
+            <li>All skills needed to deliver working product within team</li>
+            <li>No external dependencies to complete work</li>
+            <li>Deliver potentially releasable product on regular cadence</li>
+            <li>Higher quality through collaboration</li>
+            <li>Key differentiator: can finish work independently</li>
+          </ul>
+        </div>
+        <div class="role-card po">
+          <h4>Product Owner</h4>
+          <ul>
+            <li>Guides product direction; ranks work by business value</li>
+            <li>Works with team DAILY; provides feedback</li>
+            <li>Creates and maintains backlog with team</li>
+            <li>Business background; deep subject matter expertise</li>
+            <li>Manages flow of work to team</li>
+            <li>Critical: without strong PO, team creates low-value features</li>
+          </ul>
+        </div>
+        <div class="role-card sm">
+          <h4>Team Facilitator (Servant Leader)</h4>
+          <ul>
+            <li>Also: Scrum Master, Project Lead, Team Coach, PM</li>
+            <li>All agile teams need servant leadership</li>
+            <li>Facilitation, coaching, impediment removal</li>
+            <li>External coaches: experience but weak relationships</li>
+            <li>Internal coaches: strong relationships but limited breadth</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>4.3.1 Agile Team Attributes</h3>
+      <div class="two-col">
+        <div>
+          <table class="lc-table">
+            <tr><th>Attribute</th><th>Goal</th></tr>
+            <tr><td>Dedicated people</td><td>Focus, productivity; small team &lt;10</td></tr>
+            <tr><td>Cross-functional</td><td>Deliver finished value independently</td></tr>
+            <tr><td>Colocated or managed distributed</td><td>Better communication, knowledge sharing</td></tr>
+            <tr><td>Generalists + specialists (T-shaped)</td><td>Flexibility + expertise</td></tr>
+            <tr><td>Stable work environment</td><td>Dependency, agreed approach, run rate</td></tr>
+          </table>
+        </div>
+        <div>
+          <div class="key-box">
+            <div class="box-label">I-shaped vs. T-shaped vs. Broken Comb</div>
+            <strong>I-shaped:</strong> Deep in one area, no breadth — specialist silo<br>
+            <strong>T-shaped:</strong> Deep specialization + broad support skills — IDEAL for agile<br>
+            <strong>Broken Comb (Paint Drip):</strong> Multiple depth areas — superspecialist
+          </div>
+          <div class="warn-box">
+            <div class="box-label">Multitasking = Productivity Loss</div>
+            Two projects at 50% each → actual ~20–40% on each. Loss increases exponentially with more tasks. 100% dedicated = fastest throughput.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>4.3.3–4.3.7 Generalizing Specialists, Structures & Workspaces</h3>
+      <div class="three-col">
+        <div class="tip-box">
+          <div class="box-label">Generalizing Specialists</div>
+          T-shaped people needed for flow efficiency (team throughput) vs. resource efficiency (individual utilization). Single person's throughput is NOT relevant — team optimization matters.
+        </div>
+        <div class="tip-box">
+          <div class="box-label">Team Workspaces</div>
+          "Caves and common" — balance open collaboration areas with quiet focus spaces. Fishbowl windows (long-lived video links) + remote pairing for distributed teams.
+        </div>
+        <div class="tip-box">
+          <div class="box-label">Overcoming Silos</div>
+          Team members often report to different managers with different metrics. Managers must shift from resource efficiency → flow efficiency. Build cross-functional teams; dedicate individuals to one team.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 5: DELIVERING IN AGILE ===== -->
+<div id="delivering" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">5</div>
+    <div class="sec-title">Implementing Agile: Delivering in an Agile Environment</div>
+    <button class="print-btn" onclick="printSection('s5')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s5">
+
+    <div class="subsection">
+      <h3>5.1 Charter the Project and the Team</h3>
+      <div class="two-col">
+        <div>
+          <p><strong>Project Charter</strong> answers:</p>
+          <ul>
+            <li><strong>Why?</strong> — Project vision/purpose</li>
+            <li><strong>Who benefits and how?</strong> — Stakeholders</li>
+            <li><strong>What does done mean?</strong> — Release criteria</li>
+            <li><strong>How will we work together?</strong> — Flow of work</li>
+          </ul>
+        </div>
+        <div>
+          <p><strong>Team Charter / Social Contract</strong> includes:</p>
+          <ul>
+            <li>Team values (sustainable pace, core hours)</li>
+            <li>Working agreements (Definition of Ready, Definition of Done)</li>
+            <li>Ground rules (one speaker at a time)</li>
+            <li>Group norms (meeting times, respect)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>5.2 Common Agile Practices</h3>
+      <div class="practice-grid">
+        <div class="practice-card" data-icon="🔍">
+          <h4>5.2.1 Retrospectives — THE MOST IMPORTANT PRACTICE</h4>
+          <ul>
+            <li>Allows team to learn, improve, and adapt process</li>
+            <li>Based on Principle #12: reflect at regular intervals</li>
+            <li>NOT about blame — look at qualitative + quantitative data</li>
+            <li>Find root causes → countermeasures → action plans</li>
+            <li>Limit action items to team's capacity (better fewer, completed)</li>
+            <li>Measure outcomes in next period to validate</li>
+            <li>Trigger times: after release, when stuck, &gt;few weeks elapsed, any milestone</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="📝">
+          <h4>5.2.2 Backlog Preparation</h4>
+          <ul>
+            <li>Ordered list of work presented in story form</li>
+            <li>Don't create ALL stories upfront — just enough for first release (broad) + next iteration (detailed)</li>
+            <li>Product owner creates product roadmap showing anticipated sequence</li>
+            <li>Roadmap replanned based on what team produces</li>
+            <li>Progressive elaboration of backlog items</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="✂️">
+          <h4>5.2.3 Backlog Refinement</h4>
+          <ul>
+            <li>PO works with team to prepare stories for upcoming iteration</li>
+            <li>Goal: stories sized and understood by team</li>
+            <li>Refinement spectrum: just-in-time (flow) → 1hr mid-iteration (iteration-based) → multiple sessions</li>
+            <li>Teams aim for ≤1 hr/week on refinement</li>
+            <li>Techniques: triads (dev+tester+BA), group discussion, story splitting</li>
+            <li>Spike if uncertainty around a feature</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="☀️">
+          <h4>5.2.4 Daily Standups</h4>
+          <ul>
+            <li>Timebox: max 15 minutes; anyone can facilitate</li>
+            <li><strong>Iteration-based:</strong> What did I complete? What will I do? Impediments?</li>
+            <li><strong>Flow-based:</strong> Walk board right→left: What advances this? What must we finish? Anything not on board? Bottlenecks?</li>
+            <li><strong>Antipatterns:</strong> Becomes status meeting; team solves problems during standup</li>
+            <li>Problems → parking lot → separate meeting after standup</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="👁️">
+          <h4>5.2.5 Demonstrations / Reviews</h4>
+          <ul>
+            <li>Team demonstrates working product periodically</li>
+            <li>Product owner accepts or declines stories</li>
+            <li>Iteration-based: all completed work at end of iteration</li>
+            <li>Flow-based: when enough features accumulate</li>
+            <li>General rule: demo at least every 2 weeks</li>
+            <li>No demo = no learning = not adopting agile techniques</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="📅">
+          <h4>5.2.6 Planning for Iteration-Based Agile</h4>
+          <ul>
+            <li>Each team's capacity is different</li>
+            <li>Account for vacations/holidays → reduced capacity → reduced commitment</li>
+            <li>Teams estimate what they can complete (not 100% certain)</li>
+            <li>Agile: plan a little → deliver → learn → replan (ongoing cycle)</li>
+            <li>Antipattern: trying to commit to more than capacity allows</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="⚙️">
+          <h4>5.2.7 Execution Practices (Technical Excellence)</h4>
+          <ul>
+            <li><strong>Continuous Integration:</strong> Frequent incorporation of work + retest</li>
+            <li><strong>Testing at all levels:</strong> System, unit, integration, smoke, regression (prefer automated)</li>
+            <li><strong>ATDD:</strong> Team defines acceptance criteria → creates tests → write minimum code</li>
+            <li><strong>TDD / BDD:</strong> Write tests before product; mistake-proofing</li>
+            <li><strong>Spikes:</strong> Timeboxed research for estimation, acceptance criteria, user flow understanding</li>
+          </ul>
+        </div>
+        <div class="practice-card" data-icon="🔄">
+          <h4>5.2.8 Iterations + Increments → Working Product</h4>
+          <ul>
+            <li>Iterations create cadence for delivery and feedback</li>
+            <li>Increments provide value for delivery and feedback</li>
+            <li>Demo → feedback → retrospect → adapt → next iteration</li>
+            <li>Schedule demo appropriate for delivery cadence</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>5.3 Troubleshooting Agile Project Challenges</h3>
+      <div class="trouble-item"><div class="trouble-pain">Unclear purpose/mission</div><div class="trouble-sol">Agile chartering — vision, mission, mission tests</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Unclear working agreements</div><div class="trouble-sol">Chartering for alignment — values, principles, working agreements</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Unclear requirements</div><div class="trouble-sol">Product vision, roadmap, user story mapping, impact mapping; PO clarifies</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Poor user experience</div><div class="trouble-sol">UX design practices included in team; involve users early and often</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Inaccurate estimation</div><div class="trouble-sol">Reduce story size; relative estimation with whole team; agile modeling; spikes</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Unclear work assignments</div><div class="trouble-sol">Kanban boards; daily standup to walk board</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Team stuck on obstacles</div><div class="trouble-sol">Servant leader clears obstacles; escalate if needed</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Insufficient backlog refinement</div><div class="trouble-sol">PO + team workshop stories; Definition of Ready; split into smaller stories</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Defects</div><div class="trouble-sol">Pair work, collective ownership, pervasive testing, robust Definition of Done</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Technical debt</div><div class="trouble-sol">Refactoring, agile modeling, automated testing, Definition of Done</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Too much product complexity</div><div class="trouble-sol">"Simplest thing that works" principle; maximize work NOT done</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Slow process improvement</div><div class="trouble-sol">No more than 3 improvement items per retrospective; focus on completing each</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Too much upfront work/rework</div><div class="trouble-sol">Spikes to learn instead; shorten iterations; robust Definition of Done</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Rush/wait uneven flow</div><div class="trouble-sol">Plan to capacity; stop multitasking; pairs/swarm/mob to even capabilities</div></div>
+      <div class="trouble-item"><div class="trouble-pain">Siloed teams</div><div class="trouble-sol">Self-organize as cross-functional; use servant leadership to educate managers</div></div>
+    </div>
+
+    <div class="subsection">
+      <h3>5.4 Measurements in Agile Projects</h3>
+      <div class="warn-box">
+        <div class="box-label">⚠️ Watermelon Project Anti-Pattern</div>
+        Green on outside (traffic light reporting says OK), Red on inside (project is behind). Problem with predictive measurement: no empirical data until too late. Agile favors <strong>empirical, value-based measurements</strong> = finished work, not predicted work.
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card"><div class="m-title">Velocity</div><div class="m-desc">Story points completed per iteration. Used to forecast future iterations. 4-8 iterations to stabilize velocity.</div></div>
+        <div class="metric-card"><div class="m-title">Lead Time</div><div class="m-desc">Total time from item added to board → delivered to customer. Measures end-to-end flow.</div></div>
+        <div class="metric-card"><div class="m-title">Cycle Time</div><div class="m-desc">Time to process an item (start → complete). Measures team throughput; identifies bottlenecks.</div></div>
+        <div class="metric-card"><div class="m-title">Burndown</div><div class="m-desc">Work REMAINING vs. time. Shows risk early. Team can see by Day 3 if at risk. Can be dispiriting.</div></div>
+        <div class="metric-card"><div class="m-title">Burnup</div><div class="m-desc">Work COMPLETED vs. time. Shows what was accomplished. Also shows scope changes clearly.</div></div>
+        <div class="metric-card"><div class="m-title">Cumulative Flow Diagram (CFD)</div><div class="m-desc">Work in progress across all board columns. Wide band in any column = bottleneck. Adapt to project task board.</div></div>
+      </div>
+      <div class="two-col" style="margin-top: 14px;">
+        <div class="key-box">
+          <div class="box-label">EVM in Agile</div>
+          <strong>SPI = Story points completed / Story points planned</strong><br>
+          <strong>CPI = Earned Value (completed features value) / Actual Costs</strong><br>
+          If team planned 30 pts, completed 25 → SPI = 25/30 = 0.83 (83% of planned rate)
+        </div>
+        <div class="tip-box">
+          <div class="box-label">Story Points vs. Completed Stories</div>
+          Measuring STORY POINTS ≠ Measuring COMPLETED STORIES/FEATURES.<br>
+          Primary measure = <strong>working software/product</strong> (Principle #7).<br>
+          Story points = relative estimation; NOT comparable between teams.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== SECTION 6: ORGANIZATIONAL CONSIDERATIONS ===== -->
+<div id="org" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">6</div>
+    <div class="sec-title">Organizational Considerations for Project Agility</div>
+    <button class="print-btn" onclick="printSection('s6')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="s6">
+
+    <div class="subsection">
+      <h3>6.1 Organizational Change Management</h3>
+      <p>OCM covers skills/techniques for influencing changes that support agility. For full OCM guidance: PMI's <em>Managing Change in Organizations: A Practice Guide.</em></p>
+      <div class="org-grid">
+        <div class="org-card">
+          <h4>6.1.1 Drivers for Change Management</h4>
+          <ul>
+            <li><strong>Accelerated delivery changes:</strong> Receiving organization may not be ready to absorb outputs at increased pace. Customer acceptance critical.</li>
+            <li><strong>Agile adoption changes:</strong> More frequent handoffs, rework viewed negatively, transition friction requires OCM techniques.</li>
+          </ul>
+        </div>
+        <div class="org-card">
+          <h4>6.1.2 Change-Friendly Characteristics</h4>
+          <ul>
+            <li>Executive management's willingness to change</li>
+            <li>Willingness to shift performance reviews</li>
+            <li>Centralization/decentralization of PM functions</li>
+            <li>Short-term budgeting vs. long-term goals balance</li>
+            <li>Talent management maturity</li>
+          </ul>
+        </div>
+        <div class="org-card">
+          <h4>Roadblocks to Organizational Agility</h4>
+          <ul>
+            <li>Work decomposed into departmental silos</li>
+            <li>Procurement based on short-term pricing (not competency)</li>
+            <li>Leaders rewarded for local efficiency (not end-to-end flow)</li>
+            <li>Specialized contributors with no incentive to diversify</li>
+            <li>Decentralized portfolios: employees on too many projects</li>
+          </ul>
+        </div>
+        <div class="org-card">
+          <h4>Accelerating Cultural Compatibility</h4>
+          <ul>
+            <li>Visible and active executive sponsorship</li>
+            <li>OCM: communication and coaching</li>
+            <li>Progressive pacing of agile adoption project-by-project</li>
+            <li>Incremental introduction of agile practices</li>
+            <li>Leading by example</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>6.2 Organizational Culture</h3>
+      <div class="callout"><strong>"Culture eats strategy for breakfast"</strong> — Peter Drucker</div>
+      <div class="two-col">
+        <div>
+          <div class="key-box">
+            <div class="box-label">6.2.1 Environment of Safety</div>
+            Most important cultural norm: <strong>safe, honest, transparent environment</strong>. Only in safety can teams reflect on successes and apply lessons from failures without fear.
+          </div>
+        </div>
+        <div>
+          <div class="tip-box">
+            <div class="box-label">6.2.2 Culture Assessment Axes</div>
+            Exploration ↔ Execution<br>
+            Speed ↔ Stability<br>
+            Quantity ↔ Quality<br>
+            Flexibility ↔ Predictability<br>
+            Use to choose right agile techniques.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>6.3 Procurement and Contracts</h3>
+      <div class="key-box">
+        <div class="box-label">Agile Manifesto on Procurement</div>
+        "Customer collaboration OVER contract negotiation." Pursue shared-risk-reward relationship where ALL sides win (not winners vs. losers).
+      </div>
+      <table class="lc-table">
+        <tr><th>Contracting Technique</th><th>Description</th></tr>
+        <tr><td>Multi-tiered structure</td><td>Master agreement (fixed) + schedule of services (flexible) + lightweight SOW (dynamic scope/budget)</td></tr>
+        <tr><td>Emphasize value delivered</td><td>Milestones based on value-driven deliverables, not phase gates or intermediate artifacts</td></tr>
+        <tr><td>Fixed-price increments</td><td>Fixed-price microdeliverables (user stories). Customer: cost control. Supplier: limits over-commitment risk.</td></tr>
+        <tr><td>Not-to-exceed T&amp;M</td><td>Fixed max budget; customer can add new ideas by replacing original work within capacity</td></tr>
+        <tr><td>Graduated T&amp;M</td><td>Higher rate for early delivery; lower rate for late delivery. Shared financial risk.</td></tr>
+        <tr><td>Early cancellation option</td><td>Customer can exit with cancellation fee when sufficient value delivered mid-project</td></tr>
+        <tr><td>Dynamic scope option</td><td>Fixed budget; customer can vary scope at specified points to leverage innovation</td></tr>
+        <tr><td>Team augmentation</td><td>Embed supplier directly in customer org. Fund teams not scope — most collaborative approach.</td></tr>
+        <tr><td>Full-service suppliers</td><td>Prefer single supplier delivering full value (complete independent feature sets) over fragmented multi-supplier</td></tr>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <h3>6.4 Business Practices</h3>
+      <p>As cross-functional teams deliver value, they challenge internal support functions:</p>
+      <ul>
+        <li><strong>Finance:</strong> May capitalize products differently when delivered incrementally</li>
+        <li><strong>Procurement:</strong> Contracts may need restructuring for frequent delivery</li>
+        <li><strong>HR:</strong> Individual incentives may conflict with team-based self-organizing culture</li>
+        <li><strong>Management:</strong> Performance appraisals of self-organizing employees need rethinking</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <h3>6.5 Multiteam Coordination — Scaling</h3>
+      <div class="two-col">
+        <div>
+          <div class="key-box">
+            <div class="box-label">Key Rule</div>
+            If using agile for a single team is NOT successful → do NOT try to scale. Fix the foundational team issues first. Healthy agile team is a critical success factor.
+          </div>
+          <p>Scaling frameworks: SAFe®, LeSS, Disciplined Agile (DA), Scrum of Scrums. More details in Annex A3.</p>
+        </div>
+        <div>
+          <div class="tip-box">
+            <div class="box-label">Scaling Approach</div>
+            Start small → learn what works → scale gradually. Apply agile thinking to adjust existing program management. Healthy single-team agile is prerequisite to scaling.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>6.6 Agile and the PMO</h3>
+      <div class="three-col">
+        <div class="org-card">
+          <h4>6.6.1 Value-Driven PMO</h4>
+          <ul>
+            <li>Operates like consulting business</li>
+            <li>Tailors to specific project needs</li>
+            <li>Tools/templates for some; executive coaching for others</li>
+            <li>Intrapreneur approach — focus on most valuable activities</li>
+          </ul>
+        </div>
+        <div class="org-card">
+          <h4>6.6.2 Invitation-Oriented PMO</h4>
+          <ul>
+            <li>Invite (not mandate) engagement with PMO services</li>
+            <li>Higher engagement = "stickier" practices</li>
+            <li>If delivering value → clients will request services naturally</li>
+          </ul>
+        </div>
+        <div class="org-card">
+          <h4>6.6.3 Multidisciplinary PMO</h4>
+          <ul>
+            <li>Agile center of excellence services:</li>
+            <li>Standards (templates, tools, education)</li>
+            <li>Training/mentoring → agile mindset</li>
+            <li>Multiproject management coordination</li>
+            <li>Facilitating organizational learning</li>
+            <li>Managing stakeholders (PO training)</li>
+            <li>Recruiting/evaluating team leaders</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>6.7 Organizational Structure Factors</h3>
+      <table class="lc-table">
+        <tr><th>Factor</th><th>Impact on Agility</th></tr>
+        <tr><td>Geography (distributed)</td><td>Competing goals, language barriers, lower visibility. Use agile to encourage more collaboration. Tailor techniques.</td></tr>
+        <tr><td>Functionalized structures</td><td>General resistance to cross-functional collaboration. Work with managers to allocate people.</td></tr>
+        <tr><td>Size of deliverable</td><td>Smaller deliverables → more frequent handoffs → faster value flow</td></tr>
+        <tr><td>People allocation</td><td>Fully allocate one person per department to highest priority project</td></tr>
+        <tr><td>Procurement-heavy</td><td>Vendors leave with project knowledge. Use retrospectives while vendor engaged.</td></tr>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <h3>6.8 Evolving the Organization</h3>
+      <div class="tip-box">
+        <div class="box-label">Treat Change as an Agile Project</div>
+        Create a <strong>backlog of organizational changes</strong>, prioritized by value. Each change = experiment tested for short period. Use Kanban boards to track: To-Do → In-Progress → Done. Rolling out changes transparently improves likelihood of success.
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== FRAMEWORKS ANNEX A3 ===== -->
+<div id="frameworks" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">A3</div>
+    <div class="sec-title">Overview of Agile & Lean Frameworks (Annex A3)</div>
+    <button class="print-btn" onclick="printSection('sA3')">🖨️ Print This Section</button>
+  </div>
+  <div class="section-body" id="sA3">
+
+    <div class="warn-box">
+      <div class="box-label">Framework Selection Criteria in This Guide</div>
+      Selected frameworks must be: (1) Designed for holistic use, (2) Formalized for common use, (3) Popular in modern use (measured by industry surveys). Custom company methods and niche frameworks are OUT of scope.
+    </div>
+
+    <div class="fw-grid">
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — ITERATION-BASED</div>
+        <h4>Scrum</h4>
+        <ul>
+          <li>Single-team framework; sprints of ≤1 month</li>
+          <li><strong>Roles:</strong> Product Owner (maximizes value) + Development Team (cross-functional, self-organizing) + Scrum Master (upholds process, removes impediments, coaches)</li>
+          <li><strong>Events:</strong> Sprint → Sprint Planning → Daily Scrum → Sprint Review → Sprint Retrospective</li>
+          <li><strong>Artifacts:</strong> Product Backlog + Sprint Backlog + Increment</li>
+          <li>Each sprint = potentially releasable increment</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — TECHNICAL PRACTICES</div>
+        <h4>eXtreme Programming (XP)</h4>
+        <ul>
+          <li>Distills best practices to purest form, applies continuously</li>
+          <li><strong>Core Values:</strong> Communication, Simplicity, Feedback, Courage, Respect</li>
+          <li><strong>Organizational:</strong> Sit together, whole team, informative workspace</li>
+          <li><strong>Technical:</strong> Pair programming, test-first, incremental design, shared code</li>
+          <li><strong>Planning:</strong> User stories, weekly cycle, quarterly cycle, slack</li>
+          <li><strong>Integration:</strong> 10-min build, continuous integration, test-first</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — FLOW-BASED</div>
+        <h4>Kanban Method</h4>
+        <ul>
+          <li>Inspired by Toyota lean manufacturing (1953, Taiichi Ohno)</li>
+          <li>"Visual sign" — boards with columns representing workflow states</li>
+          <li>Start-where-you-are approach; least disruptive to implement</li>
+          <li>No prescribed timeboxes; continuous flow</li>
+          <li><strong>Defining Principles:</strong> Start with current state, Agree to incremental evolutionary change, Respect current process/roles, Encourage leadership at all levels</li>
+          <li><strong>Core Properties:</strong> Visualize workflow, Limit WIP, Manage flow, Make policies explicit, Implement feedback loops, Improve collaboratively</li>
+          <li>Best for: flexibility, continuous delivery, variable workload, focus, waste reduction</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — SCALABLE BY SIZE/CRITICALITY</div>
+        <h4>Crystal Methods</h4>
+        <ul>
+          <li>Family of methodologies scaled by team size AND project criticality</li>
+          <li>Colors: Crystal Clear (1-6 people) → Yellow → Orange → Red (up to 200+)</li>
+          <li>Criticality levels: Comfort → Discretionary Money → Essential Money → Life</li>
+          <li><strong>Core Values:</strong> People, Interaction, Community, Skills, Talents, Communications</li>
+          <li><strong>Common Properties:</strong> Frequent delivery, Reflective improvement, Close communication, Personal safety, Focus, Expert user access, Automated testing/CI/config mgmt</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">HYBRID — TRANSITION APPROACH</div>
+        <h4>Scrumban</h4>
+        <ul>
+          <li>Designed as transition from Scrum to Kanban; now a hybrid framework</li>
+          <li>Scrum as framework + Kanban for process improvement</li>
+          <li>Short sprints + kanban board to visualize/monitor work</li>
+          <li>WIP limits to manage work</li>
+          <li>Planning trigger: when WIP drops below predetermined level</li>
+          <li>No predefined roles — team retains current roles</li>
+          <li>Daily meetings for collaboration and impediment removal</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — FEATURE-CENTRIC</div>
+        <h4>Feature-Driven Development (FDD)</h4>
+        <ul>
+          <li>For large software projects; feature = small business value capability</li>
+          <li><strong>6 Roles:</strong> Project Manager, Chief Architect, Development Manager, Chief Programmer, Class Owner, Domain Expert</li>
+          <li><strong>5 Activities (iterative):</strong> Develop overall model → Build features list → Plan by feature → Design by feature → Build by features</li>
+          <li><strong>Best practices:</strong> Domain object modeling, feature teams, inspections, regular builds, visibility of progress</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — CONSTRAINT-DRIVEN</div>
+        <h4>Dynamic Systems Development Method (DSDM)</h4>
+        <ul>
+          <li>Noncommercial collaboration; adds rigor to iterative methods</li>
+          <li>Known for: <strong>constraint-driven delivery</strong> — Cost, Quality, Time are FIXED; Scope is VARIABLE</li>
+          <li>Traditional approach reverses this (scope fixed, others variable)</li>
+          <li><strong>8 Principles:</strong> Focus on business need, Deliver on time, Collaborate, Never compromise quality, Build incrementally from firm foundations, Develop iteratively, Communicate continuously, Demonstrate control</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">TEAM — UP VARIANT</div>
+        <h4>Agile Unified Process (AgileUP)</h4>
+        <ul>
+          <li>Offshoot of RUP (Rational Unified Process); lighter weight</li>
+          <li>7 disciplines with iterative cycles before formal delivery</li>
+          <li><strong>Disciplines:</strong> Model, Implementation, Test, Deployment, Config Mgmt, Project Mgmt, Environment</li>
+          <li><strong>Principles:</strong> Team knows what it's doing, Simplicity, Agility, Focus on high-value, Tool independence, Tailoring, Situationally specific</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">SCALING — TEAM OF TEAMS</div>
+        <h4>Scrum of Scrums (SoS)</h4>
+        <ul>
+          <li>For 2+ Scrum teams needing coordination; also "meta Scrum"</li>
+          <li>One representative per team meets daily/2-3x week</li>
+          <li>Reports: Completed work + Next work + Current impediments + Potential blocking impediments for other teams</li>
+          <li>Can scale: Scrum of Scrum of Scrums for very large programs</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">SCALING — ENTERPRISE</div>
+        <h4>Scaled Agile Framework (SAFe®)</h4>
+        <ul>
+          <li>Enterprise-level patterns for scaling agile</li>
+          <li>Organizes around value streams delivering continuous customer value</li>
+          <li>Levels: Team + Program + Portfolio</li>
+          <li><strong>9 Principles:</strong> Economic view, Systems thinking, Variability, Build incrementally with fast cycles, Milestone = objective evaluation, Visualize + limit WIP, Cadence + synchronization, Unlock intrinsic motivation, Decentralize decisions</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">SCALING — MINIMAL EXTENSION</div>
+        <h4>Large Scale Scrum (LeSS)</h4>
+        <ul>
+          <li>Extends Scrum with minimal additions — preserves single-team Scrum essence</li>
+          <li><strong>Same as Scrum:</strong> One product backlog, one Definition of Done, one increment/sprint, one PO, complete cross-functional teams, one sprint</li>
+          <li><strong>LeSS Additions:</strong> Sprint planning in two parts (What+How), organic cross-team coordination, overall cross-team refinement, overall retrospective</li>
+          <li>Principles: Systems thinking, whole product focus, transparency</li>
+        </ul>
+      </div>
+      <div class="fw-card">
+        <div class="fw-badge">SCALING — PROCESS DECISION FRAMEWORK</div>
+        <h4>Disciplined Agile (DA)</h4>
+        <ul>
+          <li>Integrates agile best practices; balanced between narrow (Scrum) and prescriptive (AgileUP)</li>
+          <li><strong>Principles:</strong> People-first, Learning-oriented, Full delivery life cycle, Goal-driven, Enterprise awareness, Scalable</li>
+          <li>Promotes fit-for-purpose life cycles</li>
+          <li>Covers multiple dimensions of program complexity</li>
+          <li>Offers cross-departmental governance guidance</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== GLOSSARY ===== -->
+<div id="glossary" class="section-wrapper">
+  <div class="section-header">
+    <div class="sec-num">G</div>
+    <div class="sec-title">Exam-Focused Glossary — Key Terms & Definitions</div>
+    <button class="print-btn" onclick="printSection('sGloss')">🖨️ Print Glossary</button>
+  </div>
+  <div class="section-body" id="sGloss">
+    <p class="text-muted" style="margin-bottom:14px">Definitions directly from the Agile Practice Guide — focus on these for exam.</p>
+    <div class="glossary-grid">
+      <div class="gloss-item"><div class="gloss-term">Agile</div><div class="gloss-def">A mindset of values and principles as set forth in the Agile Manifesto; a blanket term for adaptive frameworks.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Agile Life Cycle</div><div class="gloss-def">An approach that is both <strong>iterative AND incremental</strong> to refine work items and deliver frequently.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Agile Manifesto</div><div class="gloss-def">The original and official definition of agile values and principles. Published 2001.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Agile Mindset</div><div class="gloss-def">A way of thinking and behaving underpinned by the 4 values and 12 principles of the Agile Manifesto.</div></div>
+      <div class="gloss-item"><div class="gloss-term">ATDD</div><div class="gloss-def">Acceptance Test-Driven Development — collaboratively create acceptance tests BEFORE delivery begins.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Backlog Refinement</div><div class="gloss-def">Progressive elaboration; ongoing activity where team reviews, updates, and writes requirements to satisfy customer need.</div></div>
+      <div class="gloss-item"><div class="gloss-term">BDD</div><div class="gloss-def">Behavior-Driven Development — system design and validation using test-first principles and English-like scripts.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Broken Comb / Paint Drip</div><div class="gloss-def">A person with various DEPTHS of specialization in multiple skills. Contrast: T-shaped (one deep + broad), I-shaped (one deep only).</div></div>
+      <div class="gloss-item"><div class="gloss-term">Burndown Chart</div><div class="gloss-def">Graphical representation of <strong>work REMAINING</strong> vs. time left in timebox.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Burnup Chart</div><div class="gloss-def">Graphical representation of <strong>work COMPLETED</strong> toward release. Shows scope changes clearly.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Cadence</div><div class="gloss-def">A rhythm of execution. See also: Timebox.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Collective Code Ownership</div><div class="gloss-def">Any team member authorized to modify any project work product — emphasizes team-wide accountability.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Continuous Delivery</div><div class="gloss-def">Delivering feature increments immediately to customers, often through small batches and automation.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Continuous Integration</div><div class="gloss-def">Each team member's work frequently integrated and validated with others.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Crystal</div><div class="gloss-def">Family of lightweight agile methods scaled by team SIZE and project CRITICALITY.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Cycle Time</div><div class="gloss-def">Time required to PROCESS an item (start work → complete). Identifies bottlenecks.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Daily Scrum / Standup</div><div class="gloss-def">Brief (max 15 min) daily meeting. Team reviews yesterday, declares today's intent, highlights obstacles.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Definition of Done (DoD)</div><div class="gloss-def">Team's checklist of all criteria required for a deliverable to be considered ready for customer use.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Definition of Ready (DoR)</div><div class="gloss-def">Team's checklist ensuring a user story has all information needed for the team to begin work.</div></div>
+      <div class="gloss-item"><div class="gloss-term">DevOps</div><div class="gloss-def">Practices for smooth delivery flow by improving collaboration between development and operations staff.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Disciplined Agile (DA)</div><div class="gloss-def">Process decision framework enabling simplified process decisions around incremental and iterative delivery.</div></div>
+      <div class="gloss-item"><div class="gloss-term">DSDM</div><div class="gloss-def">Dynamic Systems Development Method — constraint-driven agile framework. Cost/Quality/Time fixed; Scope variable.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Flow Master</div><div class="gloss-def">Coach for a team in continuous flow/Kanban context. Equivalent to Scrum Master.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Hybrid Approach</div><div class="gloss-def">Combination of two or more agile and non-agile elements, having a non-agile end result.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Impact Mapping</div><div class="gloss-def">Strategic planning technique — roadmap to organization while building new products.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Impediment / Blocker</div><div class="gloss-def">An obstacle that prevents the team from achieving its objectives.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Increment</div><div class="gloss-def">A functional, tested, and accepted deliverable that is a SUBSET of the overall project outcome.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Incremental Life Cycle</div><div class="gloss-def">Approach providing finished deliverables the customer may be able to use IMMEDIATELY.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Information Radiator</div><div class="gloss-def">Visible physical display providing information without disturbing the team. E.g., Kanban board.</div></div>
+      <div class="gloss-item"><div class="gloss-term">I-shaped</div><div class="gloss-def">Person with a SINGLE deep specialization; no breadth. Not ideal for agile teams.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Iteration</div><div class="gloss-def">A TIMEBOXED cycle of development in which all work needed to deliver value is performed.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Iterative Life Cycle</div><div class="gloss-def">Approach allowing feedback on UNFINISHED work to improve and modify that work.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Kanban Board</div><div class="gloss-def">Visualization tool making bottlenecks and work quantities visible; enables flow improvement.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Kanban Method</div><div class="gloss-def">Agile method inspired by lean inventory control; specifically for knowledge work. "Start-where-you-are."</div></div>
+      <div class="gloss-item"><div class="gloss-term">Lead Time</div><div class="gloss-def">TOTAL time from item added to board → delivered to customer (includes queue time).</div></div>
+      <div class="gloss-item"><div class="gloss-term">LeSS</div><div class="gloss-def">Large Scale Scrum — extends Scrum with minimal additions; preserves single-team Scrum essence.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Mobbing</div><div class="gloss-def">Multiple team members simultaneously focusing and coordinating on ONE particular work item.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Minimum Viable Product (MVP)</div><div class="gloss-def">Smallest deliverable with enough features to satisfy early customers and collect feedback.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Organizational Bias</div><div class="gloss-def">Organization's preferences on scales: Exploration↔Execution, Speed↔Stability, Quantity↔Quality, Flexibility↔Predictability.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Pair Work / Pair Programming</div><div class="gloss-def">Two team members working simultaneously on the same work item (programming variant = pair programming).</div></div>
+      <div class="gloss-item"><div class="gloss-term">Personas</div><div class="gloss-def">Archetype user representing similar end users, described with goals, motivations, personal characteristics.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Pivot</div><div class="gloss-def">A planned course correction to test a new hypothesis about the product or strategy.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Predictive Life Cycle</div><div class="gloss-def">Traditional approach with bulk of planning UPFRONT, then executing in single pass. Sequential.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Product Backlog</div><div class="gloss-def">An ORDERED list of user-centric requirements that a team maintains for a product.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Product Owner</div><div class="gloss-def">Responsible for maximizing product value; ultimately accountable for end product built.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Progressive Elaboration</div><div class="gloss-def">Iterative process of increasing detail in plans as more information and accurate estimates become available.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Refactoring</div><div class="gloss-def">Improving product DESIGN (maintainability, other attributes) without altering expected behavior.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Retrospective</div><div class="gloss-def">Regularly occurring workshop where participants explore their work/results to improve process and product.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Rolling Wave Planning</div><div class="gloss-def">Iterative planning: near-term work planned in detail; future work planned at higher level.</div></div>
+      <div class="gloss-item"><div class="gloss-term">SAFe®</div><div class="gloss-def">Scaled Agile Framework — knowledge base of integrated patterns for enterprise-scale lean-agile development.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Scrum</div><div class="gloss-def">Agile framework for developing complex products. Specific roles (PO, Dev Team, SM), events (Sprint, Planning, Daily, Review, Retrospective), artifacts (Product Backlog, Sprint Backlog, Increment).</div></div>
+      <div class="gloss-item"><div class="gloss-term">Scrumban</div><div class="gloss-def">Management framework using Scrum as the way of working + Kanban Method as improvement lens.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Scrum Master</div><div class="gloss-def">Coach of dev team; process owner. Removes obstacles, facilitates events, defends team from disruptions.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Scrum of Scrums (SoS)</div><div class="gloss-def">Technique for multiple Scrum teams; one representative per team meets to coordinate interdependencies.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Self-Organizing Team</div><div class="gloss-def">Cross-functional team where people FLUIDLY assume leadership as needed to achieve objectives.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Servant Leadership</div><div class="gloss-def">Leading through SERVICE to the team; focusing on understanding and addressing needs of team members.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Siloed Organization</div><div class="gloss-def">Organization structured to contribute only a SUBSET of aspects required for delivering value to customers.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Smoke Testing</div><div class="gloss-def">Lightweight set of tests ensuring the MOST IMPORTANT functions work as intended — first-look test.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Specification by Example (SBE)</div><div class="gloss-def">Collaborative approach defining requirements using REALISTIC EXAMPLES instead of abstract statements.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Spike</div><div class="gloss-def">Short timeboxed interval for RESEARCH or PROTOTYPING to prove viability; for estimation/acceptance criteria.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Sprint</div><div class="gloss-def">A timeboxed ITERATION in Scrum (≤1 month). Produces a potentially releasable increment.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Story Point</div><div class="gloss-def">A UNIT-LESS measure used in RELATIVE user story estimation. Not comparable between teams.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Swarming</div><div class="gloss-def">Multiple team members collectively focusing on resolving a SPECIFIC IMPEDIMENT.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Technical Debt</div><div class="gloss-def">The DEFERRED cost of work not done at an earlier point in the product life cycle.</div></div>
+      <div class="gloss-item"><div class="gloss-term">TDD</div><div class="gloss-def">Test-Driven Development — tests defined BEFORE work begins; validates continuously; zero-defect mindset.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Timebox</div><div class="gloss-def">A FIXED period of time (e.g., 1 week, 1 month). See also: Iteration.</div></div>
+      <div class="gloss-item"><div class="gloss-term">T-shaped</div><div class="gloss-def">Person with ONE deep specialization + BROAD ability across other required skills. IDEAL for agile teams.</div></div>
+      <div class="gloss-item"><div class="gloss-term">User Story</div><div class="gloss-def">Brief description of deliverable value for a specific user. A PROMISE for a conversation to clarify details.</div></div>
+      <div class="gloss-item"><div class="gloss-term">User Story Mapping</div><div class="gloss-def">Visual practice organizing work to understand high-value features, identify backlog omissions, plan releases.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Value Stream</div><div class="gloss-def">Organizational construct focusing on FLOW of value to customers through specific products/services.</div></div>
+      <div class="gloss-item"><div class="gloss-term">Velocity</div><div class="gloss-def">Sum of story point sizes for features ACTUALLY completed in an iteration. Used for future planning.</div></div>
+      <div class="gloss-item"><div class="gloss-term">WIP (Work in Progress)</div><div class="gloss-def">Work started but not yet completed. WIP limits prevent overloading team and expose bottlenecks.</div></div>
+      <div class="gloss-item"><div class="gloss-term">XP (eXtreme Programming)</div><div class="gloss-def">Software development method based on frequent cycles; distills best practices to purest form. Origins of TDD, pair programming, CI, refactoring for agile.</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CRAM SECTION ===== -->
+<div id="cram" class="cram-section">
+  <div class="cram-header">
+    <h2>🔥 CRAM SECTION — Last-Minute Revision (5 Printable Pages)</h2>
+    <p>The complete gist of the Agile Practice Guide in high-density format — read this the night before the exam</p>
+  </div>
+  <div class="cram-body">
+    <button class="print-cram-btn" onclick="window.print()">🖨️ Print Cram Section</button>
+
+    <!-- CRAM PAGE 1 -->
+    <div class="cram-page">
+      <div class="cram-page-header">📋 CRAM PAGE 1 — MANIFESTO, MINDSET & LIFE CYCLES</div>
+      <div class="cram-cols">
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">THE 4 AGILE VALUES (Manifesto)</div>
+            <div class="cram-item"><span class="cram-highlight">Individuals & Interactions</span> over processes & tools</div>
+            <div class="cram-item"><span class="cram-highlight">Working Software</span> over comprehensive documentation</div>
+            <div class="cram-item"><span class="cram-highlight">Customer Collaboration</span> over contract negotiation</div>
+            <div class="cram-item"><span class="cram-highlight">Responding to Change</span> over following a plan</div>
+            <div class="cram-item" style="color:#ffa0a0">Items on RIGHT still have value — LEFT valued MORE</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">12 PRINCIPLES — KEY ONES FOR EXAM</div>
+            <div class="cram-item">P1: <span class="cram-highlight">Customer satisfaction through early/continuous delivery</span> = Highest Priority</div>
+            <div class="cram-item">P2: <span class="cram-highlight">Welcome changing requirements even LATE</span></div>
+            <div class="cram-item">P3: Deliver frequently — <span class="cram-highlight">prefer shorter timescale</span></div>
+            <div class="cram-item">P7: <span class="cram-highlight">Working software = PRIMARY measure of progress</span></div>
+            <div class="cram-item">P10: <span class="cram-highlight">Simplicity = art of maximizing work NOT done</span></div>
+            <div class="cram-item">P11: Best designs from <span class="cram-highlight">self-organizing teams</span></div>
+            <div class="cram-item">P12: Regular intervals → <span class="cram-highlight">reflect & adjust</span> (= Retrospective)</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">AGILE MINDSET MODEL</div>
+            <div class="cram-key-val"><div class="ck-key">Mindset (4 values)</div><div class="ck-val">→ Principles (12) → Practices (many)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Agile is a</div><div class="ck-val">BLANKET TERM (Scrum, XP, Kanban, Crystal, FDD, DSDM...)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Lean superset of</div><div class="ck-val">Agile + Kanban Method</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">4 LIFE CYCLES — MASTER COMPARISON</div>
+            <table class="cram-table">
+              <tr><th>Type</th><th>Requirements</th><th>Delivery</th><th>Goal</th></tr>
+              <tr><td>Predictive</td><td>Fixed</td><td>Single</td><td>Manage cost</td></tr>
+              <tr><td>Iterative</td><td>Dynamic</td><td>Single</td><td>Correctness</td></tr>
+              <tr><td>Incremental</td><td>Dynamic</td><td>Frequent smaller</td><td>Speed</td></tr>
+              <tr><td>Agile</td><td>Dynamic</td><td>Frequent small</td><td>Customer value</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">ITERATION-BASED vs. FLOW-BASED AGILE</div>
+            <div class="cram-key-val"><div class="ck-key">Iteration-based</div><div class="ck-val">Fixed timeboxes; velocity; sprint planning; Scrum</div></div>
+            <div class="cram-key-val"><div class="ck-key">Flow-based</div><div class="ck-val">Pull system; WIP limits; Kanban; lead/cycle time</div></div>
+            <div class="cram-key-val"><div class="ck-key">Standup (iter)</div><div class="ck-val">Done? Plan? Impediments? (3 questions)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Standup (flow)</div><div class="ck-val">Walk board right→left; bottlenecks; not on board?</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">STACEY COMPLEXITY MODEL</div>
+            <div class="cram-key-val"><div class="ck-key">Simple/Complicated</div><div class="ck-val">Low req + low tech uncertainty → Predictive</div></div>
+            <div class="cram-key-val"><div class="ck-key">Complex</div><div class="ck-val">High uncertainty one axis → Agile/Adaptive</div></div>
+            <div class="cram-key-val"><div class="ck-key">Chaotic</div><div class="ck-val">Both VERY HIGH → contain one variable first</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">HYBRID LIFE CYCLES</div>
+            <div class="cram-item">Agile Dev → Predictive Rollout (pharma, high-tech product)</div>
+            <div class="cram-item">Combined simultaneously (common, transitioning orgs)</div>
+            <div class="cram-item">Mostly Predictive + small Agile element (new component)</div>
+            <div class="cram-item">Mostly Agile + Predictive element (external vendor)</div>
+            <div class="cram-item">Fit-for-purpose (each component needs different approach)</div>
+            <div class="cram-item">Transition strategy (gradual: iterative → incremental)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAM PAGE 2 -->
+    <div class="cram-page">
+      <div class="cram-page-header">🏗️ CRAM PAGE 2 — SERVANT LEADERSHIP & TEAM COMPOSITION</div>
+      <div class="cram-cols">
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">SERVANT LEADERSHIP — ORDER OF PRIORITIES</div>
+            <div class="cram-item">1st — <span class="cram-highlight">Purpose:</span> Define "why"; team optimizes at PROJECT level</div>
+            <div class="cram-item">2nd — <span class="cram-highlight">People:</span> Environment where everyone succeeds</div>
+            <div class="cram-item">3rd — <span class="cram-highlight">Process:</span> Results over "perfect process"</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">SERVANT LEADER RESPONSIBILITIES</div>
+            <div class="cram-item"><span class="cram-highlight">Facilitate</span> — not manage; bridge-builder, coach</div>
+            <div class="cram-item"><span class="cram-highlight">Remove impediments</span> — challenge processes (finance, CCB, audit)</div>
+            <div class="cram-item"><span class="cram-highlight">Pave way</span> — enable self-management; workspace; focus</div>
+            <div class="cram-item"><span class="cram-highlight">Educate</span> — stakeholders, training, advocate for team</div>
+            <div class="cram-item">Role shift: "Managing coordination" → "Facilitating collaboration"</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">PM ROLE IN AGILE (Critical for PMP!)</div>
+            <div class="cram-item">Traditional PM = center of coordination, tracking</div>
+            <div class="cram-item">Agile PM = servant leader; coach; align stakeholders</div>
+            <div class="cram-item">Value not in POSITION but ability to make others better</div>
+            <div class="cram-item">PM encourages DISTRIBUTION of responsibility to team</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">TEAM SHAPES</div>
+            <div class="cram-key-val"><div class="ck-key">I-shaped</div><div class="ck-val">Deep specialist; no breadth — NOT ideal</div></div>
+            <div class="cram-key-val"><div class="ck-key">T-shaped</div><div class="ck-val">Deep specialization + broad support — IDEAL for agile</div></div>
+            <div class="cram-key-val"><div class="ck-key">Broken Comb</div><div class="ck-val">Multiple depth areas (Paint Drip)</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">THREE AGILE TEAM ROLES</div>
+            <table class="cram-table">
+              <tr><th>Role</th><th>Key Responsibilities</th></tr>
+              <tr><td>Cross-functional Member</td><td>All skills within team; no external dependencies; releasable product regularly</td></tr>
+              <tr><td>Product Owner</td><td>Guides product direction; ranks by business value; works with team DAILY; creates/maintains backlog</td></tr>
+              <tr><td>Team Facilitator / SM</td><td>Servant leader; facilitation, coaching, impediment removal; may be PM, Scrum Master, etc.</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">TEAM ATTRIBUTES (Table 4-1)</div>
+            <div class="cram-key-val"><div class="ck-key">Size</div><div class="ck-val">3-9 members (small team, fewer than 10)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Dedication</div><div class="ck-val">100% dedicated — multitasking loses 20-40% productivity</div></div>
+            <div class="cram-key-val"><div class="ck-key">Location</div><div class="ck-val">Colocated ideal; distributed workable with tools</div></div>
+            <div class="cram-key-val"><div class="ck-key">Skills</div><div class="ck-val">Mix of T-shaped specialists + generalists</div></div>
+            <div class="cram-key-val"><div class="ck-key">Environment</div><div class="ck-val">Stable; self-managing; servant leadership</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">MULTITASKING FACTS</div>
+            <div class="cram-item">2 projects @ 50% each = only <span class="cram-highlight">20-40% actual</span> productivity each</div>
+            <div class="cram-item">Loss increases EXPONENTIALLY with more tasks</div>
+            <div class="cram-item">People more likely to make mistakes when multitasking</div>
+            <div class="cram-item">100% dedicated = fastest throughput for team</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">DISTRIBUTED TEAM TECHNIQUES</div>
+            <div class="cram-item"><span class="cram-highlight">Fishbowl windows:</span> Long-lived video links between locations</div>
+            <div class="cram-item"><span class="cram-highlight">Remote pairing:</span> Screen share + voice + video for collaboration</div>
+            <div class="cram-item">"Caves and common" — balance open areas + quiet spaces</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAM PAGE 3 -->
+    <div class="cram-page">
+      <div class="cram-page-header">⚡ CRAM PAGE 3 — DELIVERING IN AGILE: PRACTICES & MEASUREMENTS</div>
+      <div class="cram-cols">
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">COMMON AGILE PRACTICES (Section 5.2)</div>
+            <div class="cram-key-val"><div class="ck-key">Retrospective 🔑</div><div class="ck-val">MOST IMPORTANT practice; qualitative + quantitative; limit action items; not blame</div></div>
+            <div class="cram-key-val"><div class="ck-key">Backlog Prep</div><div class="ck-val">Ordered story list; not all stories upfront; enough for first release + next iteration</div></div>
+            <div class="cram-key-val"><div class="ck-key">Backlog Refinement</div><div class="ck-val">≤1 hr/week; just-in-time (flow) or timeboxed (iter); spike if uncertainty</div></div>
+            <div class="cram-key-val"><div class="ck-key">Daily Standup</div><div class="ck-val">Max 15 min; parking lot for problems (solve AFTER, not DURING); anyone facilitates</div></div>
+            <div class="cram-key-val"><div class="ck-key">Demos/Reviews</div><div class="ck-val">At least every 2 weeks; PO accepts/declines; no demo = no learning = not agile</div></div>
+            <div class="cram-key-val"><div class="ck-key">Iteration Planning</div><div class="ck-val">Account for capacity (holidays, etc.); plan a little → deliver → learn → replan</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">TECHNICAL PRACTICES (XP Origins)</div>
+            <div class="cram-item"><span class="cram-highlight">Continuous Integration:</span> Frequent integration + full retest</div>
+            <div class="cram-item"><span class="cram-highlight">Testing at all levels:</span> system, unit, integration, smoke, regression (prefer automated)</div>
+            <div class="cram-item"><span class="cram-highlight">ATDD:</span> Team defines acceptance criteria first; then writes tests; then code</div>
+            <div class="cram-item"><span class="cram-highlight">TDD/BDD:</span> Write tests BEFORE writing product — mistake-proofing</div>
+            <div class="cram-item"><span class="cram-highlight">Spikes:</span> Timeboxed research/experiment; for estimation, ACs, feasibility</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">PROJECT/TEAM CHARTER ESSENTIALS</div>
+            <div class="cram-item">Why? (Vision/Purpose)</div>
+            <div class="cram-item">Who benefits and how?</div>
+            <div class="cram-item">What does "done" mean? (Release criteria)</div>
+            <div class="cram-item">How will we work together? (Flow of work)</div>
+            <div class="cram-item">Team Charter = Social Contract; values, working agreements, ground rules, norms</div>
+          </div>
+        </div>
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">MEASUREMENTS — AGILE METRICS</div>
+            <table class="cram-table">
+              <tr><th>Metric</th><th>What It Measures</th><th>Used For</th></tr>
+              <tr><td>Velocity</td><td>Story pts completed/iteration</td><td>Capacity; forecasting</td></tr>
+              <tr><td>Lead Time</td><td>Board entry → delivery</td><td>End-to-end flow</td></tr>
+              <tr><td>Cycle Time</td><td>Start → complete</td><td>Bottlenecks; throughput</td></tr>
+              <tr><td>Response Time</td><td>Ready → work starts</td><td>Queue management</td></tr>
+              <tr><td>Burndown</td><td>Remaining work vs. time</td><td>Sprint health; early risk</td></tr>
+              <tr><td>Burnup</td><td>Completed work vs. time</td><td>Progress; scope changes visible</td></tr>
+              <tr><td>CFD</td><td>WIP across all columns</td><td>Bottleneck identification</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">EVM IN AGILE</div>
+            <div class="cram-formula">SPI = Story Points Completed / Story Points Planned</div>
+            <div class="cram-formula">CPI = Earned Value (completed) / Actual Costs</div>
+            <div class="cram-item">Example: Planned 30 pts, completed 25 → SPI = 25/30 = 0.83</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">ANTI-PATTERNS TO KNOW</div>
+            <div class="cram-item"><span class="cram-highlight">Watermelon Project:</span> Green outside (reporting), red inside (reality)</div>
+            <div class="cram-item"><span class="cram-highlight">90% done forever:</span> Surrogate % metrics don't reflect reality</div>
+            <div class="cram-item"><span class="cram-highlight">Mini-waterfall:</span> Team does all requirements, then all design... in agile</div>
+            <div class="cram-item"><span class="cram-highlight">Standup = status meeting:</span> Team reports to PM instead of self-organizing</div>
+            <div class="cram-item"><span class="cram-highlight">Solve problems during standup:</span> Issues go to parking lot; separate meeting</div>
+            <div class="cram-item"><span class="cram-highlight">Premature tailoring:</span> Tailoring before mastering the framework</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">VELOCITY FACTS</div>
+            <div class="cram-item">4–8 iterations to achieve STABLE velocity</div>
+            <div class="cram-item">Story points NOT comparable between teams</div>
+            <div class="cram-item">Measuring story points ≠ measuring finished features</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAM PAGE 4 -->
+    <div class="cram-page">
+      <div class="cram-page-header">🏛️ CRAM PAGE 4 — ORG CONSIDERATIONS, CONTRACTS & FRAMEWORKS</div>
+      <div class="cram-cols">
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">ORGANIZATIONAL CHANGE MANAGEMENT</div>
+            <div class="cram-item">OCM is <span class="cram-highlight">OUT OF SCOPE</span> for this guide (see separate PMI practice guide)</div>
+            <div class="cram-item">Two drivers for OCM in agile: <span class="cram-highlight">Accelerated delivery</span> + <span class="cram-highlight">Agile adoption itself</span></div>
+            <div class="cram-item">Change-friendly: executive willingness, performance review shift, talent maturity</div>
+            <div class="cram-item">Roadblocks: silos, short-term procurement, local efficiency rewards, specialization incentives</div>
+            <div class="cram-item">Culture eats strategy for breakfast (Drucker)</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">AGILE CONTRACTING TECHNIQUES</div>
+            <div class="cram-key-val"><div class="ck-key">Multi-tiered</div><div class="ck-val">Master agreement + schedule of services + SOW</div></div>
+            <div class="cram-key-val"><div class="ck-key">Value-delivered</div><div class="ck-val">Milestones = value-driven deliverables (not phase gates)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Fixed-price increments</div><div class="ck-val">User stories priced separately; limits over-commitment</div></div>
+            <div class="cram-key-val"><div class="ck-key">Not-to-exceed T&M</div><div class="ck-val">Fixed max budget; customer can swap features</div></div>
+            <div class="cram-key-val"><div class="ck-key">Graduated T&M</div><div class="ck-val">Higher rate for early; lower for late delivery</div></div>
+            <div class="cram-key-val"><div class="ck-key">Early cancellation</div><div class="ck-val">Exit with fee when sufficient value delivered</div></div>
+            <div class="cram-key-val"><div class="ck-key">Dynamic scope</div><div class="ck-val">Fixed budget; vary scope at set points</div></div>
+            <div class="cram-key-val"><div class="ck-key">Team augmentation</div><div class="ck-val">Embed supplier in org; fund teams not scope</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">AGILE PMO (Three Characteristics)</div>
+            <div class="cram-item"><span class="cram-highlight">Value-driven:</span> Consulting model; tailors to project needs</div>
+            <div class="cram-item"><span class="cram-highlight">Invitation-oriented:</span> NOT mandate; higher engagement = stickier</div>
+            <div class="cram-item"><span class="cram-highlight">Multidisciplinary:</span> Standards, training, multi-project mgmt, learning, stakeholders, recruitment</div>
+          </div>
+        </div>
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">SCALING — FRAMEWORKS QUICK REFERENCE</div>
+            <table class="cram-table">
+              <tr><th>Framework</th><th>Level</th><th>Key Feature</th></tr>
+              <tr><td>Scrum of Scrums</td><td>2+ teams</td><td>One rep per team; coordinate interdependencies</td></tr>
+              <tr><td>SAFe®</td><td>Enterprise</td><td>Portfolio+Program+Team; value streams; 9 principles</td></tr>
+              <tr><td>LeSS</td><td>Multiple teams</td><td>Minimal Scrum extensions; one backlog, one PO</td></tr>
+              <tr><td>DA (Disciplined Agile)</td><td>Enterprise</td><td>Goal-driven; fit-for-purpose life cycles; people-first</td></tr>
+              <tr><td>Enterprise Scrum</td><td>Org-wide</td><td>Extend Scrum across entire org for innovation</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">FRAMEWORK QUICK REFERENCE (Teams)</div>
+            <table class="cram-table">
+              <tr><th>Framework</th><th>Type</th><th>Key Feature</th></tr>
+              <tr><td>Scrum</td><td>Iteration</td><td>PO+Dev+SM; sprints; sprint backlog</td></tr>
+              <tr><td>XP</td><td>Technical</td><td>TDD, pair programming, CI, refactoring; 5 values</td></tr>
+              <tr><td>Kanban Method</td><td>Flow</td><td>WIP limits; pull system; start-where-you-are</td></tr>
+              <tr><td>Crystal</td><td>Scalable</td><td>Team size × criticality = methodology weight</td></tr>
+              <tr><td>Scrumban</td><td>Hybrid</td><td>Scrum framework + Kanban improvement</td></tr>
+              <tr><td>FDD</td><td>Feature</td><td>5 activities; 6 roles; features = small biz value</td></tr>
+              <tr><td>DSDM</td><td>Constraint</td><td>Cost+Quality+Time FIXED; Scope VARIABLE; 8 principles</td></tr>
+              <tr><td>AgileUP</td><td>UP variant</td><td>7 disciplines; lighter than RUP</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">EVOLVING THE ORGANIZATION</div>
+            <div class="cram-item">Treat org change as an agile project with a BACKLOG</div>
+            <div class="cram-item">Each change = experiment, tested for short period</div>
+            <div class="cram-item">Use Kanban board: To-Do → In Progress → Done</div>
+            <div class="cram-item">Transparent, appealing rollout → better likelihood of success</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CRAM PAGE 5 -->
+    <div class="cram-page">
+      <div class="cram-page-header">⭐ CRAM PAGE 5 — MUST-KNOWS, TRAPS & EXAM EDGE</div>
+      <div class="cram-cols">
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">CRITICAL EXAM DISTINCTIONS</div>
+            <div class="cram-key-val"><div class="ck-key">Most important practice</div><div class="ck-val">RETROSPECTIVE (not sprint, not standup)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Primary measure</div><div class="ck-val">WORKING SOFTWARE/PRODUCT (Principle #7)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Highest priority</div><div class="ck-val">CUSTOMER SATISFACTION through early/continuous delivery (Principle #1)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Agile for its own sake</div><div class="ck-val">NOT the goal — deliver value continuously is the goal</div></div>
+            <div class="cram-key-val"><div class="ck-key">Lead time vs Cycle time</div><div class="ck-val">Lead = board entry to delivery; Cycle = start work to finish</div></div>
+            <div class="cram-key-val"><div class="ck-key">Burndown vs Burnup</div><div class="ck-val">Down = remaining; Up = completed; burnup shows scope changes clearly</div></div>
+            <div class="cram-key-val"><div class="ck-key">Story points</div><div class="ck-val">Unit-LESS; NOT comparable between teams; measure RELATIVE size</div></div>
+            <div class="cram-key-val"><div class="ck-key">Velocity stabilizes in</div><div class="ck-val">4-8 iterations</div></div>
+            <div class="cram-key-val"><div class="ck-key">Ideal agile team size</div><div class="ck-val">3-9 members (fewer than 10)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Standup duration</div><div class="ck-val">Max 15 MINUTES; not a status meeting</div></div>
+            <div class="cram-key-val"><div class="ck-key">Backlog refinement goal</div><div class="ck-val">≤1 hour per week</div></div>
+            <div class="cram-key-val"><div class="ck-key">Demo frequency</div><div class="ck-val">At least every 2 WEEKS</div></div>
+            <div class="cram-key-val"><div class="ck-key">DSDM fixed elements</div><div class="ck-val">Cost + Quality + Time; SCOPE is variable (opposite of traditional)</div></div>
+            <div class="cram-key-val"><div class="ck-key">Kanban origin</div><div class="ck-val">Toyota, 1953, Taiichi Ohno; "visual sign"</div></div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">TAILORING WATCHPOINTS</div>
+            <div class="cram-item">Tailoring = ADVANCED; gain success first (Shu-Ha-Ri)</div>
+            <div class="cram-item">Practices act as SELF-SUPPORTING PAIRS — removing one creates problems</div>
+            <div class="cram-item">If retrospectives are unpopular → FIX the team issue, don't drop them</div>
+            <div class="cram-item">Engage those IMPACTED in tailoring decisions — or expect resistance</div>
+          </div>
+        </div>
+        <div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">AGILE SUITABILITY FILTER — RADAR CHART CATEGORIES</div>
+            <div class="cram-sub-title" style="font-size:10px; margin-top:4px">Culture:</div>
+            <div class="cram-item">Buy-in to approach (senior sponsor support?)</div>
+            <div class="cram-item">Trust in team (stakeholders trust team to deliver?)</div>
+            <div class="cram-item">Decision-making powers (team has local autonomy?)</div>
+            <div class="cram-sub-title" style="font-size:10px; margin-top:8px">Team:</div>
+            <div class="cram-item">Team size (1-9=agile → 201+=predictive)</div>
+            <div class="cram-item">Experience levels (each role has experienced member?)</div>
+            <div class="cram-item">Access to customer/business (daily access to business rep?)</div>
+            <div class="cram-sub-title" style="font-size:10px; margin-top:8px">Project:</div>
+            <div class="cram-item">Likelihood of change (50%/mo=agile → 5%/mo=predictive)</div>
+            <div class="cram-item">Criticality (Time loss=agile → Many Lives=predictive)</div>
+            <div class="cram-item">Incremental delivery (Yes=agile → Unlikely=predictive)</div>
+            <div class="cram-item">Results clustered at CENTER = Agile fit; OUTSIDE = Predictive fit; MIDDLE = Hybrid</div>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">PMBOK KNOWLEDGE AREAS ↔ AGILE (Annex A1)</div>
+            <table class="cram-table">
+              <tr><th>KA</th><th>Agile Application</th></tr>
+              <tr><td>Integration</td><td>Team members as local domain experts; PM delegates product planning</td></tr>
+              <tr><td>Scope</td><td>Requirements = backlog; refined throughout; less upfront; prototypes</td></tr>
+              <tr><td>Schedule</td><td>Short iterative cycles; pull-based scheduling; rolling wave</td></tr>
+              <tr><td>Cost</td><td>Lightweight estimates; just-in-time detail; adjust scope within budget</td></tr>
+              <tr><td>Quality</td><td>Quality built in throughout; retrospectives check quality processes</td></tr>
+              <tr><td>Resource</td><td>Self-organizing; generalizing specialists; collaborative teams</td></tr>
+              <tr><td>Communications</td><td>Frequent checkpoints; colocation; transparent artifacts; stakeholder reviews</td></tr>
+              <tr><td>Risk</td><td>Frequent incremental review; cross-functional teams; requirements as living doc</td></tr>
+              <tr><td>Procurement</td><td>Shared risk model; MSA for overall + adaptive work in appendix</td></tr>
+              <tr><td>Stakeholders</td><td>Direct engagement (not through layers); co-creative process; aggressive transparency</td></tr>
+            </table>
+          </div>
+          <div class="cram-sub">
+            <div class="cram-sub-title">SECTION 7 — CALL TO ACTION</div>
+            <div class="cram-item">"Inspection without adaptation is <span class="cram-highlight">wasted effort</span>"</div>
+            <div class="cram-item">Inspection + Adaptation + Transparency = critical triad</div>
+            <div class="cram-item">Agile adoption no longer limited to software or company size</div>
+            <div class="cram-item">This is YOUR journey — learn, experiment, get feedback, experiment again</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; padding: 20px; color: var(--muted); font-family: Arial, sans-serif; font-size: 12px;">
+  Agile Practice Guide — Topper's Notes | Based on PMI Agile Practice Guide (PMI + Agile Alliance®) | For PMP Exam Preparation
+</div>
+
+</div><!-- /container -->
+
+<script>
+function printSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const title = section.closest('.section-wrapper')?.querySelector('.sec-title')?.textContent || 'Section';
+  const printWindow = window.open('', '_blank', 'width=900,height=600');
+  printWindow.document.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>${title}</title>
+      <style>
+        body { font-family: Georgia, serif; font-size: 13px; line-height: 1.6; padding: 20px; color: #2b2b2b; }
+        h1 { color: #1a3a5c; font-size: 18px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #c8832a; }
+        h3 { color: #1a3a5c; font-size: 15px; margin: 16px 0 8px; padding-left: 8px; border-left: 3px solid #c8832a; }
+        h4 { color: #2e7d4f; font-size: 13px; margin: 10px 0 5px; font-family: Arial; }
+        ul { padding-left: 18px; } li { margin-bottom: 3px; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px; }
+        th { background: #1a3a5c; color: white; padding: 6px 8px; text-align: left; }
+        td { padding: 6px 8px; border-bottom: 1px solid #d4c9b5; vertical-align: top; }
+        tr:nth-child(even) td { background: #f9f7f4; }
+        .key-box { background: #fff3cd; border: 1px solid #ffc107; border-left: 4px solid #ffc107; border-radius: 4px; padding: 10px 14px; margin: 10px 0; }
+        .tip-box { background: #e8f4fd; border: 1px solid #90caf9; border-left: 4px solid #1976d2; border-radius: 4px; padding: 10px 14px; margin: 10px 0; }
+        .warn-box { background: #fdf3e8; border: 1px solid #ffb74d; border-left: 4px solid #e65100; border-radius: 4px; padding: 10px 14px; margin: 10px 0; }
+        .success-box { background: #eafaf1; border: 1px solid #81c784; border-left: 4px solid #2e7d32; border-radius: 4px; padding: 10px 14px; margin: 10px 0; }
+        .box-label { font-family: Arial; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 5px; }
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+        .lc-card, .practice-card, .fw-card, .role-card, .org-card, .hybrid-card { border: 1px solid #d4c9b5; border-radius: 6px; padding: 12px; margin-bottom: 8px; }
+        .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+        .principle-item { background: #f0f4f8; border: 1px solid #d4c9b5; border-radius: 4px; padding: 6px 8px; font-size: 11px; display: flex; gap: 6px; }
+        .p-num { background: #1a3a5c; color: white; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; font-family: Arial; font-weight: bold; }
+        .manifesto-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .manifesto-card { background: #1a3a5c; color: white; padding: 12px; border-radius: 6px; }
+        .val-title { color: #f0c86a; font-size: 13px; font-weight: bold; }
+        .val-over { font-size: 10px; color: #90caf9; }
+        .val-desc { font-size: 11px; color: #d0e4f7; margin-top: 4px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+        .metric-card { background: #1a3a5c; color: white; border-radius: 6px; padding: 10px; text-align: center; }
+        .m-title { color: #f0c86a; font-size: 11px; font-weight: bold; font-family: Arial; }
+        .m-desc { font-size: 10px; color: #b0c4de; }
+        .trouble-item { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px solid #d4c9b5; font-size: 11px; }
+        .trouble-pain { color: #c62828; font-weight: bold; min-width: 160px; flex-shrink: 0; }
+        .callout { background: #1a3a5c; color: white; padding: 10px 14px; border-radius: 6px; margin: 10px 0; font-size: 12px; text-align: center; font-style: italic; }
+        .glossary-grid { columns: 2; column-gap: 24px; }
+        .gloss-item { break-inside: avoid; margin-bottom: 8px; padding: 6px 8px; background: white; border: 1px solid #d4c9b5; border-left: 3px solid #c8832a; border-radius: 0 4px 4px 0; font-size: 11px; }
+        .gloss-term { font-weight: bold; color: #1a3a5c; font-family: Arial; font-size: 12px; }
+        @media print { * { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+      </style>
+    </head>
+    <body>
+      <h1>${title}</h1>
+      ${section.innerHTML}
+    </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  setTimeout(() => printWindow.print(), 500);
+}
+</script>
+</body>
+</html>
